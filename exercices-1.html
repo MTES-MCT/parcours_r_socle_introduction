@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 11 Exercices | Découvrir R et RStudio</title>
+  <meta name="description" content="Chapitre 11 Exercices | Découvrir R et RStudio (module socle)" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 11 Exercices | Découvrir R et RStudio" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Chapitre 11 Exercices | Découvrir R et RStudio (module socle)" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 11 Exercices | Découvrir R et RStudio" />
+  
+  <meta name="twitter:description" content="Chapitre 11 Exercices | Découvrir R et RStudio (module socle)" />
+  
+
+<meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez &amp; Pascal Irz" />
+
+
+<meta name="date" content="2020-02-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"/>
+<link rel="next" href="exercices-pour-r-studio.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><p style="text-align:center;"><img src="https://mtes-mct.github.io/parcours-r/assets/images/logo_marianne_fond_blanc.png" style="width:100px;"/></p></li>
+<li><a href="./">Découvrir R et RStudio</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#le-parcours-de-formation"><i class="fa fa-check"></i><b>1.1</b> Le parcours de formation</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#objectifs-du-module-1"><i class="fa fa-check"></i><b>1.2</b> Objectifs du module 1</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html"><i class="fa fa-check"></i><b>2</b> R, son écosystème et ses possibilités</a><ul>
+<li class="chapter" data-level="2.1" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#le-groupe-de-référents"><i class="fa fa-check"></i><b>2.1</b> Le groupe de référents</a></li>
+<li class="chapter" data-level="2.2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#r-cest-quoi"><i class="fa fa-check"></i><b>2.2</b> R c’est quoi ?</a></li>
+<li class="chapter" data-level="2.3" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-peu-dhistoire"><i class="fa fa-check"></i><b>2.3</b> Un peu d’histoire</a></li>
+<li class="chapter" data-level="2.4" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-logiciel-libre"><i class="fa fa-check"></i><b>2.4</b> Un logiciel libre</a></li>
+<li class="chapter" data-level="2.5" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#que-peut-on-faire-avec-r"><i class="fa fa-check"></i><b>2.5</b> Que peut-on faire avec R ?</a></li>
+<li class="chapter" data-level="2.6" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-logiciel-modulaire"><i class="fa fa-check"></i><b>2.6</b> Un logiciel modulaire</a></li>
+<li class="chapter" data-level="2.7" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#des-exemples-de-ce-quon-peut-faire-avec-r"><i class="fa fa-check"></i><b>2.7</b> Des exemples de ce qu’on peut faire avec R :</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html"><i class="fa fa-check"></i><b>3</b> Présentation de l’interface et premières manipulations</a><ul>
+<li class="chapter" data-level="3.1" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#une-interface-dédiée-rstudio"><i class="fa fa-check"></i><b>3.1</b> Une interface dédiée : RStudio</a></li>
+<li class="chapter" data-level="3.2" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#session-et-répertoire-de-travail"><i class="fa fa-check"></i><b>3.2</b> Session et répertoire de travail</a></li>
+<li class="chapter" data-level="3.3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#exercice"><i class="fa fa-check"></i><b>3.3</b> Exercice</a></li>
+<li class="chapter" data-level="3.4" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#prise-en-main-de-la-console"><i class="fa fa-check"></i><b>3.4</b> Prise en main de la console</a></li>
+<li class="chapter" data-level="3.5" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#création-dune-variable"><i class="fa fa-check"></i><b>3.5</b> Création d’une variable</a></li>
+<li class="chapter" data-level="3.6" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#exercice-1"><i class="fa fa-check"></i><b>3.6</b> Exercice</a></li>
+<li class="chapter" data-level="3.7" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#utilité-des-scripts"><i class="fa fa-check"></i><b>3.7</b> Utilité des scripts</a></li>
+<li class="chapter" data-level="3.8" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#exercice-utiliser-un-script"><i class="fa fa-check"></i><b>3.8</b> Exercice : utiliser un script</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html"><i class="fa fa-check"></i><b>4</b> Mon premier jeu de données</a><ul>
+<li class="chapter" data-level="4.1" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#les-types-de-valeurs-dans-r"><i class="fa fa-check"></i><b>4.1</b> Les types de valeurs dans R</a></li>
+<li class="chapter" data-level="4.2" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#avant-de-manipuler-le-dataframe-installer-et-charger-un-package"><i class="fa fa-check"></i><b>4.2</b> Avant de manipuler le <em>dataframe</em> : installer et charger un <em>package</em></a></li>
+<li class="chapter" data-level="4.3" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#importation-de-données"><i class="fa fa-check"></i><b>4.3</b> Importation de données</a></li>
+<li class="chapter" data-level="4.4" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#structure-des-données-le-dataframe"><i class="fa fa-check"></i><b>4.4</b> Structure des données : le <em>dataframe</em></a></li>
+<li class="chapter" data-level="4.5" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#gérer-le-type-des-variables"><i class="fa fa-check"></i><b>4.5</b> Gérer le type des variables</a></li>
+<li class="chapter" data-level="4.6" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#les-valeurs-particulières"><i class="fa fa-check"></i><b>4.6</b> Les valeurs particulières</a></li>
+<li class="chapter" data-level="4.7" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#exercice-importer-les-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>4.7</b> Exercice : Importer les données et premier coup d’oeil</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bien-commencer.html"><a href="bien-commencer.html"><i class="fa fa-check"></i><b>5</b> Bien commencer</a><ul>
+<li class="chapter" data-level="5.1" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-un-projet-sous-rstudio-pour-vous-permettre-de-recenser-vos-travaux."><i class="fa fa-check"></i><b>5.1</b> Créer un projet sous Rstudio pour vous permettre de recenser vos travaux.</a></li>
+<li class="chapter" data-level="5.2" data-path="bien-commencer.html"><a href="bien-commencer.html#intégrer-vos-données"><i class="fa fa-check"></i><b>5.2</b> Intégrer vos données</a></li>
+<li class="chapter" data-level="5.3" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-votre-arborescence-de-projet"><i class="fa fa-check"></i><b>5.3</b> Créer votre arborescence de projet</a></li>
+<li class="chapter" data-level="5.4" data-path="bien-commencer.html"><a href="bien-commencer.html#activer-les-packages-nécessaires"><i class="fa fa-check"></i><b>5.4</b> Activer les packages nécessaires</a></li>
+<li class="chapter" data-level="5.5" data-path="bien-commencer.html"><a href="bien-commencer.html#bien-structurer-ses-projets-data"><i class="fa fa-check"></i><b>5.5</b> Bien structurer ses projets <em>data</em></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html"><i class="fa fa-check"></i><b>6</b> Première manipulation des données</a><ul>
+<li class="chapter" data-level="6.1" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#afficher-les-valeurs-et-manipuler-les-variables"><i class="fa fa-check"></i><b>6.1</b> Afficher les valeurs et manipuler les variables</a></li>
+<li class="chapter" data-level="6.2" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#créer-de-nouvelles-variables"><i class="fa fa-check"></i><b>6.2</b> Créer de nouvelles variables</a></li>
+<li class="chapter" data-level="6.3" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#sélectionner-des-variables"><i class="fa fa-check"></i><b>6.3</b> Sélectionner des variables</a></li>
+<li class="chapter" data-level="6.4" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#filtrer-des-observations"><i class="fa fa-check"></i><b>6.4</b> Filtrer des observations</a></li>
+<li class="chapter" data-level="6.5" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#les-tests-logiques-dans-r"><i class="fa fa-check"></i><b>6.5</b> Les tests logiques dans R</a></li>
+<li class="chapter" data-level="6.6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#renommer-des-colonnes"><i class="fa fa-check"></i><b>6.6</b> Renommer des colonnes</a></li>
+<li class="chapter" data-level="6.7" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#exercice-créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>6.7</b> Exercice : Créer, filtrer, sélectionner</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html"><i class="fa fa-check"></i><b>7</b> Premiers traitements statistiques</a><ul>
+<li class="chapter" data-level="7.1" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#obtenir-des-informations"><i class="fa fa-check"></i><b>7.1</b> Obtenir des informations</a></li>
+<li class="chapter" data-level="7.2" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#calculer-des-statistiques-spécifiques"><i class="fa fa-check"></i><b>7.2</b> Calculer des statistiques spécifiques</a></li>
+<li class="chapter" data-level="7.3" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#agréger-des-données"><i class="fa fa-check"></i><b>7.3</b> Agréger des données</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#globalement"><i class="fa fa-check"></i><b>7.3.1</b> Globalement</a></li>
+<li class="chapter" data-level="7.3.2" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#selon-un-facteur"><i class="fa fa-check"></i><b>7.3.2</b> Selon un facteur</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#tableau-de-contingence"><i class="fa fa-check"></i><b>7.4</b> Tableau de contingence</a></li>
+<li class="chapter" data-level="7.5" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#tableau-de-proportions"><i class="fa fa-check"></i><b>7.5</b> Tableau de proportions</a></li>
+<li class="chapter" data-level="7.6" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#exercice-calcul-de-statistiques"><i class="fa fa-check"></i><b>7.6</b> Exercice : calcul de statistiques</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html"><i class="fa fa-check"></i><b>8</b> Premiers graphiques</a><ul>
+<li class="chapter" data-level="8.1" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#package-ggplot2"><i class="fa fa-check"></i><b>8.1</b> Package ggplot2</a></li>
+<li class="chapter" data-level="8.2" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#histogramme"><i class="fa fa-check"></i><b>8.2</b> Histogramme</a></li>
+<li class="chapter" data-level="8.3" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#nuages-de-points"><i class="fa fa-check"></i><b>8.3</b> Nuages de points</a></li>
+<li class="chapter" data-level="8.4" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#matrice-de-nuages"><i class="fa fa-check"></i><b>8.4</b> Matrice de nuages</a></li>
+<li class="chapter" data-level="8.5" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#bonus-faire-un-graphique-dynamique"><i class="fa fa-check"></i><b>8.5</b> Bonus : faire un graphique “dynamique”</a></li>
+<li class="chapter" data-level="8.6" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#exercices-créer-des-graphiques"><i class="fa fa-check"></i><b>8.6</b> Exercices : créer des graphiques</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="sauvegarder-son-travail.html"><a href="sauvegarder-son-travail.html"><i class="fa fa-check"></i><b>9</b> Sauvegarder son travail</a><ul>
+<li class="chapter" data-level="9.1" data-path="sauvegarder-son-travail.html"><a href="sauvegarder-son-travail.html#exportation-des-résultats"><i class="fa fa-check"></i><b>9.1</b> Exportation des résultats</a></li>
+<li class="chapter" data-level="9.2" data-path="sauvegarder-son-travail.html"><a href="sauvegarder-son-travail.html#environnement-et-.rdata"><i class="fa fa-check"></i><b>9.2</b> Environnement et <code>.RData</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><i class="fa fa-check"></i><b>10</b> Aller plus loin avec les objets, crochets et la programmation fonctionnelle</a><ul>
+<li class="chapter" data-level="10.1" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#les-objets-dans-r"><i class="fa fa-check"></i><b>10.1</b> Les objets dans R</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#créer-des-vecteurs"><i class="fa fa-check"></i><b>10.1.1</b> Créer des vecteurs</a></li>
+<li class="chapter" data-level="10.1.2" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#créer-une-matrice"><i class="fa fa-check"></i><b>10.1.2</b> Créer une matrice</a></li>
+<li class="chapter" data-level="10.1.3" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#visualiser-ces-objets-et-leurs-attributs"><i class="fa fa-check"></i><b>10.1.3</b> Visualiser ces objets et leurs attributs</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#sélectionner-des-lignes-et-des-colonnes"><i class="fa fa-check"></i><b>10.2</b> Sélectionner des lignes et des colonnes</a></li>
+<li class="chapter" data-level="10.3" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#créer-une-nouvelle-fonction-en-r"><i class="fa fa-check"></i><b>10.3</b> Créer une nouvelle fonction en R</a></li>
+<li class="chapter" data-level="10.4" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#les-boucles-conditionnelles"><i class="fa fa-check"></i><b>10.4</b> Les boucles conditionnelles</a></li>
+<li class="chapter" data-level="10.5" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#les-boucles"><i class="fa fa-check"></i><b>10.5</b> Les boucles</a></li>
+<li class="chapter" data-level="10.6" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#exercices"><i class="fa fa-check"></i><b>10.6</b> Exercices</a><ul>
+<li class="chapter" data-level="10.6.1" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#vecteurs-simples"><i class="fa fa-check"></i><b>10.6.1</b> Vecteurs simples</a></li>
+<li class="chapter" data-level="10.6.2" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#dataframes-et-listes"><i class="fa fa-check"></i><b>10.6.2</b> Dataframes et listes</a></li>
+<li class="chapter" data-level="10.6.3" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#pour-aller-plus-loin-matrices-et-arrays"><i class="fa fa-check"></i><b>10.6.3</b> Pour aller plus loin : matrices et arrays</a></li>
+<li class="chapter" data-level="10.6.4" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#inspection-dun-objet-la-régression"><i class="fa fa-check"></i><b>10.6.4</b> Inspection d’un objet : la régression</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="exercices-1.html"><a href="exercices-1.html"><i class="fa fa-check"></i><b>11</b> Exercices</a><ul>
+<li class="chapter" data-level="11.1" data-path="exercices-1.html"><a href="exercices-1.html#création-et-manipulation-dobjets-dans-r"><i class="fa fa-check"></i><b>11.1</b> Création et manipulation d’objets dans R</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="exercices-1.html"><a href="exercices-1.html#génération-de-vecteurs"><i class="fa fa-check"></i><b>11.1.1</b> Génération de vecteurs</a></li>
+<li class="chapter" data-level="11.1.2" data-path="exercices-1.html"><a href="exercices-1.html#génération-dautres-objets"><i class="fa fa-check"></i><b>11.1.2</b> Génération d’autres objets</a></li>
+<li class="chapter" data-level="11.1.3" data-path="exercices-1.html"><a href="exercices-1.html#inspection-dun-objet-la-régression-1"><i class="fa fa-check"></i><b>11.1.3</b> Inspection d’un objet : la régression</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="exercices-1.html"><a href="exercices-1.html#premier-jeu-de-données-premières-statistiques"><i class="fa fa-check"></i><b>11.2</b> Premier jeu de données, premières statistiques</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="exercices-1.html"><a href="exercices-1.html#importer-les-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>11.2.1</b> Importer les données et premier coup d’oeil</a></li>
+<li class="chapter" data-level="11.2.2" data-path="exercices-1.html"><a href="exercices-1.html#créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>11.2.2</b> Créer, filtrer, sélectionner</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="exercices-1.html"><a href="exercices-1.html#mes-premiers-graphiques-et-statistiques"><i class="fa fa-check"></i><b>11.3</b> Mes premiers graphiques et statistiques</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="exercices-1.html"><a href="exercices-1.html#statistiques-univariées"><i class="fa fa-check"></i><b>11.3.1</b> Statistiques univariées</a></li>
+<li class="chapter" data-level="11.3.2" data-path="exercices-1.html"><a href="exercices-1.html#tableaux-croisés"><i class="fa fa-check"></i><b>11.3.2</b> Tableaux croisés</a></li>
+<li class="chapter" data-level="11.3.3" data-path="exercices-1.html"><a href="exercices-1.html#les-graphiques-avec-ggplot2"><i class="fa fa-check"></i><b>11.3.3</b> Les graphiques avec ggplot2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html"><i class="fa fa-check"></i><b>12</b> Exercices pour R Studio</a><ul>
+<li class="chapter" data-level="12.1" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-1-prendre-en-main-rstudio-10-min."><i class="fa fa-check"></i><b>12.1</b> Exercice 1 : Prendre en main RStudio (10 min.)</a></li>
+<li class="chapter" data-level="12.2" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-2-faire-ses-premiers-calculs-15-min."><i class="fa fa-check"></i><b>12.2</b> Exercice 2 : Faire ses premiers calculs (15 min.)</a></li>
+<li class="chapter" data-level="12.3" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-3-créer-ses-premières-variables-15-min."><i class="fa fa-check"></i><b>12.3</b> Exercice 3 : Créer ses premières variables (15 min.)</a></li>
+<li class="chapter" data-level="12.4" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-4-créer-son-premier-script-20-min."><i class="fa fa-check"></i><b>12.4</b> Exercice 4 : Créer son premier script (20 min.)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://mtes-mct.github.io/parcours-r/">Liste des formations R</a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Découvrir R et RStudio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercices-1" class="section level1">
+<h1><span class="header-section-number">Chapitre 11</span> Exercices</h1>
+<div id="création-et-manipulation-dobjets-dans-r" class="section level2">
+<h2><span class="header-section-number">11.1</span> Création et manipulation d’objets dans R</h2>
+<p>Ces exercices de mise en oeuvre des notions vues pendant la présentation se déroulent en deux parties :</p>
+<ul>
+<li>Manipulation des objets R sans recours à une base de données</li>
+<li>Importation d’une base de données à partir d’un fichier CSV et premières manipulations</li>
+<li>Premiers graphiques et statistiques.</li>
+</ul>
+<p>Par défaut, les résultats attendus sont affichés, et, si vous séchez, vous pouvez afficher le code les ayant généré en cliquant sur “code”.
+A tout moment, vous pouvez donc copier / coller le code dans l’éditeur de script ou la console pour exécuter les commandes présentées.
+Ces exercices nécessitent les packages de base et le package <code>tidyverse</code>, ce dernier regroupe un ensemble de fonctions à la syntaxe très simple.</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" data-line-number="1"><span class="kw">require</span>(tidyverse)       <span class="co"># ou library(tidyverse)</span></a></code></pre></div>
+<div id="génération-de-vecteurs" class="section level3">
+<h3><span class="header-section-number">11.1.1</span> Génération de vecteurs</h3>
+<p>Créez trois vecteurs : un numérique, un caractère et un facteur. Vous pouvez vous aider des fonctions <code>c()</code>, <code>rnorm()</code> (génération d’une variable aléatoire selon une loi normale), <code>seq()</code> ou <code>rep()</code></p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" data-line-number="1"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())</a>
+<a class="sourceLine" id="cb192-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb192-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">160</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">60</span>)</a>
+<a class="sourceLine" id="cb192-4" data-line-number="4">x1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Je&quot;</span>,<span class="st">&quot;programme&quot;</span>,<span class="st">&quot;en&quot;</span>,<span class="st">&quot;R&quot;</span>) <span class="co"># Guillemets pour indiquer que c&#39;est une variable textuelle</span></a>
+<a class="sourceLine" id="cb192-5" data-line-number="5">y &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb192-6" data-line-number="6">z &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb192-7" data-line-number="7">x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">30</span>)</a>
+<a class="sourceLine" id="cb192-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb192-9" data-line-number="9"><span class="co"># création de vecteurs avec la fonction c() = combine</span></a>
+<a class="sourceLine" id="cb192-10" data-line-number="10">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">12</span>,<span class="dv">15</span>,<span class="dv">32</span>,<span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb192-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb192-12" data-line-number="12"><span class="co"># avec la fonction seq() = sequence, g?n?ralisation de la syntaxe ci-dessus</span></a>
+<a class="sourceLine" id="cb192-13" data-line-number="13">v2 &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span> , <span class="dv">15</span> , <span class="fl">1.5</span>)</a>
+<a class="sourceLine" id="cb192-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb192-15" data-line-number="15"><span class="co"># syntaxe équivalente mais préférable car plus lisible :</span></a>
+<a class="sourceLine" id="cb192-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb192-17" data-line-number="17">v2b&lt;-<span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">1</span> , <span class="dt">to=</span><span class="dv">15</span> , <span class="dt">by=</span><span class="fl">1.5</span>)</a>
+<a class="sourceLine" id="cb192-18" data-line-number="18">v3&lt;-<span class="dv">1</span><span class="op">:</span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb192-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb192-20" data-line-number="20"><span class="co"># avec la fonction rep() = répétition</span></a>
+<a class="sourceLine" id="cb192-21" data-line-number="21">v4&lt;-<span class="kw">rep</span>(<span class="dv">4</span>,<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb192-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb192-23" data-line-number="23"><span class="co"># ces commandes peuvent être combinées. Pratique pour créer des variables &quot;facteur&quot;</span></a>
+<a class="sourceLine" id="cb192-24" data-line-number="24">v5 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="fl">1.2</span>,<span class="dv">8</span>,<span class="dv">9</span>),<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb192-25" data-line-number="25">v6 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb192-26" data-line-number="26"></a>
+<a class="sourceLine" id="cb192-27" data-line-number="27"><span class="co"># vecteurs de type texte ou factor</span></a>
+<a class="sourceLine" id="cb192-28" data-line-number="28">vtaille &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;S&quot;</span>,<span class="st">&quot;L&quot;</span>),<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb192-29" data-line-number="29">vtaille &lt;-<span class="st"> </span><span class="kw">factor</span>(vtaille)</a>
+<a class="sourceLine" id="cb192-30" data-line-number="30"></a>
+<a class="sourceLine" id="cb192-31" data-line-number="31"><span class="co"># concaténation de vecteurs</span></a>
+<a class="sourceLine" id="cb192-32" data-line-number="32">gtaille &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;X&quot;</span>,vtaille,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb192-33" data-line-number="33">gtaille &lt;-<span class="st"> </span><span class="kw">factor</span>(gtaille)</a>
+<a class="sourceLine" id="cb192-34" data-line-number="34">toutes_taille &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">as.character</span>(vtaille),<span class="kw">as.character</span>(gtaille)) </a>
+<a class="sourceLine" id="cb192-35" data-line-number="35">toutes_taille &lt;-<span class="st"> </span><span class="kw">as.factor</span>(toutes_taille)</a>
+<a class="sourceLine" id="cb192-36" data-line-number="36"><span class="kw">levels</span>(toutes_taille)</a></code></pre></div>
+<pre><code>## [1] &quot;L&quot;  &quot;S&quot;  &quot;XL&quot; &quot;XS&quot;</code></pre>
+<p>Regroupez ces variables dans un dataframe, puis dans une liste. Dans les deux configurations, affichez la variable contenant les tailles (vtaille). Pour la liste, vous pouvez utiliser les <code>[]</code> et <code>[[]]</code>.</p>
+</div>
+<div id="génération-dautres-objets" class="section level3">
+<h3><span class="header-section-number">11.1.2</span> Génération d’autres objets</h3>
+<div id="dataframes-et-listes-1" class="section level4">
+<h4><span class="header-section-number">11.1.2.1</span> Dataframes et listes</h4>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" data-line-number="1">dataf &lt;-<span class="st"> </span><span class="kw">data.frame</span>(vtaille,v1,v2,v3,v4,v5,v6)</a>
+<a class="sourceLine" id="cb194-2" data-line-number="2">liste &lt;-<span class="st"> </span><span class="kw">list</span>(vtaille,v1,v2,v3,v4,v5,v6)</a>
+<a class="sourceLine" id="cb194-3" data-line-number="3"><span class="kw">names</span>(liste) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;vtaille&quot;</span>,<span class="st">&quot;v1&quot;</span>,<span class="st">&quot;v2&quot;</span>,<span class="st">&quot;v3&quot;</span>,<span class="st">&quot;v4&quot;</span>,<span class="st">&quot;v5&quot;</span>,<span class="st">&quot;v6&quot;</span>)</a>
+<a class="sourceLine" id="cb194-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb194-5" data-line-number="5">dataf<span class="op">$</span>vtaille</a></code></pre></div>
+<pre><code>##  [1] S L S L S L S L S L
+## Levels: L S</code></pre>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" data-line-number="1">liste<span class="op">$</span>vtaille</a></code></pre></div>
+<pre><code>##  [1] S L S L S L S L S L
+## Levels: L S</code></pre>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" data-line-number="1"><span class="kw">rm</span>(dataf,vtaille,v1,v2,v2b,v3,v4,v5,v6)</a></code></pre></div>
+</div>
+<div id="pour-aller-plus-loin-matrices-et-arrays-1" class="section level4">
+<h4><span class="header-section-number">11.1.2.2</span> Pour aller plus loin : matrices et arrays</h4>
+<p>Les matrices et les arrays permettent des calculs rapides et efficaces, peuvent être très pratiques et optimisent le stockage des données. Ils demandent cependant plus de réflexion en amont quant à leur utilisation. On accède aux éléments avec les <code>[]</code>.</p>
+<ul>
+<li>Créer une matrice (10 lignes et 10 colonnes) remplie avec un tirage aléatoire selon une loi normale centrée réduit.</li>
+<li>Créer un hypercube avec la fonction <code>array()</code> avec 10 lignes, colonnes et de profondeur 3, toujours avec un tirage aléatoire selon une loi normale</li>
+</ul>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" data-line-number="1">mat &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">100</span>),<span class="dt">ncol =</span> <span class="dv">10</span>, <span class="dt">nrow =</span> <span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb199-2" data-line-number="2">arr &lt;-<span class="st"> </span><span class="kw">array</span>(<span class="kw">rnorm</span>(<span class="dv">300</span>),<span class="dt">dim =</span> <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb199-3" data-line-number="3">mat</a></code></pre></div>
+<pre><code>##              [,1]       [,2]        [,3]        [,4]        [,5]        [,6]
+##  [1,] -0.58742574  0.5195217 -0.21994365 -0.86673504  1.17345385 -1.05780579
+##  [2,] -1.72606460  0.4384652 -1.60681590 -0.07078838 -0.39963540  0.49377992
+##  [3,] -0.55227880  0.1418468  0.54983479  1.18893813 -0.86396022  0.36289419
+##  [4,]  0.44468339 -0.9533770 -1.83560066 -0.52208099  0.19665449  0.69715582
+##  [5,]  0.07271428 -2.0256923 -0.48785862  0.10624778  0.08273375  0.20194244
+##  [6,] -0.09282805 -0.2337238  1.06973437  0.92525171  0.43306580  0.75362269
+##  [7,]  0.91974585 -0.6636230 -0.04436946 -0.03982988 -2.49526443 -0.07868546
+##  [8,] -0.54280858 -1.5498919 -0.67728859  3.34727821 -0.19156435  2.31929421
+##  [9,] -0.15353732  1.1487015  0.06207105  2.10893046  1.93170587  0.92097764
+## [10,]  2.09553514 -0.6550211 -0.34750730 -0.72366006  0.49777758 -0.88149517
+##              [,7]       [,8]        [,9]        [,10]
+##  [1,]  0.63853989  0.5482386 -0.48022988 -1.426693083
+##  [2,]  0.07917464  0.5919934  1.25813393  0.011442845
+##  [3,] -0.38773783 -0.4929590 -1.62375552 -0.900161435
+##  [4,]  1.92150943  0.4473269 -0.67625190  0.358989924
+##  [5,]  0.11819276  0.7214353 -0.57904261 -1.808638355
+##  [6,] -0.92477596  0.3377371  1.31917681 -0.004834064
+##  [7,]  0.96222776 -0.8885450 -0.44930402 -0.097214619
+##  [8,]  1.22353987  0.5894826  0.89326077  0.213011680
+##  [9,] -0.46608549  0.5556173 -0.07165093 -1.376243817
+## [10,]  0.87379387  0.7497958  0.94209685 -0.467584166</code></pre>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" data-line-number="1">arr</a></code></pre></div>
+<pre><code>## , , 1
+## 
+##             [,1]       [,2]        [,3]       [,4]        [,5]         [,6]
+##  [1,]  1.4787832 -0.2007792  0.90519744  1.2284066  1.22707209  0.774867166
+##  [2,] -0.6040583 -0.4848168  2.14013591  0.3398632  0.77358305  1.474627548
+##  [3,]  1.1112179 -0.3728221  0.12849384  0.7169899 -0.75430522 -1.724842815
+##  [4,] -0.7668516  0.1700523 -0.53127882  0.7665258 -0.51831002 -0.275936320
+##  [5,]  0.6204288  0.5579788  0.06121647  0.6183425  0.15461849 -0.004720958
+##  [6,] -0.5385750  0.2577948  1.46604299  0.1396345 -2.77413297 -0.124364959
+##  [7,] -0.4716034 -0.4144268  0.68109055  1.0391030  0.01086556 -0.161700524
+##  [8,]  1.6575722 -1.9296303 -1.03573589  0.4791698 -0.68202765 -0.133143891
+##  [9,]  0.2352884  0.2406711 -1.07030591  0.3920031 -1.44342896 -0.839062332
+## [10,]  0.8200902  1.8309612 -2.45643088 -0.9770359  0.59042713 -0.104721246
+##              [,7]       [,8]        [,9]      [,10]
+##  [1,]  0.58348292  1.4440608  0.56982750  1.7738452
+##  [2,]  0.76869916  0.6997973  0.02308220  0.5618998
+##  [3,] -0.56093656  0.5467847  1.14895243 -0.3333733
+##  [4,] -0.50670613 -1.2586624  0.66673854  1.6592358
+##  [5,]  0.76125296 -0.3147802 -0.02872505  0.3271089
+##  [6,]  0.56089408 -0.8974462  0.92032397 -0.5739786
+##  [7,]  0.04562361 -0.9036783 -0.71486758 -1.1528154
+##  [8,] -0.19867951 -1.5895948 -0.48466652 -0.1198701
+##  [9,] -0.50050124 -1.4098970  0.28516412  0.3368365
+## [10,]  0.67622239  0.1999201 -1.11794514  0.9182472
+## 
+## , , 2
+## 
+##              [,1]       [,2]       [,3]        [,4]        [,5]       [,6]
+##  [1,] -1.90995810 -1.5991123 -1.1886836  0.18446561  0.64215383  0.3169746
+##  [2,]  0.56711696 -0.8390918  0.9425816 -0.16902955  1.26875135 -0.1366075
+##  [3,]  0.78249527  0.6702048  0.7087477 -0.09942289  0.06533449  1.0044255
+##  [4,]  0.71771991 -0.1870015  0.5719987  0.08758511 -0.43302718 -1.5453125
+##  [5,] -0.07730093 -0.7073353  0.6121805  0.46365823 -0.51014389 -0.1485123
+##  [6,]  1.61667402 -0.6779163 -0.1240304  0.42522885 -0.30126195  1.9705798
+##  [7,] -0.83406120 -0.2948621 -0.1409955 -0.52006512 -0.63436516 -0.7555119
+##  [8,] -0.76385049  0.3411372 -1.2385201 -0.44030806  1.71207595 -0.9469703
+##  [9,] -0.94910376  0.1936245 -1.2840953  0.10564489  0.22033671 -0.3938719
+## [10,] -0.01371318 -0.6835437  1.8560011  0.40623896  1.33406675 -0.1846630
+##             [,7]       [,8]        [,9]       [,10]
+##  [1,]  0.6593205  1.0237292 -1.04010936  1.49414384
+##  [2,] -0.3749941  1.5164658 -0.82458865  1.17785670
+##  [3,]  0.5992364 -1.8929074  0.26461458 -0.07940202
+##  [4,] -0.7173964 -2.0478200 -0.34023152  0.79500932
+##  [5,] -0.2566684 -1.0591180 -0.18700030  0.57088368
+##  [6,] -0.3177207  0.5378407  0.08254602  0.01533396
+##  [7,]  0.8987181 -1.0149425  0.16827044  0.75469953
+##  [8,]  0.8604916 -0.5887906  0.31341442  0.23414983
+##  [9,]  1.3017831  1.2453256  0.39899443 -0.16390696
+## [10,] -1.4687359  0.2005101 -0.06717809 -0.18718821
+## 
+## , , 3
+## 
+##             [,1]        [,2]       [,3]       [,4]       [,5]         [,6]
+##  [1,] -1.5768752  0.98841120 -0.1287683 -0.8204739  0.6649944  0.160923149
+##  [2,] -1.5133203  0.18412397 -0.8888516  0.2133520  0.6024791 -1.324744499
+##  [3,] -0.2735865  0.04561036  0.1334086 -0.9101836 -0.4452300  1.178599997
+##  [4,] -1.9245040  1.42478765  0.1050570  0.7415985 -0.1755208  0.969907316
+##  [5,]  2.8635481  0.48417503 -0.9144916  0.1430392  0.2950748  0.042573804
+##  [6,] -0.4056133 -0.38077860 -0.9235939 -1.5086002 -1.0795444  1.231645804
+##  [7,] -1.3495815  0.08351412 -0.8519175 -0.1343933  0.9185212 -0.365252246
+##  [8,]  0.5817461  1.04538928  0.2102478 -1.5760189  0.1995396  0.006828389
+##  [9,] -1.1137912 -0.73819329  0.3911036  0.3491374 -0.3766024 -0.763752857
+## [10,] -0.8965836  1.40874107 -0.8605323 -0.9563198  0.4299114  1.183705833
+##             [,7]        [,8]        [,9]      [,10]
+##  [1,]  0.1137849 -0.81527006 -2.69951036 -1.9047009
+##  [2,]  0.8629133  2.78320387  0.78159089  0.2443730
+##  [3,] -1.0470896 -0.65371808  0.36036619 -0.7460180
+##  [4,] -0.9897687 -1.07784770 -0.84584269  0.4252939
+##  [5,]  0.2230680 -0.84364350  0.05623495  0.1425080
+##  [6,] -1.4294861  0.58848607  0.75515463  0.7062156
+##  [7,] -0.1974527  0.67486472 -1.08051201 -1.6561383
+##  [8,] -0.6166816  2.16115650  0.21101525 -2.0213964
+##  [9,] -1.7989308  0.37117759 -1.30411487 -0.6334113
+## [10,] -2.2634909 -0.04276463 -1.00342621  0.3330079</code></pre>
+<p><em>Pourquoi s’embêter avec ça ?</em> Parce qu’on peut appliquer des fonctions facilement sur les lignes, colonnes et autres dimensions. Exemple : résultats de validations croisées par bloc, simulations de loi selon différents paramètres. Et on calcule facilement des statistiques “marginales”.</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" data-line-number="1"><span class="kw">apply</span>(arr,<span class="dt">MARGIN =</span> <span class="dv">3</span>,<span class="dt">FUN=</span>mean)</a></code></pre></div>
+<pre><code>## [1]  0.06504943  0.01540393 -0.19772724</code></pre>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb205-1" data-line-number="1"><span class="kw">apply</span>(arr,<span class="dt">MARGIN =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>),<span class="dt">FUN =</span> mean)</a></code></pre></div>
+<pre><code>##              [,1]        [,2]       [,3]
+##  [1,]  0.35422925 -0.08639815 -0.5608561
+##  [2,] -0.03450171 -0.37838965  0.4545781
+##  [3,]  0.02884257  0.07151847 -0.3728338
+##  [4,]  0.47430025  0.04439960 -0.4458863
+##  [5,] -0.34156385  0.33639209  0.1033623
+##  [6,] -0.11189983 -0.08194694  0.2320435
+##  [7,]  0.16293517  0.11840342 -0.7143134
+##  [8,] -0.34834960 -0.20797071  0.3145645
+##  [9,]  0.12678845 -0.12312680 -0.4769044
+## [10,]  0.33971361  0.46115797 -0.5110266</code></pre>
+<p><strong>Le coin du capitaine [ ]</strong> <img src="images/CapHookImage.png" style="width:10.0%" /></p>
+<p>Le crochet, c’est comme le capitaine du même nom : personne ne l’aime, mais sans lui, pas de Peter Pan, pas de Neverland ! Moralité, on s’en sert beacoup pour pimenter les codes ! On peut utiliser les crochets pour accéder aux éléments des matrices/arrays et dataframe/listes.</p>
+<ul>
+<li>Matrices et arrays</li>
+</ul>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb207-1" data-line-number="1">mat[<span class="dv">1</span>,<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>## [1] -0.5874257</code></pre>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" data-line-number="1">mat[<span class="dv">1</span>,]</a></code></pre></div>
+<pre><code>##  [1] -0.5874257  0.5195217 -0.2199436 -0.8667350  1.1734538 -1.0578058
+##  [7]  0.6385399  0.5482386 -0.4802299 -1.4266931</code></pre>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb211-1" data-line-number="1">mat[,<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>##  [1] -0.58742574 -1.72606460 -0.55227880  0.44468339  0.07271428 -0.09282805
+##  [7]  0.91974585 -0.54280858 -0.15353732  2.09553514</code></pre>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb213-1" data-line-number="1">arr[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>## [1] 1.478783</code></pre>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb215-1" data-line-number="1">arr[<span class="dv">1</span>,,]</a></code></pre></div>
+<pre><code>##             [,1]       [,2]       [,3]
+##  [1,]  1.4787832 -1.9099581 -1.5768752
+##  [2,] -0.2007792 -1.5991123  0.9884112
+##  [3,]  0.9051974 -1.1886836 -0.1287683
+##  [4,]  1.2284066  0.1844656 -0.8204739
+##  [5,]  1.2270721  0.6421538  0.6649944
+##  [6,]  0.7748672  0.3169746  0.1609231
+##  [7,]  0.5834829  0.6593205  0.1137849
+##  [8,]  1.4440608  1.0237292 -0.8152701
+##  [9,]  0.5698275 -1.0401094 -2.6995104
+## [10,]  1.7738452  1.4941438 -1.9047009</code></pre>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb217-1" data-line-number="1">arr[,,<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>##             [,1]       [,2]        [,3]       [,4]        [,5]         [,6]
+##  [1,]  1.4787832 -0.2007792  0.90519744  1.2284066  1.22707209  0.774867166
+##  [2,] -0.6040583 -0.4848168  2.14013591  0.3398632  0.77358305  1.474627548
+##  [3,]  1.1112179 -0.3728221  0.12849384  0.7169899 -0.75430522 -1.724842815
+##  [4,] -0.7668516  0.1700523 -0.53127882  0.7665258 -0.51831002 -0.275936320
+##  [5,]  0.6204288  0.5579788  0.06121647  0.6183425  0.15461849 -0.004720958
+##  [6,] -0.5385750  0.2577948  1.46604299  0.1396345 -2.77413297 -0.124364959
+##  [7,] -0.4716034 -0.4144268  0.68109055  1.0391030  0.01086556 -0.161700524
+##  [8,]  1.6575722 -1.9296303 -1.03573589  0.4791698 -0.68202765 -0.133143891
+##  [9,]  0.2352884  0.2406711 -1.07030591  0.3920031 -1.44342896 -0.839062332
+## [10,]  0.8200902  1.8309612 -2.45643088 -0.9770359  0.59042713 -0.104721246
+##              [,7]       [,8]        [,9]      [,10]
+##  [1,]  0.58348292  1.4440608  0.56982750  1.7738452
+##  [2,]  0.76869916  0.6997973  0.02308220  0.5618998
+##  [3,] -0.56093656  0.5467847  1.14895243 -0.3333733
+##  [4,] -0.50670613 -1.2586624  0.66673854  1.6592358
+##  [5,]  0.76125296 -0.3147802 -0.02872505  0.3271089
+##  [6,]  0.56089408 -0.8974462  0.92032397 -0.5739786
+##  [7,]  0.04562361 -0.9036783 -0.71486758 -1.1528154
+##  [8,] -0.19867951 -1.5895948 -0.48466652 -0.1198701
+##  [9,] -0.50050124 -1.4098970  0.28516412  0.3368365
+## [10,]  0.67622239  0.1999201 -1.11794514  0.9182472</code></pre>
+<ul>
+<li>dataframes et listes :</li>
+</ul>
+<p>Pour les dataframes, le fonctionnement est le même que pour les matrices. Pour les listes, une paire de crochet renvoie un résultat sous forme de liste, un double crochet renvoie le résultat sous sa forme naturelle (ex : vecteur ou matrice).</p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb219-1" data-line-number="1"><span class="kw">str</span>(liste[<span class="dv">1</span>])</a></code></pre></div>
+<pre><code>## List of 1
+##  $ vtaille: Factor w/ 2 levels &quot;L&quot;,&quot;S&quot;: 2 1 2 1 2 1 2 1 2 1</code></pre>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb221-1" data-line-number="1"><span class="kw">str</span>(liste[[<span class="dv">1</span>]])</a></code></pre></div>
+<pre><code>##  Factor w/ 2 levels &quot;L&quot;,&quot;S&quot;: 2 1 2 1 2 1 2 1 2 1</code></pre>
+</div>
+</div>
+<div id="inspection-dun-objet-la-régression-1" class="section level3">
+<h3><span class="header-section-number">11.1.3</span> Inspection d’un objet : la régression</h3>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-50-1.png" width="576" /></p>
+<p>La régression linéaire consiste à exprimer une variable Y en fonction d’une variable X dans une fonction linéaire. C’est à dire qu’on cherche a et b tels que : <span class="math display">\[ Y = a \cdot X + b + \epsilon\]</span>
+où <span class="math inline">\(\epsilon\)</span> est le résidu de la régression. On utilise dans cet exemple la table des iris de Fisher, existant dans R base qu’il suffit d’appeler avec <code>data(iris)</code> (il existe d’autres dataframe inclus dans les packages et qui sont utilisés en exemple dans l’aide).</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb223-1" data-line-number="1"><span class="kw">data</span>(<span class="st">&quot;iris&quot;</span>)</a>
+<a class="sourceLine" id="cb223-2" data-line-number="2"><span class="kw">str</span>(iris)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<p>Faire la régression de la Sepal.Length sur Petal.length à l’aide de la fonction <code>lm()</code></p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb225-1" data-line-number="1"><span class="kw">lm</span>(<span class="dt">data=</span>iris,<span class="dt">formula =</span> Sepal.Length<span class="op">~</span>Petal.Length)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Sepal.Length ~ Petal.Length, data = iris)
+## 
+## Coefficients:
+##  (Intercept)  Petal.Length  
+##       4.3066        0.4089</code></pre>
+<p>On a les paramètres a et b mais on aimerait en savoir plus… Au moins la qualité d’ajustement (le <span class="math inline">\(R^2\)</span> par exemple), et un graphique des résidus pour détecter une éventuelle structure. Pour cela, stocker le résultat dans un nouvel objet, et explorez-le avec les fonctions <code>str()</code>, <code>summary()</code> et <code>plot()</code></p>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb227-1" data-line-number="1">reg &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data=</span>iris,<span class="dt">formula =</span> Sepal.Length<span class="op">~</span>Petal.Length)</a>
+<a class="sourceLine" id="cb227-2" data-line-number="2"><span class="kw">str</span>(reg)</a></code></pre></div>
+<pre><code>## List of 12
+##  $ coefficients : Named num [1:2] 4.307 0.409
+##   ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;(Intercept)&quot; &quot;Petal.Length&quot;
+##  $ residuals    : Named num [1:150] 0.2209 0.0209 -0.1382 -0.32 0.1209 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:150] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ effects      : Named num [1:150] -71.566 8.812 -0.155 -0.337 0.104 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:150] &quot;(Intercept)&quot; &quot;Petal.Length&quot; &quot;&quot; &quot;&quot; ...
+##  $ rank         : int 2
+##  $ fitted.values: Named num [1:150] 4.88 4.88 4.84 4.92 4.88 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:150] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ assign       : int [1:2] 0 1
+##  $ qr           :List of 5
+##   ..$ qr   : num [1:150, 1:2] -12.2474 0.0816 0.0816 0.0816 0.0816 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ : chr [1:150] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. ..$ : chr [1:2] &quot;(Intercept)&quot; &quot;Petal.Length&quot;
+##   .. ..- attr(*, &quot;assign&quot;)= int [1:2] 0 1
+##   ..$ qraux: num [1:2] 1.08 1.1
+##   ..$ pivot: int [1:2] 1 2
+##   ..$ tol  : num 1e-07
+##   ..$ rank : int 2
+##   ..- attr(*, &quot;class&quot;)= chr &quot;qr&quot;
+##  $ df.residual  : int 148
+##  $ xlevels      : Named list()
+##  $ call         : language lm(formula = Sepal.Length ~ Petal.Length, data = iris)
+##  $ terms        :Classes &#39;terms&#39;, &#39;formula&#39;  language Sepal.Length ~ Petal.Length
+##   .. ..- attr(*, &quot;variables&quot;)= language list(Sepal.Length, Petal.Length)
+##   .. ..- attr(*, &quot;factors&quot;)= int [1:2, 1] 0 1
+##   .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. ..$ : chr [1:2] &quot;Sepal.Length&quot; &quot;Petal.Length&quot;
+##   .. .. .. ..$ : chr &quot;Petal.Length&quot;
+##   .. ..- attr(*, &quot;term.labels&quot;)= chr &quot;Petal.Length&quot;
+##   .. ..- attr(*, &quot;order&quot;)= int 1
+##   .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. ..- attr(*, &quot;predvars&quot;)= language list(Sepal.Length, Petal.Length)
+##   .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
+##   .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;Sepal.Length&quot; &quot;Petal.Length&quot;
+##  $ model        :&#39;data.frame&#39;:   150 obs. of  2 variables:
+##   ..$ Sepal.Length: num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##   ..$ Petal.Length: num [1:150] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##   ..- attr(*, &quot;terms&quot;)=Classes &#39;terms&#39;, &#39;formula&#39;  language Sepal.Length ~ Petal.Length
+##   .. .. ..- attr(*, &quot;variables&quot;)= language list(Sepal.Length, Petal.Length)
+##   .. .. ..- attr(*, &quot;factors&quot;)= int [1:2, 1] 0 1
+##   .. .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. .. ..$ : chr [1:2] &quot;Sepal.Length&quot; &quot;Petal.Length&quot;
+##   .. .. .. .. ..$ : chr &quot;Petal.Length&quot;
+##   .. .. ..- attr(*, &quot;term.labels&quot;)= chr &quot;Petal.Length&quot;
+##   .. .. ..- attr(*, &quot;order&quot;)= int 1
+##   .. .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. .. ..- attr(*, &quot;predvars&quot;)= language list(Sepal.Length, Petal.Length)
+##   .. .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
+##   .. .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;Sepal.Length&quot; &quot;Petal.Length&quot;
+##  - attr(*, &quot;class&quot;)= chr &quot;lm&quot;</code></pre>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb229-1" data-line-number="1"><span class="kw">summary</span>(reg)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Sepal.Length ~ Petal.Length, data = iris)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.24675 -0.29657 -0.01515  0.27676  1.00269 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   4.30660    0.07839   54.94   &lt;2e-16 ***
+## Petal.Length  0.40892    0.01889   21.65   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4071 on 148 degrees of freedom
+## Multiple R-squared:   0.76,  Adjusted R-squared:  0.7583 
+## F-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb231-1" data-line-number="1"><span class="kw">plot</span>(reg)</a></code></pre></div>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-53-1.png" width="576" /><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-53-2.png" width="576" /><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-53-3.png" width="576" /><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-53-4.png" width="576" /></p>
+<p>Les <strong>méthodes</strong> summary, print et plot sont implémentées pour tous les objets en R, et on peut les utiliser pour avoir un premier aperçu de ce que l’on obtient avec la fonction.</p>
+</div>
+</div>
+<div id="premier-jeu-de-données-premières-statistiques" class="section level2">
+<h2><span class="header-section-number">11.2</span> Premier jeu de données, premières statistiques</h2>
+<div id="importer-les-données-et-premier-coup-doeil" class="section level3">
+<h3><span class="header-section-number">11.2.1</span> Importer les données et premier coup d’oeil</h3>
+<p>On peut importer n’importe quel format de données en R (excel, sas, stata, SQL…) et ceci est abordé dans le module 2. Pour ce module, nous ne voyons que l’importation de fichier .CSV. Si vous avez une base de données en excel ou libreOffice, sauvegardez l’onglet que vous souhaitez en faisant “enregistrer sous” <span class="math inline">\(\rightarrow\)</span> “délimité CSV”. Ici, nous travaillerons sur une base de données communales fournies par l’Insee, dite “comparateur de territoires”. Le fichier (excel) source figure sous le répertoire “data” et contient toutes les métadonnées ; nous avons ajouté une colonne correspondant au type ZAU de la commune concernée.</p>
+<p>Utilisez la fonction read.csv pour importer ce fichier et stockez le dans un objet df. Veillez à ce que la région soit bien importée comme un facteur et non un entier. Inspectez ce nouvel objet.</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb232-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./data/Base_synth_territoires.csv&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;;&quot;</span>,<span class="dt">dec=</span><span class="st">&quot;,&quot;</span>)</a>
+<a class="sourceLine" id="cb232-2" data-line-number="2"><span class="kw">str</span>(df)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    36689 obs. of  38 variables:
+##  $ CODGEO       : Factor w/ 36689 levels &quot;01001&quot;,&quot;01002&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+##  $ LIBGEO       : Factor w/ 34174 levels &quot;\xc8ve&quot;,&quot;\xc8vres&quot;,..: 13683 13685 813 815 832 855 859 954 1011 1173 ...
+##  $ REG          : int  84 84 84 84 84 84 84 84 84 84 ...
+##  $ DEP          : Factor w/ 100 levels &quot;01&quot;,&quot;02&quot;,&quot;03&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ ZAU          : Factor w/ 9 levels &quot;111 - Grand p\xf4le (plus de 10 000 emplois)&quot;,..: 3 2 2 2 8 2 2 5 8 2 ...
+##  $ ZE           : Factor w/ 321 levels &quot;0050 - Mont-de-Marsan&quot;,..: 260 248 248 260 263 248 248 263 266 250 ...
+##  $ P14_POP      : int  767 239 14022 1627 109 2570 743 338 1142 397 ...
+##  $ P09_POP      : int  787 207 13350 1592 120 2328 660 336 960 352 ...
+##  $ SUPERF       : num  15.95 9.15 24.6 15.92 5.88 ...
+##  $ NAIS0914     : int  40 16 1051 117 8 175 59 12 56 25 ...
+##  $ DECE0914     : int  25 7 551 41 3 78 20 11 32 10 ...
+##  $ P14_MEN      : num  306 99.3 6161.1 621.1 52.5 ...
+##  $ NAISD15      : int  13 5 222 15 2 21 11 2 18 4 ...
+##  $ DECESD15     : int  5 1 121 7 2 9 3 3 5 0 ...
+##  $ P14_LOG      : num  342.7 161.2 6838.4 661.8 71.5 ...
+##  $ P14_RP       : num  306 99.3 6161.1 621.1 52.5 ...
+##  $ P14_RSECOCC  : num  14 47.3 121.6 10.9 10.9 ...
+##  $ P14_LOGVAC   : num  22.74 14.55 555.64 29.85 8.14 ...
+##  $ P14_RP_PROP  : num  260 84.6 2769 473.3 37.7 ...
+##  $ NBMENFISC13  : int  297 99 6034 617 47 1014 299 140 431 137 ...
+##  $ PIMP13       : num  NA NA 57.4 NA NA ...
+##  $ MED13        : num  22130 23213 19554 22388 21872 ...
+##  $ TP6013       : num  NA NA 15.1 NA NA ...
+##  $ P14_EMPLT    : num  85.16 12.81 7452.93 280.57 5.95 ...
+##  $ P14_EMPLT_SAL: num  52.19 4.95 6743.37 206.38 3.96 ...
+##  $ P09_EMPLT    : num  65.57 17.64 7551.68 286.61 5.29 ...
+##  $ P14_POP1564  : num  463 141.6 8962.8 1043.1 71.3 ...
+##  $ P14_CHOM1564 : num  33 9.84 1059.73 66.33 7.93 ...
+##  $ P14_ACT1564  : num  376 121 6681.9 842.1 57.5 ...
+##  $ ETTOT14      : int  47 22 1316 141 7 203 66 39 54 36 ...
+##  $ ETAZ14       : int  9 1 7 14 0 21 2 5 5 6 ...
+##  $ ETBE14       : int  2 3 60 7 0 18 0 2 6 4 ...
+##  $ ETFZ14       : int  5 1 131 19 0 21 9 1 13 3 ...
+##  $ ETGU14       : int  25 14 892 85 5 114 45 27 24 18 ...
+##  $ ETGZ14       : int  6 4 283 19 1 28 16 6 9 7 ...
+##  $ ETOQ14       : int  6 3 226 16 2 29 10 4 6 5 ...
+##  $ ETTEF114     : int  9 2 385 27 0 38 17 6 9 7 ...
+##  $ ETTEFP1014   : int  0 0 109 5 0 15 2 0 3 0 ...</code></pre>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb234-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;./data/Base_synth_territoires.csv&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;;&quot;</span>,<span class="dt">dec=</span><span class="st">&quot;,&quot;</span>,<span class="dt">colClasses =</span> <span class="kw">c</span>(<span class="st">&quot;REG&quot;</span>=<span class="st">&quot;factor&quot;</span>))</a>
+<a class="sourceLine" id="cb234-2" data-line-number="2"><span class="kw">str</span>(df)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    36689 obs. of  38 variables:
+##  $ CODGEO       : Factor w/ 36689 levels &quot;01001&quot;,&quot;01002&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+##  $ LIBGEO       : Factor w/ 34174 levels &quot;\xc8ve&quot;,&quot;\xc8vres&quot;,..: 13683 13685 813 815 832 855 859 954 1011 1173 ...
+##  $ REG          : Factor w/ 17 levels &quot;01&quot;,&quot;02&quot;,&quot;03&quot;,..: 15 15 15 15 15 15 15 15 15 15 ...
+##  $ DEP          : Factor w/ 100 levels &quot;01&quot;,&quot;02&quot;,&quot;03&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ ZAU          : Factor w/ 9 levels &quot;111 - Grand p\xf4le (plus de 10 000 emplois)&quot;,..: 3 2 2 2 8 2 2 5 8 2 ...
+##  $ ZE           : Factor w/ 321 levels &quot;0050 - Mont-de-Marsan&quot;,..: 260 248 248 260 263 248 248 263 266 250 ...
+##  $ P14_POP      : int  767 239 14022 1627 109 2570 743 338 1142 397 ...
+##  $ P09_POP      : int  787 207 13350 1592 120 2328 660 336 960 352 ...
+##  $ SUPERF       : num  15.95 9.15 24.6 15.92 5.88 ...
+##  $ NAIS0914     : int  40 16 1051 117 8 175 59 12 56 25 ...
+##  $ DECE0914     : int  25 7 551 41 3 78 20 11 32 10 ...
+##  $ P14_MEN      : num  306 99.3 6161.1 621.1 52.5 ...
+##  $ NAISD15      : int  13 5 222 15 2 21 11 2 18 4 ...
+##  $ DECESD15     : int  5 1 121 7 2 9 3 3 5 0 ...
+##  $ P14_LOG      : num  342.7 161.2 6838.4 661.8 71.5 ...
+##  $ P14_RP       : num  306 99.3 6161.1 621.1 52.5 ...
+##  $ P14_RSECOCC  : num  14 47.3 121.6 10.9 10.9 ...
+##  $ P14_LOGVAC   : num  22.74 14.55 555.64 29.85 8.14 ...
+##  $ P14_RP_PROP  : num  260 84.6 2769 473.3 37.7 ...
+##  $ NBMENFISC13  : int  297 99 6034 617 47 1014 299 140 431 137 ...
+##  $ PIMP13       : num  NA NA 57.4 NA NA ...
+##  $ MED13        : num  22130 23213 19554 22388 21872 ...
+##  $ TP6013       : num  NA NA 15.1 NA NA ...
+##  $ P14_EMPLT    : num  85.16 12.81 7452.93 280.57 5.95 ...
+##  $ P14_EMPLT_SAL: num  52.19 4.95 6743.37 206.38 3.96 ...
+##  $ P09_EMPLT    : num  65.57 17.64 7551.68 286.61 5.29 ...
+##  $ P14_POP1564  : num  463 141.6 8962.8 1043.1 71.3 ...
+##  $ P14_CHOM1564 : num  33 9.84 1059.73 66.33 7.93 ...
+##  $ P14_ACT1564  : num  376 121 6681.9 842.1 57.5 ...
+##  $ ETTOT14      : int  47 22 1316 141 7 203 66 39 54 36 ...
+##  $ ETAZ14       : int  9 1 7 14 0 21 2 5 5 6 ...
+##  $ ETBE14       : int  2 3 60 7 0 18 0 2 6 4 ...
+##  $ ETFZ14       : int  5 1 131 19 0 21 9 1 13 3 ...
+##  $ ETGU14       : int  25 14 892 85 5 114 45 27 24 18 ...
+##  $ ETGZ14       : int  6 4 283 19 1 28 16 6 9 7 ...
+##  $ ETOQ14       : int  6 3 226 16 2 29 10 4 6 5 ...
+##  $ ETTEF114     : int  9 2 385 27 0 38 17 6 9 7 ...
+##  $ ETTEFP1014   : int  0 0 109 5 0 15 2 0 3 0 ...</code></pre>
+<p>Inspectez le dataframe avec les fonctions vues en cours… et plus !</p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" data-line-number="1"><span class="kw">dim</span>(df)</a></code></pre></div>
+<pre><code>## [1] 36689    38</code></pre>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb238-1" data-line-number="1"><span class="kw">head</span>(df)</a></code></pre></div>
+<pre><code>##   CODGEO                     LIBGEO REG DEP
+## 1  01001 L&#39;Abergement-Cl\xe9menciat  84  01
+## 2  01002      L&#39;Abergement-de-Varey  84  01
+## 3  01004       Amb\xe9rieu-en-Bugey  84  01
+## 4  01005     Amb\xe9rieux-en-Dombes  84  01
+## 5  01006                 Ambl\xe9on  84  01
+## 6  01007                   Ambronay  84  01
+##                                                  ZAU
+## 1 120 - Multipolaris\xe9e des grandes aires urbaines
+## 2                  112 - Couronne d&#39;un grand p\xf4le
+## 3                  112 - Couronne d&#39;un grand p\xf4le
+## 4                  112 - Couronne d&#39;un grand p\xf4le
+## 5              300 - Autre commune multipolaris\xe9e
+## 6                  112 - Couronne d&#39;un grand p\xf4le
+##                                 ZE P14_POP P09_POP SUPERF NAIS0914 DECE0914
+## 1 8213 - Villefranche-sur-Sa\xf4ne     767     787  15.95       40       25
+## 2      8201 - Amb\xe9rieu-en-Bugey     239     207   9.15       16        7
+## 3      8201 - Amb\xe9rieu-en-Bugey   14022   13350  24.60     1051      551
+## 4 8213 - Villefranche-sur-Sa\xf4ne    1627    1592  15.92      117       41
+## 5               8216 - Chamb\xe9ry     109     120   5.88        8        3
+## 6      8201 - Amb\xe9rieu-en-Bugey    2570    2328  33.55      175       78
+##      P14_MEN NAISD15 DECESD15    P14_LOG     P14_RP P14_RSECOCC P14_LOGVAC
+## 1  306.00000      13        5  342.73473  306.00000    13.99418  22.740550
+## 2   99.33745       5        1  161.16023   99.33745    47.27625  14.546538
+## 3 6161.06200     222      121 6838.35437 6161.06200   121.64795 555.644416
+## 4  621.05374      15        7  661.76017  621.05374    10.85505  29.851387
+## 5   52.51818       2        2   71.51818   52.51818    10.85714   8.142857
+## 6 1028.00000      21        9 1160.00000 1028.00000    56.00000  76.000000
+##   P14_RP_PROP NBMENFISC13   PIMP13    MED13   TP6013   P14_EMPLT P14_EMPLT_SAL
+## 1   260.00000         297       NA 22130.00       NA   85.157286     52.191539
+## 2    84.58436          99       NA 23213.00       NA   12.814642      4.946329
+## 3  2769.00170        6034 57.41294 19554.00 15.11508 7452.926728   6743.374287
+## 4   473.32736         617       NA 22387.62       NA  280.569953    206.382233
+## 5    37.65455          47       NA 21871.67       NA    5.945455      3.963636
+## 6   779.00000        1014 62.35178 21650.67       NA  487.730918    372.758450
+##     P09_EMPLT P14_POP1564 P14_CHOM1564 P14_ACT1564 ETTOT14 ETAZ14 ETBE14 ETFZ14
+## 1   65.566193   463.00000    33.000000   376.00000      47      9      2      5
+## 2   17.644456   141.62963     9.835391   120.97531      22      1      3      1
+## 3 7551.682296  8962.84216  1059.728437  6681.86216    1316      7     60    131
+## 4  286.611037  1043.12909    66.326127   842.14083     141     14      7     19
+## 5    5.285714    71.34545     7.927273    57.47273       7      0      0      0
+## 6  491.138876  1614.00000   108.000000  1267.00000     203     21     18     21
+##   ETGU14 ETGZ14 ETOQ14 ETTEF114 ETTEFP1014
+## 1     25      6      6        9          0
+## 2     14      4      3        2          0
+## 3    892    283    226      385        109
+## 4     85     19     16       27          5
+## 5      5      1      2        0          0
+## 6    114     28     29       38         15</code></pre>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb240-1" data-line-number="1"><span class="kw">tail</span>(df)</a></code></pre></div>
+<pre><code>##       CODGEO            LIBGEO REG DEP
+## 36684  97419       Sainte-Rose  04 974
+## 36685  97420    Sainte-Suzanne  04 974
+## 36686  97421           Salazie  04 974
+## 36687  97422         Le Tampon  04 974
+## 36688  97423 Les Trois-Bassins  04 974
+## 36689  97424            Cilaos  04 974
+##                                                       ZAU             ZE
+## 36684 400 - Commune isol\xe9e hors influence des p\xf4les   0401 - L&#39;Est
+## 36685                   112 - Couronne d&#39;un grand p\xf4le 0402 - Le Nord
+## 36686 400 - Commune isol\xe9e hors influence des p\xf4les   0401 - L&#39;Est
+## 36687        111 - Grand p\xf4le (plus de 10 000 emplois)  0404 - Le Sud
+## 36688                   112 - Couronne d&#39;un grand p\xf4le 0403 - L&#39;Ouest
+## 36689 400 - Commune isol\xe9e hors influence des p\xf4les  0404 - Le Sud
+##       P14_POP P09_POP SUPERF NAIS0914 DECE0914   P14_MEN NAISD15 DECESD15
+## 36684    6722    6822 177.60      519      186  2322.000      94       43
+## 36685   22406   22437  57.84     1963      508  7686.912     358      100
+## 36686    7132    7406 103.82      661      235  2420.000     111       46
+## 36687   76796   72658 165.43     6663     2004 29662.460    1339      420
+## 36688    7198    7057  42.58      531      217  2484.887     104       54
+## 36689    5295    5989  84.40      430      186  2016.000      87       38
+##         P14_LOG    P14_RP P14_RSECOCC P14_LOGVAC P14_RP_PROP NBMENFISC13 PIMP13
+## 36684  2542.478  2322.000    28.58054   191.8979    1799.954          NA     NA
+## 36685  8328.616  7686.912    50.94097   590.7629    4450.648          NA     NA
+## 36686  2987.000  2420.000   174.00000   393.0000    1849.000          NA     NA
+## 36687 32710.091 29662.460  1004.31703  2043.3140   15372.921          NA     NA
+## 36688  2890.404  2484.887    67.58626   337.9313    1773.765          NA     NA
+## 36689  2732.690  2016.000   239.56501   477.1253    1522.480          NA     NA
+##       MED13 TP6013 P14_EMPLT P14_EMPLT_SAL P09_EMPLT P14_POP1564 P14_CHOM1564
+## 36684    NA     NA  1272.841      920.0617  1269.573    4306.217     1250.516
+## 36685    NA     NA  4296.362     3618.1538  4185.015   14821.042     3712.486
+## 36686    NA     NA  1519.306     1090.0856  1533.305    4650.000     1369.000
+## 36687    NA     NA 16145.620    12486.5465 14807.249   50316.640    12783.137
+## 36688    NA     NA  1273.858      994.3469  1202.079    4850.570     1360.617
+## 36689    NA     NA  1194.383      993.1546  1314.121    3461.457     1122.361
+##       P14_ACT1564 ETTOT14 ETAZ14 ETBE14 ETFZ14 ETGU14 ETGZ14 ETOQ14 ETTEF114
+## 36684    2850.155     414    125     44     31    159     59     55       82
+## 36685   10456.196    1323    136    139    190    694    249    164      267
+## 36686    3108.000     490    148     29     43    214     73     56       95
+## 36687   34446.789    5476    565    398    665   3025    999    823     1032
+## 36688    3524.287     456     42     39     61    223     76     91       59
+## 36689    2415.666     360     49     17     35    193     49     66       65
+##       ETTEFP1014
+## 36684          8
+## 36685         66
+## 36686         11
+## 36687        204
+## 36688         20
+## 36689         26</code></pre>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb242-1" data-line-number="1"><span class="kw">str</span>(df)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    36689 obs. of  38 variables:
+##  $ CODGEO       : Factor w/ 36689 levels &quot;01001&quot;,&quot;01002&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+##  $ LIBGEO       : Factor w/ 34174 levels &quot;\xc8ve&quot;,&quot;\xc8vres&quot;,..: 13683 13685 813 815 832 855 859 954 1011 1173 ...
+##  $ REG          : Factor w/ 17 levels &quot;01&quot;,&quot;02&quot;,&quot;03&quot;,..: 15 15 15 15 15 15 15 15 15 15 ...
+##  $ DEP          : Factor w/ 100 levels &quot;01&quot;,&quot;02&quot;,&quot;03&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ ZAU          : Factor w/ 9 levels &quot;111 - Grand p\xf4le (plus de 10 000 emplois)&quot;,..: 3 2 2 2 8 2 2 5 8 2 ...
+##  $ ZE           : Factor w/ 321 levels &quot;0050 - Mont-de-Marsan&quot;,..: 260 248 248 260 263 248 248 263 266 250 ...
+##  $ P14_POP      : int  767 239 14022 1627 109 2570 743 338 1142 397 ...
+##  $ P09_POP      : int  787 207 13350 1592 120 2328 660 336 960 352 ...
+##  $ SUPERF       : num  15.95 9.15 24.6 15.92 5.88 ...
+##  $ NAIS0914     : int  40 16 1051 117 8 175 59 12 56 25 ...
+##  $ DECE0914     : int  25 7 551 41 3 78 20 11 32 10 ...
+##  $ P14_MEN      : num  306 99.3 6161.1 621.1 52.5 ...
+##  $ NAISD15      : int  13 5 222 15 2 21 11 2 18 4 ...
+##  $ DECESD15     : int  5 1 121 7 2 9 3 3 5 0 ...
+##  $ P14_LOG      : num  342.7 161.2 6838.4 661.8 71.5 ...
+##  $ P14_RP       : num  306 99.3 6161.1 621.1 52.5 ...
+##  $ P14_RSECOCC  : num  14 47.3 121.6 10.9 10.9 ...
+##  $ P14_LOGVAC   : num  22.74 14.55 555.64 29.85 8.14 ...
+##  $ P14_RP_PROP  : num  260 84.6 2769 473.3 37.7 ...
+##  $ NBMENFISC13  : int  297 99 6034 617 47 1014 299 140 431 137 ...
+##  $ PIMP13       : num  NA NA 57.4 NA NA ...
+##  $ MED13        : num  22130 23213 19554 22388 21872 ...
+##  $ TP6013       : num  NA NA 15.1 NA NA ...
+##  $ P14_EMPLT    : num  85.16 12.81 7452.93 280.57 5.95 ...
+##  $ P14_EMPLT_SAL: num  52.19 4.95 6743.37 206.38 3.96 ...
+##  $ P09_EMPLT    : num  65.57 17.64 7551.68 286.61 5.29 ...
+##  $ P14_POP1564  : num  463 141.6 8962.8 1043.1 71.3 ...
+##  $ P14_CHOM1564 : num  33 9.84 1059.73 66.33 7.93 ...
+##  $ P14_ACT1564  : num  376 121 6681.9 842.1 57.5 ...
+##  $ ETTOT14      : int  47 22 1316 141 7 203 66 39 54 36 ...
+##  $ ETAZ14       : int  9 1 7 14 0 21 2 5 5 6 ...
+##  $ ETBE14       : int  2 3 60 7 0 18 0 2 6 4 ...
+##  $ ETFZ14       : int  5 1 131 19 0 21 9 1 13 3 ...
+##  $ ETGU14       : int  25 14 892 85 5 114 45 27 24 18 ...
+##  $ ETGZ14       : int  6 4 283 19 1 28 16 6 9 7 ...
+##  $ ETOQ14       : int  6 3 226 16 2 29 10 4 6 5 ...
+##  $ ETTEF114     : int  9 2 385 27 0 38 17 6 9 7 ...
+##  $ ETTEFP1014   : int  0 0 109 5 0 15 2 0 3 0 ...</code></pre>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb244-1" data-line-number="1"><span class="kw">names</span>(df)</a></code></pre></div>
+<pre><code>##  [1] &quot;CODGEO&quot;        &quot;LIBGEO&quot;        &quot;REG&quot;           &quot;DEP&quot;          
+##  [5] &quot;ZAU&quot;           &quot;ZE&quot;            &quot;P14_POP&quot;       &quot;P09_POP&quot;      
+##  [9] &quot;SUPERF&quot;        &quot;NAIS0914&quot;      &quot;DECE0914&quot;      &quot;P14_MEN&quot;      
+## [13] &quot;NAISD15&quot;       &quot;DECESD15&quot;      &quot;P14_LOG&quot;       &quot;P14_RP&quot;       
+## [17] &quot;P14_RSECOCC&quot;   &quot;P14_LOGVAC&quot;    &quot;P14_RP_PROP&quot;   &quot;NBMENFISC13&quot;  
+## [21] &quot;PIMP13&quot;        &quot;MED13&quot;         &quot;TP6013&quot;        &quot;P14_EMPLT&quot;    
+## [25] &quot;P14_EMPLT_SAL&quot; &quot;P09_EMPLT&quot;     &quot;P14_POP1564&quot;   &quot;P14_CHOM1564&quot; 
+## [29] &quot;P14_ACT1564&quot;   &quot;ETTOT14&quot;       &quot;ETAZ14&quot;        &quot;ETBE14&quot;       
+## [33] &quot;ETFZ14&quot;        &quot;ETGU14&quot;        &quot;ETGZ14&quot;        &quot;ETOQ14&quot;       
+## [37] &quot;ETTEF114&quot;      &quot;ETTEFP1014&quot;</code></pre>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb246-1" data-line-number="1"><span class="kw">class</span>(df)</a></code></pre></div>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb248-1" data-line-number="1"><span class="kw">typeof</span>(df)</a></code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb250-1" data-line-number="1"><span class="co"># Accéder a une variable directement (on obtient un vecteur) :</span></a>
+<a class="sourceLine" id="cb250-2" data-line-number="2">df<span class="op">$</span>CODGEO[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>] <span class="co"># Captain crochet poweeeeerr !!!</span></a></code></pre></div>
+<pre><code>##  [1] 01001 01002 01004 01005 01006 01007 01008 01009 01010 01011
+## 36689 Levels: 01001 01002 01004 01005 01006 01007 01008 01009 01010 ... 97424</code></pre>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb252-1" data-line-number="1"><span class="kw">class</span>(df<span class="op">$</span>CODGEO)</a></code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb254-1" data-line-number="1"><span class="kw">typeof</span>(df<span class="op">$</span>CODGEO)</a></code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb256-1" data-line-number="1"><span class="kw">length</span>(df)</a></code></pre></div>
+<pre><code>## [1] 38</code></pre>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb258-1" data-line-number="1"><span class="kw">length</span>(df<span class="op">$</span>region)</a></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+</div>
+<div id="créer-filtrer-sélectionner" class="section level3">
+<h3><span class="header-section-number">11.2.2</span> Créer, filtrer, sélectionner</h3>
+<p>En utilisant la fonction <code>mutate()</code>, créer une nouvelle variable correspondant à la densité de population (rapport de la population à la superficie de la commune), ainsi que les taux de natalité et de mortalité (en pour mille)</p>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb260-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">mutate</span>(df,<span class="dt">densite=</span>P14_POP<span class="op">/</span>SUPERF,<span class="dt">tx_natal=</span><span class="dv">1000</span><span class="op">*</span>NAISD15<span class="op">/</span>P14_POP,<span class="dt">tx_mort=</span>DECESD15<span class="op">/</span>P14_POP)</a></code></pre></div>
+<p>A l’aide de la fonction <code>select()</code>, créez une nouvelle table dans laquelle vous ne gardez que le code commune, le type de commune (ZAU), la région, le département et les variables que vous venez de créer.</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb261-1" data-line-number="1">selection &lt;-<span class="st"> </span><span class="kw">select</span>(df,CODGEO,ZAU,REG,DEP,densite,tx_natal,tx_mort)</a></code></pre></div>
+<p>Enfin, ne retenez les communes correspondant à votre département de naissance et stocker. Faites attention au type de la variable département !</p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb262-1" data-line-number="1">S0 &lt;-<span class="st"> </span><span class="kw">filter</span>(selection,DEP<span class="op">==</span><span class="st">&quot;62&quot;</span>)</a></code></pre></div>
+<p>On va maintenant jouer avec les opérateurs logiques pour sélectionner des échantillons différents !</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb263-1" data-line-number="1">S1 &lt;-<span class="st"> </span><span class="kw">filter</span>(selection,DEP<span class="op">!=</span><span class="st">&quot;62&quot;</span>) <span class="co"># tout sauf le 62 :(</span></a>
+<a class="sourceLine" id="cb263-2" data-line-number="2">S2 &lt;-<span class="st"> </span><span class="kw">filter</span>(selection,DEP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;59&quot;</span>,<span class="st">&quot;62&quot;</span>)) <span class="co"># L&#39;ancien NPdC :)</span></a>
+<a class="sourceLine" id="cb263-3" data-line-number="3">S3 &lt;-<span class="st"> </span><span class="kw">filter</span>(selection,<span class="op">!</span>(DEP <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;59&quot;</span>,<span class="st">&quot;62&quot;</span>))) <span class="co"># Le &quot;sud&quot; de la France</span></a>
+<a class="sourceLine" id="cb263-4" data-line-number="4">S4 &lt;-<span class="st"> </span><span class="kw">filter</span>(selection,densite<span class="op">&gt;</span><span class="dv">100</span>) <span class="co"># l&#39;urbain</span></a>
+<a class="sourceLine" id="cb263-5" data-line-number="5">S5 &lt;-<span class="st"> </span><span class="kw">filter</span>(selection,DEP<span class="op">==</span><span class="st">&quot;62&quot;</span> <span class="op">&amp;</span><span class="st"> </span>densite<span class="op">&gt;</span><span class="dv">100</span>) <span class="co"># le PdC urbain</span></a>
+<a class="sourceLine" id="cb263-6" data-line-number="6">S6 &lt;-<span class="st"> </span><span class="kw">filter</span>(selection, DEP<span class="op">==</span><span class="st">&quot;62&quot;</span> <span class="op">|</span><span class="st"> </span>densite <span class="op">&gt;</span><span class="st"> </span><span class="dv">100</span>) <span class="co"># le PdC et l&#39;urbain</span></a></code></pre></div>
+<p><strong>Nom d’un pipe <code>%&gt;%</code> !</strong></p>
+<p>On peut combiner les opérations en une seule ligne à l’aide du pipe <code>%&gt;%</code> :</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb264-1" data-line-number="1">selection &lt;-<span class="st"> </span><span class="kw">select</span>(df,CODGEO,ZAU,REG,DEP,densite,tx_natal,tx_mort) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb264-2" data-line-number="2"><span class="st">             </span><span class="kw">filter</span>(DEP<span class="op">==</span><span class="st">&quot;62&quot;</span>)</a></code></pre></div>
+<p><strong>Le coin du capitaine [ ]</strong> <img src="images/CapHookImage.png" style="width:10.0%" /></p>
+<p>Pour sélectionner les données, on peut également utiliser les crochets couplés aux dollars et aux <code>c()</code>, sans passer par les numéros de lignes et colonnes ! On rencontre assez souvent cette syntaxe sur les forums.</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb265-1" data-line-number="1">selection &lt;-<span class="st"> </span>df[df<span class="op">$</span>DEP<span class="op">==</span><span class="st">&quot;62&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;CODGEO&quot;</span>,<span class="st">&quot;ZAU&quot;</span>,<span class="st">&quot;REG&quot;</span>,<span class="st">&quot;DEP&quot;</span>,<span class="st">&quot;densite&quot;</span>,<span class="st">&quot;tx_natal&quot;</span>,<span class="st">&quot;tx_mort&quot;</span>)]</a></code></pre></div>
+<p><em>Note</em> : dans la syntaxe <code>tidyverse</code>, on ne met pas (obligatoirement) de guillemets pour les noms de variable, alors qu’on le fait pour la version [ ]</p>
+</div>
+</div>
+<div id="mes-premiers-graphiques-et-statistiques" class="section level2">
+<h2><span class="header-section-number">11.3</span> Mes premiers graphiques et statistiques</h2>
+<div id="statistiques-univariées" class="section level3">
+<h3><span class="header-section-number">11.3.1</span> Statistiques univariées</h3>
+<p>Utilisez la fonction <code>summary</code> pour obtenir un résumé de l’ensemble des variables de la table <code>df</code></p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb266-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">mutate</span>(df,<span class="dt">ZAU2=</span><span class="kw">as.factor</span>(<span class="kw">substr</span>(ZAU,<span class="dv">1</span>,<span class="dv">3</span>)))</a>
+<a class="sourceLine" id="cb266-2" data-line-number="2"><span class="co">### Parce que la variable originale est trop longue et caractères bizarres</span></a>
+<a class="sourceLine" id="cb266-3" data-line-number="3"><span class="kw">summary</span>(df)</a></code></pre></div>
+<pre><code>##      CODGEO                 LIBGEO           REG             DEP       
+##  01001  :    1   Sainte-Colombe:   13   44     : 5198   62     :  895  
+##  01002  :    1   Beaulieu      :   11   76     : 4565   02     :  816  
+##  01004  :    1   Saint-Sauveur :   11   75     : 4505   80     :  782  
+##  01005  :    1   Sainte-Marie  :   11   84     : 4189   76     :  745  
+##  01006  :    1   Le Pin        :   10   32     : 3838   57     :  730  
+##  01007  :    1   Saint-Aubin   :   10   27     : 3831   14     :  707  
+##  (Other):36683   (Other)       :36623   (Other):10563   (Other):32014  
+##    ZAU                                                      
+##  112 - Couronne d&#39;un grand p\xf4le                  :12297  
+##  400 - Commune isol\xe9e hors influence des p\xf4les: 7383  
+##  300 - Autre commune multipolaris\xe9e              : 7021  
+##  120 - Multipolaris\xe9e des grandes aires urbaines : 3962  
+##  111 - Grand p\xf4le (plus de 10 000 emplois)       : 3285  
+##  221 - Petit p\xf4le (de 1 500 \xe0 5 000 emplois)  :  888  
+##  (Other)                                            : 1853  
+##                        ZE           P14_POP           P09_POP       
+##  0061 - Toulouse        :  717   Min.   :      0   Min.   :      0  
+##  2307 - Rouen           :  501   1st Qu.:    197   1st Qu.:    193  
+##  2210 - Amiens          :  479   Median :    444   Median :    431  
+##  7310 - Tarbes - Lourdes:  455   Mean   :   1838   Mean   :   1793  
+##  2102 - Troyes          :  452   3rd Qu.:   1110   3rd Qu.:   1072  
+##  2603 - Dijon           :  448   Max.   :2220445   Max.   :2234105  
+##  (Other)                :33637   NA&#39;s   :821       NA&#39;s   :821      
+##      SUPERF            NAIS0914           DECE0914           P14_MEN         
+##  Min.   :    0.04   Min.   :     0.0   Min.   :    0.00   Min.   :      0.0  
+##  1st Qu.:    6.44   1st Qu.:     9.0   1st Qu.:    8.00   1st Qu.:     83.8  
+##  Median :   10.81   Median :    23.0   Median :   17.00   Median :    183.2  
+##  Mean   :   17.64   Mean   :   114.4   Mean   :   77.35   Mean   :    802.0  
+##  3rd Qu.:   18.58   3rd Qu.:    60.0   3rd Qu.:   43.00   3rd Qu.:    454.9  
+##  Max.   :18360.00   Max.   :150843.0   Max.   :69907.00   Max.   :1147990.9  
+##  NA&#39;s   :821        NA&#39;s   :821        NA&#39;s   :821        NA&#39;s   :821        
+##     NAISD15            DECESD15           P14_LOG              P14_RP         
+##  Min.   :    0.00   Min.   :    0.00   Min.   :      0.0   Min.   :      0.0  
+##  1st Qu.:    1.00   1st Qu.:    1.00   1st Qu.:    115.0   1st Qu.:     83.8  
+##  Median :    4.00   Median :    3.00   Median :    239.1   Median :    183.2  
+##  Mean   :   21.96   Mean   :   16.47   Mean   :    970.2   Mean   :    802.0  
+##  3rd Qu.:   11.00   3rd Qu.:    9.00   3rd Qu.:    565.0   3rd Qu.:    454.9  
+##  Max.   :28267.00   Max.   :13997.00   Max.   :1362181.9   Max.   :1147990.9  
+##  NA&#39;s   :821        NA&#39;s   :821        NA&#39;s   :821         NA&#39;s   :821        
+##   P14_RSECOCC          P14_LOGVAC         P14_RP_PROP        NBMENFISC13       
+##  Min.   :     0.00   Min.   :     0.00   Min.   :     0.0   Min.   :     32.0  
+##  1st Qu.:     7.00   1st Qu.:     8.00   1st Qu.:    68.4   1st Qu.:    102.0  
+##  Median :    19.00   Median :    18.00   Median :   148.0   Median :    205.0  
+##  Mean   :    91.63   Mean   :    76.60   Mean   :   462.2   Mean   :    809.7  
+##  3rd Qu.:    49.29   3rd Qu.:    43.75   3rd Qu.:   349.2   3rd Qu.:    484.0  
+##  Max.   :107061.99   Max.   :107129.02   Max.   :381934.3   Max.   :1038789.0  
+##  NA&#39;s   :821         NA&#39;s   :821         NA&#39;s   :821        NA&#39;s   :3793       
+##      PIMP13          MED13           TP6013        P14_EMPLT        
+##  Min.   :24.46   Min.   :10021   Min.   : 5.00   Min.   :      0.0  
+##  1st Qu.:50.57   1st Qu.:18452   1st Qu.: 8.73   1st Qu.:     26.0  
+##  Median :58.40   Median :19844   Median :11.97   Median :     66.8  
+##  Mean   :58.98   Mean   :20250   Mean   :13.35   Mean   :    733.9  
+##  3rd Qu.:67.19   3rd Qu.:21563   3rd Qu.:16.80   3rd Qu.:    229.5  
+##  Max.   :89.38   Max.   :46251   Max.   :44.84   Max.   :1801865.8  
+##  NA&#39;s   :31598   NA&#39;s   :3793    NA&#39;s   :32531   NA&#39;s   :821        
+##  P14_EMPLT_SAL         P09_EMPLT          P14_POP1564       
+##  Min.   :      0.0   Min.   :      0.0   Min.   :      0.0  
+##  1st Qu.:     13.0   1st Qu.:     26.1   1st Qu.:    120.3  
+##  Median :     42.0   Median :     65.2   Median :    275.0  
+##  Mean   :    637.8   Mean   :    716.4   Mean   :   1165.0  
+##  3rd Qu.:    173.4   3rd Qu.:    220.6   3rd Qu.:    684.8  
+##  Max.   :1562078.5   Max.   :1805470.4   Max.   :1554076.1  
+##  NA&#39;s   :821         NA&#39;s   :9           NA&#39;s   :821        
+##   P14_CHOM1564        P14_ACT1564           ETTOT14             ETAZ14      
+##  Min.   :     0.00   Min.   :      0.0   Min.   :     0.0   Min.   :  0.00  
+##  1st Qu.:     8.85   1st Qu.:     90.5   1st Qu.:    19.0   1st Qu.:  4.00  
+##  Median :    20.45   Median :    208.3   Median :    38.0   Median :  7.00  
+##  Mean   :   119.75   Mean   :    855.8   Mean   :   179.3   Mean   : 11.36  
+##  3rd Qu.:    51.78   3rd Qu.:    518.0   3rd Qu.:    92.0   3rd Qu.: 14.00  
+##  Max.   :144515.41   Max.   :1202565.3   Max.   :551952.0   Max.   :587.00  
+##  NA&#39;s   :821         NA&#39;s   :821         NA&#39;s   :25         NA&#39;s   :25      
+##      ETBE14              ETFZ14             ETGU14             ETGZ14        
+##  Min.   :    0.000   Min.   :    0.00   Min.   :     0.0   Min.   :    0.00  
+##  1st Qu.:    1.000   1st Qu.:    2.00   1st Qu.:     7.0   1st Qu.:    1.00  
+##  Median :    3.000   Median :    5.00   Median :    17.0   Median :    4.00  
+##  Mean   :    9.417   Mean   :   18.18   Mean   :   116.1   Mean   :   28.73  
+##  3rd Qu.:    7.000   3rd Qu.:   12.00   3rd Qu.:    47.0   3rd Qu.:   13.00  
+##  Max.   :15181.000   Max.   :24528.00   Max.   :462763.0   Max.   :65004.00  
+##  NA&#39;s   :25          NA&#39;s   :25         NA&#39;s   :25         NA&#39;s   :25        
+##      ETOQ14            ETTEF114           ETTEFP1014          densite        
+##  Min.   :    0.00   Min.   :     0.00   Min.   :    0.00   Min.   :    0.00  
+##  1st Qu.:    2.00   1st Qu.:     4.00   1st Qu.:    0.00   1st Qu.:   18.59  
+##  Median :    4.00   Median :     8.00   Median :    1.00   Median :   40.35  
+##  Mean   :   24.22   Mean   :    41.33   Mean   :   10.28   Mean   :  160.15  
+##  3rd Qu.:   10.00   3rd Qu.:    19.00   3rd Qu.:    4.00   3rd Qu.:   94.57  
+##  Max.   :48893.00   Max.   :124131.00   Max.   :24527.00   Max.   :27126.14  
+##  NA&#39;s   :25         NA&#39;s   :25          NA&#39;s   :25         NA&#39;s   :821       
+##     tx_natal          tx_mort            ZAU2      
+##  Min.   :  0.000   Min.   :0.0000   112    :12297  
+##  1st Qu.:  5.679   1st Qu.:0.0044   400    : 7383  
+##  Median :  9.264   Median :0.0079   300    : 7021  
+##  Mean   :  9.699   Mean   :0.0093   120    : 3962  
+##  3rd Qu.: 12.931   3rd Qu.:0.0124   111    : 3285  
+##  Max.   :111.111   Max.   :0.1577   221    :  888  
+##  NA&#39;s   :827       NA&#39;s   :827      (Other): 1853</code></pre>
+<p>Calculez maintenant les moyenne, médiane, écart-type et variance de la variable de densité de population</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb268-1" data-line-number="1"><span class="kw">mean</span>(df<span class="op">$</span>densite)</a></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb270-1" data-line-number="1"><span class="kw">sd</span>(df<span class="op">$</span>densite)</a></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb272-1" data-line-number="1"><span class="kw">median</span>(df<span class="op">$</span>densite)</a></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb274-1" data-line-number="1"><span class="kw">var</span>(df<span class="op">$</span>densite)</a></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<p>Il y a des valeurs manquantes, qui sont absorbantes ! On ajoute un paramètre pour calculer uniquement sur les valeurs renseignées</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb276-1" data-line-number="1"><span class="kw">mean</span>(df<span class="op">$</span>densite,<span class="dt">na.rm =</span> T)</a></code></pre></div>
+<pre><code>## [1] 160.151</code></pre>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb278-1" data-line-number="1"><span class="kw">sd</span>(df<span class="op">$</span>densite,<span class="dt">na.rm =</span> T)</a></code></pre></div>
+<pre><code>## [1] 722.799</code></pre>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb280-1" data-line-number="1"><span class="kw">median</span>(df<span class="op">$</span>densite,<span class="dt">na.rm =</span> T)</a></code></pre></div>
+<pre><code>## [1] 40.35457</code></pre>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb282-1" data-line-number="1"><span class="kw">var</span>(df<span class="op">$</span>densite,<span class="dt">na.rm =</span> T)</a></code></pre></div>
+<pre><code>## [1] 522438.4</code></pre>
+<p><strong>Application</strong> : calculez la version centrée réduite de la variable de densité. Rappel : on calcule la version centrée réduite d’une variable X en lui appliquant la transformation suivante : <span class="math display">\[ STD_X = \dfrac{X-\bar{X}}{\sigma_X}\]</span>
+où <span class="math inline">\(\bar{X}\)</span> est la moyenne empirique de X et <span class="math inline">\(\sigma_X\)</span> son écart-type
+Avantage : on élimine les effets d’unité (d’ordre de grandeur)</p>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb284-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">mutate</span>(df,<span class="dt">std_dens=</span>(densite<span class="op">-</span><span class="kw">mean</span>(densite,<span class="dt">na.rm =</span> T))<span class="op">/</span><span class="kw">sd</span>(densite,<span class="dt">na.rm =</span> T))</a>
+<a class="sourceLine" id="cb284-2" data-line-number="2"><span class="kw">mean</span>(df<span class="op">$</span>std_dens,<span class="dt">na.rm =</span> T)</a></code></pre></div>
+<pre><code>## [1] 9.482279e-18</code></pre>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb286-1" data-line-number="1"><span class="kw">sd</span>(df<span class="op">$</span>std_dens, <span class="dt">na.rm =</span> T)</a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Calulez à présent les quartiles puis déciles de cette variables</p>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb288-1" data-line-number="1"><span class="kw">quantile</span>(df<span class="op">$</span>densite,<span class="dt">na.rm =</span> T)</a></code></pre></div>
+<pre><code>##          0%         25%         50%         75%        100% 
+##     0.00000    18.59047    40.35457    94.57430 27126.14108</code></pre>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb290-1" data-line-number="1"><span class="kw">quantile</span>(df<span class="op">$</span>densite,<span class="dt">probs =</span> <span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,.<span class="dv">1</span>),<span class="dt">na.rm =</span> T)</a></code></pre></div>
+<pre><code>##          0%         10%         20%         30%         40%         50% 
+##     0.00000    10.03439    15.65357    21.84208    29.76144    40.35457 
+##         60%         70%         80%         90%        100% 
+##    54.82089    77.65199   119.08740   240.40789 27126.14108</code></pre>
+</div>
+<div id="tableaux-croisés" class="section level3">
+<h3><span class="header-section-number">11.3.2</span> Tableaux croisés</h3>
+<ul>
+<li>Une variable</li>
+</ul>
+<p>Calculez le nombre de communes par type d’espace à l’aide de la fonction table, et le pourcentage associé</p>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb292-1" data-line-number="1">t &lt;-<span class="st"> </span><span class="kw">table</span>(df<span class="op">$</span>ZAU2)</a>
+<a class="sourceLine" id="cb292-2" data-line-number="2">t</a></code></pre></div>
+<pre><code>## 
+##   111   112   120   211   212   221   222   300   400 
+##  3285 12297  3962   456   815   888   582  7021  7383</code></pre>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb294-1" data-line-number="1"><span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(t) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">4</span>)</a></code></pre></div>
+<pre><code>## 
+##   111   112   120   211   212   221   222   300   400 
+##  8.95 33.52 10.80  1.24  2.22  2.42  1.59 19.14 20.12</code></pre>
+<ul>
+<li>Deux variables</li>
+</ul>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb296-1" data-line-number="1">t &lt;-<span class="st"> </span><span class="kw">table</span>(df<span class="op">$</span>REG,df<span class="op">$</span>ZAU2)</a>
+<a class="sourceLine" id="cb296-2" data-line-number="2">t</a></code></pre></div>
+<pre><code>##     
+##       111  112  120  211  212  221  222  300  400
+##   01   17    6    1    0    0    3    0    2    3
+##   02   16    0    4    3    0    2    0    4    5
+##   03    3    3    0    2    0    1    0    0   13
+##   04   10    3    4    2    0    0    0    1    4
+##   11  413  853    3    3    2    0    0    7    0
+##   24  103  734  188   30   72   46   19  375  275
+##   27  140 1299  336   31  122   60  137  737  969
+##   28  216 1126  488   34  104   78   29  762  396
+##   32  481 1505  729   33   18   54   18  711  289
+##   44  322 1721  822   54  102   89  118 1155  815
+##   52  108  535  186   23   44   69    8  386  143
+##   53   89  415  152   47   18   42    1  325  181
+##   75  333 1161  254   51   81  163   81 1002 1379
+##   76  258 1124  333   79  155  123   89  877 1527
+##   84  548 1484  390   43   84  113   47  517  963
+##   93  220  229   69   20   11   32    6  107  269
+##   94    8   99    3    1    2   13   29   53  152</code></pre>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb298-1" data-line-number="1"><span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(t) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">4</span>)</a></code></pre></div>
+<pre><code>##     
+##       111  112  120  211  212  221  222  300  400
+##   01 0.05 0.02 0.00 0.00 0.00 0.01 0.00 0.01 0.01
+##   02 0.04 0.00 0.01 0.01 0.00 0.01 0.00 0.01 0.01
+##   03 0.01 0.01 0.00 0.01 0.00 0.00 0.00 0.00 0.04
+##   04 0.03 0.01 0.01 0.01 0.00 0.00 0.00 0.00 0.01
+##   11 1.13 2.32 0.01 0.01 0.01 0.00 0.00 0.02 0.00
+##   24 0.28 2.00 0.51 0.08 0.20 0.13 0.05 1.02 0.75
+##   27 0.38 3.54 0.92 0.08 0.33 0.16 0.37 2.01 2.64
+##   28 0.59 3.07 1.33 0.09 0.28 0.21 0.08 2.08 1.08
+##   32 1.31 4.10 1.99 0.09 0.05 0.15 0.05 1.94 0.79
+##   44 0.88 4.69 2.24 0.15 0.28 0.24 0.32 3.15 2.22
+##   52 0.29 1.46 0.51 0.06 0.12 0.19 0.02 1.05 0.39
+##   53 0.24 1.13 0.41 0.13 0.05 0.11 0.00 0.89 0.49
+##   75 0.91 3.16 0.69 0.14 0.22 0.44 0.22 2.73 3.76
+##   76 0.70 3.06 0.91 0.22 0.42 0.34 0.24 2.39 4.16
+##   84 1.49 4.04 1.06 0.12 0.23 0.31 0.13 1.41 2.62
+##   93 0.60 0.62 0.19 0.05 0.03 0.09 0.02 0.29 0.73
+##   94 0.02 0.27 0.01 0.00 0.01 0.04 0.08 0.14 0.41</code></pre>
+<p>Pour aller plus loin et ajouter des variables de pondération, calculer les profils-ligne ou profils-colonne, rendez-vous au module 3, ou demandez à votre GF (Gentil Formateur)</p>
+</div>
+<div id="les-graphiques-avec-ggplot2" class="section level3">
+<h3><span class="header-section-number">11.3.3</span> Les graphiques avec ggplot2</h3>
+<p>On reprend la base non filtrée. A l’aide de la cheat sheet ggplot2, réalisez un histogramme de la densite de population.</p>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb300-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> df,<span class="kw">aes</span>(<span class="dt">x=</span>densite)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>()</a></code></pre></div>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-71-1.png" width="576" /></p>
+<p>Ce n’est pas très informatif, mais on peut faire une transformation log pour y voir plus clair !</p>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb301-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> df,<span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">log</span>(densite))) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>()</a></code></pre></div>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-72-1.png" width="576" /></p>
+<p>Faites maintenant un barplot (qui n’est pas un histogramme !!!! ) du nombre de communes par type ZAU</p>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb302-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data=</span>df,<span class="kw">aes</span>(<span class="dt">x=</span>ZAU)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</a></code></pre></div>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-73-1.png" width="576" /></p>
+<p>On va essayer d’y voir plus clair avec le paramètre <code>fill</code></p>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb303-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data=</span>df,<span class="kw">aes</span>(<span class="dt">x=</span>ZAU2,<span class="dt">fill=</span>ZAU2)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</a></code></pre></div>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-74-1.png" width="576" /></p>
+<p>Réalisez un graphique (unage de points) croisant la densité de population et le taux de mortalité</p>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb304-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data=</span>df,<span class="kw">aes</span>(<span class="dt">x=</span>densite,<span class="dt">y=</span>tx_mort)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-75-1.png" width="576" /></p>
+<p>On peut ajouter une dimension supplémentaire avec la couleur des points</p>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb305-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data=</span>df,<span class="kw">aes</span>(<span class="dt">x=</span>densite,<span class="dt">y=</span>tx_mort,<span class="dt">color=</span>ZAU2)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-76-1.png" width="576" /></p>
+<p>Là encore il faudrait faire une transformation logarithmique, mais tout ça est abordé dans le module 3 !</p>
+<p>Avec les fonctions de base, on peut obtenir de nombreux graphiques avec très peu de code, mais moins jolis :</p>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb306-1" data-line-number="1"><span class="kw">plot</span>(iris)</a></code></pre></div>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-77-1.png" width="576" /></p>
+<p>Des possibilités infinies à approfondir dans les modules 3 et 5 !!!!!</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercices-pour-r-studio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Débuter-avec-R-et-RStudio.pdf", "Débuter-avec-R-et-RStudio.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
