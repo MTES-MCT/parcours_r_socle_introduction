@@ -1,4 +1,4 @@
-Code source du module 1 du parcours de formation à R du pôle ministériel MTES-MCTRCT(https://mtes-mct.github.io/parcours-r/m1/index.html)
+Code source du [module 1](https://mtes-mct.github.io/parcours_r_socle_introduction/) du [parcours de formation à R](https://mtes-mct.github.io/parcours-r/) du pôle ministériel MTES-MCTRCT
 
 Objectifs du module : 
 
