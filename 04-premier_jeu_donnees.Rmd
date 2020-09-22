@@ -86,12 +86,12 @@ mean(V1)              # renvoie NA. Not good !
 mean(V1, na.rm = T)   # renvoie 15.9   - OK !
 ```
 
-$\Rightarrow$ Le [module 2 "Préparation des données"](https://rawgit.com/MTES-MCT/parcours-r/master/Supports_formations/m2_preparation_donnees/_book/index.html) aborde la gestion de ces valeurs particulières.
+$\Rightarrow$ Le [module 2 "Préparation des données"](https://mtes-mct.github.io/parcours-r/m2/index.html) aborde la gestion de ces valeurs particulières.
 
 
 ## Exercice : Importer les données et premier coup d'oeil
 
-On peut importer n'importe quel format de données en R (Excel, SAT, Stata, SQL...). Beaucoup sont abordés lors du [module 2 "Préparation des données"](https://rawgit.com/MTES-MCT/parcours-r/master/Supports_formations/m2_preparation_donnees/_book/index.html). Pour ce module, nous ne voyons que l'importation de fichier `.CSV`. Si vous avez une base de données en Excel ou LibreOffice Calc, sauvegardez l'onglet que vous souhaitez en faisant "enregistrer sous" $\rightarrow$ "délimité CSV". 
+On peut importer n'importe quel format de données en R (Excel, SAT, Stata, SQL...). Beaucoup sont abordés lors du [module 2 "Préparation des données"](https://mtes-mct.github.io/parcours-r/m2/index.html). Pour ce module, nous ne voyons que l'importation de fichier `.CSV`. Si vous avez une base de données en Excel ou LibreOffice Calc, sauvegardez l'onglet que vous souhaitez en faisant "enregistrer sous" $\rightarrow$ "délimité CSV". 
 
 Ici, nous travaillerons sur une base de données communales fournie par l'Insee, dite "comparateur de territoires". Le fichier source (Excel) figure dans le sous-répertoire "data" et contient toutes les métadonnées.
 

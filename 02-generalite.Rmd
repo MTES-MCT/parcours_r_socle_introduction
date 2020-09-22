@@ -72,7 +72,7 @@ Computational and Graphical Statistics*, 5(3), 299–314](https://www.stat.auckl
   
 C'est un logiciel libre : les utilisateurs ont la liberté d'exécuter, copier, distribuer, étudier, modifier et améliorer ce logiciel. R fait partie de la "galaxie" GNU (GNU's Not Unix). R est donc libre, gratuit et multiplateforme.
 
-[Le site CRAN = Comprehensive R Archive Network](cran.r-project.org) est le site de référence pour R. Il contient non seulement les installeurs du logiciel mais également de nombreuses ressources : documentations, FAQ, tutoriels... 
+[Le site CRAN = Comprehensive R Archive Network](https://cran.r-project.org) est le site de référence pour R. Il contient non seulement les installeurs du logiciel mais également de nombreuses ressources : documentations, FAQ, tutoriels... 
 
 
     
