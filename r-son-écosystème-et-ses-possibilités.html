@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 2 R, son écosystème et ses possibilités | Découvrir R et RStudio</title>
   <meta name="description" content="Chapitre 2 R, son écosystème et ses possibilités | Découvrir R et RStudio (module socle)" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 2 R, son écosystème et ses possibilités | Découvrir R et RStudio" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez &amp; Pascal Irz" />
 
 
-<meta name="date" content="2020-02-28" />
+<meta name="date" content="2020-12-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="présentation-de-linterface-et-premières-manipulations.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,35 +51,38 @@
 
 
 
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2/plotly.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +91,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,11 +143,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Découvrir R et RStudio</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#le-parcours-de-formation"><i class="fa fa-check"></i><b>1.1</b> Le parcours de formation</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#objectifs-du-module-1"><i class="fa fa-check"></i><b>1.2</b> Objectifs du module 1</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html"><i class="fa fa-check"></i><b>2</b> R, son écosystème et ses possibilités</a><ul>
+<li class="chapter" data-level="2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html"><i class="fa fa-check"></i><b>2</b> R, son écosystème et ses possibilités</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#le-groupe-de-référents"><i class="fa fa-check"></i><b>2.1</b> Le groupe de référents</a></li>
 <li class="chapter" data-level="2.2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#r-cest-quoi"><i class="fa fa-check"></i><b>2.2</b> R c’est quoi ?</a></li>
 <li class="chapter" data-level="2.3" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-peu-dhistoire"><i class="fa fa-check"></i><b>2.3</b> Un peu d’histoire</a></li>
@@ -152,7 +158,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-logiciel-modulaire"><i class="fa fa-check"></i><b>2.6</b> Un logiciel modulaire</a></li>
 <li class="chapter" data-level="2.7" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#des-exemples-de-ce-quon-peut-faire-avec-r"><i class="fa fa-check"></i><b>2.7</b> Des exemples de ce qu’on peut faire avec R :</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html"><i class="fa fa-check"></i><b>3</b> Présentation de l’interface et premières manipulations</a><ul>
+<li class="chapter" data-level="3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html"><i class="fa fa-check"></i><b>3</b> Présentation de l’interface et premières manipulations</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#une-interface-dédiée-rstudio"><i class="fa fa-check"></i><b>3.1</b> Une interface dédiée : RStudio</a></li>
 <li class="chapter" data-level="3.2" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#session-et-répertoire-de-travail"><i class="fa fa-check"></i><b>3.2</b> Session et répertoire de travail</a></li>
 <li class="chapter" data-level="3.3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#exercice"><i class="fa fa-check"></i><b>3.3</b> Exercice</a></li>
@@ -162,7 +169,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.7" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#utilité-des-scripts"><i class="fa fa-check"></i><b>3.7</b> Utilité des scripts</a></li>
 <li class="chapter" data-level="3.8" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#exercice-utiliser-un-script"><i class="fa fa-check"></i><b>3.8</b> Exercice : utiliser un script</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html"><i class="fa fa-check"></i><b>4</b> Mon premier jeu de données</a><ul>
+<li class="chapter" data-level="4" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html"><i class="fa fa-check"></i><b>4</b> Mon premier jeu de données</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#les-types-de-valeurs-dans-r"><i class="fa fa-check"></i><b>4.1</b> Les types de valeurs dans R</a></li>
 <li class="chapter" data-level="4.2" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#avant-de-manipuler-le-dataframe-installer-et-charger-un-package"><i class="fa fa-check"></i><b>4.2</b> Avant de manipuler le <em>dataframe</em> : installer et charger un <em>package</em></a></li>
 <li class="chapter" data-level="4.3" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#importation-de-données"><i class="fa fa-check"></i><b>4.3</b> Importation de données</a></li>
@@ -171,14 +179,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#les-valeurs-particulières"><i class="fa fa-check"></i><b>4.6</b> Les valeurs particulières</a></li>
 <li class="chapter" data-level="4.7" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#exercice-importer-les-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>4.7</b> Exercice : Importer les données et premier coup d’oeil</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="bien-commencer.html"><a href="bien-commencer.html"><i class="fa fa-check"></i><b>5</b> Bien commencer</a><ul>
+<li class="chapter" data-level="5" data-path="bien-commencer.html"><a href="bien-commencer.html"><i class="fa fa-check"></i><b>5</b> Bien commencer</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-un-projet-sous-rstudio-pour-vous-permettre-de-recenser-vos-travaux."><i class="fa fa-check"></i><b>5.1</b> Créer un projet sous Rstudio pour vous permettre de recenser vos travaux.</a></li>
 <li class="chapter" data-level="5.2" data-path="bien-commencer.html"><a href="bien-commencer.html#intégrer-vos-données"><i class="fa fa-check"></i><b>5.2</b> Intégrer vos données</a></li>
 <li class="chapter" data-level="5.3" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-votre-arborescence-de-projet"><i class="fa fa-check"></i><b>5.3</b> Créer votre arborescence de projet</a></li>
 <li class="chapter" data-level="5.4" data-path="bien-commencer.html"><a href="bien-commencer.html#activer-les-packages-nécessaires"><i class="fa fa-check"></i><b>5.4</b> Activer les packages nécessaires</a></li>
 <li class="chapter" data-level="5.5" data-path="bien-commencer.html"><a href="bien-commencer.html#bien-structurer-ses-projets-data"><i class="fa fa-check"></i><b>5.5</b> Bien structurer ses projets <em>data</em></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html"><i class="fa fa-check"></i><b>6</b> Première manipulation des données</a><ul>
+<li class="chapter" data-level="6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html"><i class="fa fa-check"></i><b>6</b> Première manipulation des données</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#afficher-les-valeurs-et-manipuler-les-variables"><i class="fa fa-check"></i><b>6.1</b> Afficher les valeurs et manipuler les variables</a></li>
 <li class="chapter" data-level="6.2" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#créer-de-nouvelles-variables"><i class="fa fa-check"></i><b>6.2</b> Créer de nouvelles variables</a></li>
 <li class="chapter" data-level="6.3" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#sélectionner-des-variables"><i class="fa fa-check"></i><b>6.3</b> Sélectionner des variables</a></li>
@@ -187,10 +197,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#renommer-des-colonnes"><i class="fa fa-check"></i><b>6.6</b> Renommer des colonnes</a></li>
 <li class="chapter" data-level="6.7" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#exercice-créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>6.7</b> Exercice : Créer, filtrer, sélectionner</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html"><i class="fa fa-check"></i><b>7</b> Premiers traitements statistiques</a><ul>
+<li class="chapter" data-level="7" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html"><i class="fa fa-check"></i><b>7</b> Premiers traitements statistiques</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#obtenir-des-informations"><i class="fa fa-check"></i><b>7.1</b> Obtenir des informations</a></li>
 <li class="chapter" data-level="7.2" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#calculer-des-statistiques-spécifiques"><i class="fa fa-check"></i><b>7.2</b> Calculer des statistiques spécifiques</a></li>
-<li class="chapter" data-level="7.3" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#agréger-des-données"><i class="fa fa-check"></i><b>7.3</b> Agréger des données</a><ul>
+<li class="chapter" data-level="7.3" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#agréger-des-données"><i class="fa fa-check"></i><b>7.3</b> Agréger des données</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#globalement"><i class="fa fa-check"></i><b>7.3.1</b> Globalement</a></li>
 <li class="chapter" data-level="7.3.2" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#selon-un-facteur"><i class="fa fa-check"></i><b>7.3.2</b> Selon un facteur</a></li>
 </ul></li>
@@ -198,7 +210,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#tableau-de-proportions"><i class="fa fa-check"></i><b>7.5</b> Tableau de proportions</a></li>
 <li class="chapter" data-level="7.6" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#exercice-calcul-de-statistiques"><i class="fa fa-check"></i><b>7.6</b> Exercice : calcul de statistiques</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html"><i class="fa fa-check"></i><b>8</b> Premiers graphiques</a><ul>
+<li class="chapter" data-level="8" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html"><i class="fa fa-check"></i><b>8</b> Premiers graphiques</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#package-ggplot2"><i class="fa fa-check"></i><b>8.1</b> Package ggplot2</a></li>
 <li class="chapter" data-level="8.2" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#histogramme"><i class="fa fa-check"></i><b>8.2</b> Histogramme</a></li>
 <li class="chapter" data-level="8.3" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#nuages-de-points"><i class="fa fa-check"></i><b>8.3</b> Nuages de points</a></li>
@@ -206,12 +219,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.5" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#bonus-faire-un-graphique-dynamique"><i class="fa fa-check"></i><b>8.5</b> Bonus : faire un graphique “dynamique”</a></li>
 <li class="chapter" data-level="8.6" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html#exercices-créer-des-graphiques"><i class="fa fa-check"></i><b>8.6</b> Exercices : créer des graphiques</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="sauvegarder-son-travail.html"><a href="sauvegarder-son-travail.html"><i class="fa fa-check"></i><b>9</b> Sauvegarder son travail</a><ul>
+<li class="chapter" data-level="9" data-path="sauvegarder-son-travail.html"><a href="sauvegarder-son-travail.html"><i class="fa fa-check"></i><b>9</b> Sauvegarder son travail</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="sauvegarder-son-travail.html"><a href="sauvegarder-son-travail.html#exportation-des-résultats"><i class="fa fa-check"></i><b>9.1</b> Exportation des résultats</a></li>
 <li class="chapter" data-level="9.2" data-path="sauvegarder-son-travail.html"><a href="sauvegarder-son-travail.html#environnement-et-.rdata"><i class="fa fa-check"></i><b>9.2</b> Environnement et <code>.RData</code></a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><i class="fa fa-check"></i><b>10</b> Aller plus loin avec les objets, crochets et la programmation fonctionnelle</a><ul>
-<li class="chapter" data-level="10.1" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#les-objets-dans-r"><i class="fa fa-check"></i><b>10.1</b> Les objets dans R</a><ul>
+<li class="chapter" data-level="10" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><i class="fa fa-check"></i><b>10</b> Aller plus loin avec les objets, crochets et la programmation fonctionnelle</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#les-objets-dans-r"><i class="fa fa-check"></i><b>10.1</b> Les objets dans R</a>
+<ul>
 <li class="chapter" data-level="10.1.1" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#créer-des-vecteurs"><i class="fa fa-check"></i><b>10.1.1</b> Créer des vecteurs</a></li>
 <li class="chapter" data-level="10.1.2" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#créer-une-matrice"><i class="fa fa-check"></i><b>10.1.2</b> Créer une matrice</a></li>
 <li class="chapter" data-level="10.1.3" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#visualiser-ces-objets-et-leurs-attributs"><i class="fa fa-check"></i><b>10.1.3</b> Visualiser ces objets et leurs attributs</a></li>
@@ -220,30 +236,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.3" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#créer-une-nouvelle-fonction-en-r"><i class="fa fa-check"></i><b>10.3</b> Créer une nouvelle fonction en R</a></li>
 <li class="chapter" data-level="10.4" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#les-boucles-conditionnelles"><i class="fa fa-check"></i><b>10.4</b> Les boucles conditionnelles</a></li>
 <li class="chapter" data-level="10.5" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#les-boucles"><i class="fa fa-check"></i><b>10.5</b> Les boucles</a></li>
-<li class="chapter" data-level="10.6" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#exercices"><i class="fa fa-check"></i><b>10.6</b> Exercices</a><ul>
+<li class="chapter" data-level="10.6" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#exercices"><i class="fa fa-check"></i><b>10.6</b> Exercices</a>
+<ul>
 <li class="chapter" data-level="10.6.1" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#vecteurs-simples"><i class="fa fa-check"></i><b>10.6.1</b> Vecteurs simples</a></li>
 <li class="chapter" data-level="10.6.2" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#dataframes-et-listes"><i class="fa fa-check"></i><b>10.6.2</b> Dataframes et listes</a></li>
 <li class="chapter" data-level="10.6.3" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#pour-aller-plus-loin-matrices-et-arrays"><i class="fa fa-check"></i><b>10.6.3</b> Pour aller plus loin : matrices et arrays</a></li>
 <li class="chapter" data-level="10.6.4" data-path="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-crochets-et-la-programmation-fonctionnelle.html#inspection-dun-objet-la-régression"><i class="fa fa-check"></i><b>10.6.4</b> Inspection d’un objet : la régression</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="exercices-1.html"><a href="exercices-1.html"><i class="fa fa-check"></i><b>11</b> Exercices</a><ul>
-<li class="chapter" data-level="11.1" data-path="exercices-1.html"><a href="exercices-1.html#création-et-manipulation-dobjets-dans-r"><i class="fa fa-check"></i><b>11.1</b> Création et manipulation d’objets dans R</a><ul>
+<li class="chapter" data-level="11" data-path="exercices-1.html"><a href="exercices-1.html"><i class="fa fa-check"></i><b>11</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="exercices-1.html"><a href="exercices-1.html#création-et-manipulation-dobjets-dans-r"><i class="fa fa-check"></i><b>11.1</b> Création et manipulation d’objets dans R</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="exercices-1.html"><a href="exercices-1.html#génération-de-vecteurs"><i class="fa fa-check"></i><b>11.1.1</b> Génération de vecteurs</a></li>
 <li class="chapter" data-level="11.1.2" data-path="exercices-1.html"><a href="exercices-1.html#génération-dautres-objets"><i class="fa fa-check"></i><b>11.1.2</b> Génération d’autres objets</a></li>
 <li class="chapter" data-level="11.1.3" data-path="exercices-1.html"><a href="exercices-1.html#inspection-dun-objet-la-régression-1"><i class="fa fa-check"></i><b>11.1.3</b> Inspection d’un objet : la régression</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="exercices-1.html"><a href="exercices-1.html#premier-jeu-de-données-premières-statistiques"><i class="fa fa-check"></i><b>11.2</b> Premier jeu de données, premières statistiques</a><ul>
+<li class="chapter" data-level="11.2" data-path="exercices-1.html"><a href="exercices-1.html#premier-jeu-de-données-premières-statistiques"><i class="fa fa-check"></i><b>11.2</b> Premier jeu de données, premières statistiques</a>
+<ul>
 <li class="chapter" data-level="11.2.1" data-path="exercices-1.html"><a href="exercices-1.html#importer-les-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>11.2.1</b> Importer les données et premier coup d’oeil</a></li>
 <li class="chapter" data-level="11.2.2" data-path="exercices-1.html"><a href="exercices-1.html#créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>11.2.2</b> Créer, filtrer, sélectionner</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="exercices-1.html"><a href="exercices-1.html#mes-premiers-graphiques-et-statistiques"><i class="fa fa-check"></i><b>11.3</b> Mes premiers graphiques et statistiques</a><ul>
+<li class="chapter" data-level="11.3" data-path="exercices-1.html"><a href="exercices-1.html#mes-premiers-graphiques-et-statistiques"><i class="fa fa-check"></i><b>11.3</b> Mes premiers graphiques et statistiques</a>
+<ul>
 <li class="chapter" data-level="11.3.1" data-path="exercices-1.html"><a href="exercices-1.html#statistiques-univariées"><i class="fa fa-check"></i><b>11.3.1</b> Statistiques univariées</a></li>
 <li class="chapter" data-level="11.3.2" data-path="exercices-1.html"><a href="exercices-1.html#tableaux-croisés"><i class="fa fa-check"></i><b>11.3.2</b> Tableaux croisés</a></li>
 <li class="chapter" data-level="11.3.3" data-path="exercices-1.html"><a href="exercices-1.html#les-graphiques-avec-ggplot2"><i class="fa fa-check"></i><b>11.3.3</b> Les graphiques avec ggplot2</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html"><i class="fa fa-check"></i><b>12</b> Exercices pour R Studio</a><ul>
+<li class="chapter" data-level="12" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html"><i class="fa fa-check"></i><b>12</b> Exercices pour R Studio</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-1-prendre-en-main-rstudio-10-min."><i class="fa fa-check"></i><b>12.1</b> Exercice 1 : Prendre en main RStudio (10 min.)</a></li>
 <li class="chapter" data-level="12.2" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-2-faire-ses-premiers-calculs-15-min."><i class="fa fa-check"></i><b>12.2</b> Exercice 2 : Faire ses premiers calculs (15 min.)</a></li>
 <li class="chapter" data-level="12.3" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-3-créer-ses-premières-variables-15-min."><i class="fa fa-check"></i><b>12.3</b> Exercice 3 : Créer ses premières variables (15 min.)</a></li>
@@ -270,9 +292,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="r-son-écosystème-et-ses-possibilités" class="section level1">
+<div id="r-son-écosystème-et-ses-possibilités" class="section level1" number="2">
 <h1><span class="header-section-number">Chapitre 2</span> R, son écosystème et ses possibilités</h1>
-<div id="le-groupe-de-référents" class="section level2">
+<div id="le-groupe-de-référents" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Le groupe de référents</h2>
 <ul>
 <li>Un groupe pour structurer une offre de formations sur R</li>
@@ -280,14 +302,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/mapg2r-1.png" width="576" /></p>
 </div>
-<div id="r-cest-quoi" class="section level2">
+<div id="r-cest-quoi" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> R c’est quoi ?</h2>
 <ul>
 <li>Un langage de programmation interprété exécutable pas à pas <span class="math inline">\(\rightarrow\)</span> lignes de code</li>
 <li>Un logiciel interactif permettant de traiter divers types de données</li>
 </ul>
 </div>
-<div id="un-peu-dhistoire" class="section level2">
+<div id="un-peu-dhistoire" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Un peu d’histoire</h2>
 <ul>
 <li><p>À l’origine existait le langage S, servant à programmer avec des données (<em>Bell laboratory</em>, années 70)</p></li>
@@ -295,7 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Computational and Graphical Statistics</em>, 5(3), 299–314</a></p></li>
 <li><p>S’est d’abord développé dans le monde académique, puis a essaimé vers d’autres domaines professionnels, voire associatifs</p></li>
 <li><p>Système toujours d’actualité - Mise à jour tous les 6 mois</p></li>
-<li>Avenir dans la statistique publique : adopté comme standard par l’Insee (à l’horizon 2025) et divers SSM. Des packages pour :
+<li><p>Avenir dans la statistique publique : adopté comme standard par l’Insee (à l’horizon 2025) et divers SSM. Des packages pour :</p>
 <ul>
 <li>charger les données produites par l’Insee au format sdmx,</li>
 <li>charger les formats des organisations internationales (Eurostat, OCDE, ONU, etc.),</li>
@@ -303,7 +325,7 @@ Computational and Graphical Statistics</em>, 5(3), 299–314</a></p></li>
 </ul></li>
 </ul>
 </div>
-<div id="un-logiciel-libre" class="section level2">
+<div id="un-logiciel-libre" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Un logiciel libre</h2>
 <ul>
 <li>Disponible en libre téléchargement sur <a href="https://cran.r-project.org">le site officiel du CRAN</a></li>
@@ -320,9 +342,9 @@ Computational and Graphical Statistics</em>, 5(3), 299–314</a></p></li>
 </ul></li>
 </ul>
 <p>C’est un logiciel libre : les utilisateurs ont la liberté d’exécuter, copier, distribuer, étudier, modifier et améliorer ce logiciel. R fait partie de la “galaxie” GNU (GNU’s Not Unix). R est donc libre, gratuit et multiplateforme.</p>
-<p><a href="cran.r-project.org">Le site CRAN = Comprehensive R Archive Network</a> est le site de référence pour R. Il contient non seulement les installeurs du logiciel mais également de nombreuses ressources : documentations, FAQ, tutoriels…</p>
+<p><a href="https://cran.r-project.org">Le site CRAN = Comprehensive R Archive Network</a> est le site de référence pour R. Il contient non seulement les installeurs du logiciel mais également de nombreuses ressources : documentations, FAQ, tutoriels…</p>
 </div>
-<div id="que-peut-on-faire-avec-r" class="section level2">
+<div id="que-peut-on-faire-avec-r" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Que peut-on faire avec R ?</h2>
 <ul>
 <li>Lire des données de formats divers</li>
@@ -336,7 +358,7 @@ Computational and Graphical Statistics</em>, 5(3), 299–314</a></p></li>
 <p>Privilégie la flexibilité et le découpage des traitements en parties simples.</p>
 <p><img src="images/illustrations.png" /></p>
 </div>
-<div id="un-logiciel-modulaire" class="section level2">
+<div id="un-logiciel-modulaire" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Un logiciel modulaire</h2>
 <ul>
 <li>Le package <code>base</code> contient nombreuses fonctionnalités</li>
@@ -345,7 +367,7 @@ Computational and Graphical Statistics</em>, 5(3), 299–314</a></p></li>
 <li>Proposition d’une version installable de R + ensemble de packages utiles</li>
 </ul>
 <p>De base, R permet déjà de faire un très grand nombre de choses avec son socle commun : le package <code>base</code>. Pour afficher la liste des fonctions disponibles dans le package <code>base</code> :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(<span class="dt">help =</span> <span class="st">&#39;base&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="r-son-écosystème-et-ses-possibilités.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="at">help =</span> <span class="st">&#39;base&#39;</span>)</span></code></pre></div>
 <p>Sur ce package <code>base</code> vient se greffer un ensemble de packages (plugins, modules) complémentaires.
 Un package est une bibliothèque de fonctions. La plupart de ceux qui font référence sont mis à disposition de tous sur le dépôt CRAN.</p>
 <p>Cela permet d’étendre à l’infini les possibilités de R : celles-ci sont seulement limitées par la volonté de développement des utilisateurs.</p>
@@ -354,7 +376,7 @@ Un package est une bibliothèque de fonctions. La plupart de ceux qui font réf�
 <p>Les fonctionnalités utilisables dans R, sont en perpétuelle évolution et permettent d’intégrer les méthodes les plus récentes dans des domaines qui évoluent rapidement : modélisation, analyse spatiale, dataviz,…</p>
 <p>Le groupe des référents propose un pack d’installation comprenant R, RStudio et un ensemble de packages en phase avec le parcours de formation. Vous pouvez le <a href="http://pne.metier.e2.rie.gouv.fr/suite-logicielle-r-r974.html">télécharger ici</a> en deux fichiers compressés (nécessite un accès intranet MTES-MCT).</p>
 </div>
-<div id="des-exemples-de-ce-quon-peut-faire-avec-r" class="section level2">
+<div id="des-exemples-de-ce-quon-peut-faire-avec-r" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> Des exemples de ce qu’on peut faire avec R :</h2>
 <ul>
 <li>Le support de cette formation</li>
