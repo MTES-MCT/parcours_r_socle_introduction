@@ -9,8 +9,8 @@ setwd ("C:/Users/pirz/GitHub/parcours-r/m1_socle_book/Presentation RStudio")
 # Liste les fichiers du répertoire de travail
 dir ()
 
-# Activation du package "tidyverse"
-library (tidyverse)
+# Activation du package "dplyr"
+library (dplyr)
 
 # Import d'un CSV
 rp_2012 <- read.table (file = "rp_2012.csv", header = T, sep = ";", dec = ",")

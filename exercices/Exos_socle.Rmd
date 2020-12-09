@@ -23,7 +23,8 @@ A tout moment, vous pouvez donc copier / coller le code dans l'éditeur de scrip
 Ces exercices nécessitent les packages de base et le package `tidyverse`, qui regroupe un ensemble de packages à la syntaxe très simple.
 
 ```{r}
-require(tidyverse)       # ou library(tidyverse)
+library(dplyr)
+library(ggplot2)
 ```
 
 
