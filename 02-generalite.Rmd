@@ -57,24 +57,18 @@ Computational and Graphical Statistics*, 5(3), 299–314](https://www.stat.auckl
 
 ## Un logiciel libre
 
-- Disponible en libre téléchargement sur [le site officiel du CRAN](https://cran.r-project.org)
+- Disponible en libre téléchargement sur [le site officiel du CRAN = Comprehensive R Archive Network](https://cran.r-project.org)
+C'est le site de référence pour R. Il contient non seulement les installeurs du logiciel mais également de nombreuses ressources : documentations, FAQ, tutoriels...
 - Installable sur la plupart des systèmes d'exploitation
 - Utilisé en recherche, en enseignement et en entreprise
 - Une communauté très active :
     - Forum des [utilisateurs de R en français](http://forums.cirad.fr/logiciel-R/)
     - Communauté française des utilisateurs de R (avec des packages spécifiques, qui permettent de gérer les changements de géographie communale par exemple) : [Frrrenchies](https://github.com/frrrenchies/frrrenchies)
     - Slack de ces utilisateurs (pour les questions/réponses, actualités...) [Slack](https://r-grrr.slack.com/)
-    - Forum des utilisateurs de R en français : http://forums.cirad.fr/logiciel-R/
     - R-bloggers : https://www.r-bloggers.com/
     - Stackoverflow : https://stackoverflow.com/questions/tagged/r
-
-
   
 C'est un logiciel libre : les utilisateurs ont la liberté d'exécuter, copier, distribuer, étudier, modifier et améliorer ce logiciel. R fait partie de la "galaxie" GNU (GNU's Not Unix). R est donc libre, gratuit et multiplateforme.
-
-[Le site CRAN = Comprehensive R Archive Network](https://cran.r-project.org) est le site de référence pour R. Il contient non seulement les installeurs du logiciel mais également de nombreuses ressources : documentations, FAQ, tutoriels... 
-
-
     
 ## Que peut-on faire avec R ?
 

@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Mon premier jeu de données
 
 ## Les types de valeurs dans R
@@ -8,11 +13,54 @@ Une valeur constitue l'unité de base des données pour R. Comme pour la plupart
 - **Caractère** : texte ou code
 - **Logique** : booléens
 
-Ces valeurs sont ensuites structurées au sein de vecteurs qui sont compilés dans des *dataframes*.
+*En anglais : numeric, character et logical !*
+
+Les formats de dates sont de type character.
+
+## Les vecteurs
+
+Les valeurs peuvent être structurées au sein de vecteurs. Ces vecteurs peuvent être vus comme des colonnes de valeurs toutes du même type.
+
+Différentes fonctions permettent de créer des vecteurs.
+
+```{r}
+vect_num <- c(1,160,2,9)
+vect_txt <- c("Je","programme","en","R")
+
+sequence <- seq(from = 1, to = 10, by = 1)
+
+repetition <- rep("bla", 3)
+
+```
+
+## Les dataframes
+
+Plusieurs vecteurs de types différents possédant un même nombre de lignes peuvent être accolés pour former une **dataframe**.
+Les dataframes sont les objets les plus courants dans le traitement de données usuel.
+Il s'agit de tableaux dont les lignes correspondent à des observations et les colonnes à des variables.
+
+Ces dataframes peuvent être créées par association des vecteurs avec les fonctions :
+```{r}
+dataframe_a <- data.frame(vect_num, vect_txt)
+
+dataframe_b <- bind_cols(vect_num, vect_txt)
+```
+
+Une dataframe peut aussi être créée par l'import d'un tableau, voir le chapitre dédié.
 
 
+Il est possible d'accéder aux éléments d’une dataframe à partir du numéro de ligne et de colonne, grâce aux crochets :
 
-## Avant de manipuler le *dataframe* : installer et charger un *package*
+<center>![](images/DF2.png)</center>
+
+- `base[1,3]` $\rightarrow$ <span style="color:red">valeur de la première ligne et de la troisième colonne </span>
+- `base[2,]` $\rightarrow$ <span style="color:blue">toutes les variables pour la 2e observation</span>
+- `base[,4]` $\rightarrow$ <span style="color:green">toutes les observations de la quatrième colonne  </span>
+- `base[,’V6’]` $\rightarrow$ <span style="color:cyan">toutes les observations de la variable V6</span>
+- $\Rightarrow$ Utile pour sélectionner une partie d'une table : `base[1:4, c(3, 6)]`
+
+
+## Installer et charger un *package*
 Pour manipuler notre base de données, nous allons nous servir de fonctionnalités présentes dans le package `tidyverse`. 
 
 La première fois que l'on veut utiliser un package, il faut le télécharger sur notre ordinateur, avec `install.packages()` :
@@ -20,11 +68,47 @@ La première fois que l'on veut utiliser un package, il faut le télécharger su
 install.packages("tidyverse")
 ```
 
-Puis à l'ouverture d'une session R, le charger (si on a besoin de ses fonctions), avec `library()` :
+
+Puis à l'ouverture d'une nouvelle session R, le charger (si on a besoin de ses fonctions), avec `library()` :
 ```{r}
 library("tidyverse")
 ```
 Le package est prêt à être utilisé !
+
+
+Pour appliquer une fonction à un objet, la syntaxe est :
+
+```{r}
+nom_de_la_fonction(objet, attribut1, attribut2, ...)
+```
+
+Pour stocker le résultat de cette fonction dans une variable :
+```{r}
+ma_variable <- nom_de_la_fonction(objet, attribut1, attribut2, ...)
+```
+
+
+Une erreur fréquente est :
+`Error in nom_de_le_fonction() : impossible de trouver la fonction "nom_de_la_fonction"`
+
+Cela signifie que le package auquel appartient la fonction n'est pas chargé, voire pas installé.
+
+## Les fonctions et les valeurs particulières
+- NA : valeur manquante (*Not Available*) dans une dataframe ou en résultat d'une fonction
+- NaN : pas un nombre (*Not a Number*) lorsqu'une fonction tente de diviser par 0
+- -Inf, Inf : inﬁni positif ou négatif lorsque une fonction diverge
+
+Une valeur manquante peut perturber l'éxecution d'une fonction :
+```{r}
+V1 <- c(1, 14, NA, 32.7)
+mean(V1)              # renvoie NA. Not good !
+mean(V1, na.rm = T)   # renvoie 15.9   - OK !
+```
+
+Les noms de ces valeurs particulières sont "réservés" par R, ils ne peuvent pas être utilisés comme nom de variable.
+C'est également le cas des booléens (`TRUE`, `FALSE`, `T` et `F`)
+
+$\Rightarrow$ Le [module 2 "Préparation des données"](https://mtes-mct.github.io/parcours_r_socle_preparation_des_donnees/) aborde la gestion de ces valeurs particulières.
 
 ## Importation de données 
 
@@ -32,7 +116,9 @@ Conseil : exporter les données au format CSV ; c'est le format le plus interop�
 
 ```{r lecturecsv}
 base <- read.csv (file = "data/Base_synth_territoires.csv",
-                 header = T, sep = ";", dec = ",")
+                 header = T,
+                 sep = ";",
+                 dec = ",")
 ```
 
 - `header =`indique la présence des noms de variable sur la première ligne
@@ -50,21 +136,9 @@ Autres façons d'importer les données
 - **Le passage par un fichier csv est très recommandé**
 
 
-
-## Structure des données : le *dataframe*
-
-<center>![](images/DF1.png)</center>
-
-- n lignes (observations)
-- p colonnes (variables)
-```{r dimdf}
-nrow (base)
-ncol (base)
-dim (base)
-```
-
 ## Gérer le type des variables
-À chaque type de variable (numéric, factor,…) correspond une utilisation. Lors de l’import des données, un type est affecté automatiquement par R.
+Chaque variable est du type de son contenu (numeric, character, logical). Si les valeurs prises par la variables correspondent à un nombre fini de modalités, la variable peut être du type "factor". Ses composantes sont toujours d'un des 3 types décrits ci-dessus mais il est possible d'employer des fonctions spécifiques au traitement de modalités.
+À chaque type de variable correspond une utilisation. Lors de l’import des données, un type est affecté automatiquement par R.
 Mais le type peut être erronné. Il suffit alors de les convertir :
 
 ```{r converttype}
@@ -75,55 +149,36 @@ ou `as.factor()`, `as.numeric()`, etc...
 
 Pour être sûr de ne pas faire de bêtise, il vaut mieux gérer les types au moment de l'importation avec le paramètre `colClasses` $\rightarrow$ exercice !
 
-## Les valeurs particulières
-- NA : Valeur manquante (*Not Available*)
-- NaN : Pas un nombre (*Not a Number*, e.g., 0/0)
-- -Inf, Inf : Inﬁni positif ou négatif, e.g. 1/0
 
-```{r}
-V1 <- c(1, 14, NA, 32.7)
-mean(V1)              # renvoie NA. Not good !
-mean(V1, na.rm = T)   # renvoie 15.9   - OK !
+## Structure des données : le *dataframe*
+
+<center>![](images/DF1.png)</center>
+
+- n lignes (observations)
+- p colonnes (variables)
+
+Les fonctions suivantes permettent de connaître la structure de la dataframe, d'en connaître les variables, d'en observer certaines lignes ou d'en vérifier le type.
+
+```{r dimdf}
+nrow (base) # nombre de lignes
+ncol (base) # nombre de colonnes
+dim (base) # nombre de lignes et de colonnes
+names(base) # noms des variables
+str(base) # nom, type et extrait des variables
+head(base) # 6 premières lignes
+tail(base) # 6 dernières lignes
+class(base) # la classe de l'objet (du point de vue langage orienté objet)
+typeof(base) # le type d'objet du point de vue "interne" à R
+
 ```
 
-$\Rightarrow$ Le [module 2 "Préparation des données"](https://mtes-mct.github.io/parcours-r/m2/index.html) aborde la gestion de ces valeurs particulières.
 
+## Exercice : importer des données et premier coup d'oeil
 
-## Exercice : Importer les données et premier coup d'oeil
-
-On peut importer n'importe quel format de données en R (Excel, SAT, Stata, SQL...). Beaucoup sont abordés lors du [module 2 "Préparation des données"](https://mtes-mct.github.io/parcours-r/m2/index.html). Pour ce module, nous ne voyons que l'importation de fichier `.CSV`. Si vous avez une base de données en Excel ou LibreOffice Calc, sauvegardez l'onglet que vous souhaitez en faisant "enregistrer sous" $\rightarrow$ "délimité CSV". 
+On peut importer n'importe quel format de données en R (Excel, SAT, Stata, SQL...). Beaucoup sont abordés lors du [module 2 "Préparation des données"](https://mtes-mct.github.io/parcours_r_socle_preparation_des_donnees/). Pour ce module, nous ne voyons que l'importation de fichier `.CSV`. Si vous avez une base de données en Excel ou LibreOffice Calc, sauvegardez l'onglet que vous souhaitez en faisant "enregistrer sous" $\rightarrow$ "délimité CSV". 
 
 Ici, nous travaillerons sur une base de données communales fournie par l'Insee, dite "comparateur de territoires". Le fichier source (Excel) figure dans le sous-répertoire "data" et contient toutes les métadonnées.
 
 
 - Utiliser la fonction `read.csv()` pour importer ce fichier et stocker le dans un objet `df`. **Veillez à ce que la région soit bien importée comme un facteur et non un entier**. 
-- Inspecter le dataframe avec les fonctions vues auparavant
-
-
-```{r inspectdf}
-df <- read.csv(file = "data/Base_synth_territoires.csv",
-               sep = ";", dec = ",",
-               colClasses = c(NA, "NULL", "character", "NULL","NULL","NULL",
-                              NA, NA, NA, NA, rep("NULL", 28)))
-
-str(df)
-```
-
-On peut également gérer les problèmes d'encodage de caractères (si on passe de Windows à un système Unix, par exemple).
-
-```{r}
-head(df)
-tail(df)
-
-names(df)
-class(df) # la classe de l'objet (du point de vue langage orienté objet)
-typeof(df) # le type d'objet du point de vue "interne" à R
-
-# Accéder a une variable directement (on obtient un vecteur), grâce à $ :
-df$CODGEO[1:10] # Captain crochet poweeeeerr !!!
-class(df$CODGEO)
-typeof(df$CODGEO)
-length(df)
-length(df$REG)
-```
-
+- Inspecter le dataframe avec les fonctions vues auparavant pour connaître le nombre de lignes, de colonnes, 

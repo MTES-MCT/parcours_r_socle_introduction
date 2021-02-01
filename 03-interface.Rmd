@@ -13,10 +13,6 @@ Ce chapitre permet de découvrir l'interface de travail RStudio et les principal
 
 L’interface RStudio est composée de différents panneaux, dont l’arrangement peut être reconfiguré, incluant une console, un navigateur de fichiers et graphiques, l’espace de travail et l’historique des commandes. D'autres environnements graphiques existent, Rstudio semble le plus approprié à nos métiers
 
-Lancer le script exemple
-
-**Démonstration** : "./Presentation RStudio"
-
 ## Session et répertoire de travail
 
 - Session de travail R : commence à l'ouverture de RStudio et se termine en le quittant
@@ -40,9 +36,11 @@ Concernant le répertoire de travail, quelques conseils :
 - Créer des sous-répertoires dans ce répertoire : "./Data", "./Figures", "./Redaction"... 
 - Rassembler autant que possible les fichiers qui seront utilisés dans le cadre de ce projet et éviter d'aller chercher des fichiers ailleurs
 
-## Exercice
+## C'est à vous : créer son répertoire de travail
 
-- Sur le poste de travail, créer un dossier devant servir de dossier de travail au cours de la formation.
+- Sur le poste de travail, créer un dossier devant servir de dossier de travail au cours de la formation
+
+- Copier/coller dans ce dossier le sous-dossier "data" fourni par les formateurs
 
 - Dans Rstudio, définir ce dossier comme répertoire de travail directement en utilisant `setwd('')`
 
@@ -87,8 +85,9 @@ Nouvelles fonctions                               |Attention pour le nommage des
 `rm()` pour supprimer une variable                |Pas d'espaces ni tirets (-) ; préférer (_)
 
 Adopter des règles de nommage cohérentes, par exemples [celles-ci](http://adv-r.had.co.nz/Style.html).
+ATTENTION : un nom de variable ne peux pas commencer par un chiffre et certains noms sont interdits (voir 4.6)
 
-## Exercice
+## C'est à vous : créer et manipuler des variables
 
 - Créer plusieurs variables numériques par assignation `a <- 5`, `b <- 4`
 - Regarder l'onglet Environnement
@@ -124,7 +123,7 @@ Actions plus complexes, longues, nécessitant une maintenance, des modifications
 
 Toujours utiliser des commentaires. Permet de pouvoir mieux comprendre ce que l'on a fait lorsqu'on reprend un programme plus tard ou lorsqu'on le donne à quelqu'un.
 
-## Exercice : utiliser un script
+## C'est à vous : utiliser un script
 
 - Recopier le script ci-dessous et changer les paramètres pour le re-exécuter plusieurs fois
 - Sauvegarder ce script dans votre répertoire de travail
