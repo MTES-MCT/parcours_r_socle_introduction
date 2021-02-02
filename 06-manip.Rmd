@@ -92,8 +92,6 @@ TableEnSortie <- filter(TableEnSortie, x==a | y==b)    #  x vaut a **OU** y vaut
 ```
 
 
-
-
 ## Renommer des colonnes
 
 La fonction `rename()` permet de renommer une variable (ou plusieurs).
@@ -107,7 +105,7 @@ Exemple
 base_rename <- rename(base, ZONE_EMPLOI = ZE)
 ```
 
-## Exercice : Créer, filtrer, sélectionner 
+## Exercice : créer, filtrer, sélectionner 
 
 - En utilisant la fonction `mutate()`, créer une nouvelle variable correspondant à la densité de population (rapport de la population à la superficie de la commune), ainsi que les taux de natalité et de mortalité (en pour mille)
 
@@ -117,40 +115,30 @@ base_rename <- rename(base, ZONE_EMPLOI = ZE)
 
 - Avec les opérateurs logiques, faire des essais pour sélectionner des échantillons différents.
 
+
+## Nom d'un pipe `%>%` !
+
+Pour enchaîner des opérations, on peut créer des variables successives :
 ```{r}
-df <- mutate(base, densite = P14_POP / SUPERF,
-             tx_natal = 1000 * NAISD15 / P14_POP,
-             tx_mort = DECESD15 / P14_POP)
+selection <- select(df, CODGEO, ZAU, REG, DEP, densite, tx_natal)
+filtre_62 <- filter(selection, DEP == "62")
 ```
+Cela peut être relativement clair si on respecte de bonnes pratiques de nommage mais encombre inutilement l'environnement de travail.
 
-
-
+On peut emboîter les fonctions :
 ```{r}
-selection <- select(df, CODGEO, ZAU, REG, DEP,
-                    densite, tx_natal, tx_mort)
+selection_62 <- filter(select(df, CODGEO, ZAU, REG, DEP, densite, tx_natal), DEP == "62")
 ```
+Ce choix préserve l'environnement de travail mais la lecture est particulièrement confuse et le risque d'oubli de parenthèses important.
 
-
-```{r}
-S0 <- filter(selection, DEP == "62")
-```
-
+Il y a enfin une solution du package `magrittr` faisant partie du `tidyverse`.
+On peut combiner les opérations en une seule ligne à l'aide de l'opérateur pipe `%>%` :
 
 ```{r}
-S1 <- filter(selection, DEP != "62") # tout sauf le 62 :(
-S2 <- filter(selection, DEP %in% c("59", "62")) # L'ancien NPdC :)
-S3 <- filter(selection, !(DEP %in% c("59", "62"))) # Le "sud" de la France
-S4 <- filter(selection, densite > 100) # l'urbain
-S5 <- filter(selection, DEP == "62" & densite > 100) # le PdC urbain
-S6 <- filter(selection, DEP == "62" | densite > 100) # le PdC et l'urbain
-```
-
-**Nom d'un pipe `%>%` !**
-
-On peut combiner les opérations en une seule ligne à l'aide du pipe `%>%` :
-
-```{r}
-selection_62 <- select(df, CODGEO, ZAU, REG, DEP, densite, tx_natal) %>%
+selection_62 <- df %>%
+  select(CODGEO, ZAU, REG, DEP, densite, tx_natal) %>%
   filter(DEP == "62")
 ```
+Cette écriture permet d'enchaîner les opérations telles qu'on les décrirait à l'oral.
+L'objet auquel s'applique chaque nouvelle opération est le résultat de l'opération précédente.
 
