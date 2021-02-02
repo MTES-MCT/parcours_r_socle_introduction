@@ -1,8 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
 # Mon premier jeu de données
 
 ## Les types de valeurs dans R
@@ -78,12 +73,12 @@ Le package est prêt à être utilisé !
 
 Pour appliquer une fonction à un objet, la syntaxe est :
 
-```{r}
+```{r, eval = FALSE}
 nom_de_la_fonction(objet, attribut1, attribut2, ...)
 ```
 
 Pour stocker le résultat de cette fonction dans une variable :
-```{r}
+```{r, eval = FALSE}
 ma_variable <- nom_de_la_fonction(objet, attribut1, attribut2, ...)
 ```
 
