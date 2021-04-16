@@ -86,7 +86,13 @@ print(t)
 La fonction `prop.table()` prend en entrée un objet `table` (tableau de contingence avec les effectifs) et calcule les pourcentages (total, ligne, colonne) associés $\rightarrow$ `?prop.table`
 
 ```{r stat_9}
+# Calcule la fréquence en % (la somme de tous les pourcentages vaut 100)
 (prop.table(t) * 100) %>% round(digits = 1)
+```
+
+```{r stat_9b}
+# Calcule la fréquence en % par région (la somme de tous les pourcentages d'une colonne vaut 100)
+(prop.table(t,"REG") * 100) %>% round(digits = 1)
 ```
 
 ## Exercice : calcul de statistiques 
