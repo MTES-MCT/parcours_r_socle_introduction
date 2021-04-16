@@ -78,13 +78,13 @@ base_filter <- filter(base, DEP == "01" & P14_POP > 10000)
 
 ## Les tests logiques dans R
 
-Syntaxe           | Action
-------------------|----------------------------------------
-==                |  Test d'égalité
-!=                |  Différent de
-%in%  c(...)      |  Dans une liste de valeurs 
-$>, >=$   $<, <=$ |  Supérieur (ou inférieur) (ou égal)
-! (x %in% c(...)) |  N'est pas dans une liste de valeurs 
+Syntaxe             | Action
+--------------------|----------------------------------------
+`==`                |  Test d'égalité
+`!=`                |  Différent de
+`%in%  c(...)`      |  Dans une liste de valeurs 
+`>, >= ,  <, <=`    |  Supérieur (ou inférieur) (ou égal)
+`! (x %in% c(...))` |  N'est pas dans une liste de valeurs 
 
 ```{r, eval=FALSE}
 TableEnSortie <- filter(TableEnSortie, x==a & y==b)    #  x vaut a **ET** y vaut b
