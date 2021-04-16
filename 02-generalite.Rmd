@@ -46,7 +46,7 @@ labelLayer (map, txt = "ref")
 - Au milieu des années 90, mélange de S et du langage Lisp pour le dédier à l'analyse de données et aux graphiques $\rightarrow$ création de R. [Ihaka R, Gentleman R (1996) R: A Language for Data Analysis and Graphics. *Journal of
 Computational and Graphical Statistics*, 5(3), 299–314](https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf)
 
-- S'est d'abord développé dans le monde académique, puis a essaimé vers d'autres domaines professionnels, voire associatifs
+- S est d'abord développé dans le monde académique, puis a essaimé vers d'autres domaines professionnels, voire associatifs
 
 - Système toujours d’actualité - Mise à jour tous les 6 mois
 
@@ -106,7 +106,7 @@ Cela permet d'étendre à l'infini les possibilités de R : celles-ci sont seule
 
 De même que les packages sont dépendants de fonctions du module principal `base`, certains packages peuvent être dépendants de fonctionnalités d'autres packages $\rightarrow$ notion d'arbre des dépendances (géré par R de façon transparente).
 
-Sructure modulaire $\rightarrow$ il existe de multiple façons d'effectuer une même tâche. Il suffit d'une méthode maîtrisée pour aller au résultat.
+Structure modulaire $\rightarrow$ il existe de multiples façons d'effectuer une même tâche. Il suffit d'une méthode maîtrisée pour aller au résultat.
 
 Les fonctionnalités utilisables dans R, sont en perpétuelle évolution et permettent d'intégrer les méthodes les plus récentes dans des domaines qui évoluent rapidement : modélisation, analyse spatiale, dataviz,...
 
