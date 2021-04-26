@@ -24,7 +24,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-04-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -415,7 +415,8 @@ La fonction <code>quantile()</code> renvoie les quartiles de la variables (ou bi
 <div id="tableau-de-proportions" class="section level2" number="7.5">
 <h2><span class="header-section-number">7.5</span> Tableau de proportions</h2>
 <p>La fonction <code>prop.table()</code> prend en entrée un objet <code>table</code> (tableau de contingence avec les effectifs) et calcule les pourcentages (total, ligne, colonne) associés <span class="math inline">\(\rightarrow\)</span> <code>?prop.table</code></p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="premiers-traitements-statistiques.html#cb73-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">prop.table</span>(t) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="premiers-traitements-statistiques.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcule la fréquence en % (la somme de tous les pourcentages vaut 100)</span></span>
+<span id="cb73-2"><a href="premiers-traitements-statistiques.html#cb73-2" aria-hidden="true" tabindex="-1"></a>(<span class="fu">prop.table</span>(t) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>##                                                      REG
 ## ZAU                                                     1   2   3   4  11  24
 ##   111 - Grand p\xf4le (plus de 10 000 emplois)        0.0 0.0 0.0 0.0 1.1 0.3
@@ -449,6 +450,52 @@ La fonction <code>quantile()</code> renvoie les quartiles de la variables (ou bi
 ##   222 - Couronne d&#39;un petit p\xf4le                   0.2 0.2 0.1 0.0 0.1
 ##   300 - Autre commune multipolaris\xe9e               2.7 2.4 1.4 0.3 0.1
 ##   400 - Commune isol\xe9e hors influence des p\xf4les 3.8 4.2 2.6 0.7 0.4</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="premiers-traitements-statistiques.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcule la fréquence en % par région (la somme de tous les pourcentages d&#39;une colonne vaut 100)</span></span>
+<span id="cb75-2"><a href="premiers-traitements-statistiques.html#cb75-2" aria-hidden="true" tabindex="-1"></a>(<span class="fu">prop.table</span>(t,<span class="st">&quot;REG&quot;</span>) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##                                                      REG
+## ZAU                                                      1    2    3    4   11
+##   111 - Grand p\xf4le (plus de 10 000 emplois)        53.1 47.1 13.6 41.7 32.2
+##   112 - Couronne d&#39;un grand p\xf4le                   18.8  0.0 13.6 12.5 66.6
+##   120 - Multipolaris\xe9e des grandes aires urbaines   3.1 11.8  0.0 16.7  0.2
+##   211 - Moyen p\xf4le (5 000 \xe0 10 000 emplois)      0.0  8.8  9.1  8.3  0.2
+##   212 - Couronne d&#39;un moyen p\xf4le                    0.0  0.0  0.0  0.0  0.2
+##   221 - Petit p\xf4le (de 1 500 \xe0 5 000 emplois)    9.4  5.9  4.5  0.0  0.0
+##   222 - Couronne d&#39;un petit p\xf4le                    0.0  0.0  0.0  0.0  0.0
+##   300 - Autre commune multipolaris\xe9e                6.2 11.8  0.0  4.2  0.5
+##   400 - Commune isol\xe9e hors influence des p\xf4les  9.4 14.7 59.1 16.7  0.0
+##                                                      REG
+## ZAU                                                     24   27   28   32   44
+##   111 - Grand p\xf4le (plus de 10 000 emplois)         5.6  3.7  6.7 12.5  6.2
+##   112 - Couronne d&#39;un grand p\xf4le                   39.8 33.9 34.8 39.2 33.1
+##   120 - Multipolaris\xe9e des grandes aires urbaines  10.2  8.8 15.1 19.0 15.8
+##   211 - Moyen p\xf4le (5 000 \xe0 10 000 emplois)      1.6  0.8  1.1  0.9  1.0
+##   212 - Couronne d&#39;un moyen p\xf4le                    3.9  3.2  3.2  0.5  2.0
+##   221 - Petit p\xf4le (de 1 500 \xe0 5 000 emplois)    2.5  1.6  2.4  1.4  1.7
+##   222 - Couronne d&#39;un petit p\xf4le                    1.0  3.6  0.9  0.5  2.3
+##   300 - Autre commune multipolaris\xe9e               20.4 19.2 23.6 18.5 22.2
+##   400 - Commune isol\xe9e hors influence des p\xf4les 14.9 25.3 12.2  7.5 15.7
+##                                                      REG
+## ZAU                                                     52   53   75   76   84
+##   111 - Grand p\xf4le (plus de 10 000 emplois)         7.2  7.0  7.4  5.7 13.1
+##   112 - Couronne d&#39;un grand p\xf4le                   35.6 32.7 25.8 24.6 35.4
+##   120 - Multipolaris\xe9e des grandes aires urbaines  12.4 12.0  5.6  7.3  9.3
+##   211 - Moyen p\xf4le (5 000 \xe0 10 000 emplois)      1.5  3.7  1.1  1.7  1.0
+##   212 - Couronne d&#39;un moyen p\xf4le                    2.9  1.4  1.8  3.4  2.0
+##   221 - Petit p\xf4le (de 1 500 \xe0 5 000 emplois)    4.6  3.3  3.6  2.7  2.7
+##   222 - Couronne d&#39;un petit p\xf4le                    0.5  0.1  1.8  1.9  1.1
+##   300 - Autre commune multipolaris\xe9e               25.7 25.6 22.2 19.2 12.3
+##   400 - Commune isol\xe9e hors influence des p\xf4les  9.5 14.3 30.6 33.5 23.0
+##                                                      REG
+## ZAU                                                     93   94
+##   111 - Grand p\xf4le (plus de 10 000 emplois)        22.8  2.2
+##   112 - Couronne d&#39;un grand p\xf4le                   23.8 27.5
+##   120 - Multipolaris\xe9e des grandes aires urbaines   7.2  0.8
+##   211 - Moyen p\xf4le (5 000 \xe0 10 000 emplois)      2.1  0.3
+##   212 - Couronne d&#39;un moyen p\xf4le                    1.1  0.6
+##   221 - Petit p\xf4le (de 1 500 \xe0 5 000 emplois)    3.3  3.6
+##   222 - Couronne d&#39;un petit p\xf4le                    0.6  8.1
+##   300 - Autre commune multipolaris\xe9e               11.1 14.7
+##   400 - Commune isol\xe9e hors influence des p\xf4les 27.9 42.2</code></pre>
 </div>
 <div id="exercice-calcul-de-statistiques" class="section level2" number="7.6">
 <h2><span class="header-section-number">7.6</span> Exercice : calcul de statistiques</h2>

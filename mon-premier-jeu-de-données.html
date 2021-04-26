@@ -24,7 +24,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-04-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -362,9 +362,9 @@ C’est également le cas des booléens (<code>TRUE</code>, <code>FALSE</code>, 
 <span id="cb15-4"><a href="mon-premier-jeu-de-données.html#cb15-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">dec =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
 <ul>
 <li><code>header =</code>indique la présence des noms de variable sur la première ligne</li>
-<li><code>sep =</code> indique le séparateur de champ : ‘;’ ‘/t’ pour tabulation.</li>
+<li><code>sep =</code> indique le séparateur de champ : ‘;’ ‘/t’ pour tabulation</li>
 <li><code>dec =</code> indique le séparateur de décimale (‘.’ par défaut)</li>
-<li><code>colClasses =</code>permet de préciser le type de la données en entrée</li>
+<li><code>colClasses =</code>permet de préciser le type de chaque colonne de la donnée en entrée</li>
 </ul>
 <p><span class="math inline">\(\Rightarrow\)</span> <code>?read.csv</code> pour plus d’options</p>
 <p>Autres façons d’importer les données</p>
@@ -561,8 +561,8 @@ Mais le type peut être erronné. Il suffit alors de les convertir :</p>
 <p>On peut importer n’importe quel format de données en R (Excel, SAT, Stata, SQL…). Beaucoup sont abordés lors du <a href="https://mtes-mct.github.io/parcours_r_socle_preparation_des_donnees/">module 2 “Préparation des données”</a>. Pour ce module, nous ne voyons que l’importation de fichier <code>.CSV</code>. Si vous avez une base de données en Excel ou LibreOffice Calc, sauvegardez l’onglet que vous souhaitez en faisant “enregistrer sous” <span class="math inline">\(\rightarrow\)</span> “délimité CSV.”</p>
 <p>Ici, nous travaillerons sur une base de données communales fournie par l’Insee, dite “comparateur de territoires.” Le fichier source (Excel) figure dans le sous-répertoire “data” et contient toutes les métadonnées.</p>
 <ul>
-<li>Utiliser la fonction <code>read.csv()</code> pour importer ce fichier et stocker le dans un objet <code>df</code>. <strong>Veillez à ce que la région soit bien importée comme un facteur et non un entier</strong>.</li>
-<li>Inspecter le dataframe avec les fonctions vues auparavant pour connaître le nombre de lignes, de colonnes,</li>
+<li>Utiliser la fonction <code>read.csv()</code> pour importer ce fichier et stocker le dans un objet <code>df</code>. <strong>Veillez à ce que la région soit bien importée comme un facteur et non un entier</strong></li>
+<li>Inspecter le dataframe avec les fonctions vues auparavant pour connaître le nombre de lignes, de colonnes, …</li>
 </ul>
 
 </div>

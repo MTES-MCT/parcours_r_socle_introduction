@@ -24,7 +24,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2021-02-03" />
+<meta name="date" content="2021-04-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -307,43 +307,43 @@ Les arrays peuvent être très puissants pour gérer des millésimes.</li>
 <div id="créer-une-nouvelle-fonction-en-r" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> Créer une nouvelle fonction en R</h2>
 <p>La fonction est un objet comme les autres, qu’on crée avec l’opérateur d’affectation. Elle est définie par des paramètres et elle se termine par la fonction <code>return()</code>. On reprend l’exemple du calcul de l’IMC</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb86-1" aria-hidden="true" tabindex="-1"></a>calcul_IMC <span class="ot">&lt;-</span> <span class="cf">function</span> (poids, taille)</span>
-<span id="cb86-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb86-2" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb86-3"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb86-3" aria-hidden="true" tabindex="-1"></a>  <span class="do">## La taille est exprimée en mètres</span></span>
-<span id="cb86-4"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb86-4" aria-hidden="true" tabindex="-1"></a>  imc <span class="ot">&lt;-</span> poids <span class="sc">/</span> taille <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb86-5"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb86-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (imc)</span>
-<span id="cb86-6"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb86-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb86-7"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb86-7" aria-hidden="true" tabindex="-1"></a><span class="fu">calcul_IMC</span> (<span class="at">poids =</span> <span class="dv">80</span>, <span class="at">taille =</span> <span class="fl">1.89</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb88-1" aria-hidden="true" tabindex="-1"></a>calcul_IMC <span class="ot">&lt;-</span> <span class="cf">function</span> (poids, taille)</span>
+<span id="cb88-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb88-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb88-3"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb88-3" aria-hidden="true" tabindex="-1"></a>  <span class="do">## La taille est exprimée en mètres</span></span>
+<span id="cb88-4"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb88-4" aria-hidden="true" tabindex="-1"></a>  imc <span class="ot">&lt;-</span> poids <span class="sc">/</span> taille <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb88-5"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (imc)</span>
+<span id="cb88-6"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb88-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb88-7"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb88-7" aria-hidden="true" tabindex="-1"></a><span class="fu">calcul_IMC</span> (<span class="at">poids =</span> <span class="dv">80</span>, <span class="at">taille =</span> <span class="fl">1.89</span>)</span></code></pre></div>
 <pre><code>## [1] 22.39579</code></pre>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcul_IMC</span> (<span class="at">poids =</span> <span class="dv">60</span>, <span class="at">taille =</span> <span class="fl">1.55</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcul_IMC</span> (<span class="at">poids =</span> <span class="dv">60</span>, <span class="at">taille =</span> <span class="fl">1.55</span>)</span></code></pre></div>
 <pre><code>## [1] 24.97399</code></pre>
 </div>
 <div id="les-boucles-conditionnelles" class="section level2" number="10.3">
 <h2><span class="header-section-number">10.3</span> Les boucles conditionnelles</h2>
 <p>Les commandes <code>if</code> et <code>else</code> sont bien entendues utilisables. Le “then” n’existe pas : il est implicite après les accolades.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-1" aria-hidden="true" tabindex="-1"></a>diag_IMC <span class="ot">&lt;-</span> <span class="cf">function</span>(poids,taille)</span>
-<span id="cb90-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-2" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb90-3"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-3" aria-hidden="true" tabindex="-1"></a>  imc <span class="ot">&lt;-</span> poids <span class="sc">/</span> taille <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb90-4"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (imc <span class="sc">&lt;</span> <span class="fl">18.5</span>) {diag <span class="ot">&lt;-</span> <span class="st">&quot;maigre&quot;</span>}</span>
-<span id="cb90-5"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (imc <span class="sc">&lt;</span> <span class="dv">25</span>) {diag <span class="ot">&lt;-</span> <span class="st">&quot;normal&quot;</span>}</span>
-<span id="cb90-6"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-6" aria-hidden="true" tabindex="-1"></a>       <span class="cf">else</span> {diag <span class="ot">&lt;-</span> <span class="st">&quot;surpoids&quot;</span>}</span>
-<span id="cb90-7"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (diag)</span>
-<span id="cb90-8"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb90-9"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-9" aria-hidden="true" tabindex="-1"></a><span class="fu">diag_IMC</span> (<span class="at">poids=</span><span class="dv">60</span>,<span class="at">taille=</span><span class="fl">1.89</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-1" aria-hidden="true" tabindex="-1"></a>diag_IMC <span class="ot">&lt;-</span> <span class="cf">function</span>(poids,taille)</span>
+<span id="cb92-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb92-3"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-3" aria-hidden="true" tabindex="-1"></a>  imc <span class="ot">&lt;-</span> poids <span class="sc">/</span> taille <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb92-4"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (imc <span class="sc">&lt;</span> <span class="fl">18.5</span>) {diag <span class="ot">&lt;-</span> <span class="st">&quot;maigre&quot;</span>}</span>
+<span id="cb92-5"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (imc <span class="sc">&lt;</span> <span class="dv">25</span>) {diag <span class="ot">&lt;-</span> <span class="st">&quot;normal&quot;</span>}</span>
+<span id="cb92-6"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-6" aria-hidden="true" tabindex="-1"></a>       <span class="cf">else</span> {diag <span class="ot">&lt;-</span> <span class="st">&quot;surpoids&quot;</span>}</span>
+<span id="cb92-7"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (diag)</span>
+<span id="cb92-8"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb92-9"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-9" aria-hidden="true" tabindex="-1"></a><span class="fu">diag_IMC</span> (<span class="at">poids=</span><span class="dv">60</span>,<span class="at">taille=</span><span class="fl">1.89</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;maigre&quot;</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag_IMC</span> (<span class="at">poids=</span><span class="dv">80</span>,<span class="at">taille=</span><span class="fl">1.89</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag_IMC</span> (<span class="at">poids=</span><span class="dv">80</span>,<span class="at">taille=</span><span class="fl">1.89</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;normal&quot;</code></pre>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag_IMC</span> (<span class="at">poids=</span><span class="dv">80</span>,<span class="at">taille=</span><span class="fl">1.55</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag_IMC</span> (<span class="at">poids=</span><span class="dv">80</span>,<span class="at">taille=</span><span class="fl">1.55</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;surpoids&quot;</code></pre>
 </div>
 <div id="les-boucles" class="section level2" number="10.4">
 <h2><span class="header-section-number">10.4</span> Les boucles</h2>
 <p>On peut utiliser les boucles classiques : <code>repeat</code>, <code>while</code>, <code>for</code> :</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (pp <span class="cf">in</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">50</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))</span>
-<span id="cb96-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb96-2" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb96-3"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;Taille = 1,70m, poids =&quot;</span>, pp, <span class="st">&quot;Diagnotic :&quot;</span>,</span>
-<span id="cb96-4"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb96-4" aria-hidden="true" tabindex="-1"></a>               <span class="fu">diag_IMC</span> (<span class="at">poids =</span> pp, <span class="at">taille =</span> <span class="fl">1.70</span>)))</span>
-<span id="cb96-5"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb96-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (pp <span class="cf">in</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">50</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))</span>
+<span id="cb98-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb98-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb98-3"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;Taille = 1,70m, poids =&quot;</span>, pp, <span class="st">&quot;Diagnotic :&quot;</span>,</span>
+<span id="cb98-4"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb98-4" aria-hidden="true" tabindex="-1"></a>               <span class="fu">diag_IMC</span> (<span class="at">poids =</span> pp, <span class="at">taille =</span> <span class="fl">1.70</span>)))</span>
+<span id="cb98-5"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb98-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;Taille = 1,70m, poids = 50 Diagnotic : maigre&quot;
 ## [1] &quot;Taille = 1,70m, poids = 55 Diagnotic : normal&quot;
 ## [1] &quot;Taille = 1,70m, poids = 60 Diagnotic : normal&quot;
@@ -362,89 +362,89 @@ Les arrays peuvent être très puissants pour gérer des millésimes.</li>
 <img src="images/grille.jpg" style="width:50.0%" />
 On peut par exemple créer une matrice à 10 lignes et 10 colonnes remplie avec un tirage aléatoire selon une loi normale centrée réduit.
 De la même façon on peut créer un hypercube avec la fonction avec 10 lignes, 5 colonnes et de profondeur 3, toujours avec un tirage aléatoire selon une loi normale</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb98-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">50</span>), <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">nrow =</span> <span class="dv">10</span>)</span>
-<span id="cb98-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb98-2" aria-hidden="true" tabindex="-1"></a>arr <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="fu">rnorm</span>(<span class="dv">150</span>),<span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">3</span>))</span>
-<span id="cb98-3"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb98-3" aria-hidden="true" tabindex="-1"></a>mat</span></code></pre></div>
-<pre><code>##              [,1]        [,2]        [,3]        [,4]       [,5]
-##  [1,]  0.01315201 -0.38063811 -0.59082928 -0.26406291 -0.6370559
-##  [2,] -0.45597380  0.31723301  0.47721279 -0.72705945  0.5889519
-##  [3,]  1.28968300 -1.48069505 -1.83149251  0.26513523 -0.3567677
-##  [4,]  1.15964319 -0.03629307 -0.04562359 -0.67421808  2.8174321
-##  [5,]  0.67429885  0.11824627 -0.29041350 -1.61003886 -0.1435525
-##  [6,] -0.41608957 -1.18419771  0.29440050 -0.73607149 -0.5969048
-##  [7,] -0.68549432  0.47278093 -0.09871080 -1.36246991 -0.4712292
-##  [8,]  0.82868715  0.32046639  1.58716243  0.09092307  1.0137987
-##  [9,] -0.12602527 -1.08556065 -0.75370497 -0.39053123  0.1131537
-## [10,]  0.48091281  1.15789316 -0.39894267 -0.09658795  0.0228142</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb100-1" aria-hidden="true" tabindex="-1"></a>arr</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb100-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">50</span>), <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">nrow =</span> <span class="dv">10</span>)</span>
+<span id="cb100-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb100-2" aria-hidden="true" tabindex="-1"></a>arr <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="fu">rnorm</span>(<span class="dv">150</span>),<span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">3</span>))</span>
+<span id="cb100-3"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb100-3" aria-hidden="true" tabindex="-1"></a>mat</span></code></pre></div>
+<pre><code>##              [,1]          [,2]        [,3]        [,4]       [,5]
+##  [1,]  1.13515205 -0.8226599312 -0.72936219 -2.79139413  0.5075732
+##  [2,]  1.57444488  1.5685968235  0.69066035  0.90039450  0.1011213
+##  [3,]  1.20732855  0.0008902783  0.05672407  2.22590072 -0.9760279
+##  [4,] -0.61345396 -1.4565733019  0.62720899  0.06640467  0.4368862
+##  [5,] -2.29861055  0.0760603931 -1.49627721  0.05010100  0.6697579
+##  [6,]  1.36347958  1.3679993891  0.53209255 -0.16793272  0.5330823
+##  [7,]  0.85857579 -0.3310665926 -1.58190708 -1.90365692 -0.2108570
+##  [8,]  1.05336068  0.2039607679 -2.40689744 -1.38594930  0.9631802
+##  [9,]  0.05529513 -0.6759840560 -0.28606383 -0.12219561  0.5905691
+## [10,] -0.15504405  0.7308409304 -1.52273243 -0.25028274 -0.1624554</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb102-1" aria-hidden="true" tabindex="-1"></a>arr</span></code></pre></div>
 <pre><code>## , , 1
 ## 
-##              [,1]        [,2]        [,3]        [,4]       [,5]
-##  [1,]  0.95331575 -0.25845815  0.10052999 -0.48553118  1.5412581
-##  [2,] -0.28103351  0.09826580  1.67042257  0.90962128  0.6540329
-##  [3,]  1.37920774  1.90956006  1.24419921  2.22629928 -1.4894616
-##  [4,]  0.07328944 -0.38710929  0.23225663 -0.12931817 -1.1065776
-##  [5,] -0.90210961 -0.91830731 -0.92498144 -0.65583482 -1.3723580
-##  [6,] -0.50782115 -1.56078200  0.05369025  2.10392723  1.5034108
-##  [7,]  1.22974034  0.06836335  1.52787802 -1.42345454 -0.5695274
-##  [8,]  2.58665867  1.60497925 -1.20376769  1.02835399  0.2516044
-##  [9,] -0.50250222 -0.81832172  0.45637538 -2.03203060 -0.4914057
-## [10,] -0.44848149  1.03543186 -0.48305806  0.07965809  0.7493886
+##              [,1]        [,2]       [,3]       [,4]       [,5]
+##  [1,] -1.06961054  0.24397296  0.2893013 -1.6946533  0.3655754
+##  [2,] -0.07353042  1.32629260 -1.9862795 -0.2723660 -0.8901372
+##  [3,]  0.67839773  0.09533467 -0.3648788  0.7032400  1.0752167
+##  [4,]  0.08999342 -0.19934653  0.2651139  0.1590499  1.1325085
+##  [5,]  0.71508529 -0.79468590 -1.5402171 -0.8843846 -0.1699657
+##  [6,]  0.67592202  0.06587018 -0.7574895  0.1552794 -1.4005624
+##  [7,]  1.08942093  0.24828623  1.6893632 -0.5316587  1.1076849
+##  [8,]  0.08887676 -0.42857354 -1.1526933 -1.5184581  1.2462037
+##  [9,]  0.52672409 -0.25805544  1.0081432 -1.6806497  1.4922209
+## [10,]  0.03667598 -1.20318488 -1.0796982  0.6399125  1.7188061
 ## 
 ## , , 2
 ## 
-##             [,1]        [,2]        [,3]       [,4]        [,5]
-##  [1,]  1.2985055 -1.30793114 -1.96418490  0.9388775 -1.50192045
-##  [2,]  0.6379131 -0.15511814 -0.29725356  0.5332170  2.00131908
-##  [3,]  0.5142631 -0.60254417  0.88907326 -1.3680467 -1.11357889
-##  [4,]  1.1356332  1.24782635  0.97084786  1.1086367  0.17663146
-##  [5,] -1.5760905  0.28395470 -0.92583750  0.2910645  0.84037103
-##  [6,]  0.5625783  0.14275943  1.13983788 -0.2614438  0.26021338
-##  [7,]  0.5360208  2.58703488 -0.28627614 -0.1651688  0.06006975
-##  [8,] -0.4194536 -0.47098975  0.07160942  0.7301089 -0.70538752
-##  [9,]  0.3702941  0.09871563 -1.27631501  0.9633679  1.74723498
-## [10,]  0.5660356 -0.66008809 -0.57109008 -0.1663867  1.26190870
+##             [,1]         [,2]       [,3]        [,4]       [,5]
+##  [1,]  0.3284243  1.503721700  0.8782226  0.92718009 -1.9058347
+##  [2,] -0.8898249  0.225910208 -0.8597456 -1.22271323  0.2530107
+##  [3,]  0.7151307  0.085220733  2.1754739 -0.09738238  1.9157281
+##  [4,] -0.4660724  0.004160004 -1.5286202 -0.13347453  0.7909296
+##  [5,] -0.8791054 -0.205035905  0.6829178 -0.40359211 -1.2332041
+##  [6,]  1.3054247  0.864617504 -0.5666085 -0.42489541 -0.5183331
+##  [7,]  0.7072108 -0.041912211  0.6850751  0.52212860  0.7774777
+##  [8,] -0.8548174  0.015842124 -1.0547936 -0.74009682  1.8490541
+##  [9,] -1.2910539  0.415779330  0.9727566 -1.04652444 -0.1051149
+## [10,] -0.1606601  0.419715665 -0.7776359 -0.11530018  0.5851670
 ## 
 ## , , 3
 ## 
-##              [,1]       [,2]        [,3]        [,4]       [,5]
-##  [1,] -0.15903858 -0.1795394 -0.73027715 -1.93625000  0.4883460
-##  [2,] -1.10547338  2.3307021 -0.24961668 -0.72527709 -0.3799565
-##  [3,] -0.57421174 -0.2528798 -0.60709939 -0.09257742 -0.5237254
-##  [4,]  0.06173059 -0.2236655  0.38442359 -1.65740588 -0.6567158
-##  [5,] -0.23098171 -0.8318255 -0.49792228 -2.17145977  0.4954471
-##  [6,]  2.03156660 -0.2240438 -1.30559868  0.26500753  0.6841532
-##  [7,] -0.31954266  0.3432167 -0.55108102  0.70356117  0.2184046
-##  [8,] -0.25153875  0.5744083 -0.06594374 -2.25659532 -1.1377434
-##  [9,]  1.05137896  0.5221409 -0.05866114 -1.32140586 -0.8223575
-## [10,]  0.95263328  0.2118956  0.14740234  1.74373217 -0.9857754</code></pre>
+##              [,1]        [,2]        [,3]        [,4]       [,5]
+##  [1,] -1.54004215  0.58504855 -0.11195776 -1.01076813  0.4123730
+##  [2,]  1.03394233 -0.17343078 -1.82384566  0.51567341 -1.3678407
+##  [3,]  0.81535321 -0.09590002  0.83946932 -1.47602804 -1.0523845
+##  [4,]  1.57186773 -0.58852554 -0.11460074  0.49300885  0.8622961
+##  [5,] -0.74112761  0.53260516  1.45033890 -0.41840100  1.0195008
+##  [6,] -0.37829574  0.16235531  0.67637473 -0.09727468  1.3067695
+##  [7,]  0.54748434  0.85674920  1.35963073 -2.32917824  0.3364376
+##  [8,]  0.71992811 -0.41395886 -1.61851013  0.38008039 -0.4876485
+##  [9,]  0.96855422  0.38025155 -0.06990941  0.25503456 -1.3564068
+## [10,]  0.04662129  0.30988331  1.82143979 -0.63959265 -0.3515885</code></pre>
 <p><em>Pourquoi s’embêter avec ça ?</em> Parce qu’on peut appliquer des fonctions facilement sur les lignes, colonnes et autres dimensions grâce à la fonction <code>apply()</code>.
 Exemple : résultats de validations croisées par bloc, simulations de loi selon différents paramètres. Et on calcule facilement des statistiques “marginales.”</p>
 <p>Par, exemple, sur une matrice, on peut calculer des statistiques par lignes :</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(mat, <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
-<pre><code>##  [1] -0.37188684  0.04007289 -0.42282740  0.64418812 -0.25029195 -0.52777262
-##  [7] -0.42902466  0.76820755 -0.44853369  0.23321791</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(mat, <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
+<pre><code>##  [1] -0.54013820  0.96704357  0.50296315 -0.18790548 -0.59979369  0.72574422
+##  [7] -0.63378237 -0.31446901 -0.08767584 -0.27193474</code></pre>
 <p>Ou par colonnes :</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(mat, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
-<pre><code>## [1]  0.2762794 -0.1780765 -0.1650942 -0.5504982  0.2350640</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(mat, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
+<pre><code>## [1]  0.41805281  0.06620647 -0.61165542 -0.33786105  0.24528300</code></pre>
 <p>Sur notre hypercube de type <code>array</code>, on peut aussi calculer des stats sur ses différentes dimensions :</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span> (arr, <span class="at">MARGIN =</span> <span class="dv">3</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
-<pre><code>## [1]  0.1663897  0.1634164 -0.1975207</code></pre>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span> (arr, <span class="at">MARGIN =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">FUN =</span> mean)</span></code></pre></div>
-<pre><code>##             [,1]       [,2]       [,3]
-## [1,]  0.35802640  0.3625699  0.1456523
-## [2,]  0.07736218  0.1163620  0.2270409
-## [3,]  0.26735449 -0.2249589 -0.3534374
-## [4,]  0.16216906  0.2604227 -0.7448670
-## [5,] -0.03296355  0.3026862 -0.2619923</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span> (arr, <span class="at">MARGIN =</span> <span class="dv">3</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
+<pre><code>## [1] -0.02045214  0.04167855  0.04003712</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span> (arr, <span class="at">MARGIN =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">FUN =</span> mean)</span></code></pre></div>
+<pre><code>##             [,1]        [,2]       [,3]
+## [1,]  0.27579553 -0.14853436  0.3044286
+## [2,] -0.09040896  0.32880192  0.1555078
+## [3,] -0.36293348  0.06070421  0.2408430
+## [4,] -0.49246887 -0.27346704 -0.4327446
+## [5,]  0.56775508  0.24088802 -0.0678492</code></pre>
 </div>
 <div id="inspection-dun-objet-la-régression" class="section level3" number="10.4.2">
 <h3><span class="header-section-number">10.4.2</span> Inspection d’un objet : la régression</h3>
-<p><img src="De%CC%81buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-33-1.png" width="576" /></p>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-33-1.png" width="576" /></p>
 <p>La régression linéaire consiste à exprimer une variable Y en fonction d’une variable X dans une fonction linéaire. C’est à dire qu’on cherche a et b tels que : <span class="math display">\[ Y = a \cdot X + b + \epsilon\]</span>
 où <span class="math inline">\(\epsilon\)</span> est le résidu de la régression. On utilise dans cet exemple la table des iris de Fisher, existant dans R base qu’il suffit d’appeler avec <code>data(iris)</code> (il existe d’autres dataframe inclus dans les packages et qui sont utilisés en exemple dans l’aide).</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span> (<span class="st">&quot;iris&quot;</span>)</span>
-<span id="cb110-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span> (iris)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span> (<span class="st">&quot;iris&quot;</span>)</span>
+<span id="cb112-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span> (iris)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
 ##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
 ##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
@@ -452,7 +452,7 @@ où <span class="math inline">\(\epsilon\)</span> est le résidu de la régressi
 ##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
 ##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
 <p>Faire la régression de la Sepal.Length sur Petal.length à l’aide de la fonction <code>lm()</code></p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span> (<span class="at">data =</span> iris, <span class="at">formula =</span> Sepal.Length <span class="sc">~</span> Petal.Length)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span> (<span class="at">data =</span> iris, <span class="at">formula =</span> Sepal.Length <span class="sc">~</span> Petal.Length)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Sepal.Length ~ Petal.Length, data = iris)
@@ -461,8 +461,8 @@ où <span class="math inline">\(\epsilon\)</span> est le résidu de la régressi
 ##  (Intercept)  Petal.Length  
 ##       4.3066        0.4089</code></pre>
 <p>On a les paramètres a et b mais on aimerait en savoir plus… Au moins la qualité d’ajustement (le <span class="math inline">\(R^2\)</span> par exemple), et un graphique des résidus pour détecter une éventuelle structure. Pour cela, stocker le résultat dans un nouvel objet, et explorez-le avec les fonctions <code>str()</code>, <code>summary()</code> et <code>plot()</code></p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb114-1" aria-hidden="true" tabindex="-1"></a>reg <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> iris, <span class="at">formula =</span> Sepal.Length <span class="sc">~</span> Petal.Length)</span>
-<span id="cb114-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span> (reg)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb116-1" aria-hidden="true" tabindex="-1"></a>reg <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> iris, <span class="at">formula =</span> Sepal.Length <span class="sc">~</span> Petal.Length)</span>
+<span id="cb116-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span> (reg)</span></code></pre></div>
 <pre><code>## List of 12
 ##  $ coefficients : Named num [1:2] 4.307 0.409
 ##   ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;(Intercept)&quot; &quot;Petal.Length&quot;
@@ -520,7 +520,7 @@ où <span class="math inline">\(\epsilon\)</span> est le résidu de la régressi
 ##   .. .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
 ##   .. .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;Sepal.Length&quot; &quot;Petal.Length&quot;
 ##  - attr(*, &quot;class&quot;)= chr &quot;lm&quot;</code></pre>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span> (reg)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span> (reg)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Sepal.Length ~ Petal.Length, data = iris)
@@ -539,8 +539,8 @@ où <span class="math inline">\(\epsilon\)</span> est le résidu de la régressi
 ## Residual standard error: 0.4071 on 148 degrees of freedom
 ## Multiple R-squared:   0.76,  Adjusted R-squared:  0.7583 
 ## F-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span> (reg)</span></code></pre></div>
-<p><img src="De%CC%81buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-36-1.png" width="576" /><img src="De%CC%81buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-36-2.png" width="576" /><img src="De%CC%81buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-36-3.png" width="576" /><img src="De%CC%81buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-36-4.png" width="576" /></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span> (reg)</span></code></pre></div>
+<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-36-1.png" width="576" /><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-36-2.png" width="576" /><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-36-3.png" width="576" /><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-36-4.png" width="576" /></p>
 <p>Les <strong>méthodes</strong> summary, print et plot sont implémentées pour tous les objets en R, et on peut les utiliser pour avoir un premier aperçu de ce que l’on obtient avec la fonction.</p>
 
 </div>
