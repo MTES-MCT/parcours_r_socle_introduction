@@ -11,12 +11,12 @@ Ce chapitre permet de découvrir l'interface de travail RStudio et les principal
 - Disponible sur http://www.rstudio.com
 
 
-L’interface RStudio est composée de différents panneaux, dont l’arrangement peut être reconfiguré, incluant une console, un navigateur de fichiers et graphiques, l’espace de travail et l’historique des commandes. D'autres environnements graphiques existent, Rstudio semble le plus approprié à nos métiers
+L’interface RStudio est composée de différents panneaux, dont l’arrangement peut être reconfiguré, incluant une console, un navigateur de fichiers et graphiques, l’espace de travail et l’historique des commandes. D'autres environnements graphiques existent, Rstudio semble le plus approprié à nos métiers.
 
 ## Session et répertoire de travail
 
 - Session de travail R : commence à l'ouverture de RStudio et se termine en le quittant
-- Répertoire de travail R : Dossier dans lequel le logiciel va chercher les fichiers de scripts et de données
+- Répertoire de travail R : dossier dans lequel le logiciel va chercher les fichiers de scripts et de données
 - Tout ce qui a été fait au cours d'une session peut être enregistré dans le répertoire de travail :
     - données
     - historique des fonctions …
@@ -76,7 +76,7 @@ ma_variable <- 1:10
 
 ```
 
-$\rightarrow$ Les variables peuvent être numérique, texte ou boléen `(TRUE/FALSE)` et elles peuvent être réutilisées.
+$\rightarrow$ Les variables peuvent être numériques, de type texte ou booléen `(TRUE/FALSE)` et elles peuvent être réutilisées.
 
 Nouvelles fonctions                               |Attention pour le nommage des variables
 --------------------------------------------------|----------------------------------------
