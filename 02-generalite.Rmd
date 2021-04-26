@@ -46,7 +46,8 @@ labelLayer (map, txt = "ref")
 - Au milieu des années 90, mélange de S et du langage Lisp pour le dédier à l'analyse de données et aux graphiques $\rightarrow$ création de R. [Ihaka R, Gentleman R (1996) R: A Language for Data Analysis and Graphics. *Journal of
 Computational and Graphical Statistics*, 5(3), 299–314](https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf)
 
-- S est d'abord développé dans le monde académique, puis a essaimé vers d'autres domaines professionnels, voire associatifs
+- S'est d'abord développé dans le monde académique, puis a essaimé vers d'autres domaines professionnels, voire associatifs
+
 
 - Système toujours d’actualité - Mise à jour tous les 6 mois
 
@@ -118,4 +119,3 @@ Le groupe des référents propose un pack d'installation comprenant R, RStudio e
 - [Visualisation du compte du logement](http://dataviz.statistiques.developpement-durable.gouv.fr/csl2017/)
 - [Les pesticides dans les cours d'eau des Pays de la Loire](https://ssm-ecologie.shinyapps.io/qualite-des-eaux/)
 - [Des exemples de ce qu'on peut faire avec shiny](http://shiny.rstudio.com/)
-
