@@ -26,6 +26,10 @@ jobs:
         run: |
           brew install pandoc
 
+      - name: Install udunits
+        run: |
+          brew install udunits
+
       - name: Cache Renv packages
         uses: actions/cache@v2
         with:
