@@ -117,9 +117,9 @@ base <- read.csv (file = "data/Base_synth_territoires.csv",
 ```
 
 - `header =`indique la présence des noms de variable sur la première ligne
-- `sep =` indique le séparateur de champ : ';' '/t' pour tabulation.
+- `sep =` indique le séparateur de champ : ';' '/t' pour tabulation
 - `dec =` indique le séparateur de décimale ('.' par défaut)
-- `colClasses =`permet de préciser le type de la données en entrée
+- `colClasses =`permet de préciser le type de chaque colonne de la donnée en entrée
 
 $\Rightarrow$ `?read.csv` pour plus d'options
 
@@ -175,5 +175,5 @@ On peut importer n'importe quel format de données en R (Excel, SAT, Stata, SQL.
 Ici, nous travaillerons sur une base de données communales fournie par l'Insee, dite "comparateur de territoires". Le fichier source (Excel) figure dans le sous-répertoire "data" et contient toutes les métadonnées.
 
 
-- Utiliser la fonction `read.csv()` pour importer ce fichier et stocker le dans un objet `df`. **Veillez à ce que la région soit bien importée comme un facteur et non un entier**. 
-- Inspecter le dataframe avec les fonctions vues auparavant pour connaître le nombre de lignes, de colonnes, 
+- Utiliser la fonction `read.csv()` pour importer ce fichier et stocker le dans un objet `df`. **Veillez à ce que la région soit bien importée comme un facteur et non un entier**
+- Inspecter le dataframe avec les fonctions vues auparavant pour connaître le nombre de lignes, de colonnes, ... 
