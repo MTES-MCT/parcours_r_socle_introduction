@@ -120,14 +120,14 @@ base_rename <- rename(base, ZONE_EMPLOI = ZE)
 
 Pour enchaîner des opérations, on peut créer des variables successives :
 ```{r}
-selection <- select(df, CODGEO, ZAU, REG, DEP, densite, tx_natal)
+selection <- select(base, CODGEO, ZAU, REG, DEP, P14_POP)
 filtre_62 <- filter(selection, DEP == "62")
 ```
 Cela peut être relativement clair si on respecte de bonnes pratiques de nommage mais encombre inutilement l'environnement de travail.
 
 On peut emboîter les fonctions :
 ```{r}
-selection_62 <- filter(select(df, CODGEO, ZAU, REG, DEP, densite, tx_natal), DEP == "62")
+selection_62 <- filter(select(base, CODGEO, ZAU, REG, DEP, P14_POP), DEP == "62")
 ```
 Ce choix préserve l'environnement de travail mais la lecture est particulièrement confuse et le risque d'oubli de parenthèses important.
 
@@ -135,8 +135,8 @@ Il y a enfin une solution du package `magrittr` faisant partie du `tidyverse`.
 On peut combiner les opérations en une seule ligne à l'aide de l'opérateur pipe `%>%` :
 
 ```{r}
-selection_62 <- df %>%
-  select(CODGEO, ZAU, REG, DEP, densite, tx_natal) %>%
+selection_62 <- base %>%
+  select(CODGEO, ZAU, REG, DEP, P14_POP) %>%
   filter(DEP == "62")
 ```
 Cette écriture permet d'enchaîner les opérations telles qu'on les décrirait à l'oral.
