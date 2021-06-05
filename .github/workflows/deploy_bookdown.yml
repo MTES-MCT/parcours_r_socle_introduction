@@ -18,6 +18,8 @@ jobs:
 
       - name: Checkout repo
         uses: actions/checkout@v2
+        with:
+          r-version: '4.0.4'
 
       - name: Setup R
         uses: r-lib/actions/setup-r@master
