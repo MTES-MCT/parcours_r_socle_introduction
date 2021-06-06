@@ -24,7 +24,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2021-05-10" />
+<meta name="date" content="2021-06-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -365,78 +365,78 @@ De la même façon on peut créer un hypercube avec la fonction avec 10 lignes, 
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb100-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">50</span>), <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">nrow =</span> <span class="dv">10</span>)</span>
 <span id="cb100-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb100-2" aria-hidden="true" tabindex="-1"></a>arr <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="fu">rnorm</span>(<span class="dv">150</span>),<span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">3</span>))</span>
 <span id="cb100-3"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb100-3" aria-hidden="true" tabindex="-1"></a>mat</span></code></pre></div>
-<pre><code>##             [,1]         [,2]        [,3]       [,4]        [,5]
-##  [1,]  0.3948522 -0.507963873  0.21547874 -0.8756777  0.67598949
-##  [2,]  0.9022911  0.364259195  0.37472653 -0.2535149  1.57435261
-##  [3,]  0.4254207  0.120054844  0.12740896 -0.6179954  0.14212501
-##  [4,] -0.2019832  0.002956622  0.20901146 -0.2695020 -0.07142476
-##  [5,]  1.3754575  0.819297416  0.51896823 -2.2982592  0.34080318
-##  [6,]  0.6640503 -0.784453142 -0.45586267  0.4620530 -0.64294898
-##  [7,]  0.6460138  0.635485133  0.02299448  0.7917651 -1.10358972
-##  [8,]  0.5685464  0.910191999  1.68560397 -0.2734925  2.65537106
-##  [9,] -0.2509839  0.035630928 -0.81868385 -0.5991403 -0.62568575
-## [10,] -0.6556373  0.422035882 -1.12669523 -0.6896291 -0.35297011</code></pre>
+<pre><code>##              [,1]       [,2]       [,3]       [,4]        [,5]
+##  [1,]  0.81353075 -1.0660044 -0.7260479 -1.3179061 -0.44916948
+##  [2,] -0.67212032 -0.4089436 -0.9235395  0.0624799 -0.12338347
+##  [3,] -2.12241887  1.1812553 -0.2153258  1.2880959 -0.79816141
+##  [4,]  0.95712242 -0.3701166  2.2076177 -1.0151871 -0.89410232
+##  [5,]  0.03104242 -0.9670394  1.3432828  1.4577326 -0.07434033
+##  [6,]  1.71554031 -1.1378376 -0.1600428  1.8304100 -0.08030125
+##  [7,] -1.33948084  0.5446614 -1.0621222 -1.5136153 -0.28523446
+##  [8,] -0.45802955  1.0862489 -0.2152334  0.4288627  0.99889022
+##  [9,]  0.79081964 -1.1081236 -0.9182740  0.4412368 -0.33816306
+## [10,]  1.29999856 -0.5373674  0.0900132  1.1147536 -0.18427886</code></pre>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb102-1" aria-hidden="true" tabindex="-1"></a>arr</span></code></pre></div>
 <pre><code>## , , 1
 ## 
-##              [,1]       [,2]       [,3]        [,4]        [,5]
-##  [1,] -0.23904449 -1.0086776 -2.3585331  0.66802036 -0.12514018
-##  [2,]  1.71436017  1.4694239 -0.2519145  1.80557260  0.49213587
-##  [3,]  0.28005199 -1.2125976 -0.6362094  0.07005015 -2.59368846
-##  [4,]  1.15427469 -0.0111591 -0.4011741  1.08992945 -0.04805122
-##  [5,]  1.12814743 -0.5297958 -1.0267102 -0.54409950  2.32514160
-##  [6,]  1.03714284 -0.8726792  0.5606853 -0.68868002  0.29687227
-##  [7,] -1.44399174 -1.4426843 -0.6953344 -1.12503563  0.71068978
-##  [8,]  0.64440813  0.4410341  0.7643391 -0.45362372  0.03352143
-##  [9,] -0.67845943  1.2079372 -0.3209200 -0.52175020 -0.67100433
-## [10,] -0.09194995 -0.5625016 -0.2034014  0.80168392  1.89986241
+##               [,1]       [,2]       [,3]        [,4]       [,5]
+##  [1,]  0.114302551 -1.9923651 -1.1578535 -0.06573673 -0.7981588
+##  [2,]  2.025200820 -1.7218011  0.8929427  0.38351058 -2.0747047
+##  [3,]  0.118387487 -0.8684824  1.4256868 -0.17625942 -0.2450599
+##  [4,] -1.096365804  0.3960259 -0.3515790  0.10991357  0.1541823
+##  [5,] -0.006014152  0.5317506  0.4179341 -1.04266654 -0.1455051
+##  [6,]  0.382265602  0.4530443  1.0713690  0.41849356 -0.7681156
+##  [7,]  1.976768462 -0.7882922 -0.2097782 -0.03733912 -1.6184724
+##  [8,] -0.305017196  0.8864748 -0.7345306  0.67672238  0.6700055
+##  [9,]  0.053295079  0.9464980  0.1410254 -0.52760398 -0.7418254
+## [10,] -0.047083284  0.0224241 -0.9632628  1.21626169  2.1149474
 ## 
 ## , , 2
 ## 
-##               [,1]        [,2]        [,3]       [,4]        [,5]
-##  [1,] -0.949657839  1.67555784 -0.33384708  0.2939580 -1.29491425
-##  [2,]  0.334974428  0.57107128  0.45547904 -1.4137908  2.13806297
-##  [3,]  1.879587708 -2.07787030 -0.65363147  0.3234731 -0.34541143
-##  [4,]  0.153863002 -1.26757262  1.35351493  0.6966685  0.15365097
-##  [5,]  0.680764490  0.02411426 -0.81915366 -0.5269501 -0.93850249
-##  [6,]  0.492932581 -1.47573538 -0.20069585 -0.0126806 -0.37220053
-##  [7,] -0.849145241 -0.20034648  1.35623532  0.7124311  0.25443806
-##  [8,] -1.115229818  1.58095189  0.95003908 -0.7610082  0.24718813
-##  [9,]  0.006182915 -0.28307794 -0.07330838  1.4451914 -0.04569379
-## [10,]  0.812540109  0.72947910 -1.30966734  1.4264569 -1.28212008
+##              [,1]       [,2]        [,3]       [,4]       [,5]
+##  [1,] -0.82023749  0.7892634  1.15141181 -0.1548732 -1.2180381
+##  [2,] -0.27167738 -1.1316623  1.30999737 -1.7674001  0.3294799
+##  [3,] -0.66615804 -0.2972548 -0.80393741  1.1140771  0.5022785
+##  [4,]  0.41908024  1.1842937 -0.28217032 -0.8505262  0.6267414
+##  [5,] -0.80561486 -0.5653778  1.26088858 -1.6256885  0.5594982
+##  [6,] -0.07472884  1.4512229 -1.92472876 -0.2192199 -0.4341223
+##  [7,]  0.51637544 -0.5955882 -0.69908594 -0.5546692 -0.5447584
+##  [8,]  0.39806427 -1.9666748  1.40717669  0.1602361  1.0097292
+##  [9,]  0.95533357  2.4550718 -0.05845534 -0.8128145  0.7096677
+## [10,] -0.05917768  1.2698378 -0.48100779 -2.8846109 -1.5222392
 ## 
 ## , , 3
 ## 
-##             [,1]       [,2]        [,3]        [,4]        [,5]
-##  [1,]  0.1940876  1.6346161  0.80835944  1.35269602 -0.08726757
-##  [2,]  0.0191941  0.5716194 -0.42956710  0.23509340  0.46122964
-##  [3,] -0.8474836 -1.3016156 -0.13078630 -0.83381842 -1.36953381
-##  [4,]  1.0276704  0.7101802 -0.06768872  1.84654768  0.76425239
-##  [5,] -1.2872056 -0.8215934 -0.19382703  0.76952703  0.33307779
-##  [6,]  1.0801045 -1.5843051 -1.26234459 -0.34177350  0.90019615
-##  [7,] -1.3987026  0.6475144  1.44560873  0.06997862  1.08906162
-##  [8,]  1.1555296 -0.1053378 -0.96307967  0.36197803  0.85559540
-##  [9,] -2.2785956 -0.4168769 -0.69771637 -1.50803201  0.19184297
-## [10,]  1.9934184  0.6633600  1.17636233  0.96462595 -0.08419072</code></pre>
+##             [,1]        [,2]       [,3]        [,4]       [,5]
+##  [1,]  0.6553693 -0.68433679  0.7684555 -0.74789957 -0.5746866
+##  [2,]  0.7756929 -0.23196090  0.7467001 -0.05902254  0.5660232
+##  [3,]  0.1137682 -0.06838192  0.5875329  0.15021027  0.3810600
+##  [4,] -0.7095704 -2.39696693 -1.5017303  0.61333984  2.9609492
+##  [5,]  0.2149110 -1.20338322 -2.4724538  1.14450232  0.6663784
+##  [6,]  0.1597661  0.84454773 -0.6321452  0.84598937 -0.3993165
+##  [7,] -0.6553417 -0.07203069 -0.7306818 -0.06477137 -0.6553238
+##  [8,] -0.5236373 -0.34001571 -1.1026227 -1.79029455  1.3604586
+##  [9,] -0.4916871 -0.12650794 -0.7503314  0.29821688  1.5236639
+## [10,] -0.1885988 -1.00786800  0.9378159  0.21979578 -0.3323858</code></pre>
 <p><em>Pourquoi s’embêter avec ça ?</em> Parce qu’on peut appliquer des fonctions facilement sur les lignes, colonnes et autres dimensions grâce à la fonction <code>apply()</code>.
 Exemple : résultats de validations croisées par bloc, simulations de loi selon différents paramètres. Et on calcule facilement des statistiques “marginales.”</p>
 <p>Par, exemple, sur une matrice, on peut calculer des statistiques par lignes :</p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(mat, <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
-<pre><code>##  [1] -0.01946424  0.59242290  0.03940284 -0.06618837  0.15125342 -0.15143231
-##  [7]  0.19853376  1.10924418 -0.45177257 -0.48057917</code></pre>
+<pre><code>##  [1] -0.5491194 -0.4131014 -0.1333110  0.1770668  0.3581356  0.4335537
+##  [7] -0.7311583  0.3681478 -0.2265008  0.3566238</code></pre>
 <p>Ou par colonnes :</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(mat, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
-<pre><code>## [1]  0.38680276  0.20174950  0.07529506 -0.46233930  0.25920220</code></pre>
+<pre><code>## [1]  0.10160045 -0.27832669 -0.05796719  0.27768632 -0.22282444</code></pre>
 <p>Sur notre hypercube de type <code>array</code>, on peut aussi calculer des stats sur ses différentes dimensions :</p>
 <div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span> (arr, <span class="at">MARGIN =</span> <span class="dv">3</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
-<pre><code>## [1] -0.003270524  0.042931910  0.106239720</code></pre>
+<pre><code>## [1] -0.01768881 -0.09025545 -0.07957612</code></pre>
 <div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span> (arr, <span class="at">MARGIN =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">FUN =</span> mean)</span></code></pre></div>
-<pre><code>##            [,1]        [,2]          [,3]
-## [1,]  0.3504940  0.14468123 -0.0341982737
-## [2,] -0.2521700 -0.07234284 -0.0002438631
-## [3,] -0.4569173  0.07249646 -0.0314679279
-## [4,]  0.1102067  0.21837494  0.2916822798
-## [5,]  0.2320339 -0.14855024  0.3054263872</code></pre>
+<pre><code>##             [,1]         [,2]        [,3]
+## [1,]  0.32157396 -0.040874076 -0.06493277
+## [2,] -0.21347230  0.259313178 -0.52869044
+## [3,]  0.05319539  0.088008888 -0.41494609
+## [4,]  0.09552960 -0.759548942  0.06100664
+## [5,] -0.34527068  0.001823686  0.54968206</code></pre>
 </div>
 <div id="inspection-dun-objet-la-régression" class="section level3" number="10.4.2">
 <h3><span class="header-section-number">10.4.2</span> Inspection d’un objet : la régression</h3>
@@ -594,7 +594,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Débuter-avec-R-et-RStudio.pdf", "Débuter-avec-R-et-RStudio.epub"],
+"download": ["Débuter-avec-R-et-RStudio.pdf"],
 "toc": {
 "collapse": "subsection"
 }
