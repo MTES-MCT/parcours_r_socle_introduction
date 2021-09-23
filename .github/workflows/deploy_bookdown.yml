@@ -21,10 +21,16 @@ jobs:
 
       - name: Setup R
         uses: r-lib/actions/setup-r@master
+        with:
+          r-version: '4.0.4'
 
       - name: Install pandoc
         run: |
           brew install pandoc
+
+      - name: Install udunits
+        run: |
+          brew install udunits
 
       - name: Cache Renv packages
         uses: actions/cache@v2
@@ -45,6 +51,11 @@ jobs:
           R -e 'install.packages("renv")'
           R -e 'renv::restore()'
 
+      - name: install phantomjs
+        run: |
+          R -e 'install.packages("webshot")'
+          R -e 'webshot::install_phantomjs()'
+        
       - name: Build site
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
         
@@ -73,8 +84,9 @@ jobs:
      - name: Deploy to GitHub Pages
        uses: Cecilapp/GitHub-Pages-deploy@master
        env:
-          EMAIL: ${{ secrets.EMAIL }}               # must be a verified email
-          GH_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
-          BUILD_DIR: _book/                     # "_site/" by default
-    
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
+       with:
+          build_dir: _book                          # "_site/" by default
+          email: ${{ secrets.EMAIL }}               # must be a verified email
+        
  

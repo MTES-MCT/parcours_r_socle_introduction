@@ -48,6 +48,7 @@ Computational and Graphical Statistics*, 5(3), 299–314](https://www.stat.auckl
 
 - S'est d'abord développé dans le monde académique, puis a essaimé vers d'autres domaines professionnels, voire associatifs
 
+
 - Système toujours d’actualité - Mise à jour tous les 6 mois
 
 - Avenir dans la statistique publique : adopté comme standard par l'Insee (à l'horizon 2025) et divers SSM. Des packages pour :
@@ -57,24 +58,18 @@ Computational and Graphical Statistics*, 5(3), 299–314](https://www.stat.auckl
 
 ## Un logiciel libre
 
-- Disponible en libre téléchargement sur [le site officiel du CRAN](https://cran.r-project.org)
+- Disponible en libre téléchargement sur [le site officiel du CRAN = Comprehensive R Archive Network](https://cran.r-project.org)
+C'est le site de référence pour R. Il contient non seulement les installeurs du logiciel mais également de nombreuses ressources : documentations, FAQ, tutoriels...
 - Installable sur la plupart des systèmes d'exploitation
 - Utilisé en recherche, en enseignement et en entreprise
 - Une communauté très active :
     - Forum des [utilisateurs de R en français](http://forums.cirad.fr/logiciel-R/)
     - Communauté française des utilisateurs de R (avec des packages spécifiques, qui permettent de gérer les changements de géographie communale par exemple) : [Frrrenchies](https://github.com/frrrenchies/frrrenchies)
     - Slack de ces utilisateurs (pour les questions/réponses, actualités...) [Slack](https://r-grrr.slack.com/)
-    - Forum des utilisateurs de R en français : http://forums.cirad.fr/logiciel-R/
     - R-bloggers : https://www.r-bloggers.com/
     - Stackoverflow : https://stackoverflow.com/questions/tagged/r
-
-
   
 C'est un logiciel libre : les utilisateurs ont la liberté d'exécuter, copier, distribuer, étudier, modifier et améliorer ce logiciel. R fait partie de la "galaxie" GNU (GNU's Not Unix). R est donc libre, gratuit et multiplateforme.
-
-[Le site CRAN = Comprehensive R Archive Network](https://cran.r-project.org) est le site de référence pour R. Il contient non seulement les installeurs du logiciel mais également de nombreuses ressources : documentations, FAQ, tutoriels... 
-
-
     
 ## Que peut-on faire avec R ?
 
@@ -112,7 +107,7 @@ Cela permet d'étendre à l'infini les possibilités de R : celles-ci sont seule
 
 De même que les packages sont dépendants de fonctions du module principal `base`, certains packages peuvent être dépendants de fonctionnalités d'autres packages $\rightarrow$ notion d'arbre des dépendances (géré par R de façon transparente).
 
-Sructure modulaire $\rightarrow$ il existe de multiple façons d'effectuer une même tâche. Il suffit d'une méthode maîtrisée pour aller au résultat.
+Structure modulaire $\rightarrow$ il existe de multiples façons d'effectuer une même tâche. Il suffit d'une méthode maîtrisée pour aller au résultat.
 
 Les fonctionnalités utilisables dans R, sont en perpétuelle évolution et permettent d'intégrer les méthodes les plus récentes dans des domaines qui évoluent rapidement : modélisation, analyse spatiale, dataviz,...
 
@@ -124,4 +119,3 @@ Le groupe des référents propose un pack d'installation comprenant R, RStudio e
 - [Visualisation du compte du logement](http://dataviz.statistiques.developpement-durable.gouv.fr/csl2017/)
 - [Les pesticides dans les cours d'eau des Pays de la Loire](https://ssm-ecologie.shinyapps.io/qualite-des-eaux/)
 - [Des exemples de ce qu'on peut faire avec shiny](http://shiny.rstudio.com/)
-

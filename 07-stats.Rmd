@@ -86,7 +86,13 @@ print(t)
 La fonction `prop.table()` prend en entrée un objet `table` (tableau de contingence avec les effectifs) et calcule les pourcentages (total, ligne, colonne) associés $\rightarrow$ `?prop.table`
 
 ```{r stat_9}
+# Calcule la fréquence en % (la somme de tous les pourcentages vaut 100)
 (prop.table(t) * 100) %>% round(digits = 1)
+```
+
+```{r stat_9b}
+# Calcule la fréquence en % par région (la somme de tous les pourcentages d'une colonne vaut 100)
+(prop.table(t,"REG") * 100) %>% round(digits = 1)
 ```
 
 ## Exercice : calcul de statistiques 
@@ -103,63 +109,6 @@ Tableaux croisés :
 - Calculer le nombre de communes par région et type d'espace, et les pourcentages associés
 
 
-```{r stat_10}
-df <- base %>% 
-  select(1:24) %>% 
-  mutate(densite = P14_POP / SUPERF,
-         tx_natal = 1000 * NAISD15 / P14_POP,
-         tx_mort = DECESD15 / P14_POP,
-         ZAU2 = as.factor(substr(ZAU, 1, 3))) # Parce que la variable originale est longue
 
-summary(df)
-```
-
-
-```{r stat_11, eval = F}
-df %>% pull(densite) %>% mean()
-df %>% pull(densite) %>% sd()
-df %>% pull(densite) %>% median()
-df %>% pull(densite) %>% var()
-```
-
-On a des NA car les valeurs manquantes sont absorbantes !
-
-```{r stat_12, eval = F}
-df %>% pull(densite) %>% mean(na.rm = T)
-df %>% pull(densite) %>% sd(na.rm = T)
-df %>% pull(densite) %>% median(na.rm = T)
-df %>% pull(densite) %>% var(na.rm = T)
-```
-
-
-```{r stat_13}
-df <- df %>% 
-  mutate(std_dens = (densite - mean(densite, na.rm = T)) / sd(densite, na.rm = T))
-```
-
-Avantage des variables centrées réduites : on élimine les effets d'unité (d'ordre de grandeur), et on peut donc comparer les distributions de deux variables qui ont des unités différentes (voir module 3)
-
-```{r stat_14}
-df %>% pull(densite) %>% quantile(na.rm = T)
-```
-
-```{r stat_15}
-seq(0, 1, 0.1) # vérifier la séquence qu'on souhaite
-df %>% pull(densite) %>% quantile(probs = seq(0, 1, 0.1), na.rm = T)
-```
-
-```{r stat_16}
-t <- table(df$ZAU2)
-t
-100 * prop.table(t) %>% round(digits = 4)
-```
-
-- Deux variables
-```{r stat_17}
-t <- table(df$REG, df$ZAU2)
-t
-100 * prop.table(t) %>% round(digits = 4)
-```
-
-Pour aller plus loin et ajouter des variables de pondération, calculer les profils-ligne ou profils-colonne, rendez-vous au [module 3 "Statistiques descriptives"](https://mtes-mct.github.io/parcours-r/m3/index.html) ou demander à un GF (Gentil Formateur).
+Pour aller plus loin et ajouter des variables de pondération, calculer les profils-ligne ou profils-colonne, rendez-vous au [module 3 "Statistiques descriptives"](https://mtes-mct.github.io/parcours_r_module_statistiques_descriptives/) ou demander à un GF (Gentil Formateur).
 

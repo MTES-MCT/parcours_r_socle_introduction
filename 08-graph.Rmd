@@ -15,7 +15,7 @@ La fonction `ggplot()` fonctionne d'une manière particulière. La structure res
 ggplot(TableEnEntree, aes(VariablesATracer)) + geom_FonctionAChoisir()
 ```
 
-Pour découvrir les nombreuses possibilités de `ggplot2`, vous pouvez vous référer au [Module 5 : « Datavisualisation : produire des graphiques, des cartes et des tableaux »](https://mtes-mct.github.io/parcours-r/m5/index.html) ou consulter les sites suivants :
+Pour découvrir les nombreuses possibilités de `ggplot2`, vous pouvez vous référer au [Module 5 : « Valoriser ses données avec R »](https://mtes-mct.github.io/parcours_r_module_datavisualisation/) ou consulter les sites suivants :
 
 - [Version anglaise](http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization)
 - [Version française](http://www.sthda.com/french/wiki/ggplot2)
@@ -78,7 +78,7 @@ g <- ggplot(data = base, aes(x = REG, fill = REG)) +
 ggplotly(g)
 ```
 
-## Exercices : créer des graphiques
+## Exercice : créer des graphiques
 
 À l'aide de l'aide mémoire `ggplot2` :
 
@@ -88,45 +88,6 @@ ggplotly(g)
 - Utiliser le paramètre fill de la fonction `aes()` pour améliorer le graphique
 - Réaliser un graphique (nuage de points) croisant la densité de population et le taux de mortalité
 - Ajouter une dimension supplémentaire avec la couleur des points (paramètre color de `aes()`)
-
-```{r graph_5}
-ggplot(data = base, aes(x = P14_POP)) +
-  geom_histogram()
-```
-
-Ce n'est pas très informatif, mais on peut faire une transformation log pour y voir plus clair !
-
-```{r graph_6}
-ggplot(data = base, aes(x = log(P14_POP))) +
-  geom_histogram()
-```
-
-Faites maintenant un barplot (qui n'est pas un histogramme !!!!) du nombre de communes par type ZAU.
-
-```{r graph_7}
-ggplot(data = base, aes(x = REG)) +
-  geom_bar()
-```
-
-On va essayer d'y voir plus clair avec le paramètre `fill`
-
-```{r graph_8}
-ggplot(data = base, aes(x = REG, fill = REG)) +
-  geom_bar()
-```
-
-
-```{r graph_9}
-ggplot(data = base, aes(x = log(P14_POP), y = log(P14_LOGVAC))) +
-  geom_point()
-```
-
-```{r graph_10}
-ggplot(data = base, aes(x = densite, y = tx_mort, color = REG)) +
-  geom_point()
-```
-
-Là encore il faudrait faire une transformation logarithmique, mais tout ça est abordé dans le module 3 !
 
 **Note** : avec les fonctions de base, on peut obtenir de nombreux graphiques avec très peu de code, mais moins jolis :
 
