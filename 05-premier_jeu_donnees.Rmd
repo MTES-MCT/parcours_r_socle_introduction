@@ -55,39 +55,6 @@ Il est possible d'accéder aux éléments d’une dataframe à partir du numéro
 - $\Rightarrow$ Utile pour sélectionner une partie d'une table : `base[1:4, c(3, 6)]`
 
 
-## Installer et charger un *package*
-Pour manipuler notre base de données, nous allons nous servir de fonctionnalités présentes dans le package `tidyverse`. 
-
-La première fois que l'on veut utiliser un package, il faut le télécharger sur notre ordinateur, avec `install.packages()` :
-```{r, eval=FALSE}
-install.packages("tidyverse")
-```
-
-
-Puis à l'ouverture d'une nouvelle session R, le charger (si on a besoin de ses fonctions), avec `library()` :
-```{r}
-library("tidyverse")
-```
-Le package est prêt à être utilisé !
-
-
-Pour appliquer une fonction à un objet, la syntaxe est :
-
-```{r, eval = FALSE}
-nom_de_la_fonction(objet, attribut1, attribut2, ...)
-```
-
-Pour stocker le résultat de cette fonction dans une variable :
-```{r, eval = FALSE}
-ma_variable <- nom_de_la_fonction(objet, attribut1, attribut2, ...)
-```
-
-
-Une erreur fréquente est :
-`Error in nom_de_le_fonction() : impossible de trouver la fonction "nom_de_la_fonction"`
-
-Cela signifie que le package auquel appartient la fonction n'est pas chargé, voire pas installé.
-
 ## Les fonctions et les valeurs particulières
 - NA : valeur manquante (*Not Available*) dans une dataframe ou en résultat d'une fonction
 - NaN : pas un nombre (*Not a Number*) lorsqu'une fonction tente de diviser par 0
