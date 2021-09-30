@@ -80,7 +80,7 @@ library(tidyverse)
 library(GGally) 
 library(plotly)
 
-base <- read.csv (file = "data/Base_synth_territoires.csv",
+base <- read.csv (file = "extdata/Base_synth_territoires.csv",
                  header = T, sep = ";", dec = ",")
 
 ```

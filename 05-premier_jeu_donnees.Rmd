@@ -77,7 +77,7 @@ $\Rightarrow$ Le [module 2 "Préparation des données"](https://mtes-mct.github.
 Conseil : exporter les données au format CSV ; c'est le format le plus interopérable (supporté par tous les logiciels stat). Utiliser ensuite la fonction `read.csv` après avoir défini le répertoire de travail (ou en donnant le chemin complet)
 
 ```{r lecturecsv}
-base <- read.csv (file = "data/Base_synth_territoires.csv",
+base0 <- read.csv (file = "extdata/Base_synth_territoires.csv",
                  header = T,
                  sep = ";",
                  dec = ",")
@@ -104,7 +104,7 @@ Chaque variable est du type de son contenu (numeric, character, logical). Si les
 Mais le type peut être erronné. Il suffit alors de les convertir :
 
 ```{r converttype}
-base <- mutate(base, LIBGEO = as.character (LIBGEO))
+base <- mutate(base0, LIBGEO = as.character (LIBGEO))
 ```
 
 ou `as.factor()`, `as.numeric()`, etc...

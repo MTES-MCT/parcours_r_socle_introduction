@@ -154,7 +154,7 @@ install.packages("tidyverse")
 
 Puis à l'ouverture d'une nouvelle session R, le charger (si on a besoin de ses fonctions), avec `library()` :
 ```{r}
-library("tidyverse")
+library(tidyverse)
 ```
 Le package est prêt à être utilisé !
 
