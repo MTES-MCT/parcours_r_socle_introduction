@@ -92,8 +92,11 @@ La fonction `prop.table()` prend en entrée un objet `table` (tableau de conting
 
 ```{r stat_9b}
 # Calcule la fréquence en % par région (la somme de tous les pourcentages d'une colonne vaut 100)
-(prop.table(t,"REG") * 100) %>% round(digits = 1)
+(prop.table(t,"REG") * 100) %>% 
+  round(digits = 1)
 ```
+*Attention*: la fonction `prop.table()` a été améliorée avec le changement de version de R base. La version <3.6.2 ne permettait pas d'utiliser le nom de la variable (ici "REG") pour spécifier le mode de calcul des fréquences, l'option était alors `margin=` (1: en ligne, 2: en colonne)
+
 
 ## Exercice : calcul de statistiques 
 
