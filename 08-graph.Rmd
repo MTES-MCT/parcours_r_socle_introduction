@@ -33,7 +33,7 @@ Si on désire un histogramme de log_SUPERF, on fera appel à la fonction `geom_h
 ```{r graph_3, message=FALSE, warning=FALSE}
 rm(list = ls())
 
-base <- read.csv(file = "data/Base_synth_territoires.csv",
+base <- read.csv(file = "extdata/Base_synth_territoires.csv",
                  header = T, sep=";", dec=",") %>% 
   select(1:24) %>% 
   mutate(log_SUPERF = log (SUPERF),
