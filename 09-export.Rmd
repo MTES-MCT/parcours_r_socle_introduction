@@ -35,7 +35,7 @@ load("outputs/env_entier.RData") # chargement de l'environnement stocké sur l'o
 
 save(base, V1, file = "outputs/petit_env.RData") # sauvegarde des éléments base et V1
 rm(list = ls()) # suppression de notre environnement
-load(outputs/"petit_env.RData")
+load("outputs/petit_env.RData")
 ```
 
 >**Avantages    
