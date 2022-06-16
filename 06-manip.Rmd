@@ -1,7 +1,7 @@
 # Première manipulation des données
 
 ```{r}
-require("dplyr")
+library("dplyr")
 ```
 
 ## Afficher les valeurs et manipuler les variables
@@ -105,15 +105,15 @@ Exemple
 base_rename <- rename(base, ZONE_EMPLOI = ZE)
 ```
 
-## Exercice : créer, filtrer, sélectionner 
+## Exercice 3 : créer, filtrer, sélectionner 
 
-- En utilisant la fonction `mutate()`, créer une nouvelle variable correspondant à la densité de population (rapport de la population à la superficie de la commune), ainsi que les taux de natalité et de mortalité (en pour mille)
+- En utilisant la fonction `mutate()`, créer une nouvelle variable correspondant à la densité de population (rapport de la population à la superficie de la commune), ainsi que les taux de natalité et de mortalité (en pour mille de la population 2014)
 
 - A l'aide de la fonction `select()`, créer une nouvelle table en ne conservant que le code commune, le type de commune (ZAU), la région, le département et les variables que vous venez de créer.
 
 - Enfin, ne conserver les communes correspondant à votre département de naissance et stocker ce *dataframe*. Attention au type de la variable département !
 
-- Avec les opérateurs logiques, faire des essais pour sélectionner des échantillons différents.
+- Avec les opérateurs logiques, faire des essais pour sélectionner des échantillons différents (autres départements, densité, l'un et l'autre...).
 
 
 ## Nom d'un pipe `%>%` !
@@ -131,9 +131,9 @@ Cela peut être relativement clair si on respecte de bonnes pratiques de nommage
 On peut emboîter les fonctions :
 ```{r}
 selection_62 <- filter(select(mutate(base, densite = P14_POP / SUPERF,
-             tx_natal = 1000 * NAISD15 / P14_POP,
-             tx_mort = DECESD15 / P14_POP),
-             CODGEO, ZAU, REG, DEP, densite, tx_natal), DEP == "62")
+                                     tx_natal = 1000 * NAISD15 / P14_POP,
+                                     tx_mort = DECESD15 / P14_POP),
+                              CODGEO, ZAU, REG, DEP, densite, tx_natal), DEP == "62")
 ```
 Ce choix préserve l'environnement de travail mais la lecture est particulièrement confuse et le risque d'oubli de parenthèses important.
 

@@ -7,10 +7,10 @@ Après avoir réalisé ces traitements, on peut exporter son travail afin de le 
 - Exporter une table en csv
 ```{r exp_1,eval=FALSE}
 res <- summary(base)
-write.table(x = res, file = 'outputs/resultat_R.csv', sep = ';', row.names = F)
+write.table(x = res, file = 'outputs/resultat_R.csv', sep = ';', row.names = FALSE)
 # row.names=F pour éviter un décalage entre première ligne et les suivantes
 
-write.table(x = base, file = 'outputs/base_R.csv', sep = ';', row.names = F)
+write.table(x = base, file = 'outputs/base_R.csv', sep = ';', row.names = FALSE)
 ```
 
 - Exporter un graphique pour l'intégrer à un document

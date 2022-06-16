@@ -15,8 +15,8 @@ L’interface RStudio est composée de différents panneaux, dont l’arrangemen
 
 ## Session et répertoire de travail
 
-- Session de travail R : commence à l'ouverture de RStudio et se termine en le quittant
-- Répertoire de travail R : dossier dans lequel le logiciel va chercher les fichiers de scripts et de données
+- Session de travail R : commence à l'ouverture de RStudio et se termine en le quittant.
+- Répertoire de travail R : dossier dans lequel le logiciel va chercher les fichiers de scripts et de données.
 - Tout ce qui a été fait au cours d'une session peut être enregistré dans le répertoire de travail :
     - données
     - historique des fonctions …
@@ -34,19 +34,19 @@ Concernant le répertoire de travail, quelques conseils :
 
 - Créer un nouveau répertoire pour un projet particulier qui sera votre répertoire de travail 
 - Créer des sous-répertoires dans ce répertoire : "./Data", "./Figures", "./Redaction"... 
-- Rassembler autant que possible les fichiers qui seront utilisés dans le cadre de ce projet et éviter d'aller chercher des fichiers ailleurs
+- Rassembler autant que possible les fichiers qui seront utilisés dans le cadre de ce projet et éviter d'aller chercher des fichiers ailleurs (sauf à inscrire dans le script une instruction de téléchargement exécutable par tous)
 
-## C'est à vous : créer son répertoire de travail
+## C'est à vous : créer un répertoire de travail
 
-- Sur le poste de travail, créer un dossier devant servir de dossier de travail au cours de la formation
-
-- Copier/coller dans ce dossier le sous-dossier "data" fourni par les formateurs
+- Sur le poste de travail, créer un dossier 'premiers_pas' à partir du menu 'New Folder' (cadran droite bas)
 
 - Dans Rstudio, définir ce dossier comme répertoire de travail directement en utilisant `setwd('')`
 
 - Appeler l'aide en ligne par `?setwd` ou `help(setwd)`
 
 - Faire une recherche dans la partie Help de RStudio
+
+- Créer un script à partir du menu 'File/New File/R script' et l'enregistrer sous 'mes_tous_premiers_pas.R' 
 
 - Lire le contenu du répertoire de travail avec `dir()`
 
@@ -128,7 +128,7 @@ Toujours utiliser des commentaires. Permet de pouvoir mieux comprendre ce que l'
 
 - Recopier le script ci-dessous et changer les paramètres pour le re-exécuter plusieurs fois
 - Sauvegarder ce script dans votre répertoire de travail
-- Fermer RStudio, le rouvrir, et réexécuter le script
+- Redémarrer votre session RStudio, le rouvrir, et ré-exécuter le script
 
 ```{r inter_2}
 # Supprimer toutes les variables existantes
@@ -144,17 +144,18 @@ imc <- poids / (taille ^ 2)
 # Affichage du résultat
 print (imc)
 ```
+
 ## Installer et charger un *package*
 Pour manipuler notre base de données, nous allons nous servir de fonctionnalités présentes dans le package `tidyverse`. 
 
-La première fois que l'on veut utiliser un package, il faut le télécharger sur notre ordinateur, avec `install.packages()` :
+La première fois que l'on veut utiliser un package, il faut le télécharger sur notre machine, avec `install.packages()` :
 ```{r, eval=FALSE}
 install.packages("tidyverse")
 ```
 
 
 Puis à l'ouverture d'une nouvelle session R, le charger (si on a besoin de ses fonctions), avec `library()` :
-```{r}
+```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
 ```
 Le package est prêt à être utilisé !
