@@ -6,7 +6,7 @@ Pour réaliser des graphiques, nous choisissons de nous servir du package `ggplo
 ```{r graph_1, eval=FALSE}
 install.packages("ggplot2")
 library("ggplot2")
-require(dplyr)
+library(dplyr)
 ```
 
 La fonction `ggplot()` fonctionne d'une manière particulière. La structure ressemble à ceci :
@@ -20,7 +20,7 @@ Pour découvrir les nombreuses possibilités de `ggplot2`, vous pouvez vous réf
 - [Version anglaise](http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization)
 - [Version française](http://www.sthda.com/french/wiki/ggplot2)
 
-La fonction `aes()` (pour "aesthetics"), utilisée dans l'instrution `ggplot()` permet de définir les données à tracer. On y indique les dimensions que l'on veut représenter sur le graphique. On peut représenter jusqu'à 5 dimensions sur un même graphique, mais attention à la lisibilité !
+La fonction `aes()` (pour "aesthetics"), utilisée dans l'instruction `ggplot()` permet de définir les données à tracer. On y indique les dimensions que l'on veut représenter sur le graphique. On peut représenter jusqu'à 5 dimensions sur un même graphique, mais attention à la lisibilité !
 
 - 2 variables quanti : x en fonction de y $\rightarrow$ 2 dimensions (nuage de points)
 - taille du point $\rightarrow$ 3e dimension (quanti)
@@ -36,13 +36,13 @@ rm(list = ls())
 base <- read.csv(file = "extdata/Base_synth_territoires.csv",
                  header = T, sep=";", dec=",") %>% 
   select(1:24) %>% 
-  mutate(log_SUPERF = log (SUPERF),
-         REG = as.factor (REG),
+  mutate(log_SUPERF = log(SUPERF),
+         REG = as.factor(REG),
          densite = P14_POP / SUPERF,
          tx_natal = 1000 * NAISD15 / P14_POP,
          tx_mort = DECESD15 / P14_POP)
 
-ggplot(base, aes(x = log_SUPERF)) + geom_histogram()
+ggplot(data = base, mapping = aes(x = log_SUPERF)) + geom_histogram()
 ```
 
 ## Nuages de points
@@ -51,7 +51,7 @@ Selon les graphiques que l'on veut tracer, on peut renseigner plusieurs variable
 
 ```{r graph_4, message=FALSE, warning=FALSE, cache=TRUE}
 ggplot(base, aes(x = P14_EMPLT, y = MED13)) + geom_point(colour = "blue")
-ggplot(base, aes(x = log (P14_EMPLT), y = log(MED13))) + geom_point(colour = "blue")
+ggplot(base, aes(x = log(P14_EMPLT), y = log(MED13))) + geom_point(colour = "blue")
 ```
 
 
