@@ -3,10 +3,8 @@
 ## 04 - importer des données et premier coup d'oeil
 
 ```{r inspectdf}
-df <- read.csv(file = "extdata/Base_synth_territoires.csv",
-               sep = ";", dec = ",",
-               colClasses = c(NA, "NULL", "character", "NULL","NULL","NULL",
-                              NA, NA, NA, NA, rep("NULL", 28)))
+df <- read.csv(file = "extdata/Base_synth_territoires.csv", header = TRUE, sep = ";", dec = ",",
+               colClasses = c(rep("character", 2), rep("factor", 4) , rep(NA, 32)))
 
 str(df)
 head(df)
@@ -19,7 +17,7 @@ typeof(df)
 ## 06 - créer, filtrer, sélectionner
 
 ```{r}
-df <- mutate(base, densite = P14_POP / SUPERF,
+df <- mutate(df, densite = P14_POP / SUPERF,
              tx_natal = 1000 * NAISD15 / P14_POP,
              tx_mort = DECESD15 / P14_POP)
 ```
@@ -51,7 +49,7 @@ S6 <- filter(selection, DEP == "62" | densite > 100) # le PdC et l'urbain
 
 
 ```{r stat_10}
-df <- base %>% 
+df <- df %>% 
   select(1:24) %>% 
   mutate(densite = P14_POP / SUPERF,
          tx_natal = 1000 * NAISD15 / P14_POP,
@@ -112,39 +110,39 @@ t
 
 
 ```{r graph_5}
-ggplot(data = base, aes(x = P14_POP)) +
+ggplot(data = df, aes(x = P14_POP)) +
   geom_histogram()
 ```
 
 Ce n'est pas très informatif, mais on peut faire une transformation log pour y voir plus clair !
 
 ```{r graph_6}
-ggplot(data = base, aes(x = log(P14_POP))) +
+ggplot(data = df, aes(x = log(P14_POP))) +
   geom_histogram()
 ```
 
-Faites maintenant un barplot (qui n'est pas un histogramme !!!!) du nombre de communes par type ZAU.
+Faites maintenant un barplot (qui n'est pas un histogramme !!!!) du nombre de communes par REG.
 
 ```{r graph_7}
-ggplot(data = base, aes(x = REG)) +
+ggplot(data = df, aes(x = REG)) +
   geom_bar()
 ```
 
 On va essayer d'y voir plus clair avec le paramètre `fill`
 
 ```{r graph_8}
-ggplot(data = base, aes(x = REG, fill = REG)) +
+ggplot(data = df, aes(x = REG, fill = REG)) +
   geom_bar()
 ```
 
 
 ```{r graph_9}
-ggplot(data = base, aes(x = log(P14_POP), y = log(P14_LOGVAC))) +
+ggplot(data = df, aes(x = log(P14_POP), y = log(P14_LOGVAC))) +
   geom_point()
 ```
 
 ```{r graph_10}
-ggplot(data = base, aes(x = densite, y = tx_mort, color = REG)) +
+ggplot(data = df, aes(x = densite, y = tx_mort, color = REG)) +
   geom_point()
 ```
 

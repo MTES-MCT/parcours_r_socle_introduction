@@ -127,7 +127,7 @@ Toujours utiliser des commentaires. Permet de pouvoir mieux comprendre ce que l'
 ## C'est à vous : utiliser un script
 
 - Recopier le script ci-dessous et changer les paramètres pour le re-exécuter plusieurs fois
-- Sauvegarder ce script dans votre répertoire de travail
+- Sauvegarder ce script dans votre répertoire de travail, fermez le
 - Redémarrer votre session RStudio, le rouvrir, et ré-exécuter le script
 
 ```{r inter_2}

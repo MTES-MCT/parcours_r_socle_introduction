@@ -75,7 +75,9 @@ for (pp in seq(from = 50, to = 100, by = 5))
 ```
 
 
-### Pour aller plus loin : matrices et arrays
+## Pour aller plus loin 
+
+### matrices et arrays
 
 Les matrices et les arrays permettent des calculs rapides et efficaces, et peuvent être très pratiques et optimisent le stockage des données. Ils demandent cependant plus de réflexion en amont quant à leur utilisation. On accède aux éléments avec les [].
 

@@ -33,7 +33,7 @@ save(list = ls(), file = "outputs/env_entier.RData") # sauvegarde de tout l'envi
 rm(list = ls()) # suppression de notre environnement dans R
 load("outputs/env_entier.RData") # chargement de l'environnement stocké sur l'ordinateur
 
-save(base, V1, file = "outputs/petit_env.RData") # sauvegarde des éléments base et V1
+save(base, res, file = "outputs/petit_env.RData") # sauvegarde des éléments base et V1
 rm(list = ls()) # suppression de notre environnement
 load("outputs/petit_env.RData")
 ```
