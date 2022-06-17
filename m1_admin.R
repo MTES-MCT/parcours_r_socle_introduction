@@ -11,21 +11,18 @@ pagedown::chrome_print(input = "index.rmd")
 propre.rpls::creer_pdf_book(
   chemin_book = "_book/", nom_pdf = "M1_Debuter_avec_R_et_RStudio.pdf",
   pages_html = c(
-    "index.html",
-    "bien-commencer.html",
-    "package-ggplot2.html",
-    "le-mapping.html",
-    "les-formes-géométriques.html",
-    "lhabillage-simple.html",
-    "les-thèmes.html",
-    "les-scales.html",
-    "la-mise-en-page-de-plusieurs-graphiques.html",
-    "les-facettes.html",
-    "exporter-un-graphique.html",
-    "créer-des-cartes-avec-ggplot2.html",
-    "animer-ses-graphiques-ggplot-avec-gganimate.html",
-    "créer-des-graphiques-et-cartes-pour-le-web.html",
-    "créer-des-tableaux-avec-kable-et-kable-extra.html",
-    "ressources.html",
-    "exercices-et-corrections.html"
+    "index.html",   
+    "r-son-écosystème-et-ses-possibilités.html",                            
+    "présentation-de-linterface-et-premières-manipulations.html",            
+    "bien-commencer.html",                                                   
+    "mon-premier-jeu-de-données.html",                                       
+    "première-manipulation-des-données.html" ,                               
+    "premiers-traitements-statistiques.html",                                
+    "premiers-graphiques.html",                                    
+    "sauvegarder-son-travail.html" ,
+    "aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html",
+    "exercices-corrigés.html",                                    
+    "exercices-pour-r-studio.html"
   ))
+
+                                        
