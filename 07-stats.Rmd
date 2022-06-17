@@ -53,8 +53,6 @@ base_med <- base_extrait %>%
 
 La fonction `summarise()` retourne un data.frame.
 
-TODO: image summarise dplyr
-
 ### Selon un facteur
 
 <center>![](images/groupby.png)</center>

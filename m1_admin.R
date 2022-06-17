@@ -5,7 +5,6 @@ bookdown::render_book("index.Rmd", "bookdown::epub_book")
 
 # Erreur à la compilation
 # bookdown::render_book("index.Rmd", "bookdown::pdf_book")
-pagedown::chrome_print(input = "index.rmd")
 
 # Commande pour générer un support pdf du module
 propre.rpls::creer_pdf_book(
