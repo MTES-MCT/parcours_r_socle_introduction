@@ -5,7 +5,7 @@ Après avoir réalisé ces traitements, on peut exporter son travail afin de le 
 ## Exportation des résultats
 
 - Exporter une table en csv
-```{r exp_1,eval=FALSE}
+```{r exp_1, eval=FALSE}
 res <- summary(base)
 write.table(x = res, file = 'outputs/resultat_R.csv', sep = ';', row.names = FALSE)
 # row.names=F pour éviter un décalage entre première ligne et les suivantes

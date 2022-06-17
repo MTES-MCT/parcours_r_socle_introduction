@@ -1,6 +1,6 @@
 # Première manipulation des données
 
-```{r}
+```{r manip}
 library("dplyr")
 ```
 
