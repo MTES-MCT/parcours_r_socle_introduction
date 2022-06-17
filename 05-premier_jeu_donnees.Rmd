@@ -19,7 +19,7 @@ Ces vecteurs peuvent être vus comme des colonnes de valeurs toutes du même typ
 
 Différentes fonctions permettent de créer des vecteurs.
 
-```{r}
+```{r premierJeuDonnees}
 vect_num <- c(1, 160, 2, 9)
 
 vect_txt <- c("Je", "programme", "en", "R")
@@ -152,3 +152,51 @@ Ici, nous travaillerons sur une base de données communales fournie par l'Insee,
 - Utiliser la fonction `read.csv()` pour importer ce fichier et stocker le dans un objet `df`. **Veillez à ce que la région soit bien importée comme un facteur et non un entier**  
 
 - Inspecter le dataframe avec les fonctions vues auparavant pour connaître le nombre de lignes, de colonnes, ... 
+
+
+
+
+## Catalogue d'attributs de la base  
+
+
+
+- *CODGEO* : [text] Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal
+- *LIBGEO* : [text] Libellé de la commune ou de l'arrondissement municipal pour Paris
+- *REG*: [text] Région
+- *DEP* : [text] Département
+- *ZAU* : [text] Zonage en aire urbaine
+- *ZE* : [text] Zone d'emploi
+- *P14_POP*: [double] Population en 2014
+- *P09_POP*: [double] Population en 2009
+- *SUPERF*: [double] Superficie (en km2)
+- *NAIS0914*: [double] Nombre de naissances entre le 01/01/2009 et le 01/01/2014
+- *DECE0914*: [double] Nombre de décès entre le 01/01/2009 et le 01/01/2014
+- *P14_MEN*: [double] Nombre de ménages en 2014
+- *NAISD15*: [double] Nombre de naissances domiciliées en 2015
+- *DECESD15*: [double] Nombre de décès domiciliés en 2015
+- *P14_LOG*: [double] Nombre de logements en 2014
+- *P14_RP*: [double] Nombre de résidences principales en 2014
+- *P14_RSECOCC*: [double] Nombre de résidences secondaires et logements occasionnels en 2014
+- *P14_LOGVAC*: [double] Nombre de logements vacants en 2014
+- *P14_RP_PROP*: [double] Nombre de résidences principales occupées par propriétaires en 2014
+- *NBMENFISC13*: [double] Nombre de ménages fiscaux en 2013
+- *PIMP13*: [text] Part des ménages fiscaux imposés en 2013
+- *MED13*: [double] Médiane du niveau de vie en 2013
+- *TP6013*: [text] Taux de pauvreté en 2013
+- *P14_EMPLT*: [double] Nombre d'emplois au lieu de travail en 2014
+- *P14_EMPLT_SAL*: [double] Nombre d'emplois salariés au lieu de travail en 2014
+- *P09_EMPLT*: [double] Nombre d'emplois au lieu de travail en 2009
+- *P14_POP1564*: [double] Nombre de personnes de 15 à 64 ans en 2014
+- *P14_CHOM1564*: [double] Nombre de chômeurs de 15 à 64 ans en 2014
+- *P14_ACT1564*: [double] Nombre de personnes actives de 15 à 64 ans en 2014
+- *ETTOT14*: [double] Total des établissements actifs au 31 décembre 2014
+- *ETAZ14*: [double] Etablissements actifs de l'agriculture, sylviculture et pêche au 31/12/2014
+- *ETBE14*: [double] Etablissements actifs de l'industrie au 31/12/2014
+- *ETFZ14*: [double] Etablissements actifs de la construction au 31/12/2014
+- *ETGU14*: [double] Etablissements actifs du commerce, transports et services divers au 31/12/2014
+- *ETGZ14*: [double] Etablissements actifs du commerce et réparation automobile au 31/12/2014
+- *ETOQ14*: [double] Etablissements actifs de l'administration publique, enseignement, santé et action sociale au 31/12/2014
+- *ETTEF114*: [double] Etablissements actifs de 1 à 9 salariés au 31 décembre 2014
+- *ETTEFP1014*: [double] Etablissements actifs de 10 salariés ou plus au 31 décembre 2014
+
+
