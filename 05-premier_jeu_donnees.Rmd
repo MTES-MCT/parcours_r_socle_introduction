@@ -14,15 +14,18 @@ Les formats de dates sont de type character.
 
 ## Les vecteurs
 
-Les valeurs peuvent être structurées au sein de vecteurs. Ces vecteurs peuvent être vus comme des colonnes de valeurs toutes du même type.
+Les valeurs peuvent être structurées au sein de vecteurs. 
+Ces vecteurs peuvent être vus comme des colonnes de valeurs toutes du même type.
 
 Différentes fonctions permettent de créer des vecteurs.
 
-```{r}
-vect_num <- c(1,160,2,9)
-vect_txt <- c("Je","programme","en","R")
+```{r premierJeuDonnees}
+vect_num <- c(1, 160, 2, 9)
+
+vect_txt <- c("Je", "programme", "en", "R")
 
 sequence <- seq(from = 1, to = 10, by = 1)
+sequence_pareille <- 1:10
 
 repetition <- rep("bla", 3)
 
@@ -38,7 +41,7 @@ Ces dataframes peuvent être créées par association des vecteurs avec les fonc
 ```{r}
 dataframe_a <- data.frame(vect_num, vect_txt)
 
-dataframe_b <- bind_cols(vect_num, vect_txt)
+dataframe_b <- bind_cols("vect_num" = vect_num, "vect_txt" = vect_txt)
 ```
 
 Une dataframe peut aussi être créée par l'import d'un tableau, voir le chapitre dédié.
@@ -60,11 +63,11 @@ Il est possible d'accéder aux éléments d’une dataframe à partir du numéro
 - NaN : pas un nombre (*Not a Number*) lorsqu'une fonction tente de diviser par 0
 - -Inf, Inf : inﬁni positif ou négatif lorsque une fonction diverge
 
-Une valeur manquante peut perturber l'éxecution d'une fonction :
+Une valeur manquante peut perturber l’exécution d'une fonction :
 ```{r}
 V1 <- c(1, 14, NA, 32.7)
 mean(V1)              # renvoie NA. Not good !
-mean(V1, na.rm = T)   # renvoie 15.9   - OK !
+mean(V1, na.rm = TRUE)   # renvoie 15.9   - OK !
 ```
 
 Les noms de ces valeurs particulières sont "réservés" par R, ils ne peuvent pas être utilisés comme nom de variable.
@@ -77,16 +80,16 @@ $\Rightarrow$ Le [module 2 "Préparation des données"](https://mtes-mct.github.
 Conseil : exporter les données au format CSV ; c'est le format le plus interopérable (supporté par tous les logiciels stat). Utiliser ensuite la fonction `read.csv` après avoir défini le répertoire de travail (ou en donnant le chemin complet)
 
 ```{r lecturecsv}
-base0 <- read.csv (file = "extdata/Base_synth_territoires.csv",
-                 header = T,
-                 sep = ";",
-                 dec = ",")
+base0 <- read.csv(file = "extdata/Base_synth_territoires.csv",
+                  header = TRUE,
+                  sep = ";",
+                  dec = ",")
 ```
 
 - `header =`indique la présence des noms de variable sur la première ligne
 - `sep =` indique le séparateur de champ : ';' '/t' pour tabulation
 - `dec =` indique le séparateur de décimale ('.' par défaut)
-- `colClasses =`permet de préciser le type de chaque colonne de la donnée en entrée
+- `colClasses =`permet de préciser le type de chaque colonne de la donnée en entrée, par exemple pour une table de 3 colonnes de types texte, puis 2 fois numériques : `colClasses = c("character", "numeric", "numeric")`. `NA` pour laisser R deviner, `NULL` pour éviter d'importer la colonne.
 
 $\Rightarrow$ `?read.csv` pour plus d'options
 
@@ -99,12 +102,17 @@ Autres façons d'importer les données
 
 
 ## Gérer le type des variables
-Chaque variable est du type de son contenu (numeric, character, logical). Si les valeurs prises par la variables correspondent à un nombre fini de modalités, la variable peut être du type "factor". Ses composantes sont toujours d'un des 3 types décrits ci-dessus mais il est possible d'employer des fonctions spécifiques au traitement de modalités.
-À chaque type de variable correspond une utilisation. Lors de l’import des données, un type est affecté automatiquement par R.
-Mais le type peut être erronné. Il suffit alors de les convertir :
+Chaque variable est du type de son contenu (numeric, character, logical). 
+Si les valeurs prises par la variables correspondent à un nombre fini de modalités, **la variable peut être du type "factor"**. 
+Ses composantes sont toujours d'un des 3 types décrits ci-dessus mais il est possible d'employer des fonctions spécifiques au traitement de modalités.
+À chaque type de variable correspond une utilisation. 
+Lors de l’import des données, un type est affecté automatiquement par R.
+Mais le type peut être erroné. 
+Il suffit alors de les convertir :
 
 ```{r converttype}
-base <- mutate(base0, LIBGEO = as.character (LIBGEO))
+base <- mutate(base0, LIBGEO = as.character(LIBGEO))
+
 ```
 
 ou `as.factor()`, `as.numeric()`, etc...
@@ -122,9 +130,9 @@ Pour être sûr de ne pas faire de bêtise, il vaut mieux gérer les types au mo
 Les fonctions suivantes permettent de connaître la structure de la dataframe, d'en connaître les variables, d'en observer certaines lignes ou d'en vérifier le type.
 
 ```{r dimdf}
-nrow (base) # nombre de lignes
-ncol (base) # nombre de colonnes
-dim (base) # nombre de lignes et de colonnes
+nrow(base) # nombre de lignes
+ncol(base) # nombre de colonnes
+dim(base) # nombre de lignes et de colonnes
 names(base) # noms des variables
 str(base) # nom, type et extrait des variables
 head(base) # 6 premières lignes
@@ -135,12 +143,60 @@ typeof(base) # le type d'objet du point de vue "interne" à R
 ```
 
 
-## Exercice : importer des données et premier coup d'oeil
+## Exercice 2 : importer des données et premier coup d'oeil
 
 On peut importer n'importe quel format de données en R (Excel, SAT, Stata, SQL...). Beaucoup sont abordés lors du [module 2 "Préparation des données"](https://mtes-mct.github.io/parcours_r_socle_preparation_des_donnees/). Pour ce module, nous ne voyons que l'importation de fichier `.CSV`. Si vous avez une base de données en Excel ou LibreOffice Calc, sauvegardez l'onglet que vous souhaitez en faisant "enregistrer sous" $\rightarrow$ "délimité CSV". 
 
-Ici, nous travaillerons sur une base de données communales fournie par l'Insee, dite "comparateur de territoires". Le fichier source (Excel) figure dans le sous-répertoire "data" et contient toutes les métadonnées.
+Ici, nous travaillerons sur une base de données communales fournie par l'Insee, dite "comparateur de territoires".
 
+- Utiliser la fonction `read.csv()` pour importer ce fichier et stocker le dans un objet `df`. **Veillez à ce que la région soit bien importée comme un facteur et non un entier**  
 
-- Utiliser la fonction `read.csv()` pour importer ce fichier et stocker le dans un objet `df`. **Veillez à ce que la région soit bien importée comme un facteur et non un entier**
 - Inspecter le dataframe avec les fonctions vues auparavant pour connaître le nombre de lignes, de colonnes, ... 
+
+
+
+
+## Catalogue d'attributs de la base  
+
+
+
+- *CODGEO* : [text] Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal
+- *LIBGEO* : [text] Libellé de la commune ou de l'arrondissement municipal pour Paris
+- *REG*: [text] Région
+- *DEP* : [text] Département
+- *ZAU* : [text] Zonage en aire urbaine
+- *ZE* : [text] Zone d'emploi
+- *P14_POP*: [double] Population en 2014
+- *P09_POP*: [double] Population en 2009
+- *SUPERF*: [double] Superficie (en km2)
+- *NAIS0914*: [double] Nombre de naissances entre le 01/01/2009 et le 01/01/2014
+- *DECE0914*: [double] Nombre de décès entre le 01/01/2009 et le 01/01/2014
+- *P14_MEN*: [double] Nombre de ménages en 2014
+- *NAISD15*: [double] Nombre de naissances domiciliées en 2015
+- *DECESD15*: [double] Nombre de décès domiciliés en 2015
+- *P14_LOG*: [double] Nombre de logements en 2014
+- *P14_RP*: [double] Nombre de résidences principales en 2014
+- *P14_RSECOCC*: [double] Nombre de résidences secondaires et logements occasionnels en 2014
+- *P14_LOGVAC*: [double] Nombre de logements vacants en 2014
+- *P14_RP_PROP*: [double] Nombre de résidences principales occupées par propriétaires en 2014
+- *NBMENFISC13*: [double] Nombre de ménages fiscaux en 2013
+- *PIMP13*: [text] Part des ménages fiscaux imposés en 2013
+- *MED13*: [double] Médiane du niveau de vie en 2013
+- *TP6013*: [text] Taux de pauvreté en 2013
+- *P14_EMPLT*: [double] Nombre d'emplois au lieu de travail en 2014
+- *P14_EMPLT_SAL*: [double] Nombre d'emplois salariés au lieu de travail en 2014
+- *P09_EMPLT*: [double] Nombre d'emplois au lieu de travail en 2009
+- *P14_POP1564*: [double] Nombre de personnes de 15 à 64 ans en 2014
+- *P14_CHOM1564*: [double] Nombre de chômeurs de 15 à 64 ans en 2014
+- *P14_ACT1564*: [double] Nombre de personnes actives de 15 à 64 ans en 2014
+- *ETTOT14*: [double] Total des établissements actifs au 31 décembre 2014
+- *ETAZ14*: [double] Etablissements actifs de l'agriculture, sylviculture et pêche au 31/12/2014
+- *ETBE14*: [double] Etablissements actifs de l'industrie au 31/12/2014
+- *ETFZ14*: [double] Etablissements actifs de la construction au 31/12/2014
+- *ETGU14*: [double] Etablissements actifs du commerce, transports et services divers au 31/12/2014
+- *ETGZ14*: [double] Etablissements actifs du commerce et réparation automobile au 31/12/2014
+- *ETOQ14*: [double] Etablissements actifs de l'administration publique, enseignement, santé et action sociale au 31/12/2014
+- *ETTEF114*: [double] Etablissements actifs de 1 à 9 salariés au 31 décembre 2014
+- *ETTEFP1014*: [double] Etablissements actifs de 10 salariés ou plus au 31 décembre 2014
+
+

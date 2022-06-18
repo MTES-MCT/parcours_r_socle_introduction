@@ -1,4 +1,4 @@
---- 
+---
 title: "Découvrir R et RStudio"
 author: "Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz & Nicolas Torterotot"
 date: '`r format(Sys.time(), "%d %B %Y")`'
@@ -10,60 +10,41 @@ link-citations: yes
 description: "Découvrir R et RStudio (module socle)"
 ---
 
+```{=html}
 <style> 
   body {text-align: justify;}
 </style>
-
+```
 ```{r setup, include=FALSE}
 rm(list=ls())
-knitr::opts_chunk$set(echo = T, message=F, error=F,warning=F,fig.width=6, fig.height=6)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, error = FALSE, warning = FALSE,
+                      dev = "svg",
+                      fig.width = 6, fig.height = 6)
 ```
 
 # Introduction
 
 ![](images/grenouille.jpg)
 
-<font size="2"> 
-*Crédit photographique Pascal Boulin*
-</font> 
-
+<font size="2"> *Crédit photographique Pascal Boulin* </font>
 
 ## Le parcours de formation
 
-Ce dispositif de formation vise à faire monter en compétence les agents du MTES (Ministère de la transition écologique) et du MCTRCT (Ministère de la Cohésion des Territoires et des Relations avec les collectivités territoriales) dans le domaine de la science de la donnée avec le logiciel R. Il est conçu pour être déployé à l'échelle nationale par le réseau des CVRH (Centre de Valorisation des Ressources Humaines).
+```{r collecte prez parcours, results='asis', warning=FALSE, echo=FALSE}
+# Utilisation du chapitre de présentation du parcours présent dans https://github.com/MTES-MCT/parcours-r
+cat(stringi::stri_read_lines("https://raw.githubusercontent.com/MTES-MCT/parcours-r/parties_communes/parties_communes/le_parcours_R.Rmd", encoding = "UTF-8"), sep = "\n")
 
-Le parcours proposé est structuré en modules de 2 jours chacun. Les deux premiers (ou un niveau équivalent) sont des pré-requis pour suivre les suivants qui sont proposés "à la carte" :
+```
 
-1. Socle : Premier programme en R
-2. Socle : Préparation des données
-3. Statistiques descriptives
-4. Analyse des données multi-dimensionnelles
-5. Datavisualisation : Produire des graphiques, des cartes et des tableaux
-6. Publications reproductibles avec RMarkdown (à venir)
-7. Analyse spatiale (à venir)
-8. Big data et optimisation du code (à venir)
-9. Applications interactives avec Shiny (à venir)
-
-
-La mise à disposition des supports de formation se fait désormais par la [page d'accueil du parcours de formation](https://mtes-mct.github.io/parcours-r/). Ces supports sont en [licence ouverte](https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf).
-
-
-Si vous souhaitez accéder aux sources ou aux données mobilisées pendant les formations, il faut directement les télécharger depuis le [Github du ministère](https://github.com/MTES-MCT?q=parcours_r&type=&language=).
-
-Pour vous tenir au courant de l'offre de formation proposée par le réseau des CVRH, [consultez la plateforme OUPS](http://oups-cmvrh.e2.rie.gouv.fr/) (un accès intranet MTES-MCT est nécessaire). Vous pouvez vous y abonner pour recevoir les annonces de formation qui vous intéressent.
-
-Pour échanger de l'information, discuter autour de R ou encore faire part de difficultés et trouver ensemble les solutions, il existe deux solutions:
-- S'insrire, en envoyant un message vide avec le titre "subscribe labo.communaute-r", à l'adresse sympa@developpement-durable.gouv.fr.
-- rejoindre le fil Ariane # utilisateurs_r
 
 ## Objectifs du module 1
 
 Ce module vise à faire découvrir :
 
-- R et son écosystème
-- L'interface de RStudio
-- Les méthodes élémentaires d'importation des données
-- Des premières statistiques
-- Des premières représentations graphiques
+-   R et son écosystème.  
+-   L'interface de RStudio.  
+-   Les méthodes élémentaires d'importation des données  
+-   Des premières statistiques  
+-   Des premières représentations graphiques  
 
 Il s'agit d'avoir les clefs pour commencer à travailler rapidement sur R en complément, voire en remplacement d'autres outils (Excel, SAS...). Les concepts de programmation sont également abordés pour comprendre les syntaxes proposées dans les différents forums d'aide.

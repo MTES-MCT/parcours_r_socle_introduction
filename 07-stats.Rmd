@@ -26,9 +26,9 @@ Les fonctions `sum()`, `mean()`, `median()`, `min()`, `max()`, `var()`, `sd()`..
 La fonction `quantile()` renvoie les quartiles de la variables (ou bien tout autre découpage qu'on lui renseigne).
 
 ```{r stat_4}
-sum(pull(base_extrait, P14_POP), na.rm = T)
-mean(pull(base_extrait, P14_POP), na.rm = T)
-median(pull(base_extrait, P14_POP), na.rm = T)
+sum(pull(base_extrait, P14_POP), na.rm = TRUE)
+mean(pull(base_extrait, P14_POP), na.rm = TRUE)
+median(pull(base_extrait, P14_POP), na.rm = TRUE)
 quantile(pull(base_extrait, P14_POP), probs = c(0.25, 0.5, 0.75), na.rm = T)
 ```
 
@@ -43,7 +43,7 @@ Ces fonctions retournent une valeur, ou bien un ensemble de valeur (pour `quanti
 La fonction `summarise()` permet d'aggréger des données, en appliquant une fonction sur les variables pour construire une statistique sur les observations de la table. C'est une fonction dite de “résumé”.
 
 ```{r stat_5, eval=FALSE}
-summarise (TableEnEntree, NomVariableAgregee = Fonction(NomVariableEtude))
+summarise(TableEnEntree, NomVariableAgregee = Fonction(NomVariableEtude))
 ```
 
 ```{r stat_6}
@@ -60,15 +60,15 @@ La fonction `summarise()` retourne un data.frame.
 La fonction `summarise()` couplée à `group_by()` permet de calculer des statistiques pour chaque modalité d'une variable qualitative. Avec `group_by()`, on précise les variables qui formeront des groupes, sur lesquels on appliquera une fonction :
 
 ```{r, eval=FALSE}
-TableauGroupes <- group_by (TableEnEntree, Variable1, ..., VariableN)
-summarise (TableauGroupes, NomVariableAgregee = Fonction (NomVariableEtude))
+TableauGroupes <- group_by(TableEnEntree, Variable1, ..., VariableN)
+summarise(TableauGroupes, NomVariableAgregee = Fonction (NomVariableEtude))
 ```
 
 Par exemple, si on veut avoir la médiane de la variable P14_POP, pour chaque ZAU et chaque région :
 ```{r stat_7}
 base_reg_ann <- base_extrait %>% 
-  group_by (ZAU, REG) %>%
-  summarise (population_med = median (P14_POP, na.rm = T))
+  group_by(ZAU, REG) %>%
+  summarise(population_med = median (P14_POP, na.rm = TRUE))
 ```
 
 
@@ -77,7 +77,9 @@ base_reg_ann <- base_extrait %>%
 La fonction `table()` calcule les effectifs d'un tableau croisé :
 ```{r stat_8}
 t <- base_extrait %>% 
-  select(ZAU, REG) %>% table
+  select(ZAU, REG) %>% 
+  table()
+
 print(t)
 ```
 
@@ -98,12 +100,12 @@ La fonction `prop.table()` prend en entrée un objet `table` (tableau de conting
 *Attention*: la fonction `prop.table()` a été améliorée avec le changement de version de R base. La version <3.6.2 ne permettait pas d'utiliser le nom de la variable (ici "REG") pour spécifier le mode de calcul des fréquences, l'option était alors `margin=` (1: en ligne, 2: en colonne)
 
 
-## Exercice : calcul de statistiques 
+## Exercice 4 : calcul de statistiques 
 
 - Utilisez la fonction `summary()` pour obtenir un résumé de l'ensemble des variables de la table df
 - Calculez maintenant les moyenne, médiane, écart-type et variance de la variable de densité de population. Que constatez-vous ?
-- Utilisez le paramètre `na.rm = T` pour gérer les valeurs manquantes
-- Calulez à présent les quartiles puis déciles de cette variables
+- Utilisez le paramètre `na.rm = TRUE` pour gérer les valeurs manquantes
+- Calculez à présent les quartiles puis déciles de cette variables
 - Calculez la version centrée réduite de la variable de densité. Rappel : on calcule la version centrée réduite d'une variable X en lui appliquant la transformation suivante : $$ STD_X =\dfrac{X-\bar{X}}{\sigma_X}$$ où $\bar{X}$ est la moyenne empirique de X et $\sigma_X$ son écart-type
 
 Tableaux croisés : 
