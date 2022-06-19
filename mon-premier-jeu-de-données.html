@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 5 Mon premier jeu de données | Découvrir R et RStudio</title>
   <meta name="description" content="Chapitre 5 Mon premier jeu de données | Découvrir R et RStudio (module socle)" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 5 Mon premier jeu de données | Découvrir R et RStudio" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2021-10-05" />
+<meta name="date" content="2022-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="bien-commencer.html"/>
 <link rel="next" href="première-manipulation-des-données.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +51,15 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -127,6 +127,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -151,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html"><i class="fa fa-check"></i><b>2</b> R, son écosystème et ses possibilités</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#le-groupe-de-référents"><i class="fa fa-check"></i><b>2.1</b> Le groupe de référents</a></li>
+<li class="chapter" data-level="2.1" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#le-groupe-de-référents-r-du-pôle-ministériel"><i class="fa fa-check"></i><b>2.1</b> Le groupe de référents R du pôle ministériel</a></li>
 <li class="chapter" data-level="2.2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#r-cest-quoi"><i class="fa fa-check"></i><b>2.2</b> R c’est quoi ?</a></li>
 <li class="chapter" data-level="2.3" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-peu-dhistoire"><i class="fa fa-check"></i><b>2.3</b> Un peu d’histoire</a></li>
 <li class="chapter" data-level="2.4" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-logiciel-libre"><i class="fa fa-check"></i><b>2.4</b> Un logiciel libre</a></li>
@@ -163,7 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#une-interface-dédiée-rstudio"><i class="fa fa-check"></i><b>3.1</b> Une interface dédiée : RStudio</a></li>
 <li class="chapter" data-level="3.2" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#session-et-répertoire-de-travail"><i class="fa fa-check"></i><b>3.2</b> Session et répertoire de travail</a></li>
-<li class="chapter" data-level="3.3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-son-répertoire-de-travail"><i class="fa fa-check"></i><b>3.3</b> C’est à vous : créer son répertoire de travail</a></li>
+<li class="chapter" data-level="3.3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-un-répertoire-de-travail"><i class="fa fa-check"></i><b>3.3</b> C’est à vous : créer un répertoire de travail</a></li>
 <li class="chapter" data-level="3.4" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#prise-en-main-de-la-console"><i class="fa fa-check"></i><b>3.4</b> Prise en main de la console</a></li>
 <li class="chapter" data-level="3.5" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#création-dune-variable"><i class="fa fa-check"></i><b>3.5</b> Création d’une variable</a></li>
 <li class="chapter" data-level="3.6" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-et-manipuler-des-variables"><i class="fa fa-check"></i><b>3.6</b> C’est à vous : créer et manipuler des variables</a></li>
@@ -174,9 +175,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="bien-commencer.html"><a href="bien-commencer.html"><i class="fa fa-check"></i><b>4</b> Bien commencer</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-un-projet-sous-rstudio-pour-vous-permettre-de-recenser-vos-travaux."><i class="fa fa-check"></i><b>4.1</b> Créer un projet sous Rstudio pour vous permettre de recenser vos travaux.</a></li>
-<li class="chapter" data-level="4.2" data-path="bien-commencer.html"><a href="bien-commencer.html#intégrer-vos-données"><i class="fa fa-check"></i><b>4.2</b> Intégrer vos données</a></li>
-<li class="chapter" data-level="4.3" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-votre-arborescence-de-projet"><i class="fa fa-check"></i><b>4.3</b> Créer votre arborescence de projet</a></li>
-<li class="chapter" data-level="4.4" data-path="bien-commencer.html"><a href="bien-commencer.html#utilisation-du-package-savoirfr"><i class="fa fa-check"></i><b>4.4</b> Utilisation du package savoirfR</a></li>
+<li class="chapter" data-level="4.2" data-path="bien-commencer.html"><a href="bien-commencer.html#utilisation-du-package-savoirfr"><i class="fa fa-check"></i><b>4.2</b> Utilisation du package <code>{savoirfR}</code></a></li>
+<li class="chapter" data-level="4.3" data-path="bien-commencer.html"><a href="bien-commencer.html#intégrer-vos-données"><i class="fa fa-check"></i><b>4.3</b> Intégrer vos données</a></li>
+<li class="chapter" data-level="4.4" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-votre-arborescence-de-projet"><i class="fa fa-check"></i><b>4.4</b> Créer votre arborescence de projet</a></li>
 <li class="chapter" data-level="4.5" data-path="bien-commencer.html"><a href="bien-commencer.html#activer-les-packages-nécessaires"><i class="fa fa-check"></i><b>4.5</b> Activer les packages nécessaires</a></li>
 <li class="chapter" data-level="4.6" data-path="bien-commencer.html"><a href="bien-commencer.html#bien-structurer-ses-projets-data"><i class="fa fa-check"></i><b>4.6</b> Bien structurer ses projets <em>data</em></a></li>
 </ul></li>
@@ -189,7 +190,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#importation-de-données"><i class="fa fa-check"></i><b>5.5</b> Importation de données</a></li>
 <li class="chapter" data-level="5.6" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#gérer-le-type-des-variables"><i class="fa fa-check"></i><b>5.6</b> Gérer le type des variables</a></li>
 <li class="chapter" data-level="5.7" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#structure-des-données-le-dataframe"><i class="fa fa-check"></i><b>5.7</b> Structure des données : le <em>dataframe</em></a></li>
-<li class="chapter" data-level="5.8" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#exercice-importer-des-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>5.8</b> Exercice : importer des données et premier coup d’oeil</a></li>
+<li class="chapter" data-level="5.8" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#exercice-2-importer-des-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>5.8</b> Exercice 2 : importer des données et premier coup d’oeil</a></li>
+<li class="chapter" data-level="5.9" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#catalogue-dattributs-de-la-base"><i class="fa fa-check"></i><b>5.9</b> Catalogue d’attributs de la base</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html"><i class="fa fa-check"></i><b>6</b> Première manipulation des données</a>
 <ul>
@@ -199,7 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#filtrer-des-observations"><i class="fa fa-check"></i><b>6.4</b> Filtrer des observations</a></li>
 <li class="chapter" data-level="6.5" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#les-tests-logiques-dans-r"><i class="fa fa-check"></i><b>6.5</b> Les tests logiques dans R</a></li>
 <li class="chapter" data-level="6.6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#renommer-des-colonnes"><i class="fa fa-check"></i><b>6.6</b> Renommer des colonnes</a></li>
-<li class="chapter" data-level="6.7" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#exercice-créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>6.7</b> Exercice : créer, filtrer, sélectionner</a></li>
+<li class="chapter" data-level="6.7" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#exercice-3-créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>6.7</b> Exercice 3 : créer, filtrer, sélectionner</a></li>
 <li class="chapter" data-level="6.8" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#nom-dun-pipe"><i class="fa fa-check"></i><b>6.8</b> Nom d’un pipe <code>%&gt;%</code> !</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html"><i class="fa fa-check"></i><b>7</b> Premiers traitements statistiques</a>
@@ -213,7 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#tableau-de-contingence"><i class="fa fa-check"></i><b>7.4</b> Tableau de contingence</a></li>
 <li class="chapter" data-level="7.5" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#tableau-de-proportions"><i class="fa fa-check"></i><b>7.5</b> Tableau de proportions</a></li>
-<li class="chapter" data-level="7.6" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#exercice-calcul-de-statistiques"><i class="fa fa-check"></i><b>7.6</b> Exercice : calcul de statistiques</a></li>
+<li class="chapter" data-level="7.6" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#exercice-4-calcul-de-statistiques"><i class="fa fa-check"></i><b>7.6</b> Exercice 4 : calcul de statistiques</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html"><i class="fa fa-check"></i><b>8</b> Premiers graphiques</a>
 <ul>
@@ -234,10 +236,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-objets-dans-r-plus-de-détails"><i class="fa fa-check"></i><b>10.1</b> Les objets dans R, plus de détails</a></li>
 <li class="chapter" data-level="10.2" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#créer-une-nouvelle-fonction-en-r"><i class="fa fa-check"></i><b>10.2</b> Créer une nouvelle fonction en R</a></li>
 <li class="chapter" data-level="10.3" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles-conditionnelles"><i class="fa fa-check"></i><b>10.3</b> Les boucles conditionnelles</a></li>
-<li class="chapter" data-level="10.4" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles"><i class="fa fa-check"></i><b>10.4</b> Les boucles</a>
+<li class="chapter" data-level="10.4" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles"><i class="fa fa-check"></i><b>10.4</b> Les boucles</a></li>
+<li class="chapter" data-level="10.5" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#pour-aller-plus-loin"><i class="fa fa-check"></i><b>10.5</b> Pour aller plus loin</a>
 <ul>
-<li class="chapter" data-level="10.4.1" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#pour-aller-plus-loin-matrices-et-arrays"><i class="fa fa-check"></i><b>10.4.1</b> Pour aller plus loin : matrices et arrays</a></li>
-<li class="chapter" data-level="10.4.2" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#inspection-dun-objet-la-régression"><i class="fa fa-check"></i><b>10.4.2</b> Inspection d’un objet : la régression</a></li>
+<li class="chapter" data-level="10.5.1" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#matrices-et-arrays"><i class="fa fa-check"></i><b>10.5.1</b> matrices et arrays</a></li>
+<li class="chapter" data-level="10.5.2" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#inspection-dun-objet-la-régression"><i class="fa fa-check"></i><b>10.5.2</b> Inspection d’un objet : la régression</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html"><i class="fa fa-check"></i><b>11</b> Exercices corrigés</a>
@@ -247,15 +250,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#calcul-de-statistiques"><i class="fa fa-check"></i><b>11.3</b> 07 - calcul de statistiques</a></li>
 <li class="chapter" data-level="11.4" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#créer-des-graphiques"><i class="fa fa-check"></i><b>11.4</b> 08 - créer des graphiques</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html"><i class="fa fa-check"></i><b>12</b> Exercices pour R Studio</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-1-prendre-en-main-rstudio-10-min."><i class="fa fa-check"></i><b>12.1</b> Exercice 1 : Prendre en main RStudio (10 min.)</a></li>
-<li class="chapter" data-level="12.2" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-2-faire-ses-premiers-calculs-15-min."><i class="fa fa-check"></i><b>12.2</b> Exercice 2 : Faire ses premiers calculs (15 min.)</a></li>
-<li class="chapter" data-level="12.3" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-3-créer-ses-premières-variables-15-min."><i class="fa fa-check"></i><b>12.3</b> Exercice 3 : Créer ses premières variables (15 min.)</a></li>
-<li class="chapter" data-level="12.4" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-4-créer-son-premier-script-20-min."><i class="fa fa-check"></i><b>12.4</b> Exercice 4 : Créer son premier script (20 min.)</a></li>
-</ul></li>
 <li class="divider"></li>
-<li><a href="https://mtes-mct.github.io/parcours-r/">Liste des formations R</a></li>
+<li><a href="https://mtes-mct.github.io/parcours-r/" target="blank">Liste des formations R</a></li>
+<li><a href="https://github.com/MTES-MCT/parcours_r_socle_introduction" target="blank">Fichiers sources de ce module</a></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
 </ul>
@@ -290,14 +287,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="les-vecteurs" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Les vecteurs</h2>
-<p>Les valeurs peuvent être structurées au sein de vecteurs. Ces vecteurs peuvent être vus comme des colonnes de valeurs toutes du même type.</p>
+<p>Les valeurs peuvent être structurées au sein de vecteurs.
+Ces vecteurs peuvent être vus comme des colonnes de valeurs toutes du même type.</p>
 <p>Différentes fonctions permettent de créer des vecteurs.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="mon-premier-jeu-de-données.html#cb12-1" aria-hidden="true" tabindex="-1"></a>vect_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">160</span>,<span class="dv">2</span>,<span class="dv">9</span>)</span>
-<span id="cb12-2"><a href="mon-premier-jeu-de-données.html#cb12-2" aria-hidden="true" tabindex="-1"></a>vect_txt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Je&quot;</span>,<span class="st">&quot;programme&quot;</span>,<span class="st">&quot;en&quot;</span>,<span class="st">&quot;R&quot;</span>)</span>
-<span id="cb12-3"><a href="mon-premier-jeu-de-données.html#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="mon-premier-jeu-de-données.html#cb12-4" aria-hidden="true" tabindex="-1"></a>sequence <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
-<span id="cb12-5"><a href="mon-premier-jeu-de-données.html#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="mon-premier-jeu-de-données.html#cb12-6" aria-hidden="true" tabindex="-1"></a>repetition <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">&quot;bla&quot;</span>, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="mon-premier-jeu-de-données.html#cb12-1" aria-hidden="true" tabindex="-1"></a>vect_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">160</span>, <span class="dv">2</span>, <span class="dv">9</span>)</span>
+<span id="cb12-2"><a href="mon-premier-jeu-de-données.html#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="mon-premier-jeu-de-données.html#cb12-3" aria-hidden="true" tabindex="-1"></a>vect_txt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Je&quot;</span>, <span class="st">&quot;programme&quot;</span>, <span class="st">&quot;en&quot;</span>, <span class="st">&quot;R&quot;</span>)</span>
+<span id="cb12-4"><a href="mon-premier-jeu-de-données.html#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="mon-premier-jeu-de-données.html#cb12-5" aria-hidden="true" tabindex="-1"></a>sequence <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb12-6"><a href="mon-premier-jeu-de-données.html#cb12-6" aria-hidden="true" tabindex="-1"></a>sequence_pareille <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb12-7"><a href="mon-premier-jeu-de-données.html#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="mon-premier-jeu-de-données.html#cb12-8" aria-hidden="true" tabindex="-1"></a>repetition <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">&quot;bla&quot;</span>, <span class="dv">3</span>)</span></code></pre></div>
 </div>
 <div id="les-dataframes" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Les dataframes</h2>
@@ -307,7 +307,7 @@ Il s’agit de tableaux dont les lignes correspondent à des observations et les
 <p>Ces dataframes peuvent être créées par association des vecteurs avec les fonctions :</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="mon-premier-jeu-de-données.html#cb13-1" aria-hidden="true" tabindex="-1"></a>dataframe_a <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(vect_num, vect_txt)</span>
 <span id="cb13-2"><a href="mon-premier-jeu-de-données.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="mon-premier-jeu-de-données.html#cb13-3" aria-hidden="true" tabindex="-1"></a>dataframe_b <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(vect_num, vect_txt)</span></code></pre></div>
+<span id="cb13-3"><a href="mon-premier-jeu-de-données.html#cb13-3" aria-hidden="true" tabindex="-1"></a>dataframe_b <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(<span class="st">&quot;vect_num&quot;</span> <span class="ot">=</span> vect_num, <span class="st">&quot;vect_txt&quot;</span> <span class="ot">=</span> vect_txt)</span></code></pre></div>
 <p>Une dataframe peut aussi être créée par l’import d’un tableau, voir le chapitre dédié.</p>
 <p>Il est possible d’accéder aux éléments d’une dataframe à partir du numéro de ligne et de colonne, grâce aux crochets :</p>
 <center>
@@ -328,11 +328,11 @@ Il s’agit de tableaux dont les lignes correspondent à des observations et les
 <li>NaN : pas un nombre (<em>Not a Number</em>) lorsqu’une fonction tente de diviser par 0</li>
 <li>-Inf, Inf : inﬁni positif ou négatif lorsque une fonction diverge</li>
 </ul>
-<p>Une valeur manquante peut perturber l’éxecution d’une fonction :</p>
+<p>Une valeur manquante peut perturber l’exécution d’une fonction :</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="mon-premier-jeu-de-données.html#cb14-1" aria-hidden="true" tabindex="-1"></a>V1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">14</span>, <span class="cn">NA</span>, <span class="fl">32.7</span>)</span>
 <span id="cb14-2"><a href="mon-premier-jeu-de-données.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(V1)              <span class="co"># renvoie NA. Not good !</span></span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="mon-premier-jeu-de-données.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(V1, <span class="at">na.rm =</span> T)   <span class="co"># renvoie 15.9   - OK !</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="mon-premier-jeu-de-données.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(V1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)   <span class="co"># renvoie 15.9   - OK !</span></span></code></pre></div>
 <pre><code>## [1] 15.9</code></pre>
 <p>Les noms de ces valeurs particulières sont “réservés” par R, ils ne peuvent pas être utilisés comme nom de variable.
 C’est également le cas des booléens (<code>TRUE</code>, <code>FALSE</code>, <code>T</code> et <code>F</code>)</p>
@@ -341,15 +341,15 @@ C’est également le cas des booléens (<code>TRUE</code>, <code>FALSE</code>, 
 <div id="importation-de-données" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> Importation de données</h2>
 <p>Conseil : exporter les données au format CSV ; c’est le format le plus interopérable (supporté par tous les logiciels stat). Utiliser ensuite la fonction <code>read.csv</code> après avoir défini le répertoire de travail (ou en donnant le chemin complet)</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="mon-premier-jeu-de-données.html#cb18-1" aria-hidden="true" tabindex="-1"></a>base0 <span class="ot">&lt;-</span> <span class="fu">read.csv</span> (<span class="at">file =</span> <span class="st">&quot;extdata/Base_synth_territoires.csv&quot;</span>,</span>
-<span id="cb18-2"><a href="mon-premier-jeu-de-données.html#cb18-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">header =</span> T,</span>
-<span id="cb18-3"><a href="mon-premier-jeu-de-données.html#cb18-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>,</span>
-<span id="cb18-4"><a href="mon-premier-jeu-de-données.html#cb18-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">dec =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="mon-premier-jeu-de-données.html#cb18-1" aria-hidden="true" tabindex="-1"></a>base0 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;extdata/Base_synth_territoires.csv&quot;</span>,</span>
+<span id="cb18-2"><a href="mon-premier-jeu-de-données.html#cb18-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb18-3"><a href="mon-premier-jeu-de-données.html#cb18-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>,</span>
+<span id="cb18-4"><a href="mon-premier-jeu-de-données.html#cb18-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dec =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
 <ul>
 <li><code>header =</code>indique la présence des noms de variable sur la première ligne</li>
 <li><code>sep =</code> indique le séparateur de champ : ‘;’ ‘/t’ pour tabulation</li>
 <li><code>dec =</code> indique le séparateur de décimale (‘.’ par défaut)</li>
-<li><code>colClasses =</code>permet de préciser le type de chaque colonne de la donnée en entrée</li>
+<li><code>colClasses =</code>permet de préciser le type de chaque colonne de la donnée en entrée, par exemple pour une table de 3 colonnes de types texte, puis 2 fois numériques : <code>colClasses = c("character", "numeric", "numeric")</code>. <code>NA</code> pour laisser R deviner, <code>NULL</code> pour éviter d’importer la colonne.</li>
 </ul>
 <p><span class="math inline">\(\Rightarrow\)</span> <code>?read.csv</code> pour plus d’options</p>
 <p>Autres façons d’importer les données</p>
@@ -362,10 +362,14 @@ C’est également le cas des booléens (<code>TRUE</code>, <code>FALSE</code>, 
 </div>
 <div id="gérer-le-type-des-variables" class="section level2" number="5.6">
 <h2><span class="header-section-number">5.6</span> Gérer le type des variables</h2>
-<p>Chaque variable est du type de son contenu (numeric, character, logical). Si les valeurs prises par la variables correspondent à un nombre fini de modalités, la variable peut être du type “factor”. Ses composantes sont toujours d’un des 3 types décrits ci-dessus mais il est possible d’employer des fonctions spécifiques au traitement de modalités.
-À chaque type de variable correspond une utilisation. Lors de l’import des données, un type est affecté automatiquement par R.
-Mais le type peut être erronné. Il suffit alors de les convertir :</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="mon-premier-jeu-de-données.html#cb19-1" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">mutate</span>(base0, <span class="at">LIBGEO =</span> <span class="fu">as.character</span> (LIBGEO))</span></code></pre></div>
+<p>Chaque variable est du type de son contenu (numeric, character, logical).
+Si les valeurs prises par la variables correspondent à un nombre fini de modalités, <strong>la variable peut être du type “factor”</strong>.
+Ses composantes sont toujours d’un des 3 types décrits ci-dessus mais il est possible d’employer des fonctions spécifiques au traitement de modalités.
+À chaque type de variable correspond une utilisation.
+Lors de l’import des données, un type est affecté automatiquement par R.
+Mais le type peut être erroné.
+Il suffit alors de les convertir :</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="mon-premier-jeu-de-données.html#cb19-1" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">mutate</span>(base0, <span class="at">LIBGEO =</span> <span class="fu">as.character</span>(LIBGEO))</span></code></pre></div>
 <p>ou <code>as.factor()</code>, <code>as.numeric()</code>, etc…</p>
 <p>Pour être sûr de ne pas faire de bêtise, il vaut mieux gérer les types au moment de l’importation avec le paramètre <code>colClasses</code> <span class="math inline">\(\rightarrow\)</span> exercice !</p>
 </div>
@@ -379,11 +383,11 @@ Mais le type peut être erronné. Il suffit alors de les convertir :</p>
 <li>p colonnes (variables)</li>
 </ul>
 <p>Les fonctions suivantes permettent de connaître la structure de la dataframe, d’en connaître les variables, d’en observer certaines lignes ou d’en vérifier le type.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="mon-premier-jeu-de-données.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span> (base) <span class="co"># nombre de lignes</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="mon-premier-jeu-de-données.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(base) <span class="co"># nombre de lignes</span></span></code></pre></div>
 <pre><code>## [1] 36689</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="mon-premier-jeu-de-données.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span> (base) <span class="co"># nombre de colonnes</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="mon-premier-jeu-de-données.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(base) <span class="co"># nombre de colonnes</span></span></code></pre></div>
 <pre><code>## [1] 38</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="mon-premier-jeu-de-données.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span> (base) <span class="co"># nombre de lignes et de colonnes</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="mon-premier-jeu-de-données.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(base) <span class="co"># nombre de lignes et de colonnes</span></span></code></pre></div>
 <pre><code>## [1] 36689    38</code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="mon-premier-jeu-de-données.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(base) <span class="co"># noms des variables</span></span></code></pre></div>
 <pre><code>##  [1] &quot;CODGEO&quot;        &quot;LIBGEO&quot;        &quot;REG&quot;           &quot;DEP&quot;          
@@ -541,13 +545,56 @@ Mais le type peut être erronné. Il suffit alors de les convertir :</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="mon-premier-jeu-de-données.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(base) <span class="co"># le type d&#39;objet du point de vue &quot;interne&quot; à R</span></span></code></pre></div>
 <pre><code>## [1] &quot;list&quot;</code></pre>
 </div>
-<div id="exercice-importer-des-données-et-premier-coup-doeil" class="section level2" number="5.8">
-<h2><span class="header-section-number">5.8</span> Exercice : importer des données et premier coup d’oeil</h2>
-<p>On peut importer n’importe quel format de données en R (Excel, SAT, Stata, SQL…). Beaucoup sont abordés lors du <a href="https://mtes-mct.github.io/parcours_r_socle_preparation_des_donnees/">module 2 “Préparation des données”</a>. Pour ce module, nous ne voyons que l’importation de fichier <code>.CSV</code>. Si vous avez une base de données en Excel ou LibreOffice Calc, sauvegardez l’onglet que vous souhaitez en faisant “enregistrer sous” <span class="math inline">\(\rightarrow\)</span> “délimité CSV”.</p>
-<p>Ici, nous travaillerons sur une base de données communales fournie par l’Insee, dite “comparateur de territoires”. Le fichier source (Excel) figure dans le sous-répertoire “data” et contient toutes les métadonnées.</p>
+<div id="exercice-2-importer-des-données-et-premier-coup-doeil" class="section level2" number="5.8">
+<h2><span class="header-section-number">5.8</span> Exercice 2 : importer des données et premier coup d’oeil</h2>
+<p>On peut importer n’importe quel format de données en R (Excel, SAT, Stata, SQL…). Beaucoup sont abordés lors du <a href="https://mtes-mct.github.io/parcours_r_socle_preparation_des_donnees/">module 2 “Préparation des données”</a>. Pour ce module, nous ne voyons que l’importation de fichier <code>.CSV</code>. Si vous avez une base de données en Excel ou LibreOffice Calc, sauvegardez l’onglet que vous souhaitez en faisant “enregistrer sous” <span class="math inline">\(\rightarrow\)</span> “délimité CSV.”</p>
+<p>Ici, nous travaillerons sur une base de données communales fournie par l’Insee, dite “comparateur de territoires.”</p>
 <ul>
-<li>Utiliser la fonction <code>read.csv()</code> pour importer ce fichier et stocker le dans un objet <code>df</code>. <strong>Veillez à ce que la région soit bien importée comme un facteur et non un entier</strong></li>
-<li>Inspecter le dataframe avec les fonctions vues auparavant pour connaître le nombre de lignes, de colonnes, …</li>
+<li><p>Utiliser la fonction <code>read.csv()</code> pour importer ce fichier et stocker le dans un objet <code>df</code>. <strong>Veillez à ce que la région soit bien importée comme un facteur et non un entier</strong></p></li>
+<li><p>Inspecter le dataframe avec les fonctions vues auparavant pour connaître le nombre de lignes, de colonnes, …</p></li>
+</ul>
+</div>
+<div id="catalogue-dattributs-de-la-base" class="section level2" number="5.9">
+<h2><span class="header-section-number">5.9</span> Catalogue d’attributs de la base</h2>
+<ul>
+<li><em>CODGEO</em> : [text] Code du département suivi du numéro de commune ou du numéro d’arrondissement municipal</li>
+<li><em>LIBGEO</em> : [text] Libellé de la commune ou de l’arrondissement municipal pour Paris</li>
+<li><em>REG</em>: [text] Région</li>
+<li><em>DEP</em> : [text] Département</li>
+<li><em>ZAU</em> : [text] Zonage en aire urbaine</li>
+<li><em>ZE</em> : [text] Zone d’emploi</li>
+<li><em>P14_POP</em>: [double] Population en 2014</li>
+<li><em>P09_POP</em>: [double] Population en 2009</li>
+<li><em>SUPERF</em>: [double] Superficie (en km2)</li>
+<li><em>NAIS0914</em>: [double] Nombre de naissances entre le 01/01/2009 et le 01/01/2014</li>
+<li><em>DECE0914</em>: [double] Nombre de décès entre le 01/01/2009 et le 01/01/2014</li>
+<li><em>P14_MEN</em>: [double] Nombre de ménages en 2014</li>
+<li><em>NAISD15</em>: [double] Nombre de naissances domiciliées en 2015</li>
+<li><em>DECESD15</em>: [double] Nombre de décès domiciliés en 2015</li>
+<li><em>P14_LOG</em>: [double] Nombre de logements en 2014</li>
+<li><em>P14_RP</em>: [double] Nombre de résidences principales en 2014</li>
+<li><em>P14_RSECOCC</em>: [double] Nombre de résidences secondaires et logements occasionnels en 2014</li>
+<li><em>P14_LOGVAC</em>: [double] Nombre de logements vacants en 2014</li>
+<li><em>P14_RP_PROP</em>: [double] Nombre de résidences principales occupées par propriétaires en 2014</li>
+<li><em>NBMENFISC13</em>: [double] Nombre de ménages fiscaux en 2013</li>
+<li><em>PIMP13</em>: [text] Part des ménages fiscaux imposés en 2013</li>
+<li><em>MED13</em>: [double] Médiane du niveau de vie en 2013</li>
+<li><em>TP6013</em>: [text] Taux de pauvreté en 2013</li>
+<li><em>P14_EMPLT</em>: [double] Nombre d’emplois au lieu de travail en 2014</li>
+<li><em>P14_EMPLT_SAL</em>: [double] Nombre d’emplois salariés au lieu de travail en 2014</li>
+<li><em>P09_EMPLT</em>: [double] Nombre d’emplois au lieu de travail en 2009</li>
+<li><em>P14_POP1564</em>: [double] Nombre de personnes de 15 à 64 ans en 2014</li>
+<li><em>P14_CHOM1564</em>: [double] Nombre de chômeurs de 15 à 64 ans en 2014</li>
+<li><em>P14_ACT1564</em>: [double] Nombre de personnes actives de 15 à 64 ans en 2014</li>
+<li><em>ETTOT14</em>: [double] Total des établissements actifs au 31 décembre 2014</li>
+<li><em>ETAZ14</em>: [double] Etablissements actifs de l’agriculture, sylviculture et pêche au 31/12/2014</li>
+<li><em>ETBE14</em>: [double] Etablissements actifs de l’industrie au 31/12/2014</li>
+<li><em>ETFZ14</em>: [double] Etablissements actifs de la construction au 31/12/2014</li>
+<li><em>ETGU14</em>: [double] Etablissements actifs du commerce, transports et services divers au 31/12/2014</li>
+<li><em>ETGZ14</em>: [double] Etablissements actifs du commerce et réparation automobile au 31/12/2014</li>
+<li><em>ETOQ14</em>: [double] Etablissements actifs de l’administration publique, enseignement, santé et action sociale au 31/12/2014</li>
+<li><em>ETTEF114</em>: [double] Etablissements actifs de 1 à 9 salariés au 31 décembre 2014</li>
+<li><em>ETTEFP1014</em>: [double] Etablissements actifs de 10 salariés ou plus au 31 décembre 2014</li>
 </ul>
 
 </div>
@@ -562,7 +609,6 @@ Mais le type peut être erronné. Il suffit alors de les convertir :</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -581,6 +627,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -600,7 +647,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Débuter-avec-R-et-RStudio.pdf"],
+"download": ["Debuter-avec-R-et-RStudio.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

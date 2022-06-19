@@ -2,7 +2,7 @@ introduction
 le-parcours-de-formation
 objectifs-du-module-1
 r-son-écosystème-et-ses-possibilités
-le-groupe-de-référents
+le-groupe-de-référents-r-du-pôle-ministériel
 r-cest-quoi
 un-peu-dhistoire
 un-logiciel-libre
@@ -12,7 +12,7 @@ des-exemples-de-ce-quon-peut-faire-avec-r
 présentation-de-linterface-et-premières-manipulations
 une-interface-dédiée-rstudio
 session-et-répertoire-de-travail
-cest-à-vous-créer-son-répertoire-de-travail
+cest-à-vous-créer-un-répertoire-de-travail
 prise-en-main-de-la-console
 création-dune-variable
 cest-à-vous-créer-et-manipuler-des-variables
@@ -21,9 +21,9 @@ cest-à-vous-utiliser-un-script
 installer-et-charger-un-package
 bien-commencer
 créer-un-projet-sous-rstudio-pour-vous-permettre-de-recenser-vos-travaux.
+utilisation-du-package-savoirfr
 intégrer-vos-données
 créer-votre-arborescence-de-projet
-utilisation-du-package-savoirfr
 activer-les-packages-nécessaires
 bien-structurer-ses-projets-data
 mon-premier-jeu-de-données
@@ -34,7 +34,8 @@ les-fonctions-et-les-valeurs-particulières
 importation-de-données
 gérer-le-type-des-variables
 structure-des-données-le-dataframe
-exercice-importer-des-données-et-premier-coup-doeil
+exercice-2-importer-des-données-et-premier-coup-doeil
+catalogue-dattributs-de-la-base
 première-manipulation-des-données
 afficher-les-valeurs-et-manipuler-les-variables
 créer-de-nouvelles-variables
@@ -42,7 +43,7 @@ sélectionner-des-variables
 filtrer-des-observations
 les-tests-logiques-dans-r
 renommer-des-colonnes
-exercice-créer-filtrer-sélectionner
+exercice-3-créer-filtrer-sélectionner
 nom-dun-pipe
 premiers-traitements-statistiques
 obtenir-des-informations
@@ -52,7 +53,7 @@ globalement
 selon-un-facteur
 tableau-de-contingence
 tableau-de-proportions
-exercice-calcul-de-statistiques
+exercice-4-calcul-de-statistiques
 premiers-graphiques
 package-ggplot2
 histogramme
@@ -68,15 +69,11 @@ les-objets-dans-r-plus-de-détails
 créer-une-nouvelle-fonction-en-r
 les-boucles-conditionnelles
 les-boucles
-pour-aller-plus-loin-matrices-et-arrays
+pour-aller-plus-loin
+matrices-et-arrays
 inspection-dun-objet-la-régression
 exercices-corrigés
 importer-des-données-et-premier-coup-doeil
 créer-filtrer-sélectionner
 calcul-de-statistiques
 créer-des-graphiques
-exercices-pour-r-studio
-exercice-1-prendre-en-main-rstudio-10-min.
-exercice-2-faire-ses-premiers-calculs-15-min.
-exercice-3-créer-ses-premières-variables-15-min.
-exercice-4-créer-son-premier-script-20-min.

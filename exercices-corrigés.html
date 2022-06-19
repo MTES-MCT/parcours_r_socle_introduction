@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 11 Exercices corrigés | Découvrir R et RStudio</title>
   <meta name="description" content="Chapitre 11 Exercices corrigés | Découvrir R et RStudio (module socle)" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 11 Exercices corrigés | Découvrir R et RStudio" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2021-10-05" />
+<meta name="date" content="2022-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,9 +32,10 @@
   
   
 <link rel="prev" href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"/>
-<link rel="next" href="exercices-pour-r-studio.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +51,15 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -127,6 +127,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -151,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html"><i class="fa fa-check"></i><b>2</b> R, son écosystème et ses possibilités</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#le-groupe-de-référents"><i class="fa fa-check"></i><b>2.1</b> Le groupe de référents</a></li>
+<li class="chapter" data-level="2.1" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#le-groupe-de-référents-r-du-pôle-ministériel"><i class="fa fa-check"></i><b>2.1</b> Le groupe de référents R du pôle ministériel</a></li>
 <li class="chapter" data-level="2.2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#r-cest-quoi"><i class="fa fa-check"></i><b>2.2</b> R c’est quoi ?</a></li>
 <li class="chapter" data-level="2.3" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-peu-dhistoire"><i class="fa fa-check"></i><b>2.3</b> Un peu d’histoire</a></li>
 <li class="chapter" data-level="2.4" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-logiciel-libre"><i class="fa fa-check"></i><b>2.4</b> Un logiciel libre</a></li>
@@ -163,7 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#une-interface-dédiée-rstudio"><i class="fa fa-check"></i><b>3.1</b> Une interface dédiée : RStudio</a></li>
 <li class="chapter" data-level="3.2" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#session-et-répertoire-de-travail"><i class="fa fa-check"></i><b>3.2</b> Session et répertoire de travail</a></li>
-<li class="chapter" data-level="3.3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-son-répertoire-de-travail"><i class="fa fa-check"></i><b>3.3</b> C’est à vous : créer son répertoire de travail</a></li>
+<li class="chapter" data-level="3.3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-un-répertoire-de-travail"><i class="fa fa-check"></i><b>3.3</b> C’est à vous : créer un répertoire de travail</a></li>
 <li class="chapter" data-level="3.4" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#prise-en-main-de-la-console"><i class="fa fa-check"></i><b>3.4</b> Prise en main de la console</a></li>
 <li class="chapter" data-level="3.5" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#création-dune-variable"><i class="fa fa-check"></i><b>3.5</b> Création d’une variable</a></li>
 <li class="chapter" data-level="3.6" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-et-manipuler-des-variables"><i class="fa fa-check"></i><b>3.6</b> C’est à vous : créer et manipuler des variables</a></li>
@@ -174,9 +175,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="bien-commencer.html"><a href="bien-commencer.html"><i class="fa fa-check"></i><b>4</b> Bien commencer</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-un-projet-sous-rstudio-pour-vous-permettre-de-recenser-vos-travaux."><i class="fa fa-check"></i><b>4.1</b> Créer un projet sous Rstudio pour vous permettre de recenser vos travaux.</a></li>
-<li class="chapter" data-level="4.2" data-path="bien-commencer.html"><a href="bien-commencer.html#intégrer-vos-données"><i class="fa fa-check"></i><b>4.2</b> Intégrer vos données</a></li>
-<li class="chapter" data-level="4.3" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-votre-arborescence-de-projet"><i class="fa fa-check"></i><b>4.3</b> Créer votre arborescence de projet</a></li>
-<li class="chapter" data-level="4.4" data-path="bien-commencer.html"><a href="bien-commencer.html#utilisation-du-package-savoirfr"><i class="fa fa-check"></i><b>4.4</b> Utilisation du package savoirfR</a></li>
+<li class="chapter" data-level="4.2" data-path="bien-commencer.html"><a href="bien-commencer.html#utilisation-du-package-savoirfr"><i class="fa fa-check"></i><b>4.2</b> Utilisation du package <code>{savoirfR}</code></a></li>
+<li class="chapter" data-level="4.3" data-path="bien-commencer.html"><a href="bien-commencer.html#intégrer-vos-données"><i class="fa fa-check"></i><b>4.3</b> Intégrer vos données</a></li>
+<li class="chapter" data-level="4.4" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-votre-arborescence-de-projet"><i class="fa fa-check"></i><b>4.4</b> Créer votre arborescence de projet</a></li>
 <li class="chapter" data-level="4.5" data-path="bien-commencer.html"><a href="bien-commencer.html#activer-les-packages-nécessaires"><i class="fa fa-check"></i><b>4.5</b> Activer les packages nécessaires</a></li>
 <li class="chapter" data-level="4.6" data-path="bien-commencer.html"><a href="bien-commencer.html#bien-structurer-ses-projets-data"><i class="fa fa-check"></i><b>4.6</b> Bien structurer ses projets <em>data</em></a></li>
 </ul></li>
@@ -189,7 +190,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#importation-de-données"><i class="fa fa-check"></i><b>5.5</b> Importation de données</a></li>
 <li class="chapter" data-level="5.6" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#gérer-le-type-des-variables"><i class="fa fa-check"></i><b>5.6</b> Gérer le type des variables</a></li>
 <li class="chapter" data-level="5.7" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#structure-des-données-le-dataframe"><i class="fa fa-check"></i><b>5.7</b> Structure des données : le <em>dataframe</em></a></li>
-<li class="chapter" data-level="5.8" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#exercice-importer-des-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>5.8</b> Exercice : importer des données et premier coup d’oeil</a></li>
+<li class="chapter" data-level="5.8" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#exercice-2-importer-des-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>5.8</b> Exercice 2 : importer des données et premier coup d’oeil</a></li>
+<li class="chapter" data-level="5.9" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#catalogue-dattributs-de-la-base"><i class="fa fa-check"></i><b>5.9</b> Catalogue d’attributs de la base</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html"><i class="fa fa-check"></i><b>6</b> Première manipulation des données</a>
 <ul>
@@ -199,7 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#filtrer-des-observations"><i class="fa fa-check"></i><b>6.4</b> Filtrer des observations</a></li>
 <li class="chapter" data-level="6.5" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#les-tests-logiques-dans-r"><i class="fa fa-check"></i><b>6.5</b> Les tests logiques dans R</a></li>
 <li class="chapter" data-level="6.6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#renommer-des-colonnes"><i class="fa fa-check"></i><b>6.6</b> Renommer des colonnes</a></li>
-<li class="chapter" data-level="6.7" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#exercice-créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>6.7</b> Exercice : créer, filtrer, sélectionner</a></li>
+<li class="chapter" data-level="6.7" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#exercice-3-créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>6.7</b> Exercice 3 : créer, filtrer, sélectionner</a></li>
 <li class="chapter" data-level="6.8" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#nom-dun-pipe"><i class="fa fa-check"></i><b>6.8</b> Nom d’un pipe <code>%&gt;%</code> !</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html"><i class="fa fa-check"></i><b>7</b> Premiers traitements statistiques</a>
@@ -213,7 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#tableau-de-contingence"><i class="fa fa-check"></i><b>7.4</b> Tableau de contingence</a></li>
 <li class="chapter" data-level="7.5" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#tableau-de-proportions"><i class="fa fa-check"></i><b>7.5</b> Tableau de proportions</a></li>
-<li class="chapter" data-level="7.6" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#exercice-calcul-de-statistiques"><i class="fa fa-check"></i><b>7.6</b> Exercice : calcul de statistiques</a></li>
+<li class="chapter" data-level="7.6" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#exercice-4-calcul-de-statistiques"><i class="fa fa-check"></i><b>7.6</b> Exercice 4 : calcul de statistiques</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html"><i class="fa fa-check"></i><b>8</b> Premiers graphiques</a>
 <ul>
@@ -234,10 +236,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-objets-dans-r-plus-de-détails"><i class="fa fa-check"></i><b>10.1</b> Les objets dans R, plus de détails</a></li>
 <li class="chapter" data-level="10.2" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#créer-une-nouvelle-fonction-en-r"><i class="fa fa-check"></i><b>10.2</b> Créer une nouvelle fonction en R</a></li>
 <li class="chapter" data-level="10.3" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles-conditionnelles"><i class="fa fa-check"></i><b>10.3</b> Les boucles conditionnelles</a></li>
-<li class="chapter" data-level="10.4" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles"><i class="fa fa-check"></i><b>10.4</b> Les boucles</a>
+<li class="chapter" data-level="10.4" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles"><i class="fa fa-check"></i><b>10.4</b> Les boucles</a></li>
+<li class="chapter" data-level="10.5" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#pour-aller-plus-loin"><i class="fa fa-check"></i><b>10.5</b> Pour aller plus loin</a>
 <ul>
-<li class="chapter" data-level="10.4.1" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#pour-aller-plus-loin-matrices-et-arrays"><i class="fa fa-check"></i><b>10.4.1</b> Pour aller plus loin : matrices et arrays</a></li>
-<li class="chapter" data-level="10.4.2" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#inspection-dun-objet-la-régression"><i class="fa fa-check"></i><b>10.4.2</b> Inspection d’un objet : la régression</a></li>
+<li class="chapter" data-level="10.5.1" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#matrices-et-arrays"><i class="fa fa-check"></i><b>10.5.1</b> matrices et arrays</a></li>
+<li class="chapter" data-level="10.5.2" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#inspection-dun-objet-la-régression"><i class="fa fa-check"></i><b>10.5.2</b> Inspection d’un objet : la régression</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html"><i class="fa fa-check"></i><b>11</b> Exercices corrigés</a>
@@ -247,15 +250,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#calcul-de-statistiques"><i class="fa fa-check"></i><b>11.3</b> 07 - calcul de statistiques</a></li>
 <li class="chapter" data-level="11.4" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#créer-des-graphiques"><i class="fa fa-check"></i><b>11.4</b> 08 - créer des graphiques</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html"><i class="fa fa-check"></i><b>12</b> Exercices pour R Studio</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-1-prendre-en-main-rstudio-10-min."><i class="fa fa-check"></i><b>12.1</b> Exercice 1 : Prendre en main RStudio (10 min.)</a></li>
-<li class="chapter" data-level="12.2" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-2-faire-ses-premiers-calculs-15-min."><i class="fa fa-check"></i><b>12.2</b> Exercice 2 : Faire ses premiers calculs (15 min.)</a></li>
-<li class="chapter" data-level="12.3" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-3-créer-ses-premières-variables-15-min."><i class="fa fa-check"></i><b>12.3</b> Exercice 3 : Créer ses premières variables (15 min.)</a></li>
-<li class="chapter" data-level="12.4" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-4-créer-son-premier-script-20-min."><i class="fa fa-check"></i><b>12.4</b> Exercice 4 : Créer son premier script (20 min.)</a></li>
-</ul></li>
 <li class="divider"></li>
-<li><a href="https://mtes-mct.github.io/parcours-r/">Liste des formations R</a></li>
+<li><a href="https://mtes-mct.github.io/parcours-r/" target="blank">Liste des formations R</a></li>
+<li><a href="https://github.com/MTES-MCT/parcours_r_socle_introduction" target="blank">Fichiers sources de ce module</a></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
 </ul>
@@ -279,37 +276,160 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapitre 11</span> Exercices corrigés</h1>
 <div id="importer-des-données-et-premier-coup-doeil" class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> 04 - importer des données et premier coup d’oeil</h2>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="exercices-corrigés.html#cb123-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;extdata/Base_synth_territoires.csv&quot;</span>,</span>
-<span id="cb123-2"><a href="exercices-corrigés.html#cb123-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="at">dec =</span> <span class="st">&quot;,&quot;</span>,</span>
-<span id="cb123-3"><a href="exercices-corrigés.html#cb123-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">colClasses =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">&quot;NULL&quot;</span>, <span class="st">&quot;character&quot;</span>, <span class="st">&quot;NULL&quot;</span>,<span class="st">&quot;NULL&quot;</span>,<span class="st">&quot;NULL&quot;</span>,</span>
-<span id="cb123-4"><a href="exercices-corrigés.html#cb123-4" aria-hidden="true" tabindex="-1"></a>                              <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fu">rep</span>(<span class="st">&quot;NULL&quot;</span>, <span class="dv">28</span>)))</span>
-<span id="cb123-5"><a href="exercices-corrigés.html#cb123-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-6"><a href="exercices-corrigés.html#cb123-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    36689 obs. of  6 variables:
-##  $ CODGEO  : chr  &quot;01001&quot; &quot;01002&quot; &quot;01004&quot; &quot;01005&quot; ...
-##  $ REG     : chr  &quot;84&quot; &quot;84&quot; &quot;84&quot; &quot;84&quot; ...
-##  $ P14_POP : int  767 239 14022 1627 109 2570 743 338 1142 397 ...
-##  $ P09_POP : int  787 207 13350 1592 120 2328 660 336 960 352 ...
-##  $ SUPERF  : num  15.95 9.15 24.6 15.92 5.88 ...
-##  $ NAIS0914: int  40 16 1051 117 8 175 59 12 56 25 ...</code></pre>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="exercices-corrigés.html#cb123-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;extdata/Base_synth_territoires.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="at">dec =</span> <span class="st">&quot;,&quot;</span>,</span>
+<span id="cb123-2"><a href="exercices-corrigés.html#cb123-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">colClasses =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;character&quot;</span>, <span class="dv">2</span>), <span class="fu">rep</span>(<span class="st">&quot;factor&quot;</span>, <span class="dv">4</span>) , <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">32</span>)))</span>
+<span id="cb123-3"><a href="exercices-corrigés.html#cb123-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-4"><a href="exercices-corrigés.html#cb123-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    36689 obs. of  38 variables:
+##  $ CODGEO       : chr  &quot;01001&quot; &quot;01002&quot; &quot;01004&quot; &quot;01005&quot; ...
+##  $ LIBGEO       : chr  &quot;L&#39;Abergement-Cl\xe9menciat&quot; &quot;L&#39;Abergement-de-Varey&quot; &quot;Amb\xe9rieu-en-Bugey&quot; &quot;Amb\xe9rieux-en-Dombes&quot; ...
+##  $ REG          : Factor w/ 17 levels &quot;01&quot;,&quot;02&quot;,&quot;03&quot;,..: 15 15 15 15 15 15 15 15 15 15 ...
+##  $ DEP          : Factor w/ 100 levels &quot;01&quot;,&quot;02&quot;,&quot;03&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ ZAU          : Factor w/ 9 levels &quot;111 - Grand p\xf4le (plus de 10 000 emplois)&quot;,..: 3 2 2 2 8 2 2 5 8 2 ...
+##  $ ZE           : Factor w/ 321 levels &quot;0050 - Mont-de-Marsan&quot;,..: 260 248 248 260 263 248 248 263 266 250 ...
+##  $ P14_POP      : int  767 239 14022 1627 109 2570 743 338 1142 397 ...
+##  $ P09_POP      : int  787 207 13350 1592 120 2328 660 336 960 352 ...
+##  $ SUPERF       : num  15.95 9.15 24.6 15.92 5.88 ...
+##  $ NAIS0914     : int  40 16 1051 117 8 175 59 12 56 25 ...
+##  $ DECE0914     : int  25 7 551 41 3 78 20 11 32 10 ...
+##  $ P14_MEN      : num  306 99.3 6161.1 621.1 52.5 ...
+##  $ NAISD15      : int  13 5 222 15 2 21 11 2 18 4 ...
+##  $ DECESD15     : int  5 1 121 7 2 9 3 3 5 0 ...
+##  $ P14_LOG      : num  342.7 161.2 6838.4 661.8 71.5 ...
+##  $ P14_RP       : num  306 99.3 6161.1 621.1 52.5 ...
+##  $ P14_RSECOCC  : num  14 47.3 121.6 10.9 10.9 ...
+##  $ P14_LOGVAC   : num  22.74 14.55 555.64 29.85 8.14 ...
+##  $ P14_RP_PROP  : num  260 84.6 2769 473.3 37.7 ...
+##  $ NBMENFISC13  : int  297 99 6034 617 47 1014 299 140 431 137 ...
+##  $ PIMP13       : num  NA NA 57.4 NA NA ...
+##  $ MED13        : num  22130 23213 19554 22388 21872 ...
+##  $ TP6013       : num  NA NA 15.1 NA NA ...
+##  $ P14_EMPLT    : num  85.16 12.81 7452.93 280.57 5.95 ...
+##  $ P14_EMPLT_SAL: num  52.19 4.95 6743.37 206.38 3.96 ...
+##  $ P09_EMPLT    : num  65.57 17.64 7551.68 286.61 5.29 ...
+##  $ P14_POP1564  : num  463 141.6 8962.8 1043.1 71.3 ...
+##  $ P14_CHOM1564 : num  33 9.84 1059.73 66.33 7.93 ...
+##  $ P14_ACT1564  : num  376 121 6681.9 842.1 57.5 ...
+##  $ ETTOT14      : int  47 22 1316 141 7 203 66 39 54 36 ...
+##  $ ETAZ14       : int  9 1 7 14 0 21 2 5 5 6 ...
+##  $ ETBE14       : int  2 3 60 7 0 18 0 2 6 4 ...
+##  $ ETFZ14       : int  5 1 131 19 0 21 9 1 13 3 ...
+##  $ ETGU14       : int  25 14 892 85 5 114 45 27 24 18 ...
+##  $ ETGZ14       : int  6 4 283 19 1 28 16 6 9 7 ...
+##  $ ETOQ14       : int  6 3 226 16 2 29 10 4 6 5 ...
+##  $ ETTEF114     : int  9 2 385 27 0 38 17 6 9 7 ...
+##  $ ETTEFP1014   : int  0 0 109 5 0 15 2 0 3 0 ...</code></pre>
 <div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="exercices-corrigés.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div>
-<pre><code>##   CODGEO REG P14_POP P09_POP SUPERF NAIS0914
-## 1  01001  84     767     787  15.95       40
-## 2  01002  84     239     207   9.15       16
-## 3  01004  84   14022   13350  24.60     1051
-## 4  01005  84    1627    1592  15.92      117
-## 5  01006  84     109     120   5.88        8
-## 6  01007  84    2570    2328  33.55      175</code></pre>
+<pre><code>##   CODGEO                     LIBGEO REG DEP
+## 1  01001 L&#39;Abergement-Cl\xe9menciat  84  01
+## 2  01002      L&#39;Abergement-de-Varey  84  01
+## 3  01004       Amb\xe9rieu-en-Bugey  84  01
+## 4  01005     Amb\xe9rieux-en-Dombes  84  01
+## 5  01006                 Ambl\xe9on  84  01
+## 6  01007                   Ambronay  84  01
+##                                                  ZAU
+## 1 120 - Multipolaris\xe9e des grandes aires urbaines
+## 2                  112 - Couronne d&#39;un grand p\xf4le
+## 3                  112 - Couronne d&#39;un grand p\xf4le
+## 4                  112 - Couronne d&#39;un grand p\xf4le
+## 5              300 - Autre commune multipolaris\xe9e
+## 6                  112 - Couronne d&#39;un grand p\xf4le
+##                                 ZE P14_POP P09_POP SUPERF NAIS0914 DECE0914
+## 1 8213 - Villefranche-sur-Sa\xf4ne     767     787  15.95       40       25
+## 2      8201 - Amb\xe9rieu-en-Bugey     239     207   9.15       16        7
+## 3      8201 - Amb\xe9rieu-en-Bugey   14022   13350  24.60     1051      551
+## 4 8213 - Villefranche-sur-Sa\xf4ne    1627    1592  15.92      117       41
+## 5               8216 - Chamb\xe9ry     109     120   5.88        8        3
+## 6      8201 - Amb\xe9rieu-en-Bugey    2570    2328  33.55      175       78
+##      P14_MEN NAISD15 DECESD15    P14_LOG     P14_RP P14_RSECOCC P14_LOGVAC
+## 1  306.00000      13        5  342.73473  306.00000    13.99418  22.740550
+## 2   99.33745       5        1  161.16023   99.33745    47.27625  14.546538
+## 3 6161.06200     222      121 6838.35437 6161.06200   121.64795 555.644416
+## 4  621.05374      15        7  661.76017  621.05374    10.85505  29.851387
+## 5   52.51818       2        2   71.51818   52.51818    10.85714   8.142857
+## 6 1028.00000      21        9 1160.00000 1028.00000    56.00000  76.000000
+##   P14_RP_PROP NBMENFISC13   PIMP13    MED13   TP6013   P14_EMPLT P14_EMPLT_SAL
+## 1   260.00000         297       NA 22130.00       NA   85.157286     52.191539
+## 2    84.58436          99       NA 23213.00       NA   12.814642      4.946329
+## 3  2769.00170        6034 57.41294 19554.00 15.11508 7452.926728   6743.374287
+## 4   473.32736         617       NA 22387.62       NA  280.569953    206.382233
+## 5    37.65455          47       NA 21871.67       NA    5.945455      3.963636
+## 6   779.00000        1014 62.35178 21650.67       NA  487.730918    372.758450
+##     P09_EMPLT P14_POP1564 P14_CHOM1564 P14_ACT1564 ETTOT14 ETAZ14 ETBE14 ETFZ14
+## 1   65.566193   463.00000    33.000000   376.00000      47      9      2      5
+## 2   17.644456   141.62963     9.835391   120.97531      22      1      3      1
+## 3 7551.682296  8962.84216  1059.728437  6681.86216    1316      7     60    131
+## 4  286.611037  1043.12909    66.326127   842.14083     141     14      7     19
+## 5    5.285714    71.34545     7.927273    57.47273       7      0      0      0
+## 6  491.138876  1614.00000   108.000000  1267.00000     203     21     18     21
+##   ETGU14 ETGZ14 ETOQ14 ETTEF114 ETTEFP1014
+## 1     25      6      6        9          0
+## 2     14      4      3        2          0
+## 3    892    283    226      385        109
+## 4     85     19     16       27          5
+## 5      5      1      2        0          0
+## 6    114     28     29       38         15</code></pre>
 <div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="exercices-corrigés.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(df)</span></code></pre></div>
-<pre><code>##       CODGEO REG P14_POP P09_POP SUPERF NAIS0914
-## 36684  97419  04    6722    6822 177.60      519
-## 36685  97420  04   22406   22437  57.84     1963
-## 36686  97421  04    7132    7406 103.82      661
-## 36687  97422  04   76796   72658 165.43     6663
-## 36688  97423  04    7198    7057  42.58      531
-## 36689  97424  04    5295    5989  84.40      430</code></pre>
+<pre><code>##       CODGEO            LIBGEO REG DEP
+## 36684  97419       Sainte-Rose  04 974
+## 36685  97420    Sainte-Suzanne  04 974
+## 36686  97421           Salazie  04 974
+## 36687  97422         Le Tampon  04 974
+## 36688  97423 Les Trois-Bassins  04 974
+## 36689  97424            Cilaos  04 974
+##                                                       ZAU             ZE
+## 36684 400 - Commune isol\xe9e hors influence des p\xf4les   0401 - L&#39;Est
+## 36685                   112 - Couronne d&#39;un grand p\xf4le 0402 - Le Nord
+## 36686 400 - Commune isol\xe9e hors influence des p\xf4les   0401 - L&#39;Est
+## 36687        111 - Grand p\xf4le (plus de 10 000 emplois)  0404 - Le Sud
+## 36688                   112 - Couronne d&#39;un grand p\xf4le 0403 - L&#39;Ouest
+## 36689 400 - Commune isol\xe9e hors influence des p\xf4les  0404 - Le Sud
+##       P14_POP P09_POP SUPERF NAIS0914 DECE0914   P14_MEN NAISD15 DECESD15
+## 36684    6722    6822 177.60      519      186  2322.000      94       43
+## 36685   22406   22437  57.84     1963      508  7686.912     358      100
+## 36686    7132    7406 103.82      661      235  2420.000     111       46
+## 36687   76796   72658 165.43     6663     2004 29662.460    1339      420
+## 36688    7198    7057  42.58      531      217  2484.887     104       54
+## 36689    5295    5989  84.40      430      186  2016.000      87       38
+##         P14_LOG    P14_RP P14_RSECOCC P14_LOGVAC P14_RP_PROP NBMENFISC13 PIMP13
+## 36684  2542.478  2322.000    28.58054   191.8979    1799.954          NA     NA
+## 36685  8328.616  7686.912    50.94097   590.7629    4450.648          NA     NA
+## 36686  2987.000  2420.000   174.00000   393.0000    1849.000          NA     NA
+## 36687 32710.091 29662.460  1004.31703  2043.3140   15372.921          NA     NA
+## 36688  2890.404  2484.887    67.58626   337.9313    1773.765          NA     NA
+## 36689  2732.690  2016.000   239.56501   477.1253    1522.480          NA     NA
+##       MED13 TP6013 P14_EMPLT P14_EMPLT_SAL P09_EMPLT P14_POP1564 P14_CHOM1564
+## 36684    NA     NA  1272.841      920.0617  1269.573    4306.217     1250.516
+## 36685    NA     NA  4296.362     3618.1538  4185.015   14821.042     3712.486
+## 36686    NA     NA  1519.306     1090.0856  1533.305    4650.000     1369.000
+## 36687    NA     NA 16145.620    12486.5465 14807.249   50316.640    12783.137
+## 36688    NA     NA  1273.858      994.3469  1202.079    4850.570     1360.617
+## 36689    NA     NA  1194.383      993.1546  1314.121    3461.457     1122.361
+##       P14_ACT1564 ETTOT14 ETAZ14 ETBE14 ETFZ14 ETGU14 ETGZ14 ETOQ14 ETTEF114
+## 36684    2850.155     414    125     44     31    159     59     55       82
+## 36685   10456.196    1323    136    139    190    694    249    164      267
+## 36686    3108.000     490    148     29     43    214     73     56       95
+## 36687   34446.789    5476    565    398    665   3025    999    823     1032
+## 36688    3524.287     456     42     39     61    223     76     91       59
+## 36689    2415.666     360     49     17     35    193     49     66       65
+##       ETTEFP1014
+## 36684          8
+## 36685         66
+## 36686         11
+## 36687        204
+## 36688         20
+## 36689         26</code></pre>
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="exercices-corrigés.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df)</span></code></pre></div>
-<pre><code>## [1] &quot;CODGEO&quot;   &quot;REG&quot;      &quot;P14_POP&quot;  &quot;P09_POP&quot;  &quot;SUPERF&quot;   &quot;NAIS0914&quot;</code></pre>
+<pre><code>##  [1] &quot;CODGEO&quot;        &quot;LIBGEO&quot;        &quot;REG&quot;           &quot;DEP&quot;          
+##  [5] &quot;ZAU&quot;           &quot;ZE&quot;            &quot;P14_POP&quot;       &quot;P09_POP&quot;      
+##  [9] &quot;SUPERF&quot;        &quot;NAIS0914&quot;      &quot;DECE0914&quot;      &quot;P14_MEN&quot;      
+## [13] &quot;NAISD15&quot;       &quot;DECESD15&quot;      &quot;P14_LOG&quot;       &quot;P14_RP&quot;       
+## [17] &quot;P14_RSECOCC&quot;   &quot;P14_LOGVAC&quot;    &quot;P14_RP_PROP&quot;   &quot;NBMENFISC13&quot;  
+## [21] &quot;PIMP13&quot;        &quot;MED13&quot;         &quot;TP6013&quot;        &quot;P14_EMPLT&quot;    
+## [25] &quot;P14_EMPLT_SAL&quot; &quot;P09_EMPLT&quot;     &quot;P14_POP1564&quot;   &quot;P14_CHOM1564&quot; 
+## [29] &quot;P14_ACT1564&quot;   &quot;ETTOT14&quot;       &quot;ETAZ14&quot;        &quot;ETBE14&quot;       
+## [33] &quot;ETFZ14&quot;        &quot;ETGU14&quot;        &quot;ETGZ14&quot;        &quot;ETOQ14&quot;       
+## [37] &quot;ETTEF114&quot;      &quot;ETTEFP1014&quot;</code></pre>
 <div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="exercices-corrigés.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(df)</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="exercices-corrigés.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(df)</span></code></pre></div>
@@ -317,7 +437,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="créer-filtrer-sélectionner" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> 06 - créer, filtrer, sélectionner</h2>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="exercices-corrigés.html#cb135-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(base, <span class="at">densite =</span> P14_POP <span class="sc">/</span> SUPERF,</span>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="exercices-corrigés.html#cb135-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(df, <span class="at">densite =</span> P14_POP <span class="sc">/</span> SUPERF,</span>
 <span id="cb135-2"><a href="exercices-corrigés.html#cb135-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">tx_natal =</span> <span class="dv">1000</span> <span class="sc">*</span> NAISD15 <span class="sc">/</span> P14_POP,</span>
 <span id="cb135-3"><a href="exercices-corrigés.html#cb135-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">tx_mort =</span> DECESD15 <span class="sc">/</span> P14_POP)</span></code></pre></div>
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="exercices-corrigés.html#cb136-1" aria-hidden="true" tabindex="-1"></a>selection <span class="ot">&lt;-</span> <span class="fu">select</span>(df, CODGEO, ZAU, REG, DEP,</span>
@@ -332,7 +452,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="calcul-de-statistiques" class="section level2" number="11.3">
 <h2><span class="header-section-number">11.3</span> 07 - calcul de statistiques</h2>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="exercices-corrigés.html#cb139-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> base <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="exercices-corrigés.html#cb139-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
 <span id="cb139-2"><a href="exercices-corrigés.html#cb139-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb139-3"><a href="exercices-corrigés.html#cb139-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">densite =</span> P14_POP <span class="sc">/</span> SUPERF,</span>
 <span id="cb139-4"><a href="exercices-corrigés.html#cb139-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">tx_natal =</span> <span class="dv">1000</span> <span class="sc">*</span> NAISD15 <span class="sc">/</span> P14_POP,</span>
@@ -340,22 +460,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb139-6"><a href="exercices-corrigés.html#cb139-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">ZAU2 =</span> <span class="fu">as.factor</span>(<span class="fu">substr</span>(ZAU, <span class="dv">1</span>, <span class="dv">3</span>))) <span class="co"># Parce que la variable originale est longue</span></span>
 <span id="cb139-7"><a href="exercices-corrigés.html#cb139-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb139-8"><a href="exercices-corrigés.html#cb139-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code></pre></div>
-<pre><code>##     CODGEO             LIBGEO               REG            DEP           
-##  Length:36689       Length:36689       44     : 5198   Length:36689      
-##  Class :character   Class :character   76     : 4565   Class :character  
-##  Mode  :character   Mode  :character   75     : 4505   Mode  :character  
-##                                        84     : 4189                     
-##                                        32     : 3838                     
-##                                        27     : 3831                     
-##                                        (Other):10563                     
-##      ZAU                 ZE               P14_POP           P09_POP       
-##  Length:36689       Length:36689       Min.   :      0   Min.   :      0  
-##  Class :character   Class :character   1st Qu.:    197   1st Qu.:    193  
-##  Mode  :character   Mode  :character   Median :    444   Median :    431  
-##                                        Mean   :   1838   Mean   :   1793  
-##                                        3rd Qu.:   1110   3rd Qu.:   1072  
-##                                        Max.   :2220445   Max.   :2234105  
-##                                        NA&#39;s   :821       NA&#39;s   :821      
+<pre><code>##     CODGEO             LIBGEO               REG             DEP       
+##  Length:36689       Length:36689       44     : 5198   62     :  895  
+##  Class :character   Class :character   76     : 4565   02     :  816  
+##  Mode  :character   Mode  :character   75     : 4505   80     :  782  
+##                                        84     : 4189   76     :  745  
+##                                        32     : 3838   57     :  730  
+##                                        27     : 3831   14     :  707  
+##                                        (Other):10563   (Other):32014  
+##    ZAU                                                      
+##  112 - Couronne d&#39;un grand p\xf4le                  :12297  
+##  400 - Commune isol\xe9e hors influence des p\xf4les: 7383  
+##  300 - Autre commune multipolaris\xe9e              : 7021  
+##  120 - Multipolaris\xe9e des grandes aires urbaines : 3962  
+##  111 - Grand p\xf4le (plus de 10 000 emplois)       : 3285  
+##  221 - Petit p\xf4le (de 1 500 \xe0 5 000 emplois)  :  888  
+##  (Other)                                            : 1853  
+##                        ZE           P14_POP           P09_POP       
+##  0061 - Toulouse        :  717   Min.   :      0   Min.   :      0  
+##  2307 - Rouen           :  501   1st Qu.:    197   1st Qu.:    193  
+##  2210 - Amiens          :  479   Median :    444   Median :    431  
+##  7310 - Tarbes - Lourdes:  455   Mean   :   1838   Mean   :   1793  
+##  2102 - Troyes          :  452   3rd Qu.:   1110   3rd Qu.:   1072  
+##  2603 - Dijon           :  448   Max.   :2220445   Max.   :2234105  
+##  (Other)                :33637   NA&#39;s   :821       NA&#39;s   :821      
 ##      SUPERF            NAIS0914           DECE0914           P14_MEN         
 ##  Min.   :    0.04   Min.   :     0.0   Min.   :    0.00   Min.   :      0.0  
 ##  1st Qu.:    6.44   1st Qu.:     9.0   1st Qu.:    8.00   1st Qu.:     83.8  
@@ -434,10 +562,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb154-2"><a href="exercices-corrigés.html#cb154-2" aria-hidden="true" tabindex="-1"></a>t</span></code></pre></div>
 <pre><code>##     
 ##       111  112  120  211  212  221  222  300  400
-##   1    17    6    1    0    0    3    0    2    3
-##   2    16    0    4    3    0    2    0    4    5
-##   3     3    3    0    2    0    1    0    0   13
-##   4    10    3    4    2    0    0    0    1    4
+##   01   17    6    1    0    0    3    0    2    3
+##   02   16    0    4    3    0    2    0    4    5
+##   03    3    3    0    2    0    1    0    0   13
+##   04   10    3    4    2    0    0    0    1    4
 ##   11  413  853    3    3    2    0    0    7    0
 ##   24  103  734  188   30   72   46   19  375  275
 ##   27  140 1299  336   31  122   60  137  737  969
@@ -454,10 +582,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="exercices-corrigés.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="sc">*</span> <span class="fu">prop.table</span>(t) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##     
 ##       111  112  120  211  212  221  222  300  400
-##   1  0.05 0.02 0.00 0.00 0.00 0.01 0.00 0.01 0.01
-##   2  0.04 0.00 0.01 0.01 0.00 0.01 0.00 0.01 0.01
-##   3  0.01 0.01 0.00 0.01 0.00 0.00 0.00 0.00 0.04
-##   4  0.03 0.01 0.01 0.01 0.00 0.00 0.00 0.00 0.01
+##   01 0.05 0.02 0.00 0.00 0.00 0.01 0.00 0.01 0.01
+##   02 0.04 0.00 0.01 0.01 0.00 0.01 0.00 0.01 0.01
+##   03 0.01 0.01 0.00 0.01 0.00 0.00 0.00 0.00 0.04
+##   04 0.03 0.01 0.01 0.01 0.00 0.00 0.00 0.00 0.01
 ##   11 1.13 2.32 0.01 0.01 0.01 0.00 0.00 0.02 0.00
 ##   24 0.28 2.00 0.51 0.08 0.20 0.13 0.05 1.02 0.75
 ##   27 0.38 3.54 0.92 0.08 0.33 0.16 0.37 2.01 2.64
@@ -474,27 +602,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="créer-des-graphiques" class="section level2" number="11.4">
 <h2><span class="header-section-number">11.4</span> 08 - créer des graphiques</h2>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="exercices-corrigés.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> base, <span class="fu">aes</span>(<span class="at">x =</span> P14_POP)) <span class="sc">+</span></span>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="exercices-corrigés.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> P14_POP)) <span class="sc">+</span></span>
 <span id="cb158-2"><a href="exercices-corrigés.html#cb158-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/graph_5-1.png" width="576" /></p>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/graph_5-1.svg" width="576" /></p>
 <p>Ce n’est pas très informatif, mais on peut faire une transformation log pour y voir plus clair !</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="exercices-corrigés.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> base, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(P14_POP))) <span class="sc">+</span></span>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="exercices-corrigés.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(P14_POP))) <span class="sc">+</span></span>
 <span id="cb159-2"><a href="exercices-corrigés.html#cb159-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/graph_6-1.png" width="576" /></p>
-<p>Faites maintenant un barplot (qui n’est pas un histogramme !!!!) du nombre de communes par type ZAU.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="exercices-corrigés.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> base, <span class="fu">aes</span>(<span class="at">x =</span> REG)) <span class="sc">+</span></span>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/graph_6-1.svg" width="576" /></p>
+<p>Faites maintenant un barplot (qui n’est pas un histogramme !!!!) du nombre de communes par REG.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="exercices-corrigés.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> REG)) <span class="sc">+</span></span>
 <span id="cb160-2"><a href="exercices-corrigés.html#cb160-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/graph_7-1.png" width="576" /></p>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/graph_7-1.svg" width="576" /></p>
 <p>On va essayer d’y voir plus clair avec le paramètre <code>fill</code></p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="exercices-corrigés.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> base, <span class="fu">aes</span>(<span class="at">x =</span> REG, <span class="at">fill =</span> REG)) <span class="sc">+</span></span>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="exercices-corrigés.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> REG, <span class="at">fill =</span> REG)) <span class="sc">+</span></span>
 <span id="cb161-2"><a href="exercices-corrigés.html#cb161-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/graph_8-1.png" width="576" /></p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="exercices-corrigés.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> base, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(P14_POP), <span class="at">y =</span> <span class="fu">log</span>(P14_LOGVAC))) <span class="sc">+</span></span>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/graph_8-1.svg" width="576" /></p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="exercices-corrigés.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(P14_POP), <span class="at">y =</span> <span class="fu">log</span>(P14_LOGVAC))) <span class="sc">+</span></span>
 <span id="cb162-2"><a href="exercices-corrigés.html#cb162-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/graph_9-1.png" width="576" /></p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="exercices-corrigés.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> base, <span class="fu">aes</span>(<span class="at">x =</span> densite, <span class="at">y =</span> tx_mort, <span class="at">color =</span> REG)) <span class="sc">+</span></span>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/graph_9-1.svg" width="576" /></p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="exercices-corrigés.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> densite, <span class="at">y =</span> tx_mort, <span class="at">color =</span> REG)) <span class="sc">+</span></span>
 <span id="cb163-2"><a href="exercices-corrigés.html#cb163-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="D%C3%A9buter-avec-R-et-RStudio_files/figure-html/graph_10-1.png" width="576" /></p>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/graph_10-1.svg" width="576" /></p>
 <p>Là encore il faudrait faire une transformation logarithmique, mais tout ça est abordé dans le module 3 !</p>
 
 </div>
@@ -504,12 +632,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercices-pour-r-studio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -528,6 +655,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -547,7 +675,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Débuter-avec-R-et-RStudio.pdf"],
+"download": ["Debuter-avec-R-et-RStudio.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

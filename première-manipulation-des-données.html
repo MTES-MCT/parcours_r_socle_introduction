@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 6 Première manipulation des données | Découvrir R et RStudio</title>
   <meta name="description" content="Chapitre 6 Première manipulation des données | Découvrir R et RStudio (module socle)" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 6 Première manipulation des données | Découvrir R et RStudio" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2021-10-05" />
+<meta name="date" content="2022-06-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="mon-premier-jeu-de-données.html"/>
 <link rel="next" href="premiers-traitements-statistiques.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +51,15 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -127,6 +127,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -151,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html"><i class="fa fa-check"></i><b>2</b> R, son écosystème et ses possibilités</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#le-groupe-de-référents"><i class="fa fa-check"></i><b>2.1</b> Le groupe de référents</a></li>
+<li class="chapter" data-level="2.1" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#le-groupe-de-référents-r-du-pôle-ministériel"><i class="fa fa-check"></i><b>2.1</b> Le groupe de référents R du pôle ministériel</a></li>
 <li class="chapter" data-level="2.2" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#r-cest-quoi"><i class="fa fa-check"></i><b>2.2</b> R c’est quoi ?</a></li>
 <li class="chapter" data-level="2.3" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-peu-dhistoire"><i class="fa fa-check"></i><b>2.3</b> Un peu d’histoire</a></li>
 <li class="chapter" data-level="2.4" data-path="r-son-écosystème-et-ses-possibilités.html"><a href="r-son-écosystème-et-ses-possibilités.html#un-logiciel-libre"><i class="fa fa-check"></i><b>2.4</b> Un logiciel libre</a></li>
@@ -163,7 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#une-interface-dédiée-rstudio"><i class="fa fa-check"></i><b>3.1</b> Une interface dédiée : RStudio</a></li>
 <li class="chapter" data-level="3.2" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#session-et-répertoire-de-travail"><i class="fa fa-check"></i><b>3.2</b> Session et répertoire de travail</a></li>
-<li class="chapter" data-level="3.3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-son-répertoire-de-travail"><i class="fa fa-check"></i><b>3.3</b> C’est à vous : créer son répertoire de travail</a></li>
+<li class="chapter" data-level="3.3" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-un-répertoire-de-travail"><i class="fa fa-check"></i><b>3.3</b> C’est à vous : créer un répertoire de travail</a></li>
 <li class="chapter" data-level="3.4" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#prise-en-main-de-la-console"><i class="fa fa-check"></i><b>3.4</b> Prise en main de la console</a></li>
 <li class="chapter" data-level="3.5" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#création-dune-variable"><i class="fa fa-check"></i><b>3.5</b> Création d’une variable</a></li>
 <li class="chapter" data-level="3.6" data-path="présentation-de-linterface-et-premières-manipulations.html"><a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-et-manipuler-des-variables"><i class="fa fa-check"></i><b>3.6</b> C’est à vous : créer et manipuler des variables</a></li>
@@ -174,9 +175,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="bien-commencer.html"><a href="bien-commencer.html"><i class="fa fa-check"></i><b>4</b> Bien commencer</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-un-projet-sous-rstudio-pour-vous-permettre-de-recenser-vos-travaux."><i class="fa fa-check"></i><b>4.1</b> Créer un projet sous Rstudio pour vous permettre de recenser vos travaux.</a></li>
-<li class="chapter" data-level="4.2" data-path="bien-commencer.html"><a href="bien-commencer.html#intégrer-vos-données"><i class="fa fa-check"></i><b>4.2</b> Intégrer vos données</a></li>
-<li class="chapter" data-level="4.3" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-votre-arborescence-de-projet"><i class="fa fa-check"></i><b>4.3</b> Créer votre arborescence de projet</a></li>
-<li class="chapter" data-level="4.4" data-path="bien-commencer.html"><a href="bien-commencer.html#utilisation-du-package-savoirfr"><i class="fa fa-check"></i><b>4.4</b> Utilisation du package savoirfR</a></li>
+<li class="chapter" data-level="4.2" data-path="bien-commencer.html"><a href="bien-commencer.html#utilisation-du-package-savoirfr"><i class="fa fa-check"></i><b>4.2</b> Utilisation du package <code>{savoirfR}</code></a></li>
+<li class="chapter" data-level="4.3" data-path="bien-commencer.html"><a href="bien-commencer.html#intégrer-vos-données"><i class="fa fa-check"></i><b>4.3</b> Intégrer vos données</a></li>
+<li class="chapter" data-level="4.4" data-path="bien-commencer.html"><a href="bien-commencer.html#créer-votre-arborescence-de-projet"><i class="fa fa-check"></i><b>4.4</b> Créer votre arborescence de projet</a></li>
 <li class="chapter" data-level="4.5" data-path="bien-commencer.html"><a href="bien-commencer.html#activer-les-packages-nécessaires"><i class="fa fa-check"></i><b>4.5</b> Activer les packages nécessaires</a></li>
 <li class="chapter" data-level="4.6" data-path="bien-commencer.html"><a href="bien-commencer.html#bien-structurer-ses-projets-data"><i class="fa fa-check"></i><b>4.6</b> Bien structurer ses projets <em>data</em></a></li>
 </ul></li>
@@ -189,7 +190,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#importation-de-données"><i class="fa fa-check"></i><b>5.5</b> Importation de données</a></li>
 <li class="chapter" data-level="5.6" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#gérer-le-type-des-variables"><i class="fa fa-check"></i><b>5.6</b> Gérer le type des variables</a></li>
 <li class="chapter" data-level="5.7" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#structure-des-données-le-dataframe"><i class="fa fa-check"></i><b>5.7</b> Structure des données : le <em>dataframe</em></a></li>
-<li class="chapter" data-level="5.8" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#exercice-importer-des-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>5.8</b> Exercice : importer des données et premier coup d’oeil</a></li>
+<li class="chapter" data-level="5.8" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#exercice-2-importer-des-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>5.8</b> Exercice 2 : importer des données et premier coup d’oeil</a></li>
+<li class="chapter" data-level="5.9" data-path="mon-premier-jeu-de-données.html"><a href="mon-premier-jeu-de-données.html#catalogue-dattributs-de-la-base"><i class="fa fa-check"></i><b>5.9</b> Catalogue d’attributs de la base</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html"><i class="fa fa-check"></i><b>6</b> Première manipulation des données</a>
 <ul>
@@ -199,7 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#filtrer-des-observations"><i class="fa fa-check"></i><b>6.4</b> Filtrer des observations</a></li>
 <li class="chapter" data-level="6.5" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#les-tests-logiques-dans-r"><i class="fa fa-check"></i><b>6.5</b> Les tests logiques dans R</a></li>
 <li class="chapter" data-level="6.6" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#renommer-des-colonnes"><i class="fa fa-check"></i><b>6.6</b> Renommer des colonnes</a></li>
-<li class="chapter" data-level="6.7" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#exercice-créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>6.7</b> Exercice : créer, filtrer, sélectionner</a></li>
+<li class="chapter" data-level="6.7" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#exercice-3-créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>6.7</b> Exercice 3 : créer, filtrer, sélectionner</a></li>
 <li class="chapter" data-level="6.8" data-path="première-manipulation-des-données.html"><a href="première-manipulation-des-données.html#nom-dun-pipe"><i class="fa fa-check"></i><b>6.8</b> Nom d’un pipe <code>%&gt;%</code> !</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html"><i class="fa fa-check"></i><b>7</b> Premiers traitements statistiques</a>
@@ -213,7 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#tableau-de-contingence"><i class="fa fa-check"></i><b>7.4</b> Tableau de contingence</a></li>
 <li class="chapter" data-level="7.5" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#tableau-de-proportions"><i class="fa fa-check"></i><b>7.5</b> Tableau de proportions</a></li>
-<li class="chapter" data-level="7.6" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#exercice-calcul-de-statistiques"><i class="fa fa-check"></i><b>7.6</b> Exercice : calcul de statistiques</a></li>
+<li class="chapter" data-level="7.6" data-path="premiers-traitements-statistiques.html"><a href="premiers-traitements-statistiques.html#exercice-4-calcul-de-statistiques"><i class="fa fa-check"></i><b>7.6</b> Exercice 4 : calcul de statistiques</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="premiers-graphiques.html"><a href="premiers-graphiques.html"><i class="fa fa-check"></i><b>8</b> Premiers graphiques</a>
 <ul>
@@ -234,10 +236,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-objets-dans-r-plus-de-détails"><i class="fa fa-check"></i><b>10.1</b> Les objets dans R, plus de détails</a></li>
 <li class="chapter" data-level="10.2" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#créer-une-nouvelle-fonction-en-r"><i class="fa fa-check"></i><b>10.2</b> Créer une nouvelle fonction en R</a></li>
 <li class="chapter" data-level="10.3" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles-conditionnelles"><i class="fa fa-check"></i><b>10.3</b> Les boucles conditionnelles</a></li>
-<li class="chapter" data-level="10.4" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles"><i class="fa fa-check"></i><b>10.4</b> Les boucles</a>
+<li class="chapter" data-level="10.4" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles"><i class="fa fa-check"></i><b>10.4</b> Les boucles</a></li>
+<li class="chapter" data-level="10.5" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#pour-aller-plus-loin"><i class="fa fa-check"></i><b>10.5</b> Pour aller plus loin</a>
 <ul>
-<li class="chapter" data-level="10.4.1" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#pour-aller-plus-loin-matrices-et-arrays"><i class="fa fa-check"></i><b>10.4.1</b> Pour aller plus loin : matrices et arrays</a></li>
-<li class="chapter" data-level="10.4.2" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#inspection-dun-objet-la-régression"><i class="fa fa-check"></i><b>10.4.2</b> Inspection d’un objet : la régression</a></li>
+<li class="chapter" data-level="10.5.1" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#matrices-et-arrays"><i class="fa fa-check"></i><b>10.5.1</b> matrices et arrays</a></li>
+<li class="chapter" data-level="10.5.2" data-path="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#inspection-dun-objet-la-régression"><i class="fa fa-check"></i><b>10.5.2</b> Inspection d’un objet : la régression</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html"><i class="fa fa-check"></i><b>11</b> Exercices corrigés</a>
@@ -247,15 +250,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#calcul-de-statistiques"><i class="fa fa-check"></i><b>11.3</b> 07 - calcul de statistiques</a></li>
 <li class="chapter" data-level="11.4" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#créer-des-graphiques"><i class="fa fa-check"></i><b>11.4</b> 08 - créer des graphiques</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html"><i class="fa fa-check"></i><b>12</b> Exercices pour R Studio</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-1-prendre-en-main-rstudio-10-min."><i class="fa fa-check"></i><b>12.1</b> Exercice 1 : Prendre en main RStudio (10 min.)</a></li>
-<li class="chapter" data-level="12.2" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-2-faire-ses-premiers-calculs-15-min."><i class="fa fa-check"></i><b>12.2</b> Exercice 2 : Faire ses premiers calculs (15 min.)</a></li>
-<li class="chapter" data-level="12.3" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-3-créer-ses-premières-variables-15-min."><i class="fa fa-check"></i><b>12.3</b> Exercice 3 : Créer ses premières variables (15 min.)</a></li>
-<li class="chapter" data-level="12.4" data-path="exercices-pour-r-studio.html"><a href="exercices-pour-r-studio.html#exercice-4-créer-son-premier-script-20-min."><i class="fa fa-check"></i><b>12.4</b> Exercice 4 : Créer son premier script (20 min.)</a></li>
-</ul></li>
 <li class="divider"></li>
-<li><a href="https://mtes-mct.github.io/parcours-r/">Liste des formations R</a></li>
+<li><a href="https://mtes-mct.github.io/parcours-r/" target="blank">Liste des formations R</a></li>
+<li><a href="https://github.com/MTES-MCT/parcours_r_socle_introduction" target="blank">Fichiers sources de ce module</a></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
 </ul>
@@ -277,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="première-manipulation-des-données" class="section level1" number="6">
 <h1><span class="header-section-number">Chapitre 6</span> Première manipulation des données</h1>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="première-manipulation-des-données.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="première-manipulation-des-données.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
 <div id="afficher-les-valeurs-et-manipuler-les-variables" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Afficher les valeurs et manipuler les variables</h2>
 <ul>
@@ -330,7 +327,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Par exemple :</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="première-manipulation-des-données.html#cb48-1" aria-hidden="true" tabindex="-1"></a>base_filter <span class="ot">&lt;-</span> <span class="fu">filter</span>(base, DEP <span class="sc">==</span> <span class="st">&quot;01&quot;</span> <span class="sc">&amp;</span> P14_POP <span class="sc">&gt;</span> <span class="dv">10000</span>)</span></code></pre></div>
 <blockquote>
-<p><strong><span class="math inline">\(\Rightarrow\)</span> Attention à l’opérateur de comparaison : ” == ” et non pas “=”</strong></p>
+<p><strong><span class="math inline">\(\Rightarrow\)</span> Attention à l’opérateur de comparaison : " == " et non pas “=”</strong></p>
 </blockquote>
 </div>
 <div id="les-tests-logiques-dans-r" class="section level2" number="6.5">
@@ -375,13 +372,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Exemple</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="première-manipulation-des-données.html#cb51-1" aria-hidden="true" tabindex="-1"></a>base_rename <span class="ot">&lt;-</span> <span class="fu">rename</span>(base, <span class="at">ZONE_EMPLOI =</span> ZE)</span></code></pre></div>
 </div>
-<div id="exercice-créer-filtrer-sélectionner" class="section level2" number="6.7">
-<h2><span class="header-section-number">6.7</span> Exercice : créer, filtrer, sélectionner</h2>
+<div id="exercice-3-créer-filtrer-sélectionner" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> Exercice 3 : créer, filtrer, sélectionner</h2>
 <ul>
-<li><p>En utilisant la fonction <code>mutate()</code>, créer une nouvelle variable correspondant à la densité de population (rapport de la population à la superficie de la commune), ainsi que les taux de natalité et de mortalité (en pour mille)</p></li>
+<li><p>En utilisant la fonction <code>mutate()</code>, créer une nouvelle variable correspondant à la densité de population (rapport de la population à la superficie de la commune), ainsi que les taux de natalité et de mortalité (en pour mille de la population 2014)</p></li>
 <li><p>A l’aide de la fonction <code>select()</code>, créer une nouvelle table en ne conservant que le code commune, le type de commune (ZAU), la région, le département et les variables que vous venez de créer.</p></li>
 <li><p>Enfin, ne conserver les communes correspondant à votre département de naissance et stocker ce <em>dataframe</em>. Attention au type de la variable département !</p></li>
-<li><p>Avec les opérateurs logiques, faire des essais pour sélectionner des échantillons différents.</p></li>
+<li><p>Avec les opérateurs logiques, faire des essais pour sélectionner des échantillons différents (autres départements, densité, l’un et l’autre…).</p></li>
 </ul>
 </div>
 <div id="nom-dun-pipe" class="section level2" number="6.8">
@@ -395,9 +392,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Cela peut être relativement clair si on respecte de bonnes pratiques de nommage mais encombre inutilement l’environnement de travail.</p>
 <p>On peut emboîter les fonctions :</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="première-manipulation-des-données.html#cb53-1" aria-hidden="true" tabindex="-1"></a>selection_62 <span class="ot">&lt;-</span> <span class="fu">filter</span>(<span class="fu">select</span>(<span class="fu">mutate</span>(base, <span class="at">densite =</span> P14_POP <span class="sc">/</span> SUPERF,</span>
-<span id="cb53-2"><a href="première-manipulation-des-données.html#cb53-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">tx_natal =</span> <span class="dv">1000</span> <span class="sc">*</span> NAISD15 <span class="sc">/</span> P14_POP,</span>
-<span id="cb53-3"><a href="première-manipulation-des-données.html#cb53-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">tx_mort =</span> DECESD15 <span class="sc">/</span> P14_POP),</span>
-<span id="cb53-4"><a href="première-manipulation-des-données.html#cb53-4" aria-hidden="true" tabindex="-1"></a>             CODGEO, ZAU, REG, DEP, densite, tx_natal), DEP <span class="sc">==</span> <span class="st">&quot;62&quot;</span>)</span></code></pre></div>
+<span id="cb53-2"><a href="première-manipulation-des-données.html#cb53-2" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">tx_natal =</span> <span class="dv">1000</span> <span class="sc">*</span> NAISD15 <span class="sc">/</span> P14_POP,</span>
+<span id="cb53-3"><a href="première-manipulation-des-données.html#cb53-3" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">tx_mort =</span> DECESD15 <span class="sc">/</span> P14_POP),</span>
+<span id="cb53-4"><a href="première-manipulation-des-données.html#cb53-4" aria-hidden="true" tabindex="-1"></a>                              CODGEO, ZAU, REG, DEP, densite, tx_natal), DEP <span class="sc">==</span> <span class="st">&quot;62&quot;</span>)</span></code></pre></div>
 <p>Ce choix préserve l’environnement de travail mais la lecture est particulièrement confuse et le risque d’oubli de parenthèses important.</p>
 <p>Il y a enfin une solution du package <code>magrittr</code> faisant partie du <code>tidyverse</code>.
 On peut combiner les opérations en une seule ligne à l’aide de l’opérateur pipe <code>%&gt;%</code> :</p>
@@ -422,7 +419,6 @@ L’objet auquel s’applique chaque nouvelle opération est le résultat de l�
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -441,6 +437,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -460,7 +457,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Débuter-avec-R-et-RStudio.pdf"],
+"download": ["Debuter-avec-R-et-RStudio.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
