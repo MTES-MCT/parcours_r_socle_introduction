@@ -32,7 +32,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, error = FALSE, warning = FAL
 
 ```{r collecte prez parcours, results='asis', warning=FALSE, echo=FALSE}
 # Utilisation du chapitre de présentation du parcours présent dans https://github.com/MTES-MCT/parcours-r
-cat(stringi::stri_read_lines("https://raw.githubusercontent.com/MTES-MCT/parcours-r/parties_communes/parties_communes/le_parcours_R.Rmd", encoding = "UTF-8"), sep = "\n")
+cat(stringi::stri_read_lines("https://raw.githubusercontent.com/MTES-MCT/parcours-r/master/parties_communes/le_parcours_R.Rmd", encoding = "UTF-8"), sep = "\n")
 
 ```
 
