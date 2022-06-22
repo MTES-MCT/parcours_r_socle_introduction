@@ -89,7 +89,7 @@ base0 <- read.csv(file = "extdata/Base_synth_territoires.csv",
 - `header =`indique la présence des noms de variable sur la première ligne
 - `sep =` indique le séparateur de champ : ';' '/t' pour tabulation
 - `dec =` indique le séparateur de décimale ('.' par défaut)
-- `colClasses =`permet de préciser le type de chaque colonne de la donnée en entrée, par exemple pour une table de 3 colonnes de types texte, puis 2 fois numériques : `colClasses = c("character", "numeric", "numeric")`. `NA` pour laisser R deviner, `NULL` pour éviter d'importer la colonne.
+- `colClasses =`permet de préciser le type de chaque colonne de la donnée en entrée, par exemple pour une table de 3 colonnes de types texte, puis 2 fois numériques : `colClasses = c("character", "numeric", "numeric")`. `NA` pour laisser R deviner, `"NULL"` pour éviter d'importer la colonne.
 
 $\Rightarrow$ `?read.csv` pour plus d'options
 
