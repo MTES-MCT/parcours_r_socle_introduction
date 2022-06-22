@@ -1,6 +1,6 @@
 # Exercices corrigés
 
-## 04 - importer des données et premier coup d'oeil
+## 05 - importer des données et premier coup d'oeil
 
 ```{r inspectdf}
 df <- read.csv(file = "extdata/Base_synth_territoires.csv", header = TRUE, sep = ";", dec = ",",
@@ -19,7 +19,7 @@ typeof(df)
 ```{r}
 df <- mutate(df, densite = P14_POP / SUPERF,
              tx_natal = 1000 * NAISD15 / P14_POP,
-             tx_mort = DECESD15 / P14_POP)
+             tx_mort = 1000 * DECESD15 / P14_POP)
 ```
 
 
@@ -53,8 +53,8 @@ df <- df %>%
   select(1:24) %>% 
   mutate(densite = P14_POP / SUPERF,
          tx_natal = 1000 * NAISD15 / P14_POP,
-         tx_mort = DECESD15 / P14_POP,
-         ZAU2 = as.factor(substr(ZAU, 1, 3))) # Parce que la variable originale est longue
+         tx_mort = 1000 * DECESD15 / P14_POP
+         ) 
 
 summary(df)
 ```
@@ -94,14 +94,14 @@ df %>% pull(densite) %>% quantile(probs = seq(0, 1, 0.1), na.rm = T)
 ```
 
 ```{r stat_16}
-t <- table(df$ZAU2)
+t <- table(df$ZAU)
 t
 100 * prop.table(t) %>% round(digits = 4)
 ```
 
 - Deux variables
 ```{r stat_17}
-t <- table(df$REG, df$ZAU2)
+t <- table(df$REG, df$ZAU)
 t
 100 * prop.table(t) %>% round(digits = 4)
 ```

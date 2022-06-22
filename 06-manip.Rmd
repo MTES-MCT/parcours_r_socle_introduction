@@ -67,7 +67,7 @@ base_select <- select(base, -CODGEO)
 La fonction `filter()` permet de sélectionner les observations, selon une condition (ou plusieurs).
 
 ```{r, eval=FALSE}
-TableEnSortie <- filter(TableEnSortie, Condition1, ..., ConditionN)
+TableEnSortie <- filter(TableEnEntree, Condition1, ..., ConditionN)
 ```
 Par exemple :
 ```{r}
@@ -87,8 +87,8 @@ Syntaxe             | Action
 `! (x %in% c(...))` |  N'est pas dans une liste de valeurs 
 
 ```{r, eval=FALSE}
-TableEnSortie <- filter(TableEnSortie, x==a & y==b)    #  x vaut a **ET** y vaut b
-TableEnSortie <- filter(TableEnSortie, x==a | y==b)    #  x vaut a **OU** y vaut b (barre verticale AltGR+6)
+TableEnSortie <- filter(TableEnEntree, x==a & y==b)    #  x vaut a **ET** y vaut b
+TableEnSortie <- filter(TableEnEntree, x==a | y==b)    #  x vaut a **OU** y vaut b (barre verticale AltGR+6)
 ```
 
 
@@ -122,7 +122,7 @@ Pour enchaîner des opérations, on peut créer des variables successives :
 ```{r}
 df <- mutate(base, densite = P14_POP / SUPERF,
              tx_natal = 1000 * NAISD15 / P14_POP,
-             tx_mort = DECESD15 / P14_POP)
+             tx_mort = 1000 * DECESD15 / P14_POP)
 selection <- select(df, CODGEO, ZAU, REG, DEP, densite, tx_natal)
 filtre_62 <- filter(selection, DEP == "62")
 ```
@@ -132,8 +132,9 @@ On peut emboîter les fonctions :
 ```{r}
 selection_62 <- filter(select(mutate(base, densite = P14_POP / SUPERF,
                                      tx_natal = 1000 * NAISD15 / P14_POP,
-                                     tx_mort = DECESD15 / P14_POP),
-                              CODGEO, ZAU, REG, DEP, densite, tx_natal), DEP == "62")
+                                     tx_mort = 1000 * DECESD15 / P14_POP),
+                              CODGEO, ZAU, REG, DEP, densite, tx_natal), 
+                       DEP == "62")
 ```
 Ce choix préserve l'environnement de travail mais la lecture est particulièrement confuse et le risque d'oubli de parenthèses important.
 
@@ -144,7 +145,7 @@ On peut combiner les opérations en une seule ligne à l'aide de l'opérateur pi
 selection_62 <- base %>%
   mutate(densite = P14_POP / SUPERF,
          tx_natal = 1000 * NAISD15 / P14_POP,
-         tx_mort = DECESD15 / P14_POP) %>%
+         tx_mort = 1000 * DECESD15 / P14_POP) %>%
   select(CODGEO, ZAU, REG, DEP, densite, tx_natal) %>%
   filter(DEP == "62")
 ```

@@ -67,7 +67,7 @@ flèches pour naviguer dans l'historique          |.
 ## Création d'une variable 
 
 On assigne un contenu à une variable au moyen de `<-`
-La flèche d'assignation peut être écrite avec le raccourci clavier alt + "-" (tiret du 6).
+La flèche d'assignation peut être écrite avec le raccourci clavier alt + "-" (tiret du 6 ou signe 'moins' du pavé numérique).
 
 ```{r inter_1}
 ma_variable <- 2
