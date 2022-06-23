@@ -24,7 +24,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2022-06-22" />
+<meta name="date" content="2022-06-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -245,7 +245,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html"><i class="fa fa-check"></i><b>11</b> Exercices corrigés</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#importer-des-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>11.1</b> 04 - importer des données et premier coup d’oeil</a></li>
+<li class="chapter" data-level="11.1" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#importer-des-données-et-premier-coup-doeil"><i class="fa fa-check"></i><b>11.1</b> 05 - importer des données et premier coup d’oeil</a></li>
 <li class="chapter" data-level="11.2" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#créer-filtrer-sélectionner"><i class="fa fa-check"></i><b>11.2</b> 06 - créer, filtrer, sélectionner</a></li>
 <li class="chapter" data-level="11.3" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#calcul-de-statistiques"><i class="fa fa-check"></i><b>11.3</b> 07 - calcul de statistiques</a></li>
 <li class="chapter" data-level="11.4" data-path="exercices-corrigés.html"><a href="exercices-corrigés.html#créer-des-graphiques"><i class="fa fa-check"></i><b>11.4</b> 08 - créer des graphiques</a></li>
@@ -323,7 +323,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="images/filter.png" />
 </center>
 <p>La fonction <code>filter()</code> permet de sélectionner les observations, selon une condition (ou plusieurs).</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="première-manipulation-des-données.html#cb47-1" aria-hidden="true" tabindex="-1"></a>TableEnSortie <span class="ot">&lt;-</span> <span class="fu">filter</span>(TableEnSortie, Condition1, ..., ConditionN)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="première-manipulation-des-données.html#cb47-1" aria-hidden="true" tabindex="-1"></a>TableEnSortie <span class="ot">&lt;-</span> <span class="fu">filter</span>(TableEnEntree, Condition1, ..., ConditionN)</span></code></pre></div>
 <p>Par exemple :</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="première-manipulation-des-données.html#cb48-1" aria-hidden="true" tabindex="-1"></a>base_filter <span class="ot">&lt;-</span> <span class="fu">filter</span>(base, DEP <span class="sc">==</span> <span class="st">&quot;01&quot;</span> <span class="sc">&amp;</span> P14_POP <span class="sc">&gt;</span> <span class="dv">10000</span>)</span></code></pre></div>
 <blockquote>
@@ -362,8 +362,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="première-manipulation-des-données.html#cb49-1" aria-hidden="true" tabindex="-1"></a>TableEnSortie <span class="ot">&lt;-</span> <span class="fu">filter</span>(TableEnSortie, x<span class="sc">==</span>a <span class="sc">&amp;</span> y<span class="sc">==</span>b)    <span class="co">#  x vaut a **ET** y vaut b</span></span>
-<span id="cb49-2"><a href="première-manipulation-des-données.html#cb49-2" aria-hidden="true" tabindex="-1"></a>TableEnSortie <span class="ot">&lt;-</span> <span class="fu">filter</span>(TableEnSortie, x<span class="sc">==</span>a <span class="sc">|</span> y<span class="sc">==</span>b)    <span class="co">#  x vaut a **OU** y vaut b (barre verticale AltGR+6)</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="première-manipulation-des-données.html#cb49-1" aria-hidden="true" tabindex="-1"></a>TableEnSortie <span class="ot">&lt;-</span> <span class="fu">filter</span>(TableEnEntree, x<span class="sc">==</span>a <span class="sc">&amp;</span> y<span class="sc">==</span>b)    <span class="co">#  x vaut a **ET** y vaut b</span></span>
+<span id="cb49-2"><a href="première-manipulation-des-données.html#cb49-2" aria-hidden="true" tabindex="-1"></a>TableEnSortie <span class="ot">&lt;-</span> <span class="fu">filter</span>(TableEnEntree, x<span class="sc">==</span>a <span class="sc">|</span> y<span class="sc">==</span>b)    <span class="co">#  x vaut a **OU** y vaut b (barre verticale AltGR+6)</span></span></code></pre></div>
 </div>
 <div id="renommer-des-colonnes" class="section level2" number="6.6">
 <h2><span class="header-section-number">6.6</span> Renommer des colonnes</h2>
@@ -386,22 +386,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Pour enchaîner des opérations, on peut créer des variables successives :</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="première-manipulation-des-données.html#cb52-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(base, <span class="at">densite =</span> P14_POP <span class="sc">/</span> SUPERF,</span>
 <span id="cb52-2"><a href="première-manipulation-des-données.html#cb52-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">tx_natal =</span> <span class="dv">1000</span> <span class="sc">*</span> NAISD15 <span class="sc">/</span> P14_POP,</span>
-<span id="cb52-3"><a href="première-manipulation-des-données.html#cb52-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">tx_mort =</span> DECESD15 <span class="sc">/</span> P14_POP)</span>
+<span id="cb52-3"><a href="première-manipulation-des-données.html#cb52-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">tx_mort =</span> <span class="dv">1000</span> <span class="sc">*</span> DECESD15 <span class="sc">/</span> P14_POP)</span>
 <span id="cb52-4"><a href="première-manipulation-des-données.html#cb52-4" aria-hidden="true" tabindex="-1"></a>selection <span class="ot">&lt;-</span> <span class="fu">select</span>(df, CODGEO, ZAU, REG, DEP, densite, tx_natal)</span>
 <span id="cb52-5"><a href="première-manipulation-des-données.html#cb52-5" aria-hidden="true" tabindex="-1"></a>filtre_62 <span class="ot">&lt;-</span> <span class="fu">filter</span>(selection, DEP <span class="sc">==</span> <span class="st">&quot;62&quot;</span>)</span></code></pre></div>
 <p>Cela peut être relativement clair si on respecte de bonnes pratiques de nommage mais encombre inutilement l’environnement de travail.</p>
 <p>On peut emboîter les fonctions :</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="première-manipulation-des-données.html#cb53-1" aria-hidden="true" tabindex="-1"></a>selection_62 <span class="ot">&lt;-</span> <span class="fu">filter</span>(<span class="fu">select</span>(<span class="fu">mutate</span>(base, <span class="at">densite =</span> P14_POP <span class="sc">/</span> SUPERF,</span>
 <span id="cb53-2"><a href="première-manipulation-des-données.html#cb53-2" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">tx_natal =</span> <span class="dv">1000</span> <span class="sc">*</span> NAISD15 <span class="sc">/</span> P14_POP,</span>
-<span id="cb53-3"><a href="première-manipulation-des-données.html#cb53-3" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">tx_mort =</span> DECESD15 <span class="sc">/</span> P14_POP),</span>
-<span id="cb53-4"><a href="première-manipulation-des-données.html#cb53-4" aria-hidden="true" tabindex="-1"></a>                              CODGEO, ZAU, REG, DEP, densite, tx_natal), DEP <span class="sc">==</span> <span class="st">&quot;62&quot;</span>)</span></code></pre></div>
+<span id="cb53-3"><a href="première-manipulation-des-données.html#cb53-3" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">tx_mort =</span> <span class="dv">1000</span> <span class="sc">*</span> DECESD15 <span class="sc">/</span> P14_POP),</span>
+<span id="cb53-4"><a href="première-manipulation-des-données.html#cb53-4" aria-hidden="true" tabindex="-1"></a>                              CODGEO, ZAU, REG, DEP, densite, tx_natal), </span>
+<span id="cb53-5"><a href="première-manipulation-des-données.html#cb53-5" aria-hidden="true" tabindex="-1"></a>                       DEP <span class="sc">==</span> <span class="st">&quot;62&quot;</span>)</span></code></pre></div>
 <p>Ce choix préserve l’environnement de travail mais la lecture est particulièrement confuse et le risque d’oubli de parenthèses important.</p>
 <p>Il y a enfin une solution du package <code>magrittr</code> faisant partie du <code>tidyverse</code>.
 On peut combiner les opérations en une seule ligne à l’aide de l’opérateur pipe <code>%&gt;%</code> :</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="première-manipulation-des-données.html#cb54-1" aria-hidden="true" tabindex="-1"></a>selection_62 <span class="ot">&lt;-</span> base <span class="sc">%&gt;%</span></span>
 <span id="cb54-2"><a href="première-manipulation-des-données.html#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">densite =</span> P14_POP <span class="sc">/</span> SUPERF,</span>
 <span id="cb54-3"><a href="première-manipulation-des-données.html#cb54-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">tx_natal =</span> <span class="dv">1000</span> <span class="sc">*</span> NAISD15 <span class="sc">/</span> P14_POP,</span>
-<span id="cb54-4"><a href="première-manipulation-des-données.html#cb54-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">tx_mort =</span> DECESD15 <span class="sc">/</span> P14_POP) <span class="sc">%&gt;%</span></span>
+<span id="cb54-4"><a href="première-manipulation-des-données.html#cb54-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">tx_mort =</span> <span class="dv">1000</span> <span class="sc">*</span> DECESD15 <span class="sc">/</span> P14_POP) <span class="sc">%&gt;%</span></span>
 <span id="cb54-5"><a href="première-manipulation-des-données.html#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(CODGEO, ZAU, REG, DEP, densite, tx_natal) <span class="sc">%&gt;%</span></span>
 <span id="cb54-6"><a href="première-manipulation-des-données.html#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(DEP <span class="sc">==</span> <span class="st">&quot;62&quot;</span>)</span></code></pre></div>
 <p>Cette écriture permet d’enchaîner les opérations telles qu’on les décrirait à l’oral.
