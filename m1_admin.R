@@ -24,4 +24,10 @@ propre.rpls::creer_pdf_book(
     "exercices-pour-r-studio.html"
   ))
 
-                                        
+imports <- sort(c("bookdown", attachment::att_from_rmds(path = ".", pattern = ".Rmd", recursive = FALSE, inline = TRUE)))
+attachment::att_to_desc_from_is(
+  path.d = "DESCRIPTION",
+  imports = imports, suggests = NULL, 
+  must.exist = FALSE
+)
+
