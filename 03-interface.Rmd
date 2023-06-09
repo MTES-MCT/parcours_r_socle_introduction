@@ -16,7 +16,7 @@ L’interface RStudio est composée de différents panneaux, dont l’arrangemen
 ## Session et répertoire de travail
 
 - Session de travail R : commence à l'ouverture de RStudio et se termine en le quittant.
-- Répertoire de travail R : dossier dans lequel le logiciel va chercher les fichiers de scripts et de données.
+- Répertoire de travail R : dossier à partir duquel le logiciel va chercher les fichiers de scripts et de données.
 - Tout ce qui a été fait au cours d'une session peut être enregistré dans le répertoire de travail :
     - données
     - historique des fonctions …
