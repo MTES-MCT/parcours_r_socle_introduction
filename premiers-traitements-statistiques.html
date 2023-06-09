@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 7 Premiers traitements statistiques | Découvrir R et RStudio</title>
   <meta name="description" content="Chapitre 7 Premiers traitements statistiques | Découvrir R et RStudio (module socle)" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 7 Premiers traitements statistiques | Découvrir R et RStudio" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Chapitre 7 Premiers traitements statistiques | Découvrir R et RStudio (module socle)" />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2022-06-23" />
+<meta name="date" content="2023-06-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="première-manipulation-des-données.html"/>
 <link rel="next" href="premiers-graphiques.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,15 +49,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -100,7 +99,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +112,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -127,6 +126,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -272,10 +275,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="premiers-traitements-statistiques" class="section level1" number="7">
-<h1><span class="header-section-number">Chapitre 7</span> Premiers traitements statistiques</h1>
-<div id="obtenir-des-informations" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Obtenir des informations</h2>
+<div id="premiers-traitements-statistiques" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapitre 7</span> Premiers traitements statistiques<a href="premiers-traitements-statistiques.html#premiers-traitements-statistiques" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="obtenir-des-informations" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Obtenir des informations<a href="premiers-traitements-statistiques.html#obtenir-des-informations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La fonction <code>summary()</code> peut s’appliquer à une table entière ou un vecteur. Appliquée sur un tableau, elle donne les statistiques principales sur chacune des variables, en s’adaptant au type de celles-ci (numerique ou texte).</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="premiers-traitements-statistiques.html#cb55-1" aria-hidden="true" tabindex="-1"></a>base_extrait <span class="ot">&lt;-</span> base <span class="sc">%&gt;%</span> </span>
 <span id="cb55-2"><a href="premiers-traitements-statistiques.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span><span class="sc">:</span><span class="dv">12</span>)</span>
@@ -317,8 +320,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##    Length     Class      Mode 
 ##     36689 character character</code></pre>
 </div>
-<div id="calculer-des-statistiques-spécifiques" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Calculer des statistiques spécifiques</h2>
+<div id="calculer-des-statistiques-spécifiques" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Calculer des statistiques spécifiques<a href="premiers-traitements-statistiques.html#calculer-des-statistiques-spécifiques" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Les fonctions <code>sum()</code>, <code>mean()</code>, <code>median()</code>, <code>min()</code>, <code>max()</code>, <code>var()</code>, <code>sd()</code>… résument l’information pour en donner une statistique.
 La fonction <code>quantile()</code> renvoie les quartiles de la variables (ou bien tout autre découpage qu’on lui renseigne).</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="premiers-traitements-statistiques.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">pull</span>(base_extrait, P14_POP), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
@@ -332,21 +335,21 @@ La fonction <code>quantile()</code> renvoie les quartiles de la variables (ou bi
 ##  197  444 1110</code></pre>
 <p>Ces fonctions retournent une valeur, ou bien un ensemble de valeur (pour <code>quantile()</code>). Le résultat est donc un vecteur de un ou plusieurs nombres.</p>
 </div>
-<div id="agréger-des-données" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Agréger des données</h2>
-<div id="globalement" class="section level3" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> Globalement</h3>
+<div id="agréger-des-données" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Agréger des données<a href="premiers-traitements-statistiques.html#agréger-des-données" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="globalement" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Globalement<a href="premiers-traitements-statistiques.html#globalement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <center>
 <img src="images/summarise.png" />
 </center>
-<p>La fonction <code>summarise()</code> permet d’aggréger des données, en appliquant une fonction sur les variables pour construire une statistique sur les observations de la table. C’est une fonction dite de “résumé.”</p>
+<p>La fonction <code>summarise()</code> permet d’aggréger des données, en appliquant une fonction sur les variables pour construire une statistique sur les observations de la table. C’est une fonction dite de “résumé”.</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="premiers-traitements-statistiques.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(TableEnEntree, <span class="at">NomVariableAgregee =</span> <span class="fu">Fonction</span>(NomVariableEtude))</span></code></pre></div>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="premiers-traitements-statistiques.html#cb70-1" aria-hidden="true" tabindex="-1"></a>base_med <span class="ot">&lt;-</span> base_extrait <span class="sc">%&gt;%</span></span>
 <span id="cb70-2"><a href="premiers-traitements-statistiques.html#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">population_med =</span> <span class="fu">median</span>(P14_POP, <span class="at">na.rm =</span> T))</span></code></pre></div>
 <p>La fonction <code>summarise()</code> retourne un data.frame.</p>
 </div>
-<div id="selon-un-facteur" class="section level3" number="7.3.2">
-<h3><span class="header-section-number">7.3.2</span> Selon un facteur</h3>
+<div id="selon-un-facteur" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Selon un facteur<a href="premiers-traitements-statistiques.html#selon-un-facteur" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <center>
 <img src="images/groupby.png" />
 </center>
@@ -359,8 +362,8 @@ La fonction <code>quantile()</code> renvoie les quartiles de la variables (ou bi
 <span id="cb72-3"><a href="premiers-traitements-statistiques.html#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">population_med =</span> <span class="fu">median</span> (P14_POP, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 </div>
 </div>
-<div id="tableau-de-contingence" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Tableau de contingence</h2>
+<div id="tableau-de-contingence" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Tableau de contingence<a href="premiers-traitements-statistiques.html#tableau-de-contingence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La fonction <code>table()</code> calcule les effectifs d’un tableau croisé :</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="premiers-traitements-statistiques.html#cb73-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> base_extrait <span class="sc">%&gt;%</span> </span>
 <span id="cb73-2"><a href="premiers-traitements-statistiques.html#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ZAU, REG) <span class="sc">%&gt;%</span> </span>
@@ -412,8 +415,8 @@ La fonction <code>quantile()</code> renvoie les quartiles de la variables (ou bi
 ##   300 - Autre commune multipolaris\xe9e                107   53
 ##   400 - Commune isol\xe9e hors influence des p\xf4les  269  152</code></pre>
 </div>
-<div id="tableau-de-proportions" class="section level2" number="7.5">
-<h2><span class="header-section-number">7.5</span> Tableau de proportions</h2>
+<div id="tableau-de-proportions" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Tableau de proportions<a href="premiers-traitements-statistiques.html#tableau-de-proportions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La fonction <code>prop.table()</code> prend en entrée un objet <code>table</code> (tableau de contingence avec les effectifs) et calcule les pourcentages (total, ligne, colonne) associés <span class="math inline">\(\rightarrow\)</span> <code>?prop.table</code></p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="premiers-traitements-statistiques.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcule la fréquence en % (la somme de tous les pourcentages vaut 100)</span></span>
 <span id="cb75-2"><a href="premiers-traitements-statistiques.html#cb75-2" aria-hidden="true" tabindex="-1"></a>(<span class="fu">prop.table</span>(t) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
@@ -499,8 +502,8 @@ La fonction <code>quantile()</code> renvoie les quartiles de la variables (ou bi
 ##   400 - Commune isol\xe9e hors influence des p\xf4les 27.9 42.2</code></pre>
 <p><em>Attention</em>: la fonction <code>prop.table()</code> a été améliorée avec le changement de version de R base. La version &lt;3.6.2 ne permettait pas d’utiliser le nom de la variable (ici “REG”) pour spécifier le mode de calcul des fréquences, l’option était alors <code>margin=</code> (1: en ligne, 2: en colonne)</p>
 </div>
-<div id="exercice-4-calcul-de-statistiques" class="section level2" number="7.6">
-<h2><span class="header-section-number">7.6</span> Exercice 4 : calcul de statistiques</h2>
+<div id="exercice-4-calcul-de-statistiques" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Exercice 4 : calcul de statistiques<a href="premiers-traitements-statistiques.html#exercice-4-calcul-de-statistiques" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Utilisez la fonction <code>summary()</code> pour obtenir un résumé de l’ensemble des variables de la table df</li>
 <li>Calculez maintenant les moyenne, médiane, écart-type et variance de la variable de densité de population. Que constatez-vous ?</li>
@@ -583,7 +586,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

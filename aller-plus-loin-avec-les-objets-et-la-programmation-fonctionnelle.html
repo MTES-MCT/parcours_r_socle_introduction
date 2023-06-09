@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 10 Aller plus loin avec les objets et la programmation fonctionnelle | Découvrir R et RStudio</title>
   <meta name="description" content="Chapitre 10 Aller plus loin avec les objets et la programmation fonctionnelle | Découvrir R et RStudio (module socle)" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 10 Aller plus loin avec les objets et la programmation fonctionnelle | Découvrir R et RStudio" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Chapitre 10 Aller plus loin avec les objets et la programmation fonctionnelle | Découvrir R et RStudio (module socle)" />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2022-06-23" />
+<meta name="date" content="2023-06-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="sauvegarder-son-travail.html"/>
 <link rel="next" href="exercices-corrigés.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,15 +49,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -100,7 +99,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +112,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -127,6 +126,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -272,12 +275,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle" class="section level1" number="10">
-<h1><span class="header-section-number">Chapitre 10</span> Aller plus loin avec les objets et la programmation fonctionnelle</h1>
+<div id="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapitre 10</span> Aller plus loin avec les objets et la programmation fonctionnelle<a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Ce qui a été présenté dans ce module repose sur les fonctions du package <code>tidyverse</code>. Cette approche tend à se généraliser depuis quelques années, mais quand on cherche la réponse à un problème sur Internet, on trouve d’autres façons de programmer en R, qui font appel aux fonctions du package <code>base</code> et non du <code>tidyverse</code>
 <span class="math inline">\(\Rightarrow\)</span> Cette partie donne quelques clés de compréhension.</p>
-<div id="les-objets-dans-r-plus-de-détails" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> Les objets dans R, plus de détails</h2>
+<div id="les-objets-dans-r-plus-de-détails" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Les objets dans R, plus de détails<a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-objets-dans-r-plus-de-détails" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Rappel : en informatique, un objet est défini par : ses <em>attributs</em> et ses <em>méthodes</em> (fonctions). Dans l’exemple du jeu d’échec, chaque pièce peut être vue comme un objet :</p>
 <ul>
 <li>sa position sur le plateau constitue ses attributs</li>
@@ -302,8 +305,8 @@ Les arrays peuvent être très puissants pour gérer des millésimes.</li>
 </ul></li>
 </ul>
 </div>
-<div id="créer-une-nouvelle-fonction-en-r" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Créer une nouvelle fonction en R</h2>
+<div id="créer-une-nouvelle-fonction-en-r" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Créer une nouvelle fonction en R<a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#créer-une-nouvelle-fonction-en-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La fonction est un objet comme les autres, qu’on crée avec l’opérateur d’affectation. Elle est définie par des paramètres et elle se termine par la fonction <code>return()</code>. On reprend l’exemple du calcul de l’IMC</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-1" aria-hidden="true" tabindex="-1"></a>calcul_IMC <span class="ot">&lt;-</span> <span class="cf">function</span> (poids, taille)</span>
 <span id="cb90-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb90-2" aria-hidden="true" tabindex="-1"></a>{</span>
@@ -316,8 +319,8 @@ Les arrays peuvent être très puissants pour gérer des millésimes.</li>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calcul_IMC</span> (<span class="at">poids =</span> <span class="dv">60</span>, <span class="at">taille =</span> <span class="fl">1.55</span>)</span></code></pre></div>
 <pre><code>## [1] 24.97399</code></pre>
 </div>
-<div id="les-boucles-conditionnelles" class="section level2" number="10.3">
-<h2><span class="header-section-number">10.3</span> Les boucles conditionnelles</h2>
+<div id="les-boucles-conditionnelles" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Les boucles conditionnelles<a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles-conditionnelles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Les commandes <code>if</code> et <code>else</code> sont bien entendues utilisables. Le “then” n’existe pas : il est implicite après les accolades.</p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb94-1" aria-hidden="true" tabindex="-1"></a>diag_IMC <span class="ot">&lt;-</span> <span class="cf">function</span>(poids,taille)</span>
 <span id="cb94-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb94-2" aria-hidden="true" tabindex="-1"></a>{</span>
@@ -334,8 +337,8 @@ Les arrays peuvent être très puissants pour gérer des millésimes.</li>
 <div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag_IMC</span> (<span class="at">poids=</span><span class="dv">80</span>,<span class="at">taille=</span><span class="fl">1.55</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;surpoids&quot;</code></pre>
 </div>
-<div id="les-boucles" class="section level2" number="10.4">
-<h2><span class="header-section-number">10.4</span> Les boucles</h2>
+<div id="les-boucles" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Les boucles<a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#les-boucles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>On peut utiliser les boucles classiques : <code>repeat</code>, <code>while</code>, <code>for</code> :</p>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (pp <span class="cf">in</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">50</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))</span>
 <span id="cb100-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb100-2" aria-hidden="true" tabindex="-1"></a>{</span>
@@ -354,10 +357,10 @@ Les arrays peuvent être très puissants pour gérer des millésimes.</li>
 ## [1] &quot;Taille = 1,70m, poids = 95 Diagnotic : surpoids&quot;
 ## [1] &quot;Taille = 1,70m, poids = 100 Diagnotic : surpoids&quot;</code></pre>
 </div>
-<div id="pour-aller-plus-loin" class="section level2" number="10.5">
-<h2><span class="header-section-number">10.5</span> Pour aller plus loin</h2>
-<div id="matrices-et-arrays" class="section level3" number="10.5.1">
-<h3><span class="header-section-number">10.5.1</span> matrices et arrays</h3>
+<div id="pour-aller-plus-loin" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Pour aller plus loin<a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#pour-aller-plus-loin" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="matrices-et-arrays" class="section level3 hasAnchor" number="10.5.1">
+<h3><span class="header-section-number">10.5.1</span> matrices et arrays<a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#matrices-et-arrays" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Les matrices et les arrays permettent des calculs rapides et efficaces, et peuvent être très pratiques et optimisent le stockage des données. Ils demandent cependant plus de réflexion en amont quant à leur utilisation. On accède aux éléments avec les [].</p>
 <p>Un hypercube de trois dimensions peut être représenté comme suit :
 <img src="images/grille.jpg" style="width:50.0%" />
@@ -367,80 +370,80 @@ De la même façon on peut créer un hypercube avec la fonction avec 10 lignes, 
 <span id="cb102-2"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb102-2" aria-hidden="true" tabindex="-1"></a>arr <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="fu">rnorm</span>(<span class="dv">150</span>),<span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">3</span>))</span>
 <span id="cb102-3"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb102-3" aria-hidden="true" tabindex="-1"></a>mat</span></code></pre></div>
 <pre><code>##             [,1]       [,2]        [,3]        [,4]        [,5]
-##  [1,] -1.3190176 -0.3163225 -0.77604170 -0.22877963  0.04005827
-##  [2,] -0.5762322 -0.9764535  0.99019701  0.05803465  1.06970575
-##  [3,] -0.2890928  1.3622446  1.01104991  1.64477794  0.44392480
-##  [4,]  0.9997040 -1.3599687  0.71328682 -1.42262655 -0.32494689
-##  [5,]  2.8586207  0.3915147 -1.85301084  0.62765841 -2.44292187
-##  [6,]  0.3893275  0.3478697  0.16570716  0.38140550 -0.63802834
-##  [7,] -0.4708339 -1.0365684 -0.89968500  0.22750704 -0.33523359
-##  [8,]  0.1774111  0.8339318  1.17253349  0.06924686 -0.06421467
-##  [9,]  0.1543487 -1.2053547  0.02192704 -1.30593165  0.03426112
-## [10,] -0.4430990  0.7072403  0.42935562 -0.74402524 -1.09062996</code></pre>
+##  [1,]  1.8298970  1.9155237 -0.89170744 -1.38393491  0.33090038
+##  [2,] -0.5859457  0.2704362 -1.39684058  0.33790250  0.06794822
+##  [3,] -0.9014928  0.4969728 -1.30396452  0.55950906 -0.06483164
+##  [4,]  0.4704234  0.5712386 -0.69828470 -0.31486558 -0.07120763
+##  [5,] -0.9696539 -1.3090243  0.82188639  0.41390202  0.09632524
+##  [6,]  0.7142647 -0.6392071 -1.10677379  0.56210125  0.08949779
+##  [7,]  0.2615644 -1.5083266  0.06009281  0.78766302  0.79693897
+##  [8,]  0.3533574  1.1150566 -0.61658806  2.43104459 -0.22886904
+##  [9,]  0.1744039 -1.0749350  0.74073849  0.06538894  1.39909538
+## [10,]  0.7072237 -0.3094418 -0.28265838  0.32017082 -0.84729113</code></pre>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb104-1" aria-hidden="true" tabindex="-1"></a>arr</span></code></pre></div>
 <pre><code>## , , 1
 ## 
-##             [,1]       [,2]       [,3]       [,4]       [,5]
-##  [1,] -0.4139993  1.2672625 -1.3991578 -2.0292404 -0.6953585
-##  [2,]  1.0459114 -0.3179671  0.7680827 -0.9715310 -1.6393704
-##  [3,] -0.1002643  0.5238484 -1.4629527  0.2559039  0.2414234
-##  [4,]  0.1230348  0.4472900  0.9818828 -1.1747627  0.1193732
-##  [5,] -0.4920905 -1.8005799  2.3001735 -2.7633527  0.2880128
-##  [6,]  0.4329441  0.7485118  0.2155381  0.8020519  1.0422472
-##  [7,]  1.2792661  1.0590098 -0.6372302  0.7121650 -0.6063093
-##  [8,]  0.7477789 -1.4687705 -0.6779730  0.1080413  1.6030802
-##  [9,]  0.7984556  1.6346540 -0.7552703 -0.9335830  0.3102962
-## [10,] -0.4894856  0.8819728 -0.5878578 -0.5863894 -0.2100085
+##             [,1]       [,2]        [,3]       [,4]        [,5]
+##  [1,]  0.6289631  0.8099894 -0.11116094 -0.2195063 -0.25187189
+##  [2,] -0.1508188  2.7805517  1.29514658  0.3235999 -0.28332410
+##  [3,] -0.4489119  2.4587440 -1.30199048 -0.7219475 -0.04622427
+##  [4,] -0.7229349 -1.4175480 -0.07993031 -0.2183211  1.51428455
+##  [5,]  1.2091629 -0.2882699  0.80760717 -0.9319585  1.46395446
+##  [6,] -1.0210656  0.2181453 -1.07549735  1.1639663 -0.15427057
+##  [7,]  1.3410832  0.1973808 -0.55963879  1.3949682 -2.15301827
+##  [8,] -1.1671814  2.4020150 -0.14959200  2.2635160 -0.69074344
+##  [9,] -0.3898478 -0.7015050 -1.21863993 -1.3082619  0.11558265
+## [10,]  1.3900988 -0.7536617 -1.33658104 -0.2403796 -0.77709969
 ## 
 ## , , 2
 ## 
-##              [,1]        [,2]       [,3]         [,4]        [,5]
-##  [1,] -0.00633697 -1.25307512  1.0026805  0.246330034 -1.28256371
-##  [2,] -0.36299096 -0.58613238 -1.5881792 -0.717875540 -0.82182952
-##  [3,]  0.60576784  0.49271570 -1.5331985 -0.368387775  0.93812810
-##  [4,] -1.52176007 -0.49736889 -1.1236739 -0.004873981  0.52273229
-##  [5,]  1.64515516  0.90618951  0.4776677 -1.488328550  0.92062484
-##  [6,] -3.07939889 -0.32299812  0.4765603 -0.067212223 -1.38948777
-##  [7,] -0.90347301  0.42294401  0.9569782  0.426652557  0.64174867
-##  [8,]  0.25955643  0.41848026  0.3636171 -1.050857519 -0.42146557
-##  [9,] -0.53069193 -0.36327699  0.0509995  0.275081097  0.08306832
-## [10,] -1.37145398 -0.04421105 -1.4096213 -0.064154132 -0.14737998
+##             [,1]       [,2]       [,3]       [,4]       [,5]
+##  [1,]  0.9500794 -0.8813329  0.3669647  0.4321616  0.2859256
+##  [2,] -1.2320569  0.2199210 -1.9463721  0.6570434 -0.1430404
+##  [3,] -0.2555368 -1.4525104 -1.5720584 -0.5714278 -1.3429734
+##  [4,]  0.3659933  0.8261212  0.8552008  0.1107770  0.2433908
+##  [5,] -1.0255099  0.1516270 -1.6463431 -0.8525100  0.0468298
+##  [6,] -1.0205132 -1.6316776  0.8828802 -1.1884887  0.3727641
+##  [7,]  0.8356102  1.4554968  0.6551278  1.1386203  1.4159557
+##  [8,] -0.2545264  0.1411197 -0.6674148 -0.1536324  0.5049107
+##  [9,]  0.1310065 -1.0324879 -0.1780315  0.9334523  0.5742045
+## [10,] -0.1392483 -1.1100389 -1.4535866 -0.2223382 -0.2249076
 ## 
 ## , , 3
 ## 
-##             [,1]       [,2]       [,3]        [,4]       [,5]
-##  [1,] -0.4728864  0.7457257  0.1474167  0.65275100  0.3877883
-##  [2,] -2.1878319  0.2029380  0.2748163 -1.59495660 -0.6982329
-##  [3,]  1.9965844  0.7690569 -3.0161655 -0.83267228 -0.5527749
-##  [4,] -0.1981519 -2.1869778 -0.1512135  2.03163764  0.4813117
-##  [5,] -0.4662294 -0.4580200 -1.8886384  0.25013185 -0.2249752
-##  [6,]  0.6732329  1.0075149 -0.7208851 -0.05117024  0.8353079
-##  [7,] -0.7815695  0.2090113  0.2239345 -0.31927464  0.4059447
-##  [8,] -1.5001909  0.3586872 -0.4185586 -1.09933089  0.6811995
-##  [9,] -1.7339855  0.4379130  0.1332396  0.97264979  0.3049285
-## [10,]  0.7246959  0.8239749 -0.9588972 -0.03079220  0.8206175</code></pre>
+##             [,1]        [,2]       [,3]       [,4]       [,5]
+##  [1,] -1.3167017  2.11030214 -1.1528532 -0.5298752  0.8166477
+##  [2,] -0.9571713 -0.87435542 -0.5562974 -1.4299889 -1.6167667
+##  [3,] -0.6079834 -0.48620405  2.2058089 -0.3564476  1.6470953
+##  [4,] -0.1405643 -0.36072761  0.3855486 -0.7180859 -1.3371532
+##  [5,] -1.2490883 -0.35843645  0.2616756  2.6912969 -1.1075974
+##  [6,] -0.7770963  1.77955963  1.2171825  0.4254494  0.4728384
+##  [7,] -0.3569483  0.47348166 -0.7015739 -0.5697856  0.3873735
+##  [8,]  0.7865385  0.03720543  1.4801365 -0.9580305  0.8058474
+##  [9,]  0.3899946  1.48809787  0.9552694 -2.8341642 -0.8581658
+## [10,]  0.3279757 -0.29919687 -0.9285252  0.3193689 -0.6322436</code></pre>
 <p><em>Pourquoi s’embêter avec ça ?</em> Parce qu’on peut appliquer des fonctions facilement sur les lignes, colonnes et autres dimensions grâce à la fonction <code>apply()</code>.
-Exemple : résultats de validations croisées par bloc, simulations de loi selon différents paramètres. Et on calcule facilement des statistiques “marginales.”</p>
+Exemple : résultats de validations croisées par bloc, simulations de loi selon différents paramètres. Et on calcule facilement des statistiques “marginales”.</p>
 <p>Par, exemple, sur une matrice, on peut calculer des statistiques par lignes :</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(mat, <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
-<pre><code>##  [1] -0.52002063  0.11305034  0.83458089 -0.27891026 -0.08362778  0.12925631
-##  [7] -0.50296277  0.43778171 -0.46014991 -0.22823165</code></pre>
+<pre><code>##  [1]  0.360135735 -0.261299878 -0.242761410 -0.008539187 -0.189312923
+##  [6] -0.076023427  0.079586511  0.610800297  0.260938352 -0.082399366</code></pre>
 <p>Ou par colonnes :</p>
 <div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(mat, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
-<pre><code>## [1]  0.14811365 -0.12518667  0.09753195 -0.06927327 -0.33080254</code></pre>
+<pre><code>## [1]  0.2054042 -0.0471707 -0.4674100  0.3778882  0.1568507</code></pre>
 <p>Sur notre hypercube de type <code>array</code>, on peut aussi calculer des stats sur ses différentes dimensions :</p>
 <div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span> (arr, <span class="at">MARGIN =</span> <span class="dv">3</span>, <span class="at">FUN=</span>mean)</span></code></pre></div>
-<pre><code>## [1] -0.02950584 -0.24377159 -0.11982742</code></pre>
+<pre><code>## [1]  0.05774114 -0.15290760 -0.05214668</code></pre>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span> (arr, <span class="at">MARGIN =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">FUN =</span> mean)</span></code></pre></div>
-<pre><code>##             [,1]        [,2]         [,3]
-## [1,]  0.29315512 -0.52656264 -0.394633232
-## [2,]  0.29752318 -0.08267331  0.190982420
-## [3,] -0.12547647 -0.23261697 -0.637495133
-## [4,] -0.65806968 -0.28136260 -0.002102656
-## [5,]  0.04533863 -0.09564243  0.244111523</code></pre>
+<pre><code>##             [,1]        [,2]       [,3]
+## [1,]  0.06685476 -0.16447021 -0.3901045
+## [2,]  0.57058416 -0.33137620  0.3509726
+## [3,] -0.37302771 -0.47036331  0.3166372
+## [4,]  0.15056756  0.02836574 -0.3960263
+## [5,] -0.12627306  0.17330598 -0.1422124</code></pre>
 </div>
-<div id="inspection-dun-objet-la-régression" class="section level3" number="10.5.2">
-<h3><span class="header-section-number">10.5.2</span> Inspection d’un objet : la régression</h3>
+<div id="inspection-dun-objet-la-régression" class="section level3 hasAnchor" number="10.5.2">
+<h3><span class="header-section-number">10.5.2</span> Inspection d’un objet : la régression<a href="aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html#inspection-dun-objet-la-régression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-32-1.svg" width="576" /></p>
 <p>La régression linéaire consiste à exprimer une variable Y en fonction d’une variable X dans une fonction linéaire. C’est à dire qu’on cherche a et b tels que : <span class="math display">\[ Y = a \cdot X + b + \epsilon\]</span>
 où <span class="math inline">\(\epsilon\)</span> est le résidu de la régression. On utilise dans cet exemple la table des iris de Fisher, existant dans R base qu’il suffit d’appeler avec <code>data(iris)</code> (il existe d’autres dataframe inclus dans les packages et qui sont utilisés en exemple dans l’aide).</p>
@@ -613,7 +616,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

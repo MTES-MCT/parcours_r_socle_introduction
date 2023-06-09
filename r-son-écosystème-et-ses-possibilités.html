@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 2 R, son écosystème et ses possibilités | Découvrir R et RStudio</title>
   <meta name="description" content="Chapitre 2 R, son écosystème et ses possibilités | Découvrir R et RStudio (module socle)" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 2 R, son écosystème et ses possibilités | Découvrir R et RStudio" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Chapitre 2 R, son écosystème et ses possibilités | Découvrir R et RStudio (module socle)" />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2022-06-23" />
+<meta name="date" content="2023-06-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="présentation-de-linterface-et-premières-manipulations.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,15 +49,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -100,7 +99,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +112,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -127,6 +126,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -272,25 +275,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="r-son-écosystème-et-ses-possibilités" class="section level1" number="2">
-<h1><span class="header-section-number">Chapitre 2</span> R, son écosystème et ses possibilités</h1>
-<div id="le-groupe-de-référents-r-du-pôle-ministériel" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Le groupe de référents R du pôle ministériel</h2>
+<div id="r-son-écosystème-et-ses-possibilités" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapitre 2</span> R, son écosystème et ses possibilités<a href="r-son-écosystème-et-ses-possibilités.html#r-son-écosystème-et-ses-possibilités" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="le-groupe-de-référents-r-du-pôle-ministériel" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Le groupe de référents R du pôle ministériel<a href="r-son-écosystème-et-ses-possibilités.html#le-groupe-de-référents-r-du-pôle-ministériel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Un groupe pour structurer une offre de formations sur R</li>
 <li>Un réseau d’entraide</li>
 </ul>
 <p><img src="Debuter-avec-R-et-RStudio_files/figure-html/part_communes_mapg2r-1.svg" width="576" /></p>
 </div>
-<div id="r-cest-quoi" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> R c’est quoi ?</h2>
+<div id="r-cest-quoi" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> R c’est quoi ?<a href="r-son-écosystème-et-ses-possibilités.html#r-cest-quoi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Un langage de programmation interprété exécutable pas à pas <span class="math inline">\(\rightarrow\)</span> lignes de code</li>
 <li>Un logiciel interactif permettant de traiter divers types de données</li>
 </ul>
 </div>
-<div id="un-peu-dhistoire" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Un peu d’histoire</h2>
+<div id="un-peu-dhistoire" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Un peu d’histoire<a href="r-son-écosystème-et-ses-possibilités.html#un-peu-dhistoire" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>À l’origine existait le langage S, servant à programmer avec des données (<em>Bell laboratory</em>, années 70)</p></li>
 <li><p>Au milieu des années 90, mélange de S et du langage Lisp pour le dédier à l’analyse de données et aux graphiques <span class="math inline">\(\rightarrow\)</span> création de R. <a href="https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf">Ihaka R, Gentleman R (1996) R: A Language for Data Analysis and Graphics. <em>Journal of
@@ -314,8 +317,8 @@ Computational and Graphical Statistics</em>, 5(3), 299–314</a></p></li>
 </ul></li>
 </ul>
 </div>
-<div id="un-logiciel-libre" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Un logiciel libre</h2>
+<div id="un-logiciel-libre" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Un logiciel libre<a href="r-son-écosystème-et-ses-possibilités.html#un-logiciel-libre" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Disponible en libre téléchargement sur <a href="https://cran.r-project.org">le site officiel du CRAN = Comprehensive R Archive Network</a>
 C’est le site de référence pour R. Il contient non seulement les installeurs du logiciel mais également de nombreuses ressources : documentations, FAQ, tutoriels…</li>
@@ -332,8 +335,8 @@ C’est le site de référence pour R. Il contient non seulement les installeurs
 </ul>
 <p>C’est un logiciel libre : les utilisateurs ont la liberté d’exécuter, copier, distribuer, étudier, modifier et améliorer ce logiciel. R fait partie de la “galaxie” GNU (GNU’s Not Unix). R est donc libre, gratuit et multi-plateformes.</p>
 </div>
-<div id="que-peut-on-faire-avec-r" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Que peut-on faire avec R ?</h2>
+<div id="que-peut-on-faire-avec-r" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Que peut-on faire avec R ?<a href="r-son-écosystème-et-ses-possibilités.html#que-peut-on-faire-avec-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Lire des données de formats divers</li>
 <li>Les manipuler (prétraitements)</li>
@@ -346,8 +349,8 @@ C’est le site de référence pour R. Il contient non seulement les installeurs
 <p>Privilégie la flexibilité et le découpage des traitements en parties simples.</p>
 <p><img src="images/illustrations.png" /></p>
 </div>
-<div id="un-logiciel-modulaire" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Un logiciel modulaire</h2>
+<div id="un-logiciel-modulaire" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Un logiciel modulaire<a href="r-son-écosystème-et-ses-possibilités.html#un-logiciel-modulaire" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Le package <code>base</code> contient nombreuses fonctionnalités</li>
 <li>Extensible au moyen de <strong>packages</strong> (1 package = 1 ensemble de nouvelles fonctions)</li>
@@ -363,8 +366,8 @@ Un package est une bibliothèque de fonctions. La plupart de ceux qui font réf�
 <p>Les fonctionnalités utilisables dans R, sont en perpétuelle évolution et permettent d’intégrer les méthodes les plus récentes dans des domaines qui évoluent rapidement : modélisation, analyse spatiale, dataviz,…</p>
 <p>Le groupe des référents R propose un tutoriel d’installation et de configuration de R sur <a href="https://github.com/MTES-MCT/parcours-r/wiki/Installation-de-R-et-RStudio-Desktop-au-MTE" class="uri">https://github.com/MTES-MCT/parcours-r/wiki/Installation-de-R-et-RStudio-Desktop-au-MTE</a>.</p>
 </div>
-<div id="des-exemples-de-ce-quon-peut-faire-avec-r" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Des exemples de ce qu’on peut faire avec R :</h2>
+<div id="des-exemples-de-ce-quon-peut-faire-avec-r" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Des exemples de ce qu’on peut faire avec R :<a href="r-son-écosystème-et-ses-possibilités.html#des-exemples-de-ce-quon-peut-faire-avec-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Le support de cette formation</li>
 <li>Les <a href="https://dreal.statistiques.developpement-durable.gouv.fr/parc_social/2021/">publications régionales sur le parc locatif social</a></li>
@@ -441,7 +444,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

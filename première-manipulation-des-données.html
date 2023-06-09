@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 6 Première manipulation des données | Découvrir R et RStudio</title>
   <meta name="description" content="Chapitre 6 Première manipulation des données | Découvrir R et RStudio (module socle)" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 6 Première manipulation des données | Découvrir R et RStudio" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Chapitre 6 Première manipulation des données | Découvrir R et RStudio (module socle)" />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2022-06-23" />
+<meta name="date" content="2023-06-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="mon-premier-jeu-de-données.html"/>
 <link rel="next" href="premiers-traitements-statistiques.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,15 +49,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -100,7 +99,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +112,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -127,6 +126,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -272,11 +275,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="première-manipulation-des-données" class="section level1" number="6">
-<h1><span class="header-section-number">Chapitre 6</span> Première manipulation des données</h1>
+<div id="première-manipulation-des-données" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapitre 6</span> Première manipulation des données<a href="première-manipulation-des-données.html#première-manipulation-des-données" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="première-manipulation-des-données.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
-<div id="afficher-les-valeurs-et-manipuler-les-variables" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Afficher les valeurs et manipuler les variables</h2>
+<div id="afficher-les-valeurs-et-manipuler-les-variables" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Afficher les valeurs et manipuler les variables<a href="première-manipulation-des-données.html#afficher-les-valeurs-et-manipuler-les-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Pour afficher la table, plusieurs façons : “clic” dans l’environnement Rstudio, <code>View(base)</code>, <code>print(base)</code>, <code>base</code>.</p></li>
 <li><p>Pour accéder à une variable : fonction <code>pull()</code></p></li>
@@ -285,8 +288,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="première-manipulation-des-données.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">pull</span>(base, DEP))</span></code></pre></div>
 <pre><code>##  chr [1:36689] &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;01&quot; ...</code></pre>
 </div>
-<div id="créer-de-nouvelles-variables" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Créer de nouvelles variables</h2>
+<div id="créer-de-nouvelles-variables" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Créer de nouvelles variables<a href="première-manipulation-des-données.html#créer-de-nouvelles-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <center>
 <img src="images/mutate.png" />
 </center>
@@ -299,8 +302,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="première-manipulation-des-données.html#cb43-1" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">mutate</span>(base, <span class="at">log_SUPERF =</span> <span class="dv">100</span> <span class="sc">*</span> log_SUPERF)</span></code></pre></div>
 <p><span class="math inline">\(\Rightarrow\)</span> La table base contient de nouvelles colonnes</p>
 </div>
-<div id="sélectionner-des-variables" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Sélectionner des variables</h2>
+<div id="sélectionner-des-variables" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Sélectionner des variables<a href="première-manipulation-des-données.html#sélectionner-des-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <center>
 <img src="images/select.png" />
 </center>
@@ -317,8 +320,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="première-manipulation-des-données.html#cb46-1" aria-hidden="true" tabindex="-1"></a>base_select <span class="ot">&lt;-</span> <span class="fu">select</span>(base, CODGEO, LIBGEO, P14_POP)</span>
 <span id="cb46-2"><a href="première-manipulation-des-données.html#cb46-2" aria-hidden="true" tabindex="-1"></a>base_select <span class="ot">&lt;-</span> <span class="fu">select</span>(base, <span class="sc">-</span>CODGEO)</span></code></pre></div>
 </div>
-<div id="filtrer-des-observations" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Filtrer des observations</h2>
+<div id="filtrer-des-observations" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Filtrer des observations<a href="première-manipulation-des-données.html#filtrer-des-observations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <center>
 <img src="images/filter.png" />
 </center>
@@ -327,11 +330,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Par exemple :</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="première-manipulation-des-données.html#cb48-1" aria-hidden="true" tabindex="-1"></a>base_filter <span class="ot">&lt;-</span> <span class="fu">filter</span>(base, DEP <span class="sc">==</span> <span class="st">&quot;01&quot;</span> <span class="sc">&amp;</span> P14_POP <span class="sc">&gt;</span> <span class="dv">10000</span>)</span></code></pre></div>
 <blockquote>
-<p><strong><span class="math inline">\(\Rightarrow\)</span> Attention à l’opérateur de comparaison : " == " et non pas “=”</strong></p>
+<p><strong><span class="math inline">\(\Rightarrow\)</span> Attention à l’opérateur de comparaison : ” == ” et non pas “=”</strong></p>
 </blockquote>
 </div>
-<div id="les-tests-logiques-dans-r" class="section level2" number="6.5">
-<h2><span class="header-section-number">6.5</span> Les tests logiques dans R</h2>
+<div id="les-tests-logiques-dans-r" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Les tests logiques dans R<a href="première-manipulation-des-données.html#les-tests-logiques-dans-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
 <thead>
 <tr class="header">
@@ -365,15 +368,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="première-manipulation-des-données.html#cb49-1" aria-hidden="true" tabindex="-1"></a>TableEnSortie <span class="ot">&lt;-</span> <span class="fu">filter</span>(TableEnEntree, x<span class="sc">==</span>a <span class="sc">&amp;</span> y<span class="sc">==</span>b)    <span class="co">#  x vaut a **ET** y vaut b</span></span>
 <span id="cb49-2"><a href="première-manipulation-des-données.html#cb49-2" aria-hidden="true" tabindex="-1"></a>TableEnSortie <span class="ot">&lt;-</span> <span class="fu">filter</span>(TableEnEntree, x<span class="sc">==</span>a <span class="sc">|</span> y<span class="sc">==</span>b)    <span class="co">#  x vaut a **OU** y vaut b (barre verticale AltGR+6)</span></span></code></pre></div>
 </div>
-<div id="renommer-des-colonnes" class="section level2" number="6.6">
-<h2><span class="header-section-number">6.6</span> Renommer des colonnes</h2>
+<div id="renommer-des-colonnes" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Renommer des colonnes<a href="première-manipulation-des-données.html#renommer-des-colonnes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La fonction <code>rename()</code> permet de renommer une variable (ou plusieurs).</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="première-manipulation-des-données.html#cb50-1" aria-hidden="true" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">rename</span>(base, <span class="at">nouveau_nom =</span> ancien_nom)</span></code></pre></div>
 <p>Exemple</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="première-manipulation-des-données.html#cb51-1" aria-hidden="true" tabindex="-1"></a>base_rename <span class="ot">&lt;-</span> <span class="fu">rename</span>(base, <span class="at">ZONE_EMPLOI =</span> ZE)</span></code></pre></div>
 </div>
-<div id="exercice-3-créer-filtrer-sélectionner" class="section level2" number="6.7">
-<h2><span class="header-section-number">6.7</span> Exercice 3 : créer, filtrer, sélectionner</h2>
+<div id="exercice-3-créer-filtrer-sélectionner" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Exercice 3 : créer, filtrer, sélectionner<a href="première-manipulation-des-données.html#exercice-3-créer-filtrer-sélectionner" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>En utilisant la fonction <code>mutate()</code>, créer une nouvelle variable correspondant à la densité de population (rapport de la population à la superficie de la commune), ainsi que les taux de natalité et de mortalité (en pour mille de la population 2014)</p></li>
 <li><p>A l’aide de la fonction <code>select()</code>, créer une nouvelle table en ne conservant que le code commune, le type de commune (ZAU), la région, le département et les variables que vous venez de créer.</p></li>
@@ -381,8 +384,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Avec les opérateurs logiques, faire des essais pour sélectionner des échantillons différents (autres départements, densité, l’un et l’autre…).</p></li>
 </ul>
 </div>
-<div id="nom-dun-pipe" class="section level2" number="6.8">
-<h2><span class="header-section-number">6.8</span> Nom d’un pipe <code>%&gt;%</code> !</h2>
+<div id="nom-dun-pipe" class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> Nom d’un pipe <code>%&gt;%</code> !<a href="première-manipulation-des-données.html#nom-dun-pipe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Pour enchaîner des opérations, on peut créer des variables successives :</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="première-manipulation-des-données.html#cb52-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(base, <span class="at">densite =</span> P14_POP <span class="sc">/</span> SUPERF,</span>
 <span id="cb52-2"><a href="première-manipulation-des-données.html#cb52-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">tx_natal =</span> <span class="dv">1000</span> <span class="sc">*</span> NAISD15 <span class="sc">/</span> P14_POP,</span>
@@ -476,7 +479,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

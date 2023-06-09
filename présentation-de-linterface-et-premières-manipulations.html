@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 3 Présentation de l’interface et premières manipulations | Découvrir R et RStudio</title>
   <meta name="description" content="Chapitre 3 Présentation de l’interface et premières manipulations | Découvrir R et RStudio (module socle)" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 3 Présentation de l’interface et premières manipulations | Découvrir R et RStudio" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Chapitre 3 Présentation de l’interface et premières manipulations | Découvrir R et RStudio (module socle)" />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2022-06-23" />
+<meta name="date" content="2023-06-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="r-son-écosystème-et-ses-possibilités.html"/>
 <link rel="next" href="bien-commencer.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,15 +49,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -100,7 +99,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +112,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -127,6 +126,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -272,11 +275,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="présentation-de-linterface-et-premières-manipulations" class="section level1" number="3">
-<h1><span class="header-section-number">Chapitre 3</span> Présentation de l’interface et premières manipulations</h1>
+<div id="présentation-de-linterface-et-premières-manipulations" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapitre 3</span> Présentation de l’interface et premières manipulations<a href="présentation-de-linterface-et-premières-manipulations.html#présentation-de-linterface-et-premières-manipulations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Ce chapitre permet de découvrir l’interface de travail RStudio et les principales fonctionnalités pour débuter.</p>
-<div id="une-interface-dédiée-rstudio" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Une interface dédiée : RStudio</h2>
+<div id="une-interface-dédiée-rstudio" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Une interface dédiée : RStudio<a href="présentation-de-linterface-et-premières-manipulations.html#une-interface-dédiée-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src="images/Rstudio.png" /></p>
 <ul>
 <li>Environnement de développement conçu spécialement pour R</li>
@@ -285,8 +288,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>L’interface RStudio est composée de différents panneaux, dont l’arrangement peut être reconfiguré, incluant une console, un navigateur de fichiers et graphiques, l’espace de travail et l’historique des commandes. D’autres environnements graphiques existent, Rstudio semble le plus approprié à nos métiers.</p>
 </div>
-<div id="session-et-répertoire-de-travail" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Session et répertoire de travail</h2>
+<div id="session-et-répertoire-de-travail" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Session et répertoire de travail<a href="présentation-de-linterface-et-premières-manipulations.html#session-et-répertoire-de-travail" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Session de travail R : commence à l’ouverture de RStudio et se termine en le quittant.</li>
 <li>Répertoire de travail R : dossier dans lequel le logiciel va chercher les fichiers de scripts et de données.</li>
@@ -297,6 +300,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <table>
+<colgroup>
+<col width="55%" />
+<col width="44%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Nouvelles fonctions</th>
@@ -322,12 +329,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Concernant le répertoire de travail, quelques conseils :</p>
 <ul>
 <li>Créer un nouveau répertoire pour un projet particulier qui sera votre répertoire de travail</li>
-<li>Créer des sous-répertoires dans ce répertoire : “./Data,” “./Figures,” “./Redaction”…</li>
+<li>Créer des sous-répertoires dans ce répertoire : “./Data”, “./Figures”, “./Redaction”…</li>
 <li>Rassembler autant que possible les fichiers qui seront utilisés dans le cadre de ce projet et éviter d’aller chercher des fichiers ailleurs (sauf à inscrire dans le script une instruction de téléchargement exécutable par tous)</li>
 </ul>
 </div>
-<div id="cest-à-vous-créer-un-répertoire-de-travail" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> C’est à vous : créer un répertoire de travail</h2>
+<div id="cest-à-vous-créer-un-répertoire-de-travail" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> C’est à vous : créer un répertoire de travail<a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-un-répertoire-de-travail" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Sur le poste de travail, créer un dossier ‘premiers_pas’ à partir du menu ‘New Folder’ (cadran droite bas)</p></li>
 <li><p>Dans Rstudio, définir ce dossier comme répertoire de travail directement en utilisant <code>setwd('')</code></p></li>
@@ -337,14 +344,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Lire le contenu du répertoire de travail avec <code>dir()</code></p></li>
 </ul>
 </div>
-<div id="prise-en-main-de-la-console" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Prise en main de la console</h2>
+<div id="prise-en-main-de-la-console" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Prise en main de la console<a href="présentation-de-linterface-et-premières-manipulations.html#prise-en-main-de-la-console" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Effectuer et afficher les résultats de calculs de base <code>(+, -, *, /, ^, ...)</code></li>
 <li>Utiliser des fonctions spécifiques : <code>sum</code>, <code>abs</code>, <code>round</code>…</li>
 <li>On peut remonter dans l’historique des fonctions pour en rappeler une</li>
 </ul>
 <table>
+<colgroup>
+<col width="55%" />
+<col width="44%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Nouvelles fonctions</th>
@@ -371,8 +382,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </div>
-<div id="création-dune-variable" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Création d’une variable</h2>
+<div id="création-dune-variable" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Création d’une variable<a href="présentation-de-linterface-et-premières-manipulations.html#création-dune-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>On assigne un contenu à une variable au moyen de <code>&lt;-</code>
 La flèche d’assignation peut être écrite avec le raccourci clavier alt + “-” (tiret du 6 ou signe ‘moins’ du pavé numérique).</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="présentation-de-linterface-et-premières-manipulations.html#cb2-1" aria-hidden="true" tabindex="-1"></a>ma_variable <span class="ot">&lt;-</span> <span class="dv">2</span></span>
@@ -409,8 +420,8 @@ La flèche d’assignation peut être écrite avec le raccourci clavier alt + �
 <p>Adopter des règles de nommage cohérentes, par exemples <a href="http://adv-r.had.co.nz/Style.html">celles-ci</a>.
 ATTENTION : un nom de variable ne peux pas commencer par un chiffre et certains noms sont interdits (voir 4.6)</p>
 </div>
-<div id="cest-à-vous-créer-et-manipuler-des-variables" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> C’est à vous : créer et manipuler des variables</h2>
+<div id="cest-à-vous-créer-et-manipuler-des-variables" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> C’est à vous : créer et manipuler des variables<a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-créer-et-manipuler-des-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Créer plusieurs variables numériques par assignation <code>a &lt;- 5</code>, <code>b &lt;- 4</code></li>
 <li>Regarder l’onglet Environnement</li>
@@ -426,8 +437,8 @@ ATTENTION : un nom de variable ne peux pas commencer par un chiffre et certains 
 <li>Attention : Pour supprimer toutes les variables <code>rm(list = ls())</code></li>
 </ul>
 </div>
-<div id="utilité-des-scripts" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Utilité des scripts</h2>
+<div id="utilité-des-scripts" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Utilité des scripts<a href="présentation-de-linterface-et-premières-manipulations.html#utilité-des-scripts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Garder la trace d’une longue succession de lignes de code</li>
 <li>Pouvoir exécuter ce code (pas à pas ou en entier)</li>
@@ -435,6 +446,10 @@ ATTENTION : un nom de variable ne peux pas commencer par un chiffre et certains 
 <li>Pouvoir le réutiliser avec de nouvelles données</li>
 </ul>
 <table>
+<colgroup>
+<col width="56%" />
+<col width="43%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Nouvelles fonctions</th>
@@ -460,8 +475,8 @@ ATTENTION : un nom de variable ne peux pas commencer par un chiffre et certains 
 <p>Actions plus complexes, longues, nécessitant une maintenance, des modifications <span class="math inline">\(\rightarrow\)</span> travailler à partir de la fenêtre éditeur. Les parties de code sont enchaînées et enregistrées sous la forme d’un fichier texte réutilisable par la suite.</p>
 <p>Toujours utiliser des commentaires. Permet de pouvoir mieux comprendre ce que l’on a fait lorsqu’on reprend un programme plus tard ou lorsqu’on le donne à quelqu’un.</p>
 </div>
-<div id="cest-à-vous-utiliser-un-script" class="section level2" number="3.8">
-<h2><span class="header-section-number">3.8</span> C’est à vous : utiliser un script</h2>
+<div id="cest-à-vous-utiliser-un-script" class="section level2 hasAnchor" number="3.8">
+<h2><span class="header-section-number">3.8</span> C’est à vous : utiliser un script<a href="présentation-de-linterface-et-premières-manipulations.html#cest-à-vous-utiliser-un-script" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Recopier le script ci-dessous et changer les paramètres pour le re-exécuter plusieurs fois</li>
 <li>Sauvegarder ce script dans votre répertoire de travail, fermez le</li>
@@ -481,8 +496,8 @@ ATTENTION : un nom de variable ne peux pas commencer par un chiffre et certains 
 <span id="cb3-12"><a href="présentation-de-linterface-et-premières-manipulations.html#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> (imc)</span></code></pre></div>
 <pre><code>## [1] 26.02305</code></pre>
 </div>
-<div id="installer-et-charger-un-package" class="section level2" number="3.9">
-<h2><span class="header-section-number">3.9</span> Installer et charger un <em>package</em></h2>
+<div id="installer-et-charger-un-package" class="section level2 hasAnchor" number="3.9">
+<h2><span class="header-section-number">3.9</span> Installer et charger un <em>package</em><a href="présentation-de-linterface-et-premières-manipulations.html#installer-et-charger-un-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Pour manipuler notre base de données, nous allons nous servir de fonctionnalités présentes dans le package <code>tidyverse</code>.</p>
 <p>La première fois que l’on veut utiliser un package, il faut le télécharger sur notre machine, avec <code>install.packages()</code> :</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="présentation-de-linterface-et-premières-manipulations.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
@@ -569,7 +584,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
