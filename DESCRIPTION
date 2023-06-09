@@ -1,0 +1,20 @@
+Type: Book
+Package: M1-Parcours-R
+Title: Formation à R Module 1 socle introduction
+Version: 0.1.0
+Description: Valise pédagogique pour la formation à R
+License: MIT
+URL: https://github.com/MTES-MCT/parcours_r_socle_introduction
+Imports: 
+    bookdown,
+    COGiter,
+    GGally,
+    knitr,
+    plotly,
+    sf,
+    stringi,
+    tidyverse
+Remotes: 
+    MaelTheuliere/COGiter
+Encoding: UTF-8
+RoxygenNote: 7.2.1
