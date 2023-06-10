@@ -37,7 +37,7 @@ Si on désire un histogramme de `log_SUPERF`, on fera appel à la fonction `geom
 ```{r graph_3, message=FALSE, warning=FALSE}
 rm(list = ls())
 
-base <- read.csv(file = "extdata/Base_synth_territoires.csv",
+base <- read.csv(file = "extdata/Base_synth_territoires.csv", fileEncoding = 'latin1',
                  header = T, sep=";", dec=",") %>% 
   select(1:24) %>% 
   mutate(log_SUPERF = log(SUPERF),
@@ -76,7 +76,7 @@ Une fois qu'on a généré un graphique avec ggplot, on peut le passer dans la f
 
 ```{r ggplotly,message=FALSE,warning=FALSE}
 library(plotly)
-g <- ggplot(data = base, aes(x = REG, fill = REG)) +
+g <- ggplot(data = base, aes(x = ZAU, fill = ZAU)) +
   geom_bar()
 
 ggplotly(g)

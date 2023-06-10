@@ -1,7 +1,5 @@
 # Exercices corrigés
 
-# Exercices pour R Studio
-
 ## Manipulation 1 : Prendre en main RStudio (10 min.)
 
 * Depuis le gestionnaire de fichier de RStudio (panneau bas-droite), vous allez créer un dossier qui va servir de dossier de travail au cours de la formation. Pour cela : utilisez le bouton **New folder** (expl. Formation_R).
