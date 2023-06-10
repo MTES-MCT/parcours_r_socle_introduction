@@ -1,151 +1,65 @@
 # Exercices corrigés
 
-## 05 - importer des données et premier coup d'oeil
+# Exercices pour R Studio
 
-```{r inspectdf}
-df <- read.csv(file = "extdata/Base_synth_territoires.csv", header = TRUE, sep = ";", dec = ",",
-               colClasses = c(rep("character", 2), rep("factor", 4) , rep(NA, 32)))
+## Manipulation 1 : Prendre en main RStudio (10 min.)
 
-str(df)
-head(df)
-tail(df)
-names(df)
-class(df)
-typeof(df)
-```
+* Depuis le gestionnaire de fichier de RStudio (panneau bas-droite), vous allez créer un dossier qui va servir de dossier de travail au cours de la formation. Pour cela : utilisez le bouton **New folder** (expl. Formation_R).
+* Pour définir ce dossier comme répertoire de travail de R, sélectionnez-le et allez dans le menu **More/Set as working directory**. Regardez ce qui se passe dans la console (panneau bas gauche). Qu'est-ce que cela signifie ?
+* Si vous voulez avoir plus de renseignements sur la fonction setwd, vous pouvez utiliser l'aide en ligne de R en écrivant `?setwd` ou `help(setwd)` dans la console. Qu'est ce passe-t-il ?
+* Dans l'onglet **Help** de RStudio, vous pouvez également faire une recherche à partir du moteur de recherche. Essayez d'obtenir des informations sur la fonction `dir()`.
 
-## 06 - créer, filtrer, sélectionner
+## Manipulation 2 : Faire ses premiers calculs (15 min.)
 
-```{r}
-df <- mutate(df, densite = P14_POP / SUPERF,
-             tx_natal = 1000 * NAISD15 / P14_POP,
-             tx_mort = 1000 * DECESD15 / P14_POP)
-```
+* Dans la console, faite des calculs simples : `2 + 3`, `5 * 4`, `5 + (6 * 4)`, `2.5 * 1.3`, `3**3`
+* Que se passe-t-il lorsque vous écrivez **pi** dans la console ? Qu'est-ce que cela signifie ?
+* Calculez maintenant `cos(pi)` et `sin(pi/2)`. Que voyez-vous apparaître au moment où vous écrivez ces fonctions ?
+* Faites maintenant la moyenne des nombres : 4, 5, 2, 1. Avez-vous utilisé un calcul ou une fonction de R ?
+* Calculez la valeur absolue de l'opération `2 – 6`.
+* Calculez maintenant `round(2.125412)`. Que voyez-vous ? Comment pouvez-vous faire pour faire un arrondi de `2.125412` à deux chiffres après la virgule (vous pouvez utiliser l'aide de R).
+* Que se passe-t-il lorsque vous manipulez les flèches haut et bas depuis la console ?
 
+## Exercice 1 : Créer ses premières variables (15 min.)
 
+```{r mod1_exo1_correction, child=charge_exo("m1", "exo1.rmd"), echo=TRUE}
 
-```{r}
-selection <- select(df, CODGEO, ZAU, REG, DEP,
-                    densite, tx_natal, tx_mort)
 ```
 
 
-```{r}
-S0 <- filter(selection, DEP == "62")
+## Manipulation 3 : Créer son premier script (20 min.)
+
+* Depuis le panneau d'édition de script de RStudio (en haut à gauche), vous allez créer un script ré-utilisable permettant de calculer l'indice de masse corporelle d'un individu (IMC) et d'afficher le résultat dans la console sous la forme d'un phrase explicite. L'IMC est calculé par la masse sur la taille au carré d'un individu ($masse / taille^2$).
+* Quelques petits conseils :
+     * de façon générale, n'hésitez pas à commenter votre script pour vous aider à le comprendre lorsque vous serez amené à le reprendre,
+     * pensez à bien assigner vos variables poids et taille pour une meilleure ré-utilisabilité du script,
+     * la fonction print() permet d'afficher une chaîne de caractères dans la console,
+     * pensez à arrondir le résultat de votre calcul d'IMC. 
+* Enregistrez ensuite votre script dans votre répertoire de travail. L'extension d'un fichier script pour R est .R.
+
+## Exercice 2 : - importer des données et premier coup d'oeil
+
+```{r mod1_exo2_correction, child=charge_exo("m1", "exo2.rmd"), echo=TRUE}
+
+```
+
+## Exercice 3 : - créer, filtrer, sélectionner
+
+```{r mod1_exo3_correction, child=charge_exo("m1", "exo3.rmd"), echo=TRUE}
+
 ```
 
 
-```{r}
-S1 <- filter(selection, DEP != "62") # tout sauf le 62 :(
-S2 <- filter(selection, DEP %in% c("59", "62")) # L'ancien NPdC :)
-S3 <- filter(selection, !(DEP %in% c("59", "62"))) # Le "sud" de la France
-S4 <- filter(selection, densite > 100) # l'urbain
-S5 <- filter(selection, DEP == "62" & densite > 100) # le PdC urbain
-S6 <- filter(selection, DEP == "62" | densite > 100) # le PdC et l'urbain
+## Exercice 4 : calcul de statistiques
+
+```{r mod1_exo4_correction, child=charge_exo("m1", "exo4.rmd"), echo=TRUE}
+
 ```
 
+## Exercice 5 : créer des graphiques
 
-## 07 - calcul de statistiques
+```{r mod1_exo5_correction, child=charge_exo("m1", "exo5.rmd"), echo=TRUE}
 
-
-```{r stat_10}
-df <- df %>% 
-  select(1:24) %>% 
-  mutate(densite = P14_POP / SUPERF,
-         tx_natal = 1000 * NAISD15 / P14_POP,
-         tx_mort = 1000 * DECESD15 / P14_POP
-         ) 
-
-summary(df)
 ```
-
-
-```{r stat_11, eval = F}
-df %>% pull(densite) %>% mean()
-df %>% pull(densite) %>% sd()
-df %>% pull(densite) %>% median()
-df %>% pull(densite) %>% var()
-```
-
-On a des NA car les valeurs manquantes sont absorbantes !
-
-```{r stat_12, eval = F}
-df %>% pull(densite) %>% mean(na.rm = T)
-df %>% pull(densite) %>% sd(na.rm = T)
-df %>% pull(densite) %>% median(na.rm = T)
-df %>% pull(densite) %>% var(na.rm = T)
-```
-
-
-```{r stat_13}
-df <- df %>% 
-  mutate(std_dens = (densite - mean(densite, na.rm = T)) / sd(densite, na.rm = T))
-```
-
-Avantage des variables centrées réduites : on élimine les effets d'unité (d'ordre de grandeur), et on peut donc comparer les distributions de deux variables qui ont des unités différentes (voir module 3)
-
-```{r stat_14}
-df %>% pull(densite) %>% quantile(na.rm = T)
-```
-
-```{r stat_15}
-seq(0, 1, 0.1) # vérifier la séquence qu'on souhaite
-df %>% pull(densite) %>% quantile(probs = seq(0, 1, 0.1), na.rm = T)
-```
-
-```{r stat_16}
-t <- table(df$ZAU)
-t
-100 * prop.table(t) %>% round(digits = 4)
-```
-
-- Deux variables
-```{r stat_17}
-t <- table(df$REG, df$ZAU)
-t
-100 * prop.table(t) %>% round(digits = 4)
-```
-
-## 08 - créer des graphiques
-
-
-```{r graph_5}
-ggplot(data = df, aes(x = P14_POP)) +
-  geom_histogram()
-```
-
-Ce n'est pas très informatif, mais on peut faire une transformation log pour y voir plus clair !
-
-```{r graph_6}
-ggplot(data = df, aes(x = log(P14_POP))) +
-  geom_histogram()
-```
-
-Faites maintenant un barplot (qui n'est pas un histogramme !!!!) du nombre de communes par REG.
-
-```{r graph_7}
-ggplot(data = df, aes(x = REG)) +
-  geom_bar()
-```
-
-On va essayer d'y voir plus clair avec le paramètre `fill`
-
-```{r graph_8}
-ggplot(data = df, aes(x = REG, fill = REG)) +
-  geom_bar()
-```
-
-
-```{r graph_9}
-ggplot(data = df, aes(x = log(P14_POP), y = log(P14_LOGVAC))) +
-  geom_point()
-```
-
-```{r graph_10}
-ggplot(data = df, aes(x = densite, y = tx_mort, color = REG)) +
-  geom_point()
-```
-
 Là encore il faudrait faire une transformation logarithmique, mais tout ça est abordé dans le module 3 !
 
 

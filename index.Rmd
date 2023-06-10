@@ -20,6 +20,7 @@ rm(list=ls())
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, error = FALSE, warning = FALSE,
                       dev = "svg",
                       fig.width = 6, fig.height = 6)
+library(savoirfR)
 ```
 
 # Introduction

@@ -97,8 +97,10 @@ Autres façons d'importer les données
 
 - Fonction `read_delim`, du package `readr`, plus rapide
 - Fonction `fread`, du package `data.table`, beaucoup plus rapide !!
-- Pour importer les fichiers XLS, ODT ou DBF, il existe des fonctions et des packages spécifiques
-- **Le passage par un fichier csv est très recommandé**
+- Pour importer les fichiers XLS, ODS, SHP ou DBF, il existe des fonctions et des packages spécifiques
+- **Le passage par un fichier csv est très recommandé**.
+
+Note : le [format parquet](https://arrow.apache.org/docs/r/reference/read_parquet.html) est très intéressant pour des tables de plusieurs centaines de milliers de lignes.
 
 
 ## Gérer le type des variables
@@ -149,15 +151,12 @@ On peut importer n'importe quel format de données en R (Excel, SAT, Stata, SQL.
 
 Ici, nous travaillerons sur une base de données communales fournie par l'Insee, dite "comparateur de territoires".
 
-- Utiliser la fonction `read.csv()` pour importer ce fichier et stocker le dans un objet `df`. **Veillez à ce que la région soit bien importée comme un facteur et non un entier**  
+```{r mod1_exo2, child=charge_exo("m1", "exo2.rmd"), echo=FALSE}
 
-- Inspecter le dataframe avec les fonctions vues auparavant pour connaître le nombre de lignes, de colonnes, ... 
-
-
+```
 
 
 ## Catalogue d'attributs de la base  
-
 
 
 - *CODGEO* : [text] Code du département suivi du numéro de commune ou du numéro d'arrondissement municipal

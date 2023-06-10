@@ -23,7 +23,7 @@ L’interface RStudio est composée de différents panneaux, dont l’arrangemen
     
 Nouvelles fonctions                               |Attention
 --------------------------------------------------|----------------------------------------
-`setwd()` pour définir un répertoire de travail   |Seulement / et pas \\ 
+`setwd()` pour définir un répertoire de travail   |Seulement / et pas \\, chemin entre `"path"` 
 `help()` et ? pour afficher l'aide                |.
 `dir()` pour lister un répertoire                 |.
 
@@ -88,20 +88,11 @@ Nouvelles fonctions                               |Attention pour le nommage des
 Adopter des règles de nommage cohérentes, par exemples [celles-ci](http://adv-r.had.co.nz/Style.html).
 ATTENTION : un nom de variable ne peux pas commencer par un chiffre et certains noms sont interdits (voir 4.6)
 
-## C'est à vous : créer et manipuler des variables
+## C'est à vous : créer et manipuler des variables (Exercice 1)
 
-- Créer plusieurs variables numériques par assignation `a <- 5`, `b <- 4`
-- Regarder l'onglet Environnement
-- Afficher la liste des variables avec la fonction `ls()`
-- Faire un calcul avec ces variables et voir le résultat `(a+b)` etc.
-- Créer une troisième variable à partir des deux premières `c <- a+b*3`
-- Ré-assigner une variable : `a<-10` et vérifier l'onglet environnement
-- Créer une variable chaîne de caractère (utilisation des simples quotes et des double-quotes) `t <- 'chaine'`
-- Concaténer `a` et `t` avec `paste(a,t)` 
-- Expérimenter la casse des noms de variables : créer `A <- 15` et `B <- 12` et vérifier l'onglet environnement
-- Supprimer les variables `A` et `B` avec la fonction `rm()`
-- Aide en ligne `?ls` et `?rm`
-- Attention : Pour supprimer toutes les variables `rm(list = ls())`
+```{r mod1_exo1, child=charge_exo("m1", "exo1.rmd"), echo=FALSE}
+
+```
 
 
 ## Utilité des scripts
@@ -122,9 +113,9 @@ Utilisation simple de R $\rightarrow$ mode console. Chaque ordre, bout de code e
 
 Actions plus complexes, longues, nécessitant une maintenance, des modifications $\rightarrow$ travailler à partir de la fenêtre éditeur. Les parties de code sont enchaînées et enregistrées sous la forme d'un fichier texte réutilisable par la suite.
 
-Toujours utiliser des commentaires. Permet de pouvoir mieux comprendre ce que l'on a fait lorsqu'on reprend un programme plus tard ou lorsqu'on le donne à quelqu'un.
+Toujours utiliser des commentaires, indiquer plus le 'pourquoi' que le 'quoi'. Permet de pouvoir mieux comprendre ce que l'on a fait lorsqu'on reprend un programme plus tard ou lorsqu'on le donne à quelqu'un.
 
-## C'est à vous : utiliser un script
+## C'est à vous : utiliser un script (Exercice 1bis)
 
 - Recopier le script ci-dessous et changer les paramètres pour le re-exécuter plusieurs fois
 - Sauvegarder ce script dans votre répertoire de travail, fermez le
@@ -146,7 +137,7 @@ print (imc)
 ```
 
 ## Installer et charger un *package*
-Pour manipuler notre base de données, nous allons nous servir de fonctionnalités présentes dans le package `tidyverse`. 
+Pour manipuler nos données, nous allons nous servir de fonctionnalités présentes dans le package `tidyverse`. 
 
 La première fois que l'on veut utiliser un package, il faut le télécharger sur notre machine, avec `install.packages()` :
 ```{r, eval=FALSE}
