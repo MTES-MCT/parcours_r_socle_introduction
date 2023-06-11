@@ -15,9 +15,9 @@ session-et-répertoire-de-travail
 cest-à-vous-créer-un-répertoire-de-travail
 prise-en-main-de-la-console
 création-dune-variable
-cest-à-vous-créer-et-manipuler-des-variables
+cest-à-vous-créer-et-manipuler-des-variables-exercice-1
 utilité-des-scripts
-cest-à-vous-utiliser-un-script
+cest-à-vous-utiliser-un-script-exercice-1bis
 installer-et-charger-un-package
 bien-commencer
 créer-un-projet-sous-rstudio-pour-vous-permettre-de-recenser-vos-travaux.
@@ -60,7 +60,7 @@ histogramme
 nuages-de-points
 matrice-de-nuages
 bonus-faire-un-graphique-dynamique
-exercice-créer-des-graphiques
+exercice-5-créer-des-graphiques
 sauvegarder-son-travail
 exportation-des-résultats
 environnement-et-.rdata
@@ -73,7 +73,11 @@ pour-aller-plus-loin
 matrices-et-arrays
 inspection-dun-objet-la-régression
 exercices-corrigés
-importer-des-données-et-premier-coup-doeil
-créer-filtrer-sélectionner
-calcul-de-statistiques
-créer-des-graphiques
+manipulation-1-prendre-en-main-rstudio-10-min.
+manipulation-2-faire-ses-premiers-calculs-15-min.
+exercice-1-créer-ses-premières-variables-15-min.
+manipulation-3-créer-son-premier-script-20-min.
+exercice-2---importer-des-données-et-premier-coup-doeil
+exercice-3---créer-filtrer-sélectionner
+exercice-4-calcul-de-statistiques-1
+exercice-5-créer-des-graphiques-1
