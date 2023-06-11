@@ -11,10 +11,12 @@ Imports:
     GGally,
     knitr,
     plotly,
+    savoirfR,
     sf,
     stringi,
     tidyverse
 Remotes: 
-    MaelTheuliere/COGiter
+    MaelTheuliere/COGiter,
+    MTES-MCT/savoirfR
 Encoding: UTF-8
 RoxygenNote: 7.2.1
