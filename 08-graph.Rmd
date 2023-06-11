@@ -5,7 +5,7 @@ Pour réaliser des graphiques, nous choisissons de nous servir du package `ggplo
 
 ```{r graph_1, eval=FALSE}
 install.packages("ggplot2")
-library("ggplot2")
+library(ggplot2)
 library(dplyr)
 ```
 
@@ -20,6 +20,10 @@ Pour découvrir les nombreuses possibilités de `ggplot2`, vous pouvez vous réf
 - [Version anglaise](http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization)
 - [Version française](http://www.sthda.com/french/wiki/ggplot2)
 
+La feuille de triche accessible depuis R Studio rassemble les principales instructions et aide à prendre en main le package :    
+
+![](images/cheatsheet_ggplot2.png){width=750px}
+
 La fonction `aes()` (pour "aesthetics"), utilisée dans l'instruction `ggplot()` permet de définir les données à tracer. On y indique les dimensions que l'on veut représenter sur le graphique. On peut représenter jusqu'à 5 dimensions sur un même graphique, mais attention à la lisibilité !
 
 - 2 variables quanti : x en fonction de y $\rightarrow$ 2 dimensions (nuage de points)
@@ -28,12 +32,12 @@ La fonction `aes()` (pour "aesthetics"), utilisée dans l'instruction `ggplot()`
 - juxtaposer des graphiques en fonction d'une variable quali $\rightarrow$ 5e dimension !
 
 ## Histogramme
-Si on désire un histogramme de log_SUPERF, on fera appel à la fonction `geom_histogram()`. Ce graphique ne présente qu'une seule dimension (la variable quanti dont on veut visualiser la distribution)
+Si on désire un histogramme de `log_SUPERF`, on fera appel à la fonction `geom_histogram()`. Ce graphique ne présente qu'une seule dimension (la variable quanti dont on veut visualiser la distribution)
 
 ```{r graph_3, message=FALSE, warning=FALSE}
 rm(list = ls())
 
-base <- read.csv(file = "extdata/Base_synth_territoires.csv",
+base <- read.csv(file = "extdata/Base_synth_territoires.csv", fileEncoding = 'latin1',
                  header = T, sep=";", dec=",") %>% 
   select(1:24) %>% 
   mutate(log_SUPERF = log(SUPERF),
@@ -72,22 +76,17 @@ Une fois qu'on a généré un graphique avec ggplot, on peut le passer dans la f
 
 ```{r ggplotly,message=FALSE,warning=FALSE}
 library(plotly)
-g <- ggplot(data = base, aes(x = REG, fill = REG)) +
+g <- ggplot(data = base, aes(x = ZAU, fill = ZAU)) +
   geom_bar()
 
 ggplotly(g)
 ```
 
-## Exercice : créer des graphiques
+## Exercice 5 : créer des graphiques
 
-À l'aide de l'aide mémoire `ggplot2` :
+```{r mod1_exo5, child=charge_exo("m1", "exo5.rmd"), echo=FALSE}
 
-- Réaliser un histogramme de la population communale
-- Transformer les données avec la fonction log pour y voir plus clair
-- Faire un barplot du nombre de communes par REG
-- Utiliser le paramètre fill de la fonction `aes()` pour améliorer le graphique
-- Réaliser un graphique (nuage de points) croisant la densité de population et le taux de mortalité
-- Ajouter une dimension supplémentaire avec la couleur des points (paramètre color de `aes()`)
+```
 
 **Note** : avec les fonctions de base, on peut obtenir de nombreux graphiques avec très peu de code, mais moins jolis :
 

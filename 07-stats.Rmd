@@ -12,12 +12,16 @@ summary(base_extrait)
 
 - Les variables quantitatives
 ```{r stat_2}
-summary(pull(base_extrait, NAIS0914))
+base_extrait %>% 
+  pull(NAIS0914) %>% 
+  summary()
 ```
 
 - Les variables qualitatives
 ```{r stat_3}
-summary(pull(base_extrait, ZAU))
+base_extrait %>% 
+  pull(ZAU) %>% 
+  summary()
 ```
 
 ## Calculer des statistiques spécifiques
@@ -26,10 +30,21 @@ Les fonctions `sum()`, `mean()`, `median()`, `min()`, `max()`, `var()`, `sd()`..
 La fonction `quantile()` renvoie les quartiles de la variables (ou bien tout autre découpage qu'on lui renseigne).
 
 ```{r stat_4}
-sum(pull(base_extrait, P14_POP), na.rm = TRUE)
-mean(pull(base_extrait, P14_POP), na.rm = TRUE)
-median(pull(base_extrait, P14_POP), na.rm = TRUE)
-quantile(pull(base_extrait, P14_POP), probs = c(0.25, 0.5, 0.75), na.rm = T)
+base_extrait %>% 
+  pull(P14_POP) %>% 
+  sum(na.rm = TRUE)
+
+base_extrait %>% 
+  pull(P14_POP) %>% 
+  mean(na.rm = TRUE)
+
+base_extrait %>% 
+  pull(P14_POP) %>% 
+  median(na.rm = TRUE)
+
+base_extrait %>% 
+  pull(P14_POP) %>% 
+  quantile(probs = c(0.25, 0.5, 0.75), na.rm = TRUE)
 ```
 
 Ces fonctions retournent une valeur, ou bien un ensemble de valeur (pour `quantile()`). Le résultat est donc un vecteur de un ou plusieurs nombres.
@@ -40,7 +55,7 @@ Ces fonctions retournent une valeur, ou bien un ensemble de valeur (pour `quanti
 
 <center>![](images/summarise.png)</center>
 
-La fonction `summarise()` permet d'aggréger des données, en appliquant une fonction sur les variables pour construire une statistique sur les observations de la table. C'est une fonction dite de “résumé”.
+La fonction `summarise()` permet d'agréger des données, en appliquant une fonction sur les variables pour construire une statistique sur les observations de la table. C'est une fonction dite de “résumé”.
 
 ```{r stat_5, eval=FALSE}
 summarise(TableEnEntree, NomVariableAgregee = Fonction(NomVariableEtude))
@@ -60,15 +75,15 @@ La fonction `summarise()` retourne un data.frame.
 La fonction `summarise()` couplée à `group_by()` permet de calculer des statistiques pour chaque modalité d'une variable qualitative. Avec `group_by()`, on précise les variables qui formeront des groupes, sur lesquels on appliquera une fonction :
 
 ```{r, eval=FALSE}
-TableauGroupes <- group_by(TableEnEntree, Variable1, ..., VariableN)
-summarise(TableauGroupes, NomVariableAgregee = Fonction (NomVariableEtude))
+TableauGroupes <- group_by(TableEnEntree, Variable1, ..., VariableN) %>% 
+  summarise(NomVariableAgregee = Fonction (NomVariableEtude))
 ```
 
 Par exemple, si on veut avoir la médiane de la variable P14_POP, pour chaque ZAU et chaque région :
 ```{r stat_7}
 base_reg_ann <- base_extrait %>% 
   group_by(ZAU, REG) %>%
-  summarise(population_med = median (P14_POP, na.rm = TRUE))
+  summarise(population_med = median(P14_POP, na.rm = TRUE))
 ```
 
 
@@ -102,18 +117,9 @@ La fonction `prop.table()` prend en entrée un objet `table` (tableau de conting
 
 ## Exercice 4 : calcul de statistiques 
 
-- Utilisez la fonction `summary()` pour obtenir un résumé de l'ensemble des variables de la table df
-- Calculez maintenant les moyenne, médiane, écart-type et variance de la variable de densité de population. Que constatez-vous ?
-- Utilisez le paramètre `na.rm = TRUE` pour gérer les valeurs manquantes
-- Calculez à présent les quartiles puis déciles de cette variables
-- Calculez la version centrée réduite de la variable de densité. Rappel : on calcule la version centrée réduite d'une variable X en lui appliquant la transformation suivante : $$ STD_X =\dfrac{X-\bar{X}}{\sigma_X}$$ où $\bar{X}$ est la moyenne empirique de X et $\sigma_X$ son écart-type
+```{r mod1_exo4, child=charge_exo("m1", "exo4.rmd"), echo=FALSE}
 
-Tableaux croisés : 
-
-- Calculer le nombre de communes par type d'espace à l'aide de la fonction `table`, et le pourcentage associé
-- Calculer le nombre de communes par région et type d'espace, et les pourcentages associés
-
-
+```
 
 Pour aller plus loin et ajouter des variables de pondération, calculer les profils-ligne ou profils-colonne, rendez-vous au [module 3 "Statistiques descriptives"](https://mtes-mct.github.io/parcours_r_module_statistiques_descriptives/) ou demander à un GF (Gentil Formateur).
 

@@ -20,8 +20,7 @@ propre.rpls::creer_pdf_book(
     "premiers-graphiques.html",                                    
     "sauvegarder-son-travail.html" ,
     "aller-plus-loin-avec-les-objets-et-la-programmation-fonctionnelle.html",
-    "exercices-corrigés.html",                                    
-    "exercices-pour-r-studio.html"
+    "exercices-corrigés.html"
   ))
 
 imports <- sort(c("bookdown", attachment::att_from_rmds(path = ".", pattern = ".Rmd", recursive = FALSE, inline = TRUE)))
@@ -30,3 +29,5 @@ attachment::att_to_desc_from_is(
   imports = imports, suggests = NULL, 
   must.exist = FALSE
 )
+
+                                        
