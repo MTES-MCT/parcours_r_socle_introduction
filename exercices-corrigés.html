@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 11 Exercices corrigés | Découvrir R et RStudio</title>
   <meta name="description" content="Chapitre 11 Exercices corrigés | Découvrir R et RStudio (module socle)" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 11 Exercices corrigés | Découvrir R et RStudio" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Thierry Zorn, Murielle Lethrosne, Vivien Roussez, Pascal Irz &amp; Nicolas Torterotot" />
 
 
-<meta name="date" content="2023-06-11" />
+<meta name="date" content="2024-08-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,11 +52,12 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
@@ -1024,27 +1025,27 @@ Attention au type de la variable département !</p>
 <div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="exercices-corrigés.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb221-2"><a href="exercices-corrigés.html#cb221-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> P14_POP)) <span class="sc">+</span></span>
 <span id="cb221-3"><a href="exercices-corrigés.html#cb221-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-60-1.svg" width="576" /></p>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-172-1.svg" width="576" /></p>
 <div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="exercices-corrigés.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ce n&#39;est pas très informatif, avec une transformation log, on y voit plus clair !</span></span>
 <span id="cb222-2"><a href="exercices-corrigés.html#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(P14_POP))) <span class="sc">+</span></span>
 <span id="cb222-3"><a href="exercices-corrigés.html#cb222-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
-<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-60-2.svg" width="576" /></p>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-172-2.svg" width="576" /></p>
 <div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="exercices-corrigés.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot </span></span>
 <span id="cb223-2"><a href="exercices-corrigés.html#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> REG)) <span class="sc">+</span></span>
 <span id="cb223-3"><a href="exercices-corrigés.html#cb223-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-60-3.svg" width="576" /></p>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-172-3.svg" width="576" /></p>
 <div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="exercices-corrigés.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="co"># améliorer avec le paramètre `fill`</span></span>
 <span id="cb224-2"><a href="exercices-corrigés.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> REG, <span class="at">fill =</span> REG)) <span class="sc">+</span></span>
 <span id="cb224-3"><a href="exercices-corrigés.html#cb224-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-60-4.svg" width="576" /></p>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-172-4.svg" width="576" /></p>
 <div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="exercices-corrigés.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nuage de points</span></span>
 <span id="cb225-2"><a href="exercices-corrigés.html#cb225-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> densite, <span class="at">y =</span> tx_mort)) <span class="sc">+</span></span>
 <span id="cb225-3"><a href="exercices-corrigés.html#cb225-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-60-5.svg" width="576" /></p>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-172-5.svg" width="576" /></p>
 <div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="exercices-corrigés.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ajout couleur</span></span>
 <span id="cb226-2"><a href="exercices-corrigés.html#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> densite, <span class="at">y =</span> tx_mort, <span class="at">color =</span> REG)) <span class="sc">+</span></span>
 <span id="cb226-3"><a href="exercices-corrigés.html#cb226-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-60-6.svg" width="576" /></p>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-172-6.svg" width="576" /></p>
 <p>Là encore il faudrait faire une transformation logarithmique, mais tout ça est abordé dans le module 3 !</p>
 
 </div>
