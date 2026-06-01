@@ -1,4 +1,4 @@
-ARG R_VERSION=4.2.1
+ARG R_VERSION=4.6.0
 ARG GITHUB_PAT=${{ secrets.GITHUB_TOKEN }}
 
 FROM inseefrlab/onyxia-rstudio:r${R_VERSION}
