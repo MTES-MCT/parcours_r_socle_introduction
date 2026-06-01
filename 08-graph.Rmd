@@ -38,13 +38,15 @@ Si on désire un histogramme de `log_SUPERF`, on fera appel à la fonction `geom
 rm(list = ls())
 
 base <- read.csv(file = "extdata/Base_synth_territoires.csv", fileEncoding = 'latin1',
-                 header = T, sep=";", dec=",") %>% 
+                 header = TRUE, sep = ";", dec = ",") %>% 
   select(1:24) %>% 
   mutate(log_SUPERF = log(SUPERF),
          REG = as.factor(REG),
          densite = P14_POP / SUPERF,
          tx_natal = 1000 * NAISD15 / P14_POP,
          tx_mort = DECESD15 / P14_POP)
+
+glimpse(base)
 
 ggplot(data = base, mapping = aes(x = log_SUPERF)) + geom_histogram()
 ```
