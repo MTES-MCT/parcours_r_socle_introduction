@@ -34,7 +34,7 @@ La fonction `aes()` (pour "aesthetics"), utilisée dans l'instruction `ggplot()`
 ## Histogramme
 Si on désire un histogramme de `log_SUPERF`, on fera appel à la fonction `geom_histogram()`. Ce graphique ne présente qu'une seule dimension (la variable quanti dont on veut visualiser la distribution)
 
-```{r graph_3, message=FALSE, warning=FALSE}
+```{r graph_3, message=TRUE, warning=TRUE}
 rm(list = ls())
 
 base <- read.csv(file = "extdata/Base_synth_territoires.csv", fileEncoding = 'latin1',
@@ -46,18 +46,16 @@ base <- read.csv(file = "extdata/Base_synth_territoires.csv", fileEncoding = 'la
          tx_natal = 1000 * NAISD15 / P14_POP,
          tx_mort = DECESD15 / P14_POP)
 
-cat(str(base))
-
-# ggplot(data = base, mapping = aes(x = log_SUPERF)) + geom_histogram()
+ggplot(data = base, mapping = aes(x = log_SUPERF)) + geom_histogram()
 ```
 
 ## Nuages de points
 
 Selon les graphiques que l'on veut tracer, on peut renseigner plusieurs variables. Dans le cas d'un nuage de points, par exemple, on croise 2 variables quantitatives :
 
-```{r graph_4, message=FALSE, warning=FALSE, cache=TRUE}
-# ggplot(base, aes(x = P14_EMPLT, y = MED13)) + geom_point(colour = "blue")
-# ggplot(base, aes(x = log(P14_EMPLT), y = log(MED13))) + geom_point(colour = "blue")
+```{r graph_4, message=TRUE, warning=TRUE, cache=TRUE}
+ggplot(base, aes(x = P14_EMPLT, y = MED13)) + geom_point(colour = "blue")
+ggplot(base, aes(x = log(P14_EMPLT), y = log(MED13))) + geom_point(colour = "blue")
 ```
 
 
@@ -65,23 +63,23 @@ Selon les graphiques que l'on veut tracer, on peut renseigner plusieurs variable
 
 Pour explorer son jeu de données, on peut réaliser un nuage de points pour plusieurs croisements de variables possibles. Ici, en conservant quelques variables quantitatives, on peut réaliser un ensemble de graphiques. Cette "matrice" de nuages fonctionne avec le package `GGally`. 
 
-```{r ggpairs, message=FALSE, warning=FALSE, cache=TRUE}
-# install.packages("GGally")
-# library("GGally") 
-# num <- select(base, P14_LOGVAC:PIMP13) %>% sample_n(10000) %>% log() 
-# ggpairs(num) ## fonction ggpairs() de GGally
+```{r ggpairs, message=TRUE, warning=TRUE, cache=TRUE}
+install.packages("GGally")
+library("GGally")
+num <- select(base, P14_LOGVAC:PIMP13) %>% sample_n(10000) %>% log()
+ggpairs(num) ## fonction ggpairs() de GGally
 ```
 
 ## Bonus : faire un graphique "dynamique"
 
 Une fois qu'on a généré un graphique avec ggplot, on peut le passer dans la fonction `ggplotly()` (package `plotly`) qui permet de le rendre dynamique. 
 
-```{r ggplotly,message=FALSE,warning=FALSE}
-# library(plotly)
-# g <- ggplot(data = base, aes(x = ZAU, fill = ZAU)) +
-#   geom_bar()
-# 
-# ggplotly(g)
+```{r ggplotly, message=TRUE, warning=TRUE}
+library(plotly)
+g <- ggplot(data = base, aes(x = ZAU, fill = ZAU)) +
+  geom_bar()
+
+ggplotly(g)
 ```
 
 ## Exercice 5 : créer des graphiques
