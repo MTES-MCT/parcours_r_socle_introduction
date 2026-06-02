@@ -34,7 +34,7 @@ La fonction `aes()` (pour "aesthetics"), utilisée dans l'instruction `ggplot()`
 ## Histogramme
 Si on désire un histogramme de `log_SUPERF`, on fera appel à la fonction `geom_histogram()`. Ce graphique ne présente qu'une seule dimension (la variable quanti dont on veut visualiser la distribution)
 
-```{r graph_3, message=TRUE, warning=TRUE}
+```{r graph_3}
 rm(list = ls())
 
 base <- read.csv(file = "extdata/Base_synth_territoires.csv", fileEncoding = 'latin1',
@@ -53,7 +53,7 @@ ggplot(data = base, mapping = aes(x = log_SUPERF)) + geom_histogram()
 
 Selon les graphiques que l'on veut tracer, on peut renseigner plusieurs variables. Dans le cas d'un nuage de points, par exemple, on croise 2 variables quantitatives :
 
-```{r graph_4, message=TRUE, warning=TRUE, cache=TRUE}
+```{r graph_4}
 ggplot(base, aes(x = P14_EMPLT, y = MED13)) + geom_point(colour = "blue")
 ggplot(base, aes(x = log(P14_EMPLT), y = log(MED13))) + geom_point(colour = "blue")
 ```
@@ -63,7 +63,7 @@ ggplot(base, aes(x = log(P14_EMPLT), y = log(MED13))) + geom_point(colour = "blu
 
 Pour explorer son jeu de données, on peut réaliser un nuage de points pour plusieurs croisements de variables possibles. Ici, en conservant quelques variables quantitatives, on peut réaliser un ensemble de graphiques. Cette "matrice" de nuages fonctionne avec le package `GGally`. 
 
-```{r ggpairs, message=TRUE, warning=TRUE, cache=TRUE}
+```{r ggpairs}
 install.packages("GGally")
 library("GGally")
 num <- select(base, P14_LOGVAC:PIMP13) %>% sample_n(10000) %>% log()
@@ -74,7 +74,7 @@ ggpairs(num) ## fonction ggpairs() de GGally
 
 Une fois qu'on a généré un graphique avec ggplot, on peut le passer dans la fonction `ggplotly()` (package `plotly`) qui permet de le rendre dynamique. 
 
-```{r ggplotly, message=TRUE, warning=TRUE}
+```{r ggplotly}
 library(plotly)
 g <- ggplot(data = base, aes(x = ZAU, fill = ZAU)) +
   geom_bar()
