@@ -52,6 +52,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.12.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -312,60 +320,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb112-9"><a href="premiers-graphiques.html#cb112-9" tabindex="-1"></a>         <span class="at">tx_natal =</span> <span class="dv">1000</span> <span class="sc">*</span> NAISD15 <span class="sc">/</span> P14_POP,</span>
 <span id="cb112-10"><a href="premiers-graphiques.html#cb112-10" tabindex="-1"></a>         <span class="at">tx_mort =</span> DECESD15 <span class="sc">/</span> P14_POP)</span>
 <span id="cb112-11"><a href="premiers-graphiques.html#cb112-11" tabindex="-1"></a></span>
-<span id="cb112-12"><a href="premiers-graphiques.html#cb112-12" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">str</span>(base))</span></code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    36689 obs. of  28 variables:
-##  $ CODGEO     : chr  &quot;01001&quot; &quot;01002&quot; &quot;01004&quot; &quot;01005&quot; ...
-##  $ LIBGEO     : chr  &quot;L&#39;Abergement-Clémenciat&quot; &quot;L&#39;Abergement-de-Varey&quot; &quot;Ambérieu-en-Bugey&quot; &quot;Ambérieux-en-Dombes&quot; ...
-##  $ REG        : Factor w/ 17 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 15 15 15 15 15 15 15 15 15 15 ...
-##  $ DEP        : chr  &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;01&quot; ...
-##  $ ZAU        : chr  &quot;120 - Multipolarisée des grandes aires urbaines&quot; &quot;112 - Couronne d&#39;un grand pôle&quot; &quot;112 - Couronne d&#39;un grand pôle&quot; &quot;112 - Couronne d&#39;un grand pôle&quot; ...
-##  $ ZE         : chr  &quot;8213 - Villefranche-sur-Saône&quot; &quot;8201 - Ambérieu-en-Bugey&quot; &quot;8201 - Ambérieu-en-Bugey&quot; &quot;8213 - Villefranche-sur-Saône&quot; ...
-##  $ P14_POP    : int  767 239 14022 1627 109 2570 743 338 1142 397 ...
-##  $ P09_POP    : int  787 207 13350 1592 120 2328 660 336 960 352 ...
-##  $ SUPERF     : num  15.95 9.15 24.6 15.92 5.88 ...
-##  $ NAIS0914   : int  40 16 1051 117 8 175 59 12 56 25 ...
-##  $ DECE0914   : int  25 7 551 41 3 78 20 11 32 10 ...
-##  $ P14_MEN    : num  306 99.3 6161.1 621.1 52.5 ...
-##  $ NAISD15    : int  13 5 222 15 2 21 11 2 18 4 ...
-##  $ DECESD15   : int  5 1 121 7 2 9 3 3 5 0 ...
-##  $ P14_LOG    : num  342.7 161.2 6838.4 661.8 71.5 ...
-##  $ P14_RP     : num  306 99.3 6161.1 621.1 52.5 ...
-##  $ P14_RSECOCC: num  14 47.3 121.6 10.9 10.9 ...
-##  $ P14_LOGVAC : num  22.74 14.55 555.64 29.85 8.14 ...
-##  $ P14_RP_PROP: num  260 84.6 2769 473.3 37.7 ...
-##  $ NBMENFISC13: int  297 99 6034 617 47 1014 299 140 431 137 ...
-##  $ PIMP13     : num  NA NA 57.4 NA NA ...
-##  $ MED13      : num  22130 23213 19554 22388 21872 ...
-##  $ TP6013     : num  NA NA 15.1 NA NA ...
-##  $ P14_EMPLT  : num  85.16 12.81 7452.93 280.57 5.95 ...
-##  $ log_SUPERF : num  2.77 2.21 3.2 2.77 1.77 ...
-##  $ densite    : num  48.1 26.1 570 102.2 18.5 ...
-##  $ tx_natal   : num  16.95 20.92 15.83 9.22 18.35 ...
-##  $ tx_mort    : num  0.00652 0.00418 0.00863 0.0043 0.01835 ...</code></pre>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="premiers-graphiques.html#cb114-1" tabindex="-1"></a><span class="co"># ggplot(data = base, mapping = aes(x = log_SUPERF)) + geom_histogram()</span></span></code></pre></div>
+<span id="cb112-12"><a href="premiers-graphiques.html#cb112-12" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> base, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> log_SUPERF)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 821 rows containing non-finite outside the scale range
+## (`stat_bin()`).</code></pre>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/graph_3-1.svg" alt="" width="576" /></p>
 </div>
 <div id="nuages-de-points" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Nuages de points<a href="premiers-graphiques.html#nuages-de-points" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Selon les graphiques que l’on veut tracer, on peut renseigner plusieurs variables. Dans le cas d’un nuage de points, par exemple, on croise 2 variables quantitatives :</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="premiers-graphiques.html#cb115-1" tabindex="-1"></a><span class="co"># ggplot(base, aes(x = P14_EMPLT, y = MED13)) + geom_point(colour = &quot;blue&quot;)</span></span>
-<span id="cb115-2"><a href="premiers-graphiques.html#cb115-2" tabindex="-1"></a><span class="co"># ggplot(base, aes(x = log(P14_EMPLT), y = log(MED13))) + geom_point(colour = &quot;blue&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="premiers-graphiques.html#cb115-1" tabindex="-1"></a><span class="fu">ggplot</span>(base, <span class="fu">aes</span>(<span class="at">x =</span> P14_EMPLT, <span class="at">y =</span> MED13)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 4500 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/graph_4-1.svg" alt="" width="576" /></p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="premiers-graphiques.html#cb117-1" tabindex="-1"></a><span class="fu">ggplot</span>(base, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(P14_EMPLT), <span class="at">y =</span> <span class="fu">log</span>(MED13))) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 4500 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/graph_4-2.svg" alt="" width="576" /></p>
 </div>
 <div id="matrice-de-nuages" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Matrice de nuages<a href="premiers-graphiques.html#matrice-de-nuages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Pour explorer son jeu de données, on peut réaliser un nuage de points pour plusieurs croisements de variables possibles. Ici, en conservant quelques variables quantitatives, on peut réaliser un ensemble de graphiques. Cette “matrice” de nuages fonctionne avec le package <code>GGally</code>.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="premiers-graphiques.html#cb116-1" tabindex="-1"></a><span class="co"># install.packages(&quot;GGally&quot;)</span></span>
-<span id="cb116-2"><a href="premiers-graphiques.html#cb116-2" tabindex="-1"></a><span class="co"># library(&quot;GGally&quot;) </span></span>
-<span id="cb116-3"><a href="premiers-graphiques.html#cb116-3" tabindex="-1"></a><span class="co"># num &lt;- select(base, P14_LOGVAC:PIMP13) %&gt;% sample_n(10000) %&gt;% log() </span></span>
-<span id="cb116-4"><a href="premiers-graphiques.html#cb116-4" tabindex="-1"></a><span class="co"># ggpairs(num) ## fonction ggpairs() de GGally</span></span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="premiers-graphiques.html#cb119-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;GGally&quot;</span>)</span></code></pre></div>
+<pre><code>## Installing package into &#39;/usr/local/lib/R/site-library&#39;
+## (as &#39;lib&#39; is unspecified)</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="premiers-graphiques.html#cb121-1" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;GGally&quot;</span>)</span>
+<span id="cb121-2"><a href="premiers-graphiques.html#cb121-2" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">select</span>(base, P14_LOGVAC<span class="sc">:</span>PIMP13) <span class="sc">%&gt;%</span> <span class="fu">sample_n</span>(<span class="dv">10000</span>) <span class="sc">%&gt;%</span> <span class="fu">log</span>()</span>
+<span id="cb121-3"><a href="premiers-graphiques.html#cb121-3" tabindex="-1"></a><span class="fu">ggpairs</span>(num) <span class="do">## fonction ggpairs() de GGally</span></span></code></pre></div>
+<pre><code>## Warning: Removed 373 rows containing non-finite outside the scale range
+## (`stat_density()`).</code></pre>
+<pre><code>## Warning: Removed 218 rows containing missing values</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale range
+## (`geom_text()`).</code></pre>
+<pre><code>## Warning: Removed 1210 rows containing missing values</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing values or values outside the scale range
+## (`geom_text()`).</code></pre>
+<pre><code>## Warning: Removed 8640 rows containing missing values</code></pre>
+<pre><code>## Warning: Removed 218 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 222 rows containing non-finite outside the scale range
+## (`stat_density()`).</code></pre>
+<pre><code>## Warning: Removed 1210 rows containing missing values</code></pre>
+<pre><code>## Warning: Removed 8640 rows containing missing values</code></pre>
+<pre><code>## Warning: Removed 1210 rows containing missing values or values outside the scale range
+## (`geom_point()`).
+## Removed 1210 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1019 rows containing non-finite outside the scale range
+## (`stat_density()`).</code></pre>
+<pre><code>## Warning: Removed 8630 rows containing missing values</code></pre>
+<pre><code>## Warning: Removed 8640 rows containing missing values or values outside the scale range
+## (`geom_point()`).
+## Removed 8640 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 8630 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 8630 rows containing non-finite outside the scale range
+## (`stat_density()`).</code></pre>
+<p><img src="Debuter-avec-R-et-RStudio_files/figure-html/ggpairs-1.svg" alt="" width="576" /></p>
 </div>
 <div id="bonus-faire-un-graphique-dynamique" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> Bonus : faire un graphique “dynamique”<a href="premiers-graphiques.html#bonus-faire-un-graphique-dynamique" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Une fois qu’on a généré un graphique avec ggplot, on peut le passer dans la fonction <code>ggplotly()</code> (package <code>plotly</code>) qui permet de le rendre dynamique.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="premiers-graphiques.html#cb117-1" tabindex="-1"></a><span class="co"># library(plotly)</span></span>
-<span id="cb117-2"><a href="premiers-graphiques.html#cb117-2" tabindex="-1"></a><span class="co"># g &lt;- ggplot(data = base, aes(x = ZAU, fill = ZAU)) +</span></span>
-<span id="cb117-3"><a href="premiers-graphiques.html#cb117-3" tabindex="-1"></a><span class="co">#   geom_bar()</span></span>
-<span id="cb117-4"><a href="premiers-graphiques.html#cb117-4" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb117-5"><a href="premiers-graphiques.html#cb117-5" tabindex="-1"></a><span class="co"># ggplotly(g)</span></span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="premiers-graphiques.html#cb138-1" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb138-2"><a href="premiers-graphiques.html#cb138-2" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> base, <span class="fu">aes</span>(<span class="at">x =</span> ZAU, <span class="at">fill =</span> ZAU)) <span class="sc">+</span></span>
+<span id="cb138-3"><a href="premiers-graphiques.html#cb138-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb138-4"><a href="premiers-graphiques.html#cb138-4" tabindex="-1"></a></span>
+<span id="cb138-5"><a href="premiers-graphiques.html#cb138-5" tabindex="-1"></a><span class="fu">ggplotly</span>(g)</span></code></pre></div>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-6ad3f873d09a1dfe1883" style="width:576px;height:576px;"></div>
+<script type="application/json" data-for="htmlwidget-6ad3f873d09a1dfe1883">{"x":{"data":[{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[3285],"text":"count:  3285<br />ZAU: 111 - Grand pôle (plus de 10 000 emplois)<br />ZAU: 111 - Grand pôle (plus de 10 000 emplois)","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"111 - Grand pôle (plus de 10 000 emplois)","legendgroup":"111 - Grand pôle (plus de 10 000 emplois)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[12297],"text":"count: 12297<br />ZAU: 112 - Couronne d'un grand pôle<br />ZAU: 112 - Couronne d'un grand pôle","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(211,146,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"112 - Couronne d'un grand pôle","legendgroup":"112 - Couronne d'un grand pôle","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[3962],"text":"count:  3962<br />ZAU: 120 - Multipolarisée des grandes aires urbaines<br />ZAU: 120 - Multipolarisée des grandes aires urbaines","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(147,170,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"120 - Multipolarisée des grandes aires urbaines","legendgroup":"120 - Multipolarisée des grandes aires urbaines","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[4],"y":[456],"text":"count:   456<br />ZAU: 211 - Moyen pôle (5 000 à 10 000 emplois)<br />ZAU: 211 - Moyen pôle (5 000 à 10 000 emplois)","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"211 - Moyen pôle (5 000 à 10 000 emplois)","legendgroup":"211 - Moyen pôle (5 000 à 10 000 emplois)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[5],"y":[815],"text":"count:   815<br />ZAU: 212 - Couronne d'un moyen pôle<br />ZAU: 212 - Couronne d'un moyen pôle","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,193,159,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"212 - Couronne d'un moyen pôle","legendgroup":"212 - Couronne d'un moyen pôle","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[6],"y":[888],"text":"count:   888<br />ZAU: 221 - Petit pôle (de 1 500 à 5 000 emplois)<br />ZAU: 221 - Petit pôle (de 1 500 à 5 000 emplois)","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,185,227,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"221 - Petit pôle (de 1 500 à 5 000 emplois)","legendgroup":"221 - Petit pôle (de 1 500 à 5 000 emplois)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[7],"y":[582],"text":"count:   582<br />ZAU: 222 - Couronne d'un petit pôle<br />ZAU: 222 - Couronne d'un petit pôle","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"222 - Couronne d'un petit pôle","legendgroup":"222 - Couronne d'un petit pôle","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999947,"base":0,"x":[8],"y":[7021],"text":"count:  7021<br />ZAU: 300 - Autre commune multipolarisée<br />ZAU: 300 - Autre commune multipolarisée","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(219,114,251,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"300 - Autre commune multipolarisée","legendgroup":"300 - Autre commune multipolarisée","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[9],"y":[7383],"text":"count:  7383<br />ZAU: 400 - Commune isolée hors influence des pôles<br />ZAU: 400 - Commune isolée hors influence des pôles","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,97,195,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"400 - Commune isolée hors influence des pôles","legendgroup":"400 - Commune isolée hors influence des pôles","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":23.305936073059364,"r":7.3059360730593621,"b":37.260273972602747,"l":54.794520547945211},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,9.5999999999999996],"tickmode":"array","ticktext":["111 - Grand pôle (plus de 10 000 emplois)","112 - Couronne d'un grand pôle","120 - Multipolarisée des grandes aires urbaines","211 - Moyen pôle (5 000 à 10 000 emplois)","212 - Couronne d'un moyen pôle","221 - Petit pôle (de 1 500 à 5 000 emplois)","222 - Couronne d'un petit pôle","300 - Autre commune multipolarisée","400 - Commune isolée hors influence des pôles"],"tickvals":[1,2,3,4,5,6,6.9999999999999991,8,9],"categoryorder":"array","categoryarray":["111 - Grand pôle (plus de 10 000 emplois)","112 - Couronne d'un grand pôle","120 - Multipolarisée des grandes aires urbaines","211 - Moyen pôle (5 000 à 10 000 emplois)","212 - Couronne d'un moyen pôle","221 - Petit pôle (de 1 500 à 5 000 emplois)","222 - Couronne d'un petit pôle","300 - Autre commune multipolarisée","400 - Commune isolée hors influence des pôles"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"ZAU","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-614.85000000000002,12911.85],"tickmode":"array","ticktext":["0","2500","5000","7500","10000","12500"],"tickvals":[0,2500,5000,7500,10000,12500],"categoryorder":"array","categoryarray":["0","2500","5000","7500","10000","12500"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"count","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"ZAU","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"11d3c0b86d7":{"x":{},"fill":{},"type":"bar"}},"cur_data":"11d3c0b86d7","visdat":{"11d3c0b86d7":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="exercice-5-créer-des-graphiques" class="section level2 hasAnchor" number="8.6">
 <h2><span class="header-section-number">8.6</span> Exercice 5 : créer des graphiques<a href="premiers-graphiques.html#exercice-5-cr%C3%A9er-des-graphiques" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -387,7 +410,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Résultat attendu :</p>
 <p><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-123-1.svg" alt="" width="576" /><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-123-2.svg" alt="" width="576" /><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-123-3.svg" alt="" width="576" /><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-123-4.svg" alt="" width="576" /><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-123-5.svg" alt="" width="576" /><img src="Debuter-avec-R-et-RStudio_files/figure-html/unnamed-chunk-123-6.svg" alt="" width="576" /></p>
 <p><strong>Note</strong> : avec les fonctions de base, on peut obtenir de nombreux graphiques avec très peu de code, mais moins jolis :</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="premiers-graphiques.html#cb118-1" tabindex="-1"></a><span class="fu">plot</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="premiers-graphiques.html#cb139-1" tabindex="-1"></a><span class="fu">plot</span>(iris)</span></code></pre></div>
 <p><img src="Debuter-avec-R-et-RStudio_files/figure-html/graph_11-1.svg" alt="" width="576" /></p>
 <p>Des possibilités infinies à approfondir dans <a href="https://mtes-mct.github.io/parcours-r/">les modules 3 et 5</a> !!</p>
 
