@@ -17,9 +17,8 @@ description: "Découvrir R et RStudio (module socle)"
 ```
 ```{r setup, include=FALSE}
 rm(list=ls())
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, error = FALSE, warning = FALSE,
-                      error = FALSE, dev = "svg", fig.width = 6, fig.height = 6)
-
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, error = FALSE, 
+                      dev = "svg", fig.width = 6, fig.height = 6)
 library(savoirfR)
 ```
 
